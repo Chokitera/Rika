@@ -10,11 +10,35 @@ using System.Windows.Forms;
 
 namespace Rika
 {
-    public partial class Form1 : Form
+    public partial class FrmLogin : Form
     {
-        public Form1()
+        public FrmLogin()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_User_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string usuario, senha;
+
+            usuario = txtUsuario.Text;
+            senha = txtSenha.Text;
+
+            if(usuario == "adm" && senha == "1234")
+            {
+                lblAviso.Visible = true;
+                lblAviso.Text = "Login realizado com sucesso";
+            }
         }
     }
 }
