@@ -130,11 +130,30 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+	<Compile Include="conexao\ConnectionFactory.cs" />
     <Folder Include="controls\" />
     <Folder Include="dao\" />
     <Folder Include="models\" />
     <Folder Include="resources\" />
     <Folder Include="views\" />
+	<Compile Include="controls\modeloBotao.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\novoBotao.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\novosComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\novoTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\novoTextBox.Designer.cs">
+      <DependentUpon>novoTextBox.cs</DependentUpon>
+    </Compile>
+	<EmbeddedResource Include="controls\novoTextBox.resx">
+      <DependentUpon>novoTextBox.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
