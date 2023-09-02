@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Rika.dao;
+using Rika.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,15 +31,18 @@ namespace Rika
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string usuario, senha;
+            Usuario usuario = new Usuario();
 
-            usuario = txtUsuario.Text;
-            senha = txtSenha.Text;
+            usuario.Nome = txtUsuario.Text;
+            usuario.Senha = txtSenha.Text;
 
-            if(usuario == "adm" && senha == "1234")
+            LoginDAO dao = new LoginDAO();
+
+            bool login = dao.EfetuarLogin(usuario);
+
+            if (login)
             {
-                lblAviso.Visible = true;
-                lblAviso.Text = "Login realizado com sucesso";
+                //Chamaria a tela inicial
             }
         }
     }
