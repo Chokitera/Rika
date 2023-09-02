@@ -76,5 +76,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controls\" />
+    <Folder Include="dao\" />
+    <Folder Include="models\" />
+    <Folder Include="resources\" />
+    <Folder Include="views\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
