@@ -41,6 +41,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.DimGray;
             this.lblUser.Location = new System.Drawing.Point(69, 189);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(88, 30);
@@ -62,6 +63,7 @@
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.ForeColor = System.Drawing.Color.DimGray;
             this.lblSenha.Location = new System.Drawing.Point(69, 236);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(73, 30);
@@ -71,10 +73,10 @@
             // txtUsuario
             // 
             this.txtUsuario.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUsuario.BorderColor = System.Drawing.Color.Transparent;
+            this.txtUsuario.BorderColor = System.Drawing.Color.DimGray;
             this.txtUsuario.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtUsuario.BorderSize = 2;
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
             this.txtUsuario.Location = new System.Drawing.Point(164, 189);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
@@ -82,35 +84,35 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Padding = new System.Windows.Forms.Padding(7);
             this.txtUsuario.PasswordChar = false;
-            this.txtUsuario.Size = new System.Drawing.Size(250, 31);
+            this.txtUsuario.Size = new System.Drawing.Size(250, 39);
             this.txtUsuario.TabIndex = 3;
-            this.txtUsuario.UnderlinedStyle = false;
+            this.txtUsuario.UnderlinedStyle = true;
             this.txtUsuario._TextChanged += new System.EventHandler(this.txtUsuario__TextChanged);
             // 
             // txtSenha
             // 
             this.txtSenha.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSenha.BorderColor = System.Drawing.Color.Transparent;
+            this.txtSenha.BorderColor = System.Drawing.Color.DimGray;
             this.txtSenha.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtSenha.BorderSize = 2;
-            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.DimGray;
             this.txtSenha.Location = new System.Drawing.Point(164, 236);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Multiline = false;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Padding = new System.Windows.Forms.Padding(7);
-            this.txtSenha.PasswordChar = false;
-            this.txtSenha.Size = new System.Drawing.Size(250, 31);
+            this.txtSenha.PasswordChar = true;
+            this.txtSenha.Size = new System.Drawing.Size(250, 39);
             this.txtSenha.TabIndex = 4;
-            this.txtSenha.UnderlinedStyle = false;
+            this.txtSenha.UnderlinedStyle = true;
             // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btnLogin.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btnLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnLogin.BorderRadius = 0;
+            this.btnLogin.BorderRadius = 20;
             this.btnLogin.BorderSize = 0;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
