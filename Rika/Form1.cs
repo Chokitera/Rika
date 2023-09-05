@@ -58,7 +58,7 @@ namespace Rika
 
             if (login)
             {
-                //Chamaria a tela inicial
+                //Chamaria a tela iniciall
             }
         }
 
