@@ -42,9 +42,10 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUser.Location = new System.Drawing.Point(69, 189);
+            this.lblUser.Location = new System.Drawing.Point(92, 233);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(88, 30);
+            this.lblUser.Size = new System.Drawing.Size(116, 37);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "Usuário";
             this.lblUser.Click += new System.EventHandler(this.lbl_User_Click);
@@ -52,9 +53,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(152, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(203, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(192, 134);
+            this.pictureBox1.Size = new System.Drawing.Size(256, 165);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -64,9 +66,10 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.DimGray;
-            this.lblSenha.Location = new System.Drawing.Point(69, 236);
+            this.lblSenha.Location = new System.Drawing.Point(92, 290);
+            this.lblSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(73, 30);
+            this.lblSenha.Size = new System.Drawing.Size(94, 37);
             this.lblSenha.TabIndex = 2;
             this.lblSenha.Text = "Senha";
             // 
@@ -78,13 +81,13 @@
             this.txtUsuario.BorderSize = 2;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsuario.Location = new System.Drawing.Point(164, 189);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsuario.Location = new System.Drawing.Point(219, 233);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtUsuario.Multiline = false;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Padding = new System.Windows.Forms.Padding(7);
+            this.txtUsuario.Padding = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.txtUsuario.PasswordChar = false;
-            this.txtUsuario.Size = new System.Drawing.Size(250, 39);
+            this.txtUsuario.Size = new System.Drawing.Size(333, 48);
             this.txtUsuario.TabIndex = 3;
             this.txtUsuario.UnderlinedStyle = true;
             this.txtUsuario._TextChanged += new System.EventHandler(this.txtUsuario__TextChanged);
@@ -97,13 +100,13 @@
             this.txtSenha.BorderSize = 2;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSenha.Location = new System.Drawing.Point(164, 236);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSenha.Location = new System.Drawing.Point(219, 290);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtSenha.Multiline = false;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSenha.Padding = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.txtSenha.PasswordChar = true;
-            this.txtSenha.Size = new System.Drawing.Size(250, 39);
+            this.txtSenha.Size = new System.Drawing.Size(333, 48);
             this.txtSenha.TabIndex = 4;
             this.txtSenha.UnderlinedStyle = true;
             // 
@@ -117,9 +120,10 @@
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(176, 306);
+            this.btnLogin.Location = new System.Drawing.Point(235, 377);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(150, 40);
+            this.btnLogin.Size = new System.Drawing.Size(200, 49);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.TextColor = System.Drawing.Color.White;
@@ -128,10 +132,10 @@
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(503, 368);
+            this.ClientSize = new System.Drawing.Size(671, 453);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtUsuario);
@@ -139,6 +143,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.Text = "Login";
