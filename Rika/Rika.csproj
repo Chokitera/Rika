@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconRikaPreto.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
@@ -98,30 +101,51 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controls\textBoxComImagem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\textBoxComImagem.Designer.cs">
+      <DependentUpon>textBoxComImagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="dao\LoginDAO.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="views\FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="views\FrmCadastroUsuario.Designer.cs">
+      <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="views\FrmCadastroDeUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\FrmCadastroDeUsuarios.Designer.cs">
-      <DependentUpon>FrmCadastroDeUsuarios.cs</DependentUpon>
-    </Compile>
     <Compile Include="views\FrmTelaAdministrativa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\FrmTelaAdministrativa.Designer.cs">
       <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="controls\textBoxComImagem.resx">
+      <DependentUpon>textBoxComImagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmCadastroUsuario.resx">
+      <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -133,9 +157,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="views\FrmCadastroDeUsuarios.resx">
-      <DependentUpon>FrmCadastroDeUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="views\FrmTelaAdministrativa.resx">
       <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,9 +195,22 @@
       <DependentUpon>novoTextBox.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="resources\Logo_Rika_Branco1.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="resources\Logo_Rika_Preto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="iconRikaBranco.ico" />
+    <Content Include="iconRikaPreto.ico" />
+    <None Include="resources\icon-cadeado.png" />
+    <None Include="resources\icon-nome.png" />
+    <None Include="resources\icon-perfil-de-usuario-new.png" />
+    <None Include="resources\icon-perfil-de-usuario.png" />
+    <None Include="resources\menu-hamburguer.png" />
+    <None Include="resources\janela-minimizada.png" />
+    <None Include="resources\x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
