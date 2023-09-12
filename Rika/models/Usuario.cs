@@ -7,11 +7,20 @@ using System.Threading.Tasks;
 
 namespace Rika.models
 {
+    public enum TipoUsuario
+    {
+        Normal = 0,
+        Admin = 1
+    }
+
     public class Usuario
     {
-        public int Codigo { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
+        public string SobreNome { get; set; }
+        public string NomeUsuario { get; set; }
         public string Senha { get; set; }
-
+        public string ConfirmarSenha { get; set; }
+        public TipoUsuario Tipo { get; set; }
     }
 }

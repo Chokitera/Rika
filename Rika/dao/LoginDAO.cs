@@ -17,14 +17,15 @@ namespace Rika.dao
             this.conexao = new ConnectionFactory().getconnection();
         }
 
+        #region Método para efetuar o login
         public bool EfetuarLogin(Usuario usuario)
         {
             try
             {
-                string sql = @"select * from usuarios where nome = @nome and senha = @senha";
+                string sql = @"select * from usuarios where nome_usuario = @nome and senha = @senha";
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
 
-                executacmd.Parameters.AddWithValue("nome", usuario.Nome);
+                executacmd.Parameters.AddWithValue("nome", usuario.NomeUsuario);
                 executacmd.Parameters.AddWithValue("senha", usuario.Senha);
 
                 conexao.Open();
@@ -40,7 +41,7 @@ namespace Rika.dao
                 }
                 else
                 {
-                    MessageBox.Show("Senha ou Usuário incorreto!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuário ou Senha incorreta!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     conexao.Close();
                     return false;
                 }
@@ -52,7 +53,8 @@ namespace Rika.dao
                 MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conexao.Close();
                 return false;
-             }
+            }
         }
+        #endregion
     }
 }

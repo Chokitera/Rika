@@ -11,9 +11,8 @@ using System.Windows.Forms;
 namespace Rika.controls
 {
     [DefaultEvent("_TextChanged")]
-    public partial class novoTextBox : UserControl
+    public partial class textBoxComImagem : UserControl
     {
-
         //Atributos
         private Color borderColor = Color.MediumSlateBlue;
         private int borderSize = 2;
@@ -22,7 +21,7 @@ namespace Rika.controls
         private bool isFocused = false;
 
         //Construtor
-        public novoTextBox()
+        public textBoxComImagem()
         {
             InitializeComponent();
         }
@@ -131,6 +130,13 @@ namespace Rika.controls
         {
             get { return borderFocusColor; }
             set { borderFocusColor = value; }
+        }
+
+        [Category("Botoes")]
+        public Image NovaImagem
+        {
+            get { return pictureBox1.Image; }
+            set { pictureBox1.Image = value; }
         }
 
         //Complemento do método
