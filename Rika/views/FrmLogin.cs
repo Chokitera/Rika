@@ -86,7 +86,7 @@ namespace Rika.views
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
+            txtUsuario.Focus();
         }
 
         #region Ajuste no Visual dos TextBoxs
@@ -114,7 +114,6 @@ namespace Rika.views
             {
                 txtSenha.Text = "";
                 txtSenha.ForeColor = Color.FromArgb(28, 28, 28);
-                txtSenha.PasswordChar = true;
             }
         }
 
@@ -122,9 +121,16 @@ namespace Rika.views
         {
             if (txtSenha.Text == "")
             {
-                txtSenha.Text = "Senha";
                 txtSenha.ForeColor = Color.DimGray;
-                txtSenha.PasswordChar = false;
+                txtSenha2.Visible = true;
+            }
+        }
+        private void txtSenha2_Enter(object sender, EventArgs e)
+        {
+            if (txtSenha.Text != null)
+            {
+                txtSenha2.Visible = false;
+                txtSenha.Focus();
             }
         }
 
@@ -219,5 +225,7 @@ namespace Rika.views
             }
         }
         #endregion
+
+        
     }
 }
