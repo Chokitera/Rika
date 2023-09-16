@@ -38,10 +38,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
-            this.passagensAerea1 = new Rika.controls.PassagensAerea();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelConteudo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -110,7 +108,6 @@
             // 
             // panelConteudo
             // 
-            this.panelConteudo.Controls.Add(this.passagensAerea1);
             this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelConteudo.Location = new System.Drawing.Point(528, 0);
             this.panelConteudo.Name = "panelConteudo";
@@ -156,21 +153,6 @@
             this.iconMinimizar.TabStop = false;
             this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
-            // passagensAerea1
-            // 
-            this.passagensAerea1.BackColor = System.Drawing.SystemColors.Menu;
-            this.passagensAerea1.classe = null;
-            this.passagensAerea1.dataViagem = null;
-            this.passagensAerea1.destino = null;
-            this.passagensAerea1.diretoEscala = null;
-            this.passagensAerea1.idavolta = null;
-            this.passagensAerea1.imagemPassagem = ((System.Drawing.Image)(resources.GetObject("passagensAerea1.imagemPassagem")));
-            this.passagensAerea1.Location = new System.Drawing.Point(22, 32);
-            this.passagensAerea1.Name = "passagensAerea1";
-            this.passagensAerea1.Size = new System.Drawing.Size(376, 263);
-            this.passagensAerea1.TabIndex = 0;
-            this.passagensAerea1.valor = null;
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,7 +174,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelConteudo.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
@@ -210,7 +191,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox iconFechar;
         private System.Windows.Forms.PictureBox iconMinimizar;
-        private controls.PassagensAerea passagensAerea1;
     }
 }
 

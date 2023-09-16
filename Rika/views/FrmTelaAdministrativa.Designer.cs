@@ -600,9 +600,9 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(624, 593);
+            this.btnSair.Location = new System.Drawing.Point(667, 598);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(135, 50);
+            this.btnSair.Size = new System.Drawing.Size(150, 45);
             this.btnSair.TabIndex = 14;
             this.btnSair.Text = "Sair";
             this.btnSair.TextColor = System.Drawing.Color.White;
@@ -620,9 +620,9 @@
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(483, 593);
+            this.btnExcluir.Location = new System.Drawing.Point(506, 598);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(135, 50);
+            this.btnExcluir.Size = new System.Drawing.Size(150, 45);
             this.btnExcluir.TabIndex = 13;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextColor = System.Drawing.Color.White;
@@ -632,17 +632,17 @@
             // 
             // btnSalvar
             // 
-            this.btnSalvar.BackColor = System.Drawing.Color.Green;
-            this.btnSalvar.BackgroundColor = System.Drawing.Color.Green;
+            this.btnSalvar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnSalvar.BackgroundColor = System.Drawing.Color.LimeGreen;
             this.btnSalvar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnSalvar.BorderRadius = 20;
             this.btnSalvar.BorderSize = 0;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(342, 593);
+            this.btnSalvar.Location = new System.Drawing.Point(346, 598);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(135, 50);
+            this.btnSalvar.Size = new System.Drawing.Size(150, 45);
             this.btnSalvar.TabIndex = 12;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextColor = System.Drawing.Color.White;

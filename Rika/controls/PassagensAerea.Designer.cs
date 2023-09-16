@@ -128,13 +128,14 @@
             this.txtDataViagem.TabIndex = 0;
             this.txtDataViagem.TextNew = "data viage";
             this.txtDataViagem.UnderlinedStyle = false;
+            this.txtDataViagem.Paint += new System.Windows.Forms.PaintEventHandler(this.txtDataViagem_Paint);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rika.Properties.Resources.seta_correta;
             this.pictureBox1.Location = new System.Drawing.Point(333, 237);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(56, 50);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
