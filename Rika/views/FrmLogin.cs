@@ -110,10 +110,10 @@ namespace Rika.views
 
         private void txtSenha_Enter(object sender, EventArgs e)
         {
-            if (txtSenha.Text == "Senha")
+            if (txtSenha.Text == "")
             {
-                txtSenha.Text = "";
                 txtSenha.ForeColor = Color.FromArgb(28, 28, 28);
+                txtSenha2.Visible = false;
             }
         }
 
@@ -125,15 +125,6 @@ namespace Rika.views
                 txtSenha2.Visible = true;
             }
         }
-        private void txtSenha2_Enter(object sender, EventArgs e)
-        {
-            if (txtSenha.Text != null)
-            {
-                txtSenha2.Visible = false;
-                txtSenha.Focus();
-            }
-        }
-
         #endregion
 
         #region Realização do Login

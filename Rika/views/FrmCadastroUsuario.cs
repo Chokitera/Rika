@@ -90,9 +90,9 @@ namespace Rika.views
         //Botão 'Senha'
         private void txtSenha_Enter(object sender, EventArgs e)
         {
-            if (txtSenha.Text == "Senha")
+            if (txtSenha.Text == "")
             {
-                txtSenha.Text = "";
+                txtSenha2.Visible = false;
                 txtSenha.ForeColor = Color.FromArgb(28, 28,28);
             }
         }
@@ -109,9 +109,9 @@ namespace Rika.views
         //Botão 'Confirmar Senha'
         private void txtConfirmarSenha_Enter(object sender, EventArgs e)
         {
-            if (txtConfirmarSenha.Text == "Confirmar Senha")
+            if (txtConfirmarSenha.Text == "")
             {
-                txtConfirmarSenha.Text = "";
+                txtConfimarSenha2.Visible = false;
                 txtConfirmarSenha.ForeColor = Color.FromArgb(28, 28, 28);
             }
         }
@@ -119,28 +119,14 @@ namespace Rika.views
         {
             if (txtConfirmarSenha.Text == "")
             {
-                txtConfirmarSenha.ForeColor = Color.DimGray;
                 txtConfimarSenha2.Visible = true;
+                txtConfirmarSenha.ForeColor = Color.DimGray;
             }
         }
-        private void txtSenha2_Enter(object sender, EventArgs e)
-        {
-            if (txtSenha.Text != null)
-            {
-                txtSenha2.Visible = false;
-                txtSenha.Focus();
-            }
-        }
-
         #endregion
 
-        private void txtConfimarSenha2_Enter(object sender, EventArgs e)
-        {
-            if (txtConfirmarSenha.Text != null)
-            {
-                txtConfimarSenha2.Visible = false;
-                txtConfirmarSenha.Focus();
-            }
-        }
+        #region Dados enviados ao banco
+
+        #endregion
     }
 }

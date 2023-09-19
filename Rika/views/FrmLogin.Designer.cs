@@ -213,7 +213,6 @@
             this.txtSenha2.TabStop = false;
             this.txtSenha2.TextNew = "Senha";
             this.txtSenha2.UnderlinedStyle = true;
-            this.txtSenha2.Enter += new System.EventHandler(this.txtSenha2_Enter);
             // 
             // FrmLogin
             // 

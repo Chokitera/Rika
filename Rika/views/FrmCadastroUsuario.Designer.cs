@@ -146,6 +146,7 @@
             this.txtConfimarSenha2.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtConfimarSenha2.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtConfimarSenha2.BorderSize = 2;
+            this.txtConfimarSenha2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConfimarSenha2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtConfimarSenha2.ForeColor = System.Drawing.Color.DimGray;
             this.txtConfimarSenha2.Location = new System.Drawing.Point(76, 404);
@@ -160,7 +161,6 @@
             this.txtConfimarSenha2.TabStop = false;
             this.txtConfimarSenha2.TextNew = "Confirmar Senha";
             this.txtConfimarSenha2.UnderlinedStyle = false;
-            this.txtConfimarSenha2.Enter += new System.EventHandler(this.txtConfimarSenha2_Enter);
             // 
             // txtSenha2
             // 
@@ -168,6 +168,7 @@
             this.txtSenha2.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtSenha2.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtSenha2.BorderSize = 2;
+            this.txtSenha2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSenha2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtSenha2.ForeColor = System.Drawing.Color.DimGray;
             this.txtSenha2.Location = new System.Drawing.Point(76, 338);
@@ -182,7 +183,6 @@
             this.txtSenha2.TabStop = false;
             this.txtSenha2.TextNew = "Senha";
             this.txtSenha2.UnderlinedStyle = false;
-            this.txtSenha2.Enter += new System.EventHandler(this.txtSenha2_Enter);
             // 
             // txtConfirmarSenha
             // 
@@ -234,6 +234,7 @@
             this.txtUsuario.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtUsuario.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtUsuario.BorderSize = 2;
+            this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
             this.txtUsuario.Location = new System.Drawing.Point(76, 272);
@@ -256,6 +257,7 @@
             this.txtSobrenome.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtSobrenome.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtSobrenome.BorderSize = 2;
+            this.txtSobrenome.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSobrenome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtSobrenome.ForeColor = System.Drawing.Color.DimGray;
             this.txtSobrenome.Location = new System.Drawing.Point(76, 204);
@@ -278,6 +280,7 @@
             this.txtNome.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.txtNome.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtNome.BorderSize = 2;
+            this.txtNome.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtNome.ForeColor = System.Drawing.Color.DimGray;
             this.txtNome.Location = new System.Drawing.Point(76, 137);
