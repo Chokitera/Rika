@@ -166,7 +166,7 @@ namespace Rika.views
             usuario.Senha = txtSenha.Text;
 
             //Instancia do dao
-            LoginDAO dao = new LoginDAO();
+            UsuarioDAO dao = new UsuarioDAO();
 
             if (VerificaCampoVazioLogin(usuario))
             {

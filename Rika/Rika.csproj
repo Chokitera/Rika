@@ -113,7 +113,7 @@
     <Compile Include="controls\textBoxComImagem.Designer.cs">
       <DependentUpon>textBoxComImagem.cs</DependentUpon>
     </Compile>
-    <Compile Include="dao\LoginDAO.cs" />
+    <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="views\FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

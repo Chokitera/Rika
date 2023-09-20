@@ -294,6 +294,7 @@
             this.txtNome.TabIndex = 30;
             this.txtNome.TextNew = "Nome";
             this.txtNome.UnderlinedStyle = false;
+            this.txtNome.Load += new System.EventHandler(this.txtNome_Load);
             this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             this.txtNome.Leave += new System.EventHandler(this.txtNome_Leave);
             // 

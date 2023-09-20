@@ -16,7 +16,10 @@ namespace Rika.views
         {
             InitializeComponent();
         }
-
+        private void txtNome_Load(object sender, EventArgs e)
+        {
+            txtNome.Focus();
+        }
         #region Link para Entrar no sistema
         private void linkEntrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -128,5 +131,8 @@ namespace Rika.views
         #region Dados enviados ao banco
 
         #endregion
+
+       
     }
 }
+
