@@ -113,6 +113,7 @@
             this.panelConteudo.Name = "panelConteudo";
             this.panelConteudo.Size = new System.Drawing.Size(419, 576);
             this.panelConteudo.TabIndex = 13;
+            this.panelConteudo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConteudo_Paint);
             this.panelConteudo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // panel2

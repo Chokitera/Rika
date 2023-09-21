@@ -86,7 +86,7 @@ namespace Rika.views
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
+            txtUsuario.Focus();
         }
 
         #region Ajuste no Visual dos TextBoxs
@@ -110,11 +110,10 @@ namespace Rika.views
 
         private void txtSenha_Enter(object sender, EventArgs e)
         {
-            if (txtSenha.Text == "Senha")
+            if (txtSenha.Text == "")
             {
-                txtSenha.Text = "";
                 txtSenha.ForeColor = Color.FromArgb(28, 28, 28);
-                txtSenha.PasswordChar = true;
+                txtSenha2.Visible = false;
             }
         }
 
@@ -122,12 +121,10 @@ namespace Rika.views
         {
             if (txtSenha.Text == "")
             {
-                txtSenha.Text = "Senha";
                 txtSenha.ForeColor = Color.DimGray;
-                txtSenha.PasswordChar = false;
+                txtSenha2.Visible = true;
             }
         }
-
         #endregion
 
         #region Realização do Login
@@ -169,7 +166,7 @@ namespace Rika.views
             usuario.Senha = txtSenha.Text;
 
             //Instancia do dao
-            LoginDAO dao = new LoginDAO();
+            UsuarioDAO dao = new UsuarioDAO();
 
             if (VerificaCampoVazioLogin(usuario))
             {
@@ -219,5 +216,7 @@ namespace Rika.views
             }
         }
         #endregion
+
+        
     }
 }

@@ -167,5 +167,10 @@ namespace Rika
             fh.Show();
         }
         #endregion
+
+        private void panelConteudo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

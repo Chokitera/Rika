@@ -101,13 +101,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controls\PassagensAerea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\PassagensAerea.Designer.cs">
+      <DependentUpon>PassagensAerea.cs</DependentUpon>
+    </Compile>
     <Compile Include="controls\textBoxComImagem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="controls\textBoxComImagem.Designer.cs">
       <DependentUpon>textBoxComImagem.cs</DependentUpon>
     </Compile>
-    <Compile Include="dao\LoginDAO.cs" />
+    <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="views\FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     <Compile Include="views\FrmTelaAdministrativa.Designer.cs">
       <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="controls\PassagensAerea.resx">
+      <DependentUpon>PassagensAerea.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controls\textBoxComImagem.resx">
       <DependentUpon>textBoxComImagem.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +213,8 @@
   <ItemGroup>
     <Content Include="iconRikaBranco.ico" />
     <Content Include="iconRikaPreto.ico" />
+    <None Include="resources\seta-correta.png" />
+    <None Include="resources\seta-direita.png" />
     <None Include="resources\icon-cadeado.png" />
     <None Include="resources\icon-nome.png" />
     <None Include="resources\icon-perfil-de-usuario-new.png" />
