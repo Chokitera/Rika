@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.lblCopyrigth = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelConteudo = new System.Windows.Forms.Panel();
-            this.txtAviso = new System.Windows.Forms.TextBox();
             this.lblAviso = new System.Windows.Forms.Label();
+            this.txtAviso = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelConteudo = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
@@ -70,14 +70,16 @@
             this.panel1.TabIndex = 12;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // panelConteudo
+            // lblAviso
             // 
-            this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelConteudo.Location = new System.Drawing.Point(528, 0);
-            this.panelConteudo.Name = "panelConteudo";
-            this.panelConteudo.Size = new System.Drawing.Size(419, 576);
-            this.panelConteudo.TabIndex = 13;
-            this.panelConteudo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.lblAviso.AutoSize = true;
+            this.lblAviso.ForeColor = System.Drawing.Color.White;
+            this.lblAviso.Location = new System.Drawing.Point(37, 418);
+            this.lblAviso.Name = "lblAviso";
+            this.lblAviso.Size = new System.Drawing.Size(33, 13);
+            this.lblAviso.TabIndex = 13;
+            this.lblAviso.Text = "Aviso";
+            this.lblAviso.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
             // txtAviso
             // 
@@ -93,17 +95,6 @@
             this.txtAviso.Text = resources.GetString("txtAviso.Text");
             this.txtAviso.Visible = false;
             // 
-            // lblAviso
-            // 
-            this.lblAviso.AutoSize = true;
-            this.lblAviso.ForeColor = System.Drawing.Color.White;
-            this.lblAviso.Location = new System.Drawing.Point(37, 418);
-            this.lblAviso.Name = "lblAviso";
-            this.lblAviso.Size = new System.Drawing.Size(33, 13);
-            this.lblAviso.TabIndex = 13;
-            this.lblAviso.Text = "Aviso";
-            this.lblAviso.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Branco;
@@ -114,6 +105,15 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            // 
+            // panelConteudo
+            // 
+            this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelConteudo.Location = new System.Drawing.Point(528, 0);
+            this.panelConteudo.Name = "panelConteudo";
+            this.panelConteudo.Size = new System.Drawing.Size(419, 576);
+            this.panelConteudo.TabIndex = 13;
+            this.panelConteudo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // panel2
             // 

@@ -17,11 +17,6 @@ namespace Rika.views
             InitializeComponent();
         }
 
-        private void modeloBotao1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmTelaAdministrativa_Load(object sender, EventArgs e)
         {
 

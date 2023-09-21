@@ -117,4 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtAviso.Text" xml:space="preserve">
+    <value>Aviso: Este programa de computador é protegido pela lei de copyrigth e tratados internacionais. 
+A reprodução ou distribuição não autorizada deste programa ou de qualquer parte dele, resultará 
+na imposição de rigorosas penas civis e criminais e será objeto de ação judicial promovida na máxima extensão possível, nos termos da lei.</value>
+  </data>
 </root>
