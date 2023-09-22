@@ -95,6 +95,7 @@ namespace Rika.dao
                 conexao.Close();
                 return false;
             }
+            #endregion
         }
     }
 

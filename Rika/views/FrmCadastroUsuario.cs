@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rika.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -128,11 +129,115 @@ namespace Rika.views
         }
         #endregion
 
-        #region Dados enviados ao banco
+        #region Validar o cadastro
+
+        public bool VerificaCampoVazioCadastro(Usuario usuario)
+        {
+            if (usuario.Nome == null || usuario.Nome == "Nome")
+            {
+                MessageBox.Show("Necessário preencher o campo Nome!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNome.Focus();
+                return false;
+            }
+            if (usuario.SobreNome == null || usuario.SobreNome == "Sobrenome")
+            {
+                MessageBox.Show("Necessário preencher o campo Sobrenome!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSobrenome.Focus();
+                return false;
+            }
+            if (usuario.NomeUsuario == null || usuario.NomeUsuario == "Usuário")
+            {
+                MessageBox.Show("Necessário preencher o campo Usuário!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUsuario.Focus();
+                return false;
+            }
+            if (usuario.Senha == null || usuario.Senha == "Senha")
+            {
+                MessageBox.Show("Necessário preencher o campo Senha!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSenha.Focus();
+                return false;
+            }
+            if (usuario.NomeUsuario == null || usuario.NomeUsuario == "Confirmar Senha")
+            {
+                MessageBox.Show("Necessário preencher o campo Confirmar Senha!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtConfirmarSenha.Focus();
+                return false;
+            }
+            return true;
+        }
 
         #endregion
 
-       
+        #region Efetuar Cadastro
+
+        private void btnCriaConta_Click(object sender, EventArgs e)
+        {
+            EfetuarCadastro(); //Efetua o cadastro
+        }
+
+        private void btnCriaConta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) //13 == enter
+            {
+                EfetuarCadastro();
+            }
+        }
+
+        private void txtNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) //Se preessionou o Enter
+            {
+                txtSobrenome.Focus();
+            }
+        }
+        private void txtSobrenome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) //Se preessionou o Enter
+            {
+                txtUsuario.Focus();
+            }
+        }
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) //Se preessionou o Enter
+            {
+                txtSenha.Focus();
+            }
+        }
+        private void txtSenha2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) //Se preessionou o Enter
+            {
+                txtConfirmarSenha.Focus();
+            }
+        }
+        private void txtSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) //Se preessionou o Enter
+            {
+                txtConfirmarSenha.Focus();
+            }
+        }
+        private void txtConfimarSenha2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) //Se preessionou o Enter
+            {
+                btnCriaConta.Focus();
+            }
+        }
+        private void txtConfirmarSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13) //Se preessionou o Enter
+            {
+                btnCriaConta.Focus();
+            }
+        }
+
+        public void EfetuarCadastro()
+        {
+
+        }
+        #endregion
     }
 }
 
