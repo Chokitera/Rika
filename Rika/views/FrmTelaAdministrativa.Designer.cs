@@ -67,6 +67,8 @@
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
+            this.label1 = new System.Windows.Forms.Label();
+            this.novoTextBox15 = new Rika.controls.novoTextBox();
             this.pnlArrastarFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -650,12 +652,43 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 541);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 22);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Situação:";
+            // 
+            // novoTextBox15
+            // 
+            this.novoTextBox15.BackColor = System.Drawing.SystemColors.Window;
+            this.novoTextBox15.BorderColor = System.Drawing.Color.DimGray;
+            this.novoTextBox15.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.novoTextBox15.BorderSize = 1;
+            this.novoTextBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.novoTextBox15.ForeColor = System.Drawing.Color.DimGray;
+            this.novoTextBox15.Location = new System.Drawing.Point(233, 541);
+            this.novoTextBox15.Margin = new System.Windows.Forms.Padding(4);
+            this.novoTextBox15.Multiline = false;
+            this.novoTextBox15.Name = "novoTextBox15";
+            this.novoTextBox15.Padding = new System.Windows.Forms.Padding(7);
+            this.novoTextBox15.PasswordChar = false;
+            this.novoTextBox15.Size = new System.Drawing.Size(250, 31);
+            this.novoTextBox15.TabIndex = 43;
+            this.novoTextBox15.TextNew = "";
+            this.novoTextBox15.UnderlinedStyle = false;
+            // 
             // FrmTelaAdministrativa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1131, 655);
+            this.Controls.Add(this.novoTextBox15);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.novoTextBox17);
             this.Controls.Add(this.novoTextBox9);
             this.Controls.Add(this.novoTextBox10);
@@ -748,5 +781,7 @@
         private controls.novoTextBox novoTextBox14;
         private controls.novoTextBox novoTextBox16;
         private controls.novoTextBox novoTextBox17;
+        private System.Windows.Forms.Label label1;
+        private controls.novoTextBox novoTextBox15;
     }
 }
