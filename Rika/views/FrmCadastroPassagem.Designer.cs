@@ -1,6 +1,6 @@
 ﻿namespace Rika.views
 {
-    partial class FrmTelaAdministrativa
+    partial class FrmCadastroPassagem
     {
         /// <summary>
         /// Required designer variable.
@@ -65,7 +65,6 @@
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(186, 22);
             this.label1lblCodigoPassagem.TabIndex = 1;
             this.label1lblCodigoPassagem.Text = "Código da Passagem:";
-            this.label1lblCodigoPassagem.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblVoo
             // 
@@ -117,7 +116,6 @@
             this.label9.Size = new System.Drawing.Size(159, 22);
             this.label9.TabIndex = 22;
             this.label9.Text = "Imagem Destaque:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // pnlArrastarFormulario
             // 
@@ -262,7 +260,6 @@
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.modeloBotao1_Click_1);
             // 
             // btnExcluir
             // 
