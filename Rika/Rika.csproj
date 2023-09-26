@@ -114,6 +114,30 @@
       <DependentUpon>textBoxComImagem.cs</DependentUpon>
     </Compile>
     <Compile Include="dao\UsuarioDAO.cs" />
+    <Compile Include="views\Aeroporto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Aeroporto.Designer.cs">
+      <DependentUpon>Aeroporto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Classe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Classe.Designer.cs">
+      <DependentUpon>Classe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\CompAerea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\CompAerea.Designer.cs">
+      <DependentUpon>CompAerea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmAviao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmAviao.Designer.cs">
+      <DependentUpon>FrmAviao.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,11 +165,35 @@
     <Compile Include="views\FrmTelaAdministrativa.Designer.cs">
       <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\Situacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Situacao.Designer.cs">
+      <DependentUpon>Situacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\Voo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Voo.Designer.cs">
+      <DependentUpon>Voo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="controls\PassagensAerea.resx">
       <DependentUpon>PassagensAerea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controls\textBoxComImagem.resx">
       <DependentUpon>textBoxComImagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Aeroporto.resx">
+      <DependentUpon>Aeroporto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Classe.resx">
+      <DependentUpon>Classe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\CompAerea.resx">
+      <DependentUpon>CompAerea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmAviao.resx">
+      <DependentUpon>FrmAviao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmCadastroUsuario.resx">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
@@ -168,6 +216,12 @@
     </Compile>
     <EmbeddedResource Include="views\FrmTelaAdministrativa.resx">
       <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Situacao.resx">
+      <DependentUpon>Situacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Voo.resx">
+      <DependentUpon>Voo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
