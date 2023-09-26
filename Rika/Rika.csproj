@@ -114,6 +114,17 @@
       <DependentUpon>textBoxComImagem.cs</DependentUpon>
     </Compile>
     <Compile Include="dao\UsuarioDAO.cs" />
+    <Compile Include="models\Aviao.cs" />
+    <Compile Include="models\Aeroporto.cs" />
+    <Compile Include="models\Classe.cs" />
+    <Compile Include="models\CompanhiaAerea.cs" />
+    <Compile Include="models\Entidade.cs" />
+    <Compile Include="models\Passagem.cs" />
+    <Compile Include="models\Situacao.cs" />
+    <Compile Include="models\TipoVenda.cs" />
+    <Compile Include="models\Titulo.cs" />
+    <Compile Include="models\Valores.cs" />
+    <Compile Include="models\Voo.cs" />
     <Compile Include="views\FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,11 +146,11 @@
     <Compile Include="models\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="views\FrmTelaAdministrativa.cs">
+    <Compile Include="views\FrmCadastroPassagem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\FrmTelaAdministrativa.Designer.cs">
-      <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
+    <Compile Include="views\FrmCadastroPassagem.Designer.cs">
+      <DependentUpon>FrmCadastroPassagem.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="controls\PassagensAerea.resx">
       <DependentUpon>PassagensAerea.cs</DependentUpon>
@@ -166,8 +177,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="views\FrmTelaAdministrativa.resx">
-      <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
+    <EmbeddedResource Include="views\FrmCadastroPassagem.resx">
+      <DependentUpon>FrmCadastroPassagem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
