@@ -114,23 +114,23 @@
       <DependentUpon>textBoxComImagem.cs</DependentUpon>
     </Compile>
     <Compile Include="dao\UsuarioDAO.cs" />
-    <Compile Include="views\Aeroporto.cs">
+    <Compile Include="views\FrmAeroporto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Aeroporto.Designer.cs">
-      <DependentUpon>Aeroporto.cs</DependentUpon>
+    <Compile Include="views\FrmAeroporto.Designer.cs">
+      <DependentUpon>FrmAeroporto.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\Classe.cs">
+    <Compile Include="views\FrmClasse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Classe.Designer.cs">
-      <DependentUpon>Classe.cs</DependentUpon>
+    <Compile Include="views\FrmClasse.Designer.cs">
+      <DependentUpon>FrmClasse.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\CompAerea.cs">
+    <Compile Include="views\FrmCompAerea.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\CompAerea.Designer.cs">
-      <DependentUpon>CompAerea.cs</DependentUpon>
+    <Compile Include="views\FrmCompAerea.Designer.cs">
+      <DependentUpon>FrmCompAerea.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FrmAviao.cs">
       <SubType>Form</SubType>
@@ -150,6 +150,12 @@
     <Compile Include="views\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmPais.Designer.cs">
+      <DependentUpon>FrmPais.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,17 +171,17 @@
     <Compile Include="views\FrmTelaAdministrativa.Designer.cs">
       <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\Situacao.cs">
+    <Compile Include="views\FrmSituacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Situacao.Designer.cs">
-      <DependentUpon>Situacao.cs</DependentUpon>
+    <Compile Include="views\FrmSituacao.Designer.cs">
+      <DependentUpon>FrmSituacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\Voo.cs">
+    <Compile Include="views\FrmVoo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\Voo.Designer.cs">
-      <DependentUpon>Voo.cs</DependentUpon>
+    <Compile Include="views\FrmVoo.Designer.cs">
+      <DependentUpon>FrmVoo.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="controls\PassagensAerea.resx">
       <DependentUpon>PassagensAerea.cs</DependentUpon>
@@ -183,14 +189,14 @@
     <EmbeddedResource Include="controls\textBoxComImagem.resx">
       <DependentUpon>textBoxComImagem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Aeroporto.resx">
-      <DependentUpon>Aeroporto.cs</DependentUpon>
+    <EmbeddedResource Include="views\FrmAeroporto.resx">
+      <DependentUpon>FrmAeroporto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Classe.resx">
-      <DependentUpon>Classe.cs</DependentUpon>
+    <EmbeddedResource Include="views\FrmClasse.resx">
+      <DependentUpon>FrmClasse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\CompAerea.resx">
-      <DependentUpon>CompAerea.cs</DependentUpon>
+    <EmbeddedResource Include="views\FrmCompAerea.resx">
+      <DependentUpon>FrmCompAerea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmAviao.resx">
       <DependentUpon>FrmAviao.cs</DependentUpon>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmPais.resx">
+      <DependentUpon>FrmPais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -217,11 +226,11 @@
     <EmbeddedResource Include="views\FrmTelaAdministrativa.resx">
       <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Situacao.resx">
-      <DependentUpon>Situacao.cs</DependentUpon>
+    <EmbeddedResource Include="views\FrmSituacao.resx">
+      <DependentUpon>FrmSituacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\Voo.resx">
-      <DependentUpon>Voo.cs</DependentUpon>
+    <EmbeddedResource Include="views\FrmVoo.resx">
+      <DependentUpon>FrmVoo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

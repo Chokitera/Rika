@@ -1,6 +1,6 @@
 ﻿namespace Rika.views
 {
-    partial class Classe
+    partial class FrmClasse
     {
         /// <summary>
         /// Required designer variable.
@@ -196,7 +196,7 @@
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             // 
-            // Classe
+            // FrmClasse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -212,7 +212,8 @@
             this.Controls.Add(this.lblAeroDecolagem);
             this.Controls.Add(this.label1lblCodigoPassagem);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Classe";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FrmClasse";
             this.Text = "Classe";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

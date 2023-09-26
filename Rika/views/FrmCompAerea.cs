@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Rika.views
 {
-    public partial class CompAerea : Form
+    public partial class FrmCompAerea : Form
     {
-        public CompAerea()
+        public FrmCompAerea()
         {
             InitializeComponent();
         }

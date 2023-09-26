@@ -155,5 +155,10 @@ namespace Rika.views
         {
 
         }
+
+        private void lblVoo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Rika.views
 {
-    public partial class Aeroporto : Form
+    public partial class FrmAeroporto : Form
     {
-        public Aeroporto()
+        public FrmAeroporto()
         {
             InitializeComponent();
         }
