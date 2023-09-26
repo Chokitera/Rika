@@ -9,12 +9,13 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Rika.models;
 
 namespace Rika.views
 {
-    public partial class FrmTelaAdministrativa : Form
+    public partial class FrmCadastroPassagem : Form
     {
-        public FrmTelaAdministrativa()
+        public FrmCadastroPassagem()
         {
             InitializeComponent();
         }
@@ -106,42 +107,7 @@ namespace Rika.views
         }
         #endregion
 
-        private void modeloBotao1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmTelaAdministrativa_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void modeloBotao1_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
         {
 
         }
@@ -153,7 +119,10 @@ namespace Rika.views
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-
+            //Instânciando a clase Passagem
+            Passagem passagem = new Passagem();
+            passagem.Id = int.Parse(txtCodPassagem.Text);
+            passagem.Nome_Voo.Id = int.Parse(txtVoo.Text);
         }
 
         private void lblVoo_Click(object sender, EventArgs e)
