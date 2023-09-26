@@ -163,6 +163,17 @@
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Usuario.cs" />
+    <Compile Include="models\Aviao.cs" />
+    <Compile Include="models\Aeroporto.cs" />
+    <Compile Include="models\Classe.cs" />
+    <Compile Include="models\CompanhiaAerea.cs" />
+    <Compile Include="models\Entidade.cs" />
+    <Compile Include="models\Passagem.cs" />
+    <Compile Include="models\Situacao.cs" />
+    <Compile Include="models\TipoVenda.cs" />
+    <Compile Include="models\Titulo.cs" />
+    <Compile Include="models\Valores.cs" />
+    <Compile Include="models\Voo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="views\FrmTelaAdministrativa.cs">
