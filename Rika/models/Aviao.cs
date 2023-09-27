@@ -10,7 +10,6 @@ namespace Rika.models
     {
         public int Qtd_Acento { get; set; }
         public string Modelo { get; set; }
-        public Voo Num_Voo { get; set; }
         public CompanhiaAerea Nome_Companhia { get; set; }
 
     }

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.novoTextBox13 = new Rika.controls.novoTextBox();
-            this.novoTextBox7 = new Rika.controls.novoTextBox();
-            this.novoTextBox6 = new Rika.controls.novoTextBox();
-            this.novoTextBox5 = new Rika.controls.novoTextBox();
-            this.novoTextBox4 = new Rika.controls.novoTextBox();
-            this.novoTextBox3 = new Rika.controls.novoTextBox();
-            this.novoTextBox2 = new Rika.controls.novoTextBox();
-            this.novoTextBox1 = new Rika.controls.novoTextBox();
+            this.txtDuracao = new Rika.controls.novoTextBox();
+            this.txtHoraChegada = new Rika.controls.novoTextBox();
+            this.txtHoraSaida = new Rika.controls.novoTextBox();
+            this.txtDataChegada = new Rika.controls.novoTextBox();
+            this.txtDataSaida = new Rika.controls.novoTextBox();
+            this.txtDestino = new Rika.controls.novoTextBox();
+            this.txtDecolagem = new Rika.controls.novoTextBox();
+            this.txtCodVoo = new Rika.controls.novoTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
@@ -49,167 +49,167 @@
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.novoTextBox8 = new Rika.controls.novoTextBox();
+            this.txtAviao = new Rika.controls.novoTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // novoTextBox13
+            // txtDuracao
             // 
-            this.novoTextBox13.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox13.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox13.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox13.BorderSize = 1;
-            this.novoTextBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox13.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox13.Location = new System.Drawing.Point(795, 217);
-            this.novoTextBox13.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox13.Multiline = false;
-            this.novoTextBox13.Name = "novoTextBox13";
-            this.novoTextBox13.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox13.PasswordChar = false;
-            this.novoTextBox13.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox13.TabIndex = 74;
-            this.novoTextBox13.TextNew = "";
-            this.novoTextBox13.UnderlinedStyle = false;
+            this.txtDuracao.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDuracao.BorderColor = System.Drawing.Color.DimGray;
+            this.txtDuracao.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDuracao.BorderSize = 1;
+            this.txtDuracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuracao.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDuracao.Location = new System.Drawing.Point(795, 217);
+            this.txtDuracao.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDuracao.Multiline = false;
+            this.txtDuracao.Name = "txtDuracao";
+            this.txtDuracao.Padding = new System.Windows.Forms.Padding(7);
+            this.txtDuracao.PasswordChar = false;
+            this.txtDuracao.Size = new System.Drawing.Size(250, 31);
+            this.txtDuracao.TabIndex = 74;
+            this.txtDuracao.TextNew = "";
+            this.txtDuracao.UnderlinedStyle = false;
             // 
-            // novoTextBox7
+            // txtHoraChegada
             // 
-            this.novoTextBox7.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox7.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox7.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox7.BorderSize = 1;
-            this.novoTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox7.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox7.Location = new System.Drawing.Point(795, 295);
-            this.novoTextBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox7.Multiline = false;
-            this.novoTextBox7.Name = "novoTextBox7";
-            this.novoTextBox7.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox7.PasswordChar = false;
-            this.novoTextBox7.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox7.TabIndex = 70;
-            this.novoTextBox7.TextNew = "";
-            this.novoTextBox7.UnderlinedStyle = false;
+            this.txtHoraChegada.BackColor = System.Drawing.SystemColors.Window;
+            this.txtHoraChegada.BorderColor = System.Drawing.Color.DimGray;
+            this.txtHoraChegada.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtHoraChegada.BorderSize = 1;
+            this.txtHoraChegada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraChegada.ForeColor = System.Drawing.Color.DimGray;
+            this.txtHoraChegada.Location = new System.Drawing.Point(795, 295);
+            this.txtHoraChegada.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHoraChegada.Multiline = false;
+            this.txtHoraChegada.Name = "txtHoraChegada";
+            this.txtHoraChegada.Padding = new System.Windows.Forms.Padding(7);
+            this.txtHoraChegada.PasswordChar = false;
+            this.txtHoraChegada.Size = new System.Drawing.Size(250, 31);
+            this.txtHoraChegada.TabIndex = 70;
+            this.txtHoraChegada.TextNew = "";
+            this.txtHoraChegada.UnderlinedStyle = false;
             // 
-            // novoTextBox6
+            // txtHoraSaida
             // 
-            this.novoTextBox6.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox6.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox6.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox6.BorderSize = 1;
-            this.novoTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox6.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox6.Location = new System.Drawing.Point(795, 256);
-            this.novoTextBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox6.Multiline = false;
-            this.novoTextBox6.Name = "novoTextBox6";
-            this.novoTextBox6.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox6.PasswordChar = false;
-            this.novoTextBox6.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox6.TabIndex = 69;
-            this.novoTextBox6.TextNew = "";
-            this.novoTextBox6.UnderlinedStyle = false;
+            this.txtHoraSaida.BackColor = System.Drawing.SystemColors.Window;
+            this.txtHoraSaida.BorderColor = System.Drawing.Color.DimGray;
+            this.txtHoraSaida.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtHoraSaida.BorderSize = 1;
+            this.txtHoraSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraSaida.ForeColor = System.Drawing.Color.DimGray;
+            this.txtHoraSaida.Location = new System.Drawing.Point(795, 256);
+            this.txtHoraSaida.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHoraSaida.Multiline = false;
+            this.txtHoraSaida.Name = "txtHoraSaida";
+            this.txtHoraSaida.Padding = new System.Windows.Forms.Padding(7);
+            this.txtHoraSaida.PasswordChar = false;
+            this.txtHoraSaida.Size = new System.Drawing.Size(250, 31);
+            this.txtHoraSaida.TabIndex = 69;
+            this.txtHoraSaida.TextNew = "";
+            this.txtHoraSaida.UnderlinedStyle = false;
             // 
-            // novoTextBox5
+            // txtDataChegada
             // 
-            this.novoTextBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox5.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox5.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox5.BorderSize = 1;
-            this.novoTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox5.Location = new System.Drawing.Point(289, 373);
-            this.novoTextBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox5.Multiline = false;
-            this.novoTextBox5.Name = "novoTextBox5";
-            this.novoTextBox5.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox5.PasswordChar = false;
-            this.novoTextBox5.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox5.TabIndex = 68;
-            this.novoTextBox5.TextNew = "";
-            this.novoTextBox5.UnderlinedStyle = false;
+            this.txtDataChegada.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDataChegada.BorderColor = System.Drawing.Color.DimGray;
+            this.txtDataChegada.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDataChegada.BorderSize = 1;
+            this.txtDataChegada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataChegada.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDataChegada.Location = new System.Drawing.Point(289, 373);
+            this.txtDataChegada.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDataChegada.Multiline = false;
+            this.txtDataChegada.Name = "txtDataChegada";
+            this.txtDataChegada.Padding = new System.Windows.Forms.Padding(7);
+            this.txtDataChegada.PasswordChar = false;
+            this.txtDataChegada.Size = new System.Drawing.Size(250, 31);
+            this.txtDataChegada.TabIndex = 68;
+            this.txtDataChegada.TextNew = "";
+            this.txtDataChegada.UnderlinedStyle = false;
             // 
-            // novoTextBox4
+            // txtDataSaida
             // 
-            this.novoTextBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox4.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox4.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox4.BorderSize = 1;
-            this.novoTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox4.Location = new System.Drawing.Point(289, 334);
-            this.novoTextBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox4.Multiline = false;
-            this.novoTextBox4.Name = "novoTextBox4";
-            this.novoTextBox4.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox4.PasswordChar = false;
-            this.novoTextBox4.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox4.TabIndex = 67;
-            this.novoTextBox4.TextNew = "";
-            this.novoTextBox4.UnderlinedStyle = false;
+            this.txtDataSaida.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDataSaida.BorderColor = System.Drawing.Color.DimGray;
+            this.txtDataSaida.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDataSaida.BorderSize = 1;
+            this.txtDataSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataSaida.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDataSaida.Location = new System.Drawing.Point(289, 334);
+            this.txtDataSaida.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDataSaida.Multiline = false;
+            this.txtDataSaida.Name = "txtDataSaida";
+            this.txtDataSaida.Padding = new System.Windows.Forms.Padding(7);
+            this.txtDataSaida.PasswordChar = false;
+            this.txtDataSaida.Size = new System.Drawing.Size(250, 31);
+            this.txtDataSaida.TabIndex = 67;
+            this.txtDataSaida.TextNew = "";
+            this.txtDataSaida.UnderlinedStyle = false;
             // 
-            // novoTextBox3
+            // txtDestino
             // 
-            this.novoTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox3.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox3.BorderSize = 1;
-            this.novoTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox3.Location = new System.Drawing.Point(289, 295);
-            this.novoTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox3.Multiline = false;
-            this.novoTextBox3.Name = "novoTextBox3";
-            this.novoTextBox3.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox3.PasswordChar = false;
-            this.novoTextBox3.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox3.TabIndex = 66;
-            this.novoTextBox3.TextNew = "";
-            this.novoTextBox3.UnderlinedStyle = false;
+            this.txtDestino.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDestino.BorderColor = System.Drawing.Color.DimGray;
+            this.txtDestino.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDestino.BorderSize = 1;
+            this.txtDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDestino.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDestino.Location = new System.Drawing.Point(289, 295);
+            this.txtDestino.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDestino.Multiline = false;
+            this.txtDestino.Name = "txtDestino";
+            this.txtDestino.Padding = new System.Windows.Forms.Padding(7);
+            this.txtDestino.PasswordChar = false;
+            this.txtDestino.Size = new System.Drawing.Size(250, 31);
+            this.txtDestino.TabIndex = 66;
+            this.txtDestino.TextNew = "";
+            this.txtDestino.UnderlinedStyle = false;
             // 
-            // novoTextBox2
+            // txtDecolagem
             // 
-            this.novoTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox2.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox2.BorderSize = 1;
-            this.novoTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox2.Location = new System.Drawing.Point(289, 256);
-            this.novoTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox2.Multiline = false;
-            this.novoTextBox2.Name = "novoTextBox2";
-            this.novoTextBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox2.PasswordChar = false;
-            this.novoTextBox2.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox2.TabIndex = 65;
-            this.novoTextBox2.TextNew = "";
-            this.novoTextBox2.UnderlinedStyle = false;
+            this.txtDecolagem.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDecolagem.BorderColor = System.Drawing.Color.DimGray;
+            this.txtDecolagem.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDecolagem.BorderSize = 1;
+            this.txtDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDecolagem.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDecolagem.Location = new System.Drawing.Point(289, 256);
+            this.txtDecolagem.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDecolagem.Multiline = false;
+            this.txtDecolagem.Name = "txtDecolagem";
+            this.txtDecolagem.Padding = new System.Windows.Forms.Padding(7);
+            this.txtDecolagem.PasswordChar = false;
+            this.txtDecolagem.Size = new System.Drawing.Size(250, 31);
+            this.txtDecolagem.TabIndex = 65;
+            this.txtDecolagem.TextNew = "";
+            this.txtDecolagem.UnderlinedStyle = false;
             // 
-            // novoTextBox1
+            // txtCodVoo
             // 
-            this.novoTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox1.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox1.BorderSize = 1;
-            this.novoTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox1.Location = new System.Drawing.Point(289, 217);
-            this.novoTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox1.Multiline = false;
-            this.novoTextBox1.Name = "novoTextBox1";
-            this.novoTextBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox1.PasswordChar = false;
-            this.novoTextBox1.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox1.TabIndex = 64;
-            this.novoTextBox1.TextNew = "";
-            this.novoTextBox1.UnderlinedStyle = false;
+            this.txtCodVoo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCodVoo.BorderColor = System.Drawing.Color.DimGray;
+            this.txtCodVoo.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCodVoo.BorderSize = 1;
+            this.txtCodVoo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodVoo.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCodVoo.Location = new System.Drawing.Point(289, 217);
+            this.txtCodVoo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodVoo.Multiline = false;
+            this.txtCodVoo.Name = "txtCodVoo";
+            this.txtCodVoo.Padding = new System.Windows.Forms.Padding(7);
+            this.txtCodVoo.PasswordChar = false;
+            this.txtCodVoo.Size = new System.Drawing.Size(250, 31);
+            this.txtCodVoo.TabIndex = 64;
+            this.txtCodVoo.TextNew = "";
+            this.txtCodVoo.UnderlinedStyle = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(577, 217);
+            this.label4.Location = new System.Drawing.Point(574, 217);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 22);
             this.label4.TabIndex = 58;
@@ -233,6 +233,7 @@
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnExcluir
             // 
@@ -252,6 +253,7 @@
             this.btnExcluir.TextColor = System.Drawing.Color.White;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 
@@ -271,6 +273,7 @@
             this.btnSalvar.TextColor = System.Drawing.Color.White;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // lblHoraChegada
             // 
@@ -363,40 +366,40 @@
             this.label5.TabIndex = 59;
             this.label5.Text = "Avião:";
             // 
-            // novoTextBox8
+            // txtAviao
             // 
-            this.novoTextBox8.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox8.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox8.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox8.BorderSize = 1;
-            this.novoTextBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox8.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox8.Location = new System.Drawing.Point(795, 334);
-            this.novoTextBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox8.Multiline = false;
-            this.novoTextBox8.Name = "novoTextBox8";
-            this.novoTextBox8.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox8.PasswordChar = false;
-            this.novoTextBox8.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox8.TabIndex = 71;
-            this.novoTextBox8.TextNew = "";
-            this.novoTextBox8.UnderlinedStyle = false;
+            this.txtAviao.BackColor = System.Drawing.SystemColors.Window;
+            this.txtAviao.BorderColor = System.Drawing.Color.DimGray;
+            this.txtAviao.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtAviao.BorderSize = 1;
+            this.txtAviao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAviao.ForeColor = System.Drawing.Color.DimGray;
+            this.txtAviao.Location = new System.Drawing.Point(795, 334);
+            this.txtAviao.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAviao.Multiline = false;
+            this.txtAviao.Name = "txtAviao";
+            this.txtAviao.Padding = new System.Windows.Forms.Padding(7);
+            this.txtAviao.PasswordChar = false;
+            this.txtAviao.Size = new System.Drawing.Size(250, 31);
+            this.txtAviao.TabIndex = 71;
+            this.txtAviao.TextNew = "";
+            this.txtAviao.UnderlinedStyle = false;
             // 
-            // Voo
+            // FrmVoo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1061, 484);
-            this.Controls.Add(this.novoTextBox13);
-            this.Controls.Add(this.novoTextBox8);
-            this.Controls.Add(this.novoTextBox7);
-            this.Controls.Add(this.novoTextBox6);
-            this.Controls.Add(this.novoTextBox5);
-            this.Controls.Add(this.novoTextBox4);
-            this.Controls.Add(this.novoTextBox3);
-            this.Controls.Add(this.novoTextBox2);
-            this.Controls.Add(this.novoTextBox1);
+            this.Controls.Add(this.txtDuracao);
+            this.Controls.Add(this.txtAviao);
+            this.Controls.Add(this.txtHoraChegada);
+            this.Controls.Add(this.txtHoraSaida);
+            this.Controls.Add(this.txtDataChegada);
+            this.Controls.Add(this.txtDataSaida);
+            this.Controls.Add(this.txtDestino);
+            this.Controls.Add(this.txtDecolagem);
+            this.Controls.Add(this.txtCodVoo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSair);
@@ -411,7 +414,7 @@
             this.Controls.Add(this.label1lblCodigoPassagem);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Voo";
+            this.Name = "FrmVoo";
             this.Text = "Voo";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -420,14 +423,14 @@
         }
 
         #endregion
-        private controls.novoTextBox novoTextBox13;
-        private controls.novoTextBox novoTextBox7;
-        private controls.novoTextBox novoTextBox6;
-        private controls.novoTextBox novoTextBox5;
-        private controls.novoTextBox novoTextBox4;
-        private controls.novoTextBox novoTextBox3;
-        private controls.novoTextBox novoTextBox2;
-        private controls.novoTextBox novoTextBox1;
+        private controls.novoTextBox txtDuracao;
+        private controls.novoTextBox txtHoraChegada;
+        private controls.novoTextBox txtHoraSaida;
+        private controls.novoTextBox txtDataChegada;
+        private controls.novoTextBox txtDataSaida;
+        private controls.novoTextBox txtDestino;
+        private controls.novoTextBox txtDecolagem;
+        private controls.novoTextBox txtCodVoo;
         private System.Windows.Forms.Label label4;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnExcluir;
@@ -441,6 +444,6 @@
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
-        private controls.novoTextBox novoTextBox8;
+        private controls.novoTextBox txtAviao;
     }
 }
