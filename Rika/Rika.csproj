@@ -188,6 +188,12 @@
     <Compile Include="views\FrmSituacao.Designer.cs">
       <DependentUpon>FrmSituacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmTelaInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmTelaInicial.Designer.cs">
+      <DependentUpon>FrmTelaInicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmVoo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmSituacao.resx">
       <DependentUpon>FrmSituacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmTelaInicial.resx">
+      <DependentUpon>FrmTelaInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmVoo.resx">
       <DependentUpon>FrmVoo.cs</DependentUpon>

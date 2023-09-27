@@ -142,18 +142,20 @@
             this.txtConfimarSenha2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtConfimarSenha2.ForeColor = System.Drawing.Color.DimGray;
             this.txtConfimarSenha2.Location = new System.Drawing.Point(57, 328);
-            this.txtConfimarSenha2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtConfimarSenha2.Margin = new System.Windows.Forms.Padding(4);
             this.txtConfimarSenha2.Multiline = false;
             this.txtConfimarSenha2.Name = "txtConfimarSenha2";
             this.txtConfimarSenha2.NovaImagem = global::Rika.Properties.Resources.icon_cadeado;
-            this.txtConfimarSenha2.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtConfimarSenha2.Padding = new System.Windows.Forms.Padding(7);
             this.txtConfimarSenha2.PasswordChar = false;
             this.txtConfimarSenha2.Size = new System.Drawing.Size(295, 31);
             this.txtConfimarSenha2.TabIndex = 43;
             this.txtConfimarSenha2.TabStop = false;
             this.txtConfimarSenha2.TextNew = "Confirmar Senha";
             this.txtConfimarSenha2.UnderlinedStyle = false;
+            this.txtConfimarSenha2.Enter += new System.EventHandler(this.txtConfirmarSenha_Enter);
             this.txtConfimarSenha2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConfimarSenha2_KeyPress);
+            this.txtConfimarSenha2.Leave += new System.EventHandler(this.txtConfirmarSenha_Leave);
             // 
             // txtSenha2
             // 
@@ -165,18 +167,20 @@
             this.txtSenha2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtSenha2.ForeColor = System.Drawing.Color.DimGray;
             this.txtSenha2.Location = new System.Drawing.Point(57, 275);
-            this.txtSenha2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSenha2.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha2.Multiline = false;
             this.txtSenha2.Name = "txtSenha2";
             this.txtSenha2.NovaImagem = global::Rika.Properties.Resources.icon_cadeado;
-            this.txtSenha2.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSenha2.Padding = new System.Windows.Forms.Padding(7);
             this.txtSenha2.PasswordChar = false;
             this.txtSenha2.Size = new System.Drawing.Size(295, 31);
             this.txtSenha2.TabIndex = 42;
             this.txtSenha2.TabStop = false;
             this.txtSenha2.TextNew = "Senha";
             this.txtSenha2.UnderlinedStyle = false;
+            this.txtSenha2.Enter += new System.EventHandler(this.txtSenha_Enter);
             this.txtSenha2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha2_KeyPress);
+            this.txtSenha2.Leave += new System.EventHandler(this.txtSenha_Leave);
             // 
             // txtConfirmarSenha
             // 
@@ -187,11 +191,11 @@
             this.txtConfirmarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtConfirmarSenha.ForeColor = System.Drawing.Color.DimGray;
             this.txtConfirmarSenha.Location = new System.Drawing.Point(57, 328);
-            this.txtConfirmarSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtConfirmarSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtConfirmarSenha.Multiline = false;
             this.txtConfirmarSenha.Name = "txtConfirmarSenha";
             this.txtConfirmarSenha.NovaImagem = global::Rika.Properties.Resources.icon_cadeado;
-            this.txtConfirmarSenha.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtConfirmarSenha.Padding = new System.Windows.Forms.Padding(7);
             this.txtConfirmarSenha.PasswordChar = true;
             this.txtConfirmarSenha.Size = new System.Drawing.Size(295, 31);
             this.txtConfirmarSenha.TabIndex = 34;
@@ -210,11 +214,11 @@
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtSenha.ForeColor = System.Drawing.Color.DimGray;
             this.txtSenha.Location = new System.Drawing.Point(57, 275);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Multiline = false;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.NovaImagem = global::Rika.Properties.Resources.icon_cadeado;
-            this.txtSenha.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSenha.Padding = new System.Windows.Forms.Padding(7);
             this.txtSenha.PasswordChar = true;
             this.txtSenha.Size = new System.Drawing.Size(295, 31);
             this.txtSenha.TabIndex = 33;
@@ -234,11 +238,11 @@
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
             this.txtUsuario.Location = new System.Drawing.Point(57, 221);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Multiline = false;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.NovaImagem = global::Rika.Properties.Resources.icon_perfil_de_usuario;
-            this.txtUsuario.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtUsuario.Padding = new System.Windows.Forms.Padding(7);
             this.txtUsuario.PasswordChar = false;
             this.txtUsuario.Size = new System.Drawing.Size(295, 31);
             this.txtUsuario.TabIndex = 32;
@@ -258,11 +262,11 @@
             this.txtSobrenome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtSobrenome.ForeColor = System.Drawing.Color.DimGray;
             this.txtSobrenome.Location = new System.Drawing.Point(57, 166);
-            this.txtSobrenome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSobrenome.Margin = new System.Windows.Forms.Padding(4);
             this.txtSobrenome.Multiline = false;
             this.txtSobrenome.Name = "txtSobrenome";
             this.txtSobrenome.NovaImagem = global::Rika.Properties.Resources.icon_nome;
-            this.txtSobrenome.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSobrenome.Padding = new System.Windows.Forms.Padding(7);
             this.txtSobrenome.PasswordChar = false;
             this.txtSobrenome.Size = new System.Drawing.Size(295, 31);
             this.txtSobrenome.TabIndex = 31;
@@ -282,11 +286,11 @@
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.txtNome.ForeColor = System.Drawing.Color.DimGray;
             this.txtNome.Location = new System.Drawing.Point(57, 111);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
             this.txtNome.NovaImagem = global::Rika.Properties.Resources.icon_nome;
-            this.txtNome.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtNome.Padding = new System.Windows.Forms.Padding(7);
             this.txtNome.PasswordChar = false;
             this.txtNome.Size = new System.Drawing.Size(295, 31);
             this.txtNome.TabIndex = 30;

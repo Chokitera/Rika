@@ -120,9 +120,9 @@ namespace Rika.views
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             //Instânciando a clase Passagem
-            Passagem passagem = new Passagem();
+           /* Passagem passagem = new Passagem();
             passagem.Id = int.Parse(txtCodPassagem.Text);
-            passagem.Nome_Voo.Id = int.Parse(txtVoo.Text);
+            passagem.Nome_Voo.Id = int.Parse(txtVoo.Text);*/
         }
 
         private void lblVoo_Click(object sender, EventArgs e)

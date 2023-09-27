@@ -4,6 +4,7 @@ using Solucao.conexao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -95,11 +96,45 @@ namespace Rika.dao
                 conexao.Close();
                 return false;
             }
-            #endregion
         }
+        #endregion
+
+        #region Método para verificar se ja possuí o nome de usuário cadastrado
+        public bool ValidarNome(Usuario usuario) 
+        {
+            try
+            {
+                string sql = @"select from usuarios where nome_usuario = @nome";
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+
+                executacmd.Parameters.AddWithValue("@nome", usuario.NomeUsuario);
+
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    //Login foi realizado com sucesso
+                    MessageBox.Show("Login realizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    conexao.Close();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
     }
-
-        
-
-
 }
+
+

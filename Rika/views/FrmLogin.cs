@@ -113,6 +113,8 @@ namespace Rika.views
             if (txtSenha.Text == "")
             {
                 txtSenha.ForeColor = Color.FromArgb(28, 28, 28);
+                txtSenha.Focus();
+                txtSenha2.TextNew = "";
                 txtSenha2.Visible = false;
             }
         }
@@ -122,6 +124,7 @@ namespace Rika.views
             if (txtSenha.Text == "")
             {
                 txtSenha.ForeColor = Color.DimGray;
+                txtSenha2.TextNew = "Senha";
                 txtSenha2.Visible = true;
             }
         }
