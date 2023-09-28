@@ -31,7 +31,8 @@ namespace Rika.views
 
             if (qrForm != null && qrForm.Count() > 0)
             {
-                ((FrmPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmLogin());
+                Usuario usuario = new Usuario();
+                ((FrmPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmLogin(usuario));
             }
         }
         #endregion
@@ -90,6 +91,16 @@ namespace Rika.views
                 txtUsuario.Text = "Usuário";
                 txtUsuario.ForeColor = Color.DimGray;
             }
+            if (txtUsuario.Text != "")
+            {
+                UsuarioDAO dao = new UsuarioDAO();
+
+                Usuario usuario = new Usuario();
+
+                usuario.NomeUsuario = txtUsuario.Text;
+
+                bool cadastroUsuario = dao.ValidarNome(usuario);
+            }
         }
 
         //Botão 'Senha'
@@ -130,45 +141,6 @@ namespace Rika.views
                 txtConfirmarSenha.ForeColor = Color.DimGray;
             }
         }
-        #endregion
-
-        #region Verificar campos vazios
-
-        public bool VerificaCampoVazioCadastro(Usuario usuario)
-        {
-            if (usuario.Nome == "" || usuario.Nome == "Nome")
-            {
-                MessageBox.Show("Necessário preencher o campo Nome!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNome.Focus();
-                return false;
-            }
-            if (usuario.SobreNome == "" || usuario.SobreNome == "Sobrenome")
-            {
-                MessageBox.Show("Necessário preencher o campo Sobrenome!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtSobrenome.Focus();
-                return false;
-            }
-            if (usuario.NomeUsuario == "" || usuario.NomeUsuario == "Usuário")
-            {
-                MessageBox.Show("Necessário preencher o campo Usuário!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtUsuario.Focus();
-                return false;
-            }
-            if (usuario.Senha == "" || usuario.Senha == "Senha")
-            {
-                MessageBox.Show("Necessário preencher o campo Senha!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtSenha.Focus();
-                return false;
-            }
-            if (usuario.ConfirmarSenha == "" || usuario.ConfirmarSenha == "Confirmar Senha")
-            {
-                MessageBox.Show("Necessário preencher o campo Confirmar Senha!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtConfirmarSenha.Focus();
-                return false;
-            }
-            return true;
-        }
-
         #endregion
 
         #region Efetuar Cadastro
@@ -257,11 +229,14 @@ namespace Rika.views
 
                     if (cadastro) // Se efetuou o cadastro
                     {
-                        // Chamaria a tela de login
-                    }
-                    else
-                    {
-                        txtSenha.Focus();
+                        var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                                     where frm is FrmPrincipal
+                                     select frm;
+
+                        if (qrForm != null && qrForm.Count() > 0)
+                        {
+                            ((FrmPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmLogin(usuario));
+                        }
                     }
                 }
                 else
@@ -269,12 +244,46 @@ namespace Rika.views
                     // Avisa que a senha não bate...
                 }
             }
-            else
-            {
-                // Lida com o campo vazio
-                txtSenha.Focus();
-            }
         }
+        #endregion
+
+        #region Verificar campos vazios
+
+        public bool VerificaCampoVazioCadastro(Usuario usuario)
+        {
+            if (usuario.Nome == "" || usuario.Nome == "Nome")
+            {
+                MessageBox.Show("Necessário preencher o campo Nome!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNome.Focus();
+                return false;
+            }
+            if (usuario.SobreNome == "" || usuario.SobreNome == "Sobrenome")
+            {
+                MessageBox.Show("Necessário preencher o campo Sobrenome!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSobrenome.Focus();
+                return false;
+            }
+            if (usuario.NomeUsuario == "" || usuario.NomeUsuario == "Usuário")
+            {
+                MessageBox.Show("Necessário preencher o campo Usuário!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUsuario.Focus();
+                return false;
+            }
+            if (usuario.Senha == "" || usuario.Senha == "Senha")
+            {
+                MessageBox.Show("Necessário preencher o campo Senha!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSenha.Focus();
+                return false;
+            }
+            if (usuario.ConfirmarSenha == "" || usuario.ConfirmarSenha == "Confirmar Senha")
+            {
+                MessageBox.Show("Necessário preencher o campo Confirmar Senha!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtConfirmarSenha.Focus();
+                return false;
+            }
+            return true;
+        }
+
         #endregion
 
         #region Verifica se confirmar senha é igual a senha
@@ -288,8 +297,17 @@ namespace Rika.views
 
             UsuarioDAO dao = new UsuarioDAO();
 
-            if(usuario.Senha != usuario.ConfirmarSenha){
+            if(usuario.Senha.Length < 8) //Verifica se a senha possue 8 caracteres
+            {
+                MessageBox.Show("A senha precisa ter no mínimo 8 caracteres! Tente novamente", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSenha.Focus();
+                return false;
+            }
+
+            if(usuario.Senha != usuario.ConfirmarSenha) // Verifica se a senha é igual a confirmar senha
+            {
                 MessageBox.Show("As senhas não coincidem! Tente novamente", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtConfirmarSenha.Focus();
                 return false;
             }
             return true;
