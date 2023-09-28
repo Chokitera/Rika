@@ -79,9 +79,11 @@ namespace Rika.views
         }
         #endregion
 
-        public FrmLogin()
+        public FrmLogin(Usuario usuario)
         {
             InitializeComponent();
+            if (usuario.NomeUsuario != null)
+                txtUsuario.TextNew = usuario.NomeUsuario;
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
@@ -114,7 +116,6 @@ namespace Rika.views
             {
                 txtSenha.ForeColor = Color.FromArgb(28, 28, 28);
                 txtSenha.Focus();
-                txtSenha2.TextNew = "";
                 txtSenha2.Visible = false;
             }
         }
@@ -124,7 +125,6 @@ namespace Rika.views
             if (txtSenha.Text == "")
             {
                 txtSenha.ForeColor = Color.DimGray;
-                txtSenha2.TextNew = "Senha";
                 txtSenha2.Visible = true;
             }
         }
@@ -177,7 +177,7 @@ namespace Rika.views
 
                 if (login) //Se efetuou o login
                 {
-                    //Chamaria a tela inicial
+                    //Tela inicial
                 }
                 else
                     txtSenha.Focus();

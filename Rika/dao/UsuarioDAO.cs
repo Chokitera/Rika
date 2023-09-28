@@ -36,7 +36,7 @@ namespace Rika.dao
                 if (reader.Read())
                 {
                     //Login foi realizado com sucesso
-                    MessageBox.Show("Login realizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Login realizado com sucesso! Bem vindo " + usuario.NomeUsuario + "!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     conexao.Close();
                     return true;
                 }
@@ -85,7 +85,7 @@ namespace Rika.dao
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 usuario.Id = reader.GetInt32(0);
-                MessageBox.Show("Usuário cadastrado com sucesso!\n\nCódigo do usuário: " + usuario.Id + " - " + usuario.NomeUsuario, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usuário cadastrado com sucesso! - " + usuario.NomeUsuario, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -115,15 +115,12 @@ namespace Rika.dao
 
                 if (reader.Read())
                 {
-                    //Login foi realizado com sucesso
-                    MessageBox.Show("Login realizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    MessageBox.Show("Usuário já cadastrado!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     conexao.Close();
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
             catch (Exception erro)
             {
