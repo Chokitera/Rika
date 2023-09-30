@@ -165,7 +165,7 @@ namespace Rika.views
             //Verifica se já existe algum arquivo com esse nome na pasta
             if (File.Exists(caminhoNovo))
             {
-                MessageBox.Show("Já existe um arquivo com esse mesmo nome!\n\nEscolha outro nome de arquivo.", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Já existe um arquivo com esse mesmo nome!\n\nEscolha outro nome de arquivo.", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             //Grava o novo arquivo em um novo caminho - SÓ VAI COPIAR E SALVAR NO BANCO DEPOIS DE CLICAR EM "CONFIRMAR"... DEPOIS RETIRAR DO EVENTO btnAbrirPasta_Click
@@ -185,23 +185,31 @@ namespace Rika.views
         #region Visualizar a imagem
         private void btnVisualizarImagem_Click(object sender, EventArgs e)
         {
-            if (txtImagem.Text != "") //Se existir imagem ele exibe
+            try
             {
-                if (File.Exists(caminhoNovo))
+                if (txtImagem.Text != "") //Se existir imagem ele exibe
                 {
-                    using (var frm = new FrmExibirImagemPassagem(caminhoNovo))//Exibe o formulário com a imagem do caminho novo
+                    if (File.Exists(caminhoNovo))
                     {
-                        frm.ShowDialog();
+                        using (var frm = new FrmExibirImagemPassagem(caminhoNovo))//Exibe o formulário com a imagem do caminho novo
+                        {
+                            frm.ShowDialog();
+                        }
                     }
-                }
-                else
-                {
-                    using (var frm = new FrmExibirImagemPassagem(caminhoOriginal))//Exibe o formulário com a imagem do caminho antigo
+                    else
                     {
-                        frm.ShowDialog();
+                        using (var frm = new FrmExibirImagemPassagem(caminhoOriginal))//Exibe o formulário com a imagem do caminho antigo
+                        {
+                            frm.ShowDialog();
+                        }
                     }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Arquivo não encontrado!\n\nVerifique se o mesmo foi excluído.", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
         #endregion
     }

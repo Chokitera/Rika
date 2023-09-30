@@ -102,6 +102,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controls\novoTextBoxReadOnly .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\novoTextBoxReadOnly .Designer.cs">
+      <DependentUpon>novoTextBoxReadOnly .cs</DependentUpon>
+    </Compile>
     <Compile Include="controls\PassagensAerea.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     <Compile Include="views\FrmCadastroVoo.Designer.cs">
       <DependentUpon>FrmCadastroVoo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="controls\novoTextBoxReadOnly .resx">
+      <DependentUpon>novoTextBoxReadOnly .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controls\PassagensAerea.resx">
       <DependentUpon>PassagensAerea.cs</DependentUpon>
     </EmbeddedResource>

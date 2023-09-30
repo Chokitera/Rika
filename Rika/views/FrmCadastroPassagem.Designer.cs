@@ -36,7 +36,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlArrastarFormulario = new System.Windows.Forms.Panel();
-            this.txtImagem = new Rika.controls.novoTextBox();
+            this.iconFechar = new System.Windows.Forms.PictureBox();
+            this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.novoTextBox9 = new Rika.controls.novoTextBox();
             this.novoTextBox10 = new Rika.controls.novoTextBox();
             this.novoTextBox12 = new Rika.controls.novoTextBox();
@@ -49,9 +50,8 @@
             this.novoTextBox15 = new Rika.controls.novoTextBox();
             this.btnAbrirPasta = new System.Windows.Forms.Button();
             this.btnVisualizarImagem = new System.Windows.Forms.Button();
-            this.iconFechar = new System.Windows.Forms.PictureBox();
-            this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtImagem = new Rika.controls.novoTextBoxReadOnly();
             this.pnlArrastarFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -131,24 +131,31 @@
             this.pnlArrastarFormulario.TabIndex = 23;
             this.pnlArrastarFormulario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlArrastarFormulario_MouseDown);
             // 
-            // txtImagem
+            // iconFechar
             // 
-            this.txtImagem.BackColor = System.Drawing.SystemColors.Window;
-            this.txtImagem.BorderColor = System.Drawing.Color.DimGray;
-            this.txtImagem.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtImagem.BorderSize = 1;
-            this.txtImagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImagem.ForeColor = System.Drawing.Color.DimGray;
-            this.txtImagem.Location = new System.Drawing.Point(261, 362);
-            this.txtImagem.Margin = new System.Windows.Forms.Padding(4);
-            this.txtImagem.Multiline = false;
-            this.txtImagem.Name = "txtImagem";
-            this.txtImagem.Padding = new System.Windows.Forms.Padding(7);
-            this.txtImagem.PasswordChar = false;
-            this.txtImagem.Size = new System.Drawing.Size(250, 31);
-            this.txtImagem.TabIndex = 41;
-            this.txtImagem.TextNew = "";
-            this.txtImagem.UnderlinedStyle = false;
+            this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconFechar.Image = global::Rika.Properties.Resources.x;
+            this.iconFechar.Location = new System.Drawing.Point(948, 4);
+            this.iconFechar.Name = "iconFechar";
+            this.iconFechar.Size = new System.Drawing.Size(20, 20);
+            this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconFechar.TabIndex = 30;
+            this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
+            // 
+            // iconMinimizar
+            // 
+            this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
+            this.iconMinimizar.Location = new System.Drawing.Point(922, 4);
+            this.iconMinimizar.Name = "iconMinimizar";
+            this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
+            this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconMinimizar.TabIndex = 31;
+            this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
             // novoTextBox9
             // 
@@ -359,32 +366,6 @@
             this.btnVisualizarImagem.UseVisualStyleBackColor = true;
             this.btnVisualizarImagem.Click += new System.EventHandler(this.btnVisualizarImagem_Click);
             // 
-            // iconFechar
-            // 
-            this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconFechar.Image = global::Rika.Properties.Resources.x;
-            this.iconFechar.Location = new System.Drawing.Point(948, 4);
-            this.iconFechar.Name = "iconFechar";
-            this.iconFechar.Size = new System.Drawing.Size(20, 20);
-            this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconFechar.TabIndex = 30;
-            this.iconFechar.TabStop = false;
-            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
-            // 
-            // iconMinimizar
-            // 
-            this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
-            this.iconMinimizar.Location = new System.Drawing.Point(922, 4);
-            this.iconMinimizar.Name = "iconMinimizar";
-            this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
-            this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconMinimizar.TabIndex = 31;
-            this.iconMinimizar.TabStop = false;
-            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
@@ -395,17 +376,37 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // txtImagem
+            // 
+            this.txtImagem.BackColor = System.Drawing.SystemColors.Window;
+            this.txtImagem.BorderColor = System.Drawing.Color.DimGray;
+            this.txtImagem.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtImagem.BorderSize = 1;
+            this.txtImagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtImagem.ForeColor = System.Drawing.Color.DimGray;
+            this.txtImagem.Location = new System.Drawing.Point(261, 361);
+            this.txtImagem.Margin = new System.Windows.Forms.Padding(4);
+            this.txtImagem.Multiline = false;
+            this.txtImagem.Name = "txtImagem";
+            this.txtImagem.Padding = new System.Windows.Forms.Padding(7);
+            this.txtImagem.PasswordChar = false;
+            this.txtImagem.ReadOnly = true;
+            this.txtImagem.Size = new System.Drawing.Size(250, 31);
+            this.txtImagem.TabIndex = 47;
+            this.txtImagem.TextNew = "";
+            this.txtImagem.UnderlinedStyle = false;
+            // 
             // FrmCadastroPassagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(980, 569);
+            this.Controls.Add(this.txtImagem);
             this.Controls.Add(this.btnAbrirPasta);
             this.Controls.Add(this.btnVisualizarImagem);
             this.Controls.Add(this.novoTextBox15);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtImagem);
             this.Controls.Add(this.novoTextBox9);
             this.Controls.Add(this.novoTextBox10);
             this.Controls.Add(this.novoTextBox12);
@@ -458,10 +459,10 @@
         private controls.novoTextBox novoTextBox10;
         private controls.novoTextBox novoTextBox12;
         private controls.novoTextBox novoTextBox16;
-        private controls.novoTextBox txtImagem;
         private System.Windows.Forms.Label label1;
         private controls.novoTextBox novoTextBox15;
         private System.Windows.Forms.Button btnVisualizarImagem;
         private System.Windows.Forms.Button btnAbrirPasta;
+        private controls.novoTextBoxReadOnly txtImagem;
     }
 }
