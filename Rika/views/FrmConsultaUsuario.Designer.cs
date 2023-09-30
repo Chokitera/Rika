@@ -1,6 +1,6 @@
 ﻿namespace Rika.views
 {
-    partial class FrmConsultaUsuarios
+    partial class FrmConsultaUsuario
     {
         /// <summary>
         /// Required designer variable.

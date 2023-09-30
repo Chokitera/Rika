@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Rika.views
 {
-    public partial class FrmPais : Form
+    public partial class FrmCadastroSituacao : Form
     {
-        public FrmPais()
+        public FrmCadastroSituacao()
         {
             InitializeComponent();
         }

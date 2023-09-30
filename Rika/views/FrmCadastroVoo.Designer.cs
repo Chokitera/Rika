@@ -1,6 +1,6 @@
 ﻿namespace Rika.views
 {
-    partial class FrmVoo
+    partial class FrmCadastroVoo
     {
         /// <summary>
         /// Required designer variable.

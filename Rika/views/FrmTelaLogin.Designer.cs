@@ -1,6 +1,6 @@
 ﻿namespace Rika.views
 {
-    partial class FrmLogin
+    partial class FrmTelaLogin
     {
         /// <summary>
         /// Required designer variable.

@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace Rika
 {
-    public partial class FrmPrincipal : Form
+    public partial class FrmTelaPrincipal : Form
     {
         //Inicialização
         private Form formularioAtual;
@@ -70,7 +70,7 @@ namespace Rika
         }
         #endregion
 
-        public FrmPrincipal()
+        public FrmTelaPrincipal()
         {
             InitializeComponent();
 
@@ -81,7 +81,7 @@ namespace Rika
         {
             //Iniciar com o Formulário de Login aberto
             Usuario usuario = new Usuario();
-            ColocarFormNoPainel(new FrmLogin(usuario));
+            ColocarFormNoPainel(new FrmTelaLogin(usuario));
 
             lblAviso.Text = "Aviso: Este programa de computador é protegido pela lei de copyrigth e tratados internacionais.\nA reprodução ou distribuição não autorizada deste programa ou de qualquer parte dele, resultará \nna imposição de rigorosas penas civis e criminais e será objeto de ação judicial promovida na\nmáxima extensão possível, nos termos da lei.";
         }

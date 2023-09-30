@@ -1,6 +1,6 @@
 ﻿namespace Rika.views
 {
-    partial class FrmAeroporto
+    partial class FrmCadastroAeroporto
     {
         /// <summary>
         /// Required designer variable.

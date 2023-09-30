@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Rika.views
 {
-    public partial class FrmLogin : Form
+    public partial class FrmTelaLogin : Form
     {
         #region Ajustes da Borda
         //Campos para alterar a borda
@@ -79,7 +79,7 @@ namespace Rika.views
         }
         #endregion
 
-        public FrmLogin(Usuario usuario)
+        public FrmTelaLogin(Usuario usuario)
         {
             InitializeComponent();
             if (usuario.NomeUsuario != null)
@@ -210,12 +210,12 @@ namespace Rika.views
         private void LinkInscrever_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                         where frm is FrmPrincipal
+                         where frm is FrmTelaPrincipal
                          select frm;
 
             if (qrForm != null && qrForm.Count() > 0)
             {
-                ((FrmPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmCadastroUsuario());
+                ((FrmTelaPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmCadastroUsuario());
             }
         }
         #endregion

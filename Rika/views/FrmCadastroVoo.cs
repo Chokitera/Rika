@@ -11,9 +11,9 @@ using Rika.models;
 
 namespace Rika.views
 {
-    public partial class FrmVoo : Form
+    public partial class FrmCadastroVoo : Form
     {
-        public FrmVoo()
+        public FrmCadastroVoo()
         {
             InitializeComponent();
         }

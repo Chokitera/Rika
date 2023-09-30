@@ -26,13 +26,13 @@ namespace Rika.views
         private void linkEntrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                         where frm is FrmPrincipal
+                         where frm is FrmTelaPrincipal
                          select frm;
 
             if (qrForm != null && qrForm.Count() > 0)
             {
                 Usuario usuario = new Usuario();
-                ((FrmPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmLogin(usuario));
+                ((FrmTelaPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmTelaLogin(usuario));
             }
         }
         #endregion
@@ -230,12 +230,12 @@ namespace Rika.views
                     if (cadastro) // Se efetuou o cadastro
                     {
                         var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                                     where frm is FrmPrincipal
+                                     where frm is FrmTelaPrincipal
                                      select frm;
 
                         if (qrForm != null && qrForm.Count() > 0)
                         {
-                            ((FrmPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmLogin(usuario));
+                            ((FrmTelaPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmTelaLogin(usuario));
                         }
                     }
                 }
