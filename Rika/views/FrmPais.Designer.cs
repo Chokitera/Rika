@@ -179,6 +179,7 @@
             this.Controls.Add(this.lblAeroDecolagem);
             this.Controls.Add(this.label1lblCodigoPassagem);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPais";
             this.Text = "FrmPais";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

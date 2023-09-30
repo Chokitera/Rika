@@ -35,6 +35,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlArrastarFormulario = new System.Windows.Forms.Panel();
+            this.iconFechar = new System.Windows.Forms.PictureBox();
+            this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.novoTextBox17 = new Rika.controls.novoTextBox();
             this.novoTextBox9 = new Rika.controls.novoTextBox();
             this.novoTextBox10 = new Rika.controls.novoTextBox();
@@ -46,8 +48,6 @@
             this.btnSalvar = new Rika.controls.ModeloBotao();
             this.label1 = new System.Windows.Forms.Label();
             this.novoTextBox15 = new Rika.controls.novoTextBox();
-            this.iconFechar = new System.Windows.Forms.PictureBox();
-            this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlArrastarFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
@@ -60,7 +60,7 @@
             this.label1lblCodigoPassagem.AccessibleName = "";
             this.label1lblCodigoPassagem.AutoSize = true;
             this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(15, 229);
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(43, 240);
             this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(186, 22);
             this.label1lblCodigoPassagem.TabIndex = 1;
@@ -70,7 +70,7 @@
             // 
             this.lblVoo.AutoSize = true;
             this.lblVoo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVoo.Location = new System.Drawing.Point(15, 268);
+            this.lblVoo.Location = new System.Drawing.Point(582, 283);
             this.lblVoo.Name = "lblVoo";
             this.lblVoo.Size = new System.Drawing.Size(47, 22);
             this.lblVoo.TabIndex = 8;
@@ -81,7 +81,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 307);
+            this.label6.Location = new System.Drawing.Point(43, 325);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 22);
             this.label6.TabIndex = 19;
@@ -91,7 +91,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 385);
+            this.label7.Location = new System.Drawing.Point(582, 325);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 22);
             this.label7.TabIndex = 20;
@@ -101,7 +101,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(15, 424);
+            this.label8.Location = new System.Drawing.Point(43, 283);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(147, 22);
             this.label8.TabIndex = 21;
@@ -111,7 +111,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(15, 463);
+            this.label9.Location = new System.Drawing.Point(43, 363);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(159, 22);
             this.label9.TabIndex = 22;
@@ -124,9 +124,35 @@
             this.pnlArrastarFormulario.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlArrastarFormulario.Location = new System.Drawing.Point(0, 0);
             this.pnlArrastarFormulario.Name = "pnlArrastarFormulario";
-            this.pnlArrastarFormulario.Size = new System.Drawing.Size(508, 24);
+            this.pnlArrastarFormulario.Size = new System.Drawing.Size(980, 24);
             this.pnlArrastarFormulario.TabIndex = 23;
             this.pnlArrastarFormulario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlArrastarFormulario_MouseDown);
+            // 
+            // iconFechar
+            // 
+            this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconFechar.Image = global::Rika.Properties.Resources.x;
+            this.iconFechar.Location = new System.Drawing.Point(948, 4);
+            this.iconFechar.Name = "iconFechar";
+            this.iconFechar.Size = new System.Drawing.Size(20, 20);
+            this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconFechar.TabIndex = 30;
+            this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
+            // 
+            // iconMinimizar
+            // 
+            this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
+            this.iconMinimizar.Location = new System.Drawing.Point(922, 4);
+            this.iconMinimizar.Name = "iconMinimizar";
+            this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
+            this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconMinimizar.TabIndex = 31;
+            this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
             // novoTextBox17
             // 
@@ -136,7 +162,7 @@
             this.novoTextBox17.BorderSize = 1;
             this.novoTextBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox17.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox17.Location = new System.Drawing.Point(233, 463);
+            this.novoTextBox17.Location = new System.Drawing.Point(261, 362);
             this.novoTextBox17.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox17.Multiline = false;
             this.novoTextBox17.Name = "novoTextBox17";
@@ -155,7 +181,7 @@
             this.novoTextBox9.BorderSize = 1;
             this.novoTextBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox9.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox9.Location = new System.Drawing.Point(233, 424);
+            this.novoTextBox9.Location = new System.Drawing.Point(261, 281);
             this.novoTextBox9.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox9.Multiline = false;
             this.novoTextBox9.Name = "novoTextBox9";
@@ -174,7 +200,7 @@
             this.novoTextBox10.BorderSize = 1;
             this.novoTextBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox10.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox10.Location = new System.Drawing.Point(233, 385);
+            this.novoTextBox10.Location = new System.Drawing.Point(684, 325);
             this.novoTextBox10.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox10.Multiline = false;
             this.novoTextBox10.Name = "novoTextBox10";
@@ -193,7 +219,7 @@
             this.novoTextBox12.BorderSize = 1;
             this.novoTextBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox12.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox12.Location = new System.Drawing.Point(233, 307);
+            this.novoTextBox12.Location = new System.Drawing.Point(261, 322);
             this.novoTextBox12.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox12.Multiline = false;
             this.novoTextBox12.Name = "novoTextBox12";
@@ -212,7 +238,7 @@
             this.novoTextBox16.BorderSize = 1;
             this.novoTextBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox16.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox16.Location = new System.Drawing.Point(233, 268);
+            this.novoTextBox16.Location = new System.Drawing.Point(684, 281);
             this.novoTextBox16.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox16.Multiline = false;
             this.novoTextBox16.Name = "novoTextBox16";
@@ -231,7 +257,7 @@
             this.novoTextBox1.BorderSize = 1;
             this.novoTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox1.Location = new System.Drawing.Point(233, 229);
+            this.novoTextBox1.Location = new System.Drawing.Point(261, 239);
             this.novoTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox1.Multiline = false;
             this.novoTextBox1.Name = "novoTextBox1";
@@ -252,7 +278,7 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(333, 512);
+            this.btnSair.Location = new System.Drawing.Point(592, 512);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
             this.btnSair.TabIndex = 14;
@@ -271,7 +297,7 @@
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(172, 512);
+            this.btnExcluir.Location = new System.Drawing.Point(431, 512);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
             this.btnExcluir.TabIndex = 13;
@@ -291,7 +317,7 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(12, 512);
+            this.btnSalvar.Location = new System.Drawing.Point(271, 512);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
             this.btnSalvar.TabIndex = 12;
@@ -305,7 +331,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 346);
+            this.label1.Location = new System.Drawing.Point(582, 240);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 22);
             this.label1.TabIndex = 42;
@@ -319,7 +345,7 @@
             this.novoTextBox15.BorderSize = 1;
             this.novoTextBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox15.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox15.Location = new System.Drawing.Point(233, 346);
+            this.novoTextBox15.Location = new System.Drawing.Point(684, 239);
             this.novoTextBox15.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox15.Multiline = false;
             this.novoTextBox15.Name = "novoTextBox15";
@@ -330,48 +356,22 @@
             this.novoTextBox15.TextNew = "";
             this.novoTextBox15.UnderlinedStyle = false;
             // 
-            // iconFechar
-            // 
-            this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconFechar.Image = global::Rika.Properties.Resources.x;
-            this.iconFechar.Location = new System.Drawing.Point(476, 4);
-            this.iconFechar.Name = "iconFechar";
-            this.iconFechar.Size = new System.Drawing.Size(20, 20);
-            this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconFechar.TabIndex = 30;
-            this.iconFechar.TabStop = false;
-            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
-            // 
-            // iconMinimizar
-            // 
-            this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
-            this.iconMinimizar.Location = new System.Drawing.Point(450, 4);
-            this.iconMinimizar.Name = "iconMinimizar";
-            this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
-            this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconMinimizar.TabIndex = 31;
-            this.iconMinimizar.TabStop = false;
-            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(172, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(401, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // FrmTelaAdministrativa
+            // FrmCadastroPassagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(508, 569);
+            this.ClientSize = new System.Drawing.Size(980, 569);
             this.Controls.Add(this.novoTextBox15);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.novoTextBox17);
@@ -392,7 +392,7 @@
             this.Controls.Add(this.label1lblCodigoPassagem);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmTelaAdministrativa";
+            this.Name = "FrmCadastroPassagem";
             this.Text = "FrmTelaAdministrativa";
             this.Load += new System.EventHandler(this.FrmTelaAdministrativa_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmTelaAdministrativa_Paint);

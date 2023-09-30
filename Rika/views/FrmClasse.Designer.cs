@@ -49,7 +49,7 @@
             this.novoTextBox3.BorderSize = 1;
             this.novoTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox3.Location = new System.Drawing.Point(257, 286);
+            this.novoTextBox3.Location = new System.Drawing.Point(223, 286);
             this.novoTextBox3.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox3.Multiline = false;
             this.novoTextBox3.Name = "novoTextBox3";
@@ -68,7 +68,7 @@
             this.novoTextBox2.BorderSize = 1;
             this.novoTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox2.Location = new System.Drawing.Point(257, 247);
+            this.novoTextBox2.Location = new System.Drawing.Point(223, 247);
             this.novoTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox2.Multiline = false;
             this.novoTextBox2.Name = "novoTextBox2";
@@ -87,7 +87,7 @@
             this.novoTextBox1.BorderSize = 1;
             this.novoTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox1.Location = new System.Drawing.Point(257, 208);
+            this.novoTextBox1.Location = new System.Drawing.Point(223, 208);
             this.novoTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox1.Multiline = false;
             this.novoTextBox1.Name = "novoTextBox1";
@@ -159,7 +159,7 @@
             // 
             this.lblAeroDestino.AutoSize = true;
             this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDestino.Location = new System.Drawing.Point(36, 286);
+            this.lblAeroDestino.Location = new System.Drawing.Point(49, 286);
             this.lblAeroDestino.Name = "lblAeroDestino";
             this.lblAeroDestino.Size = new System.Drawing.Size(90, 22);
             this.lblAeroDestino.TabIndex = 47;
@@ -169,7 +169,7 @@
             // 
             this.lblAeroDecolagem.AutoSize = true;
             this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDecolagem.Location = new System.Drawing.Point(36, 247);
+            this.lblAeroDecolagem.Location = new System.Drawing.Point(49, 247);
             this.lblAeroDecolagem.Name = "lblAeroDecolagem";
             this.lblAeroDecolagem.Size = new System.Drawing.Size(62, 22);
             this.lblAeroDecolagem.TabIndex = 46;
@@ -180,7 +180,7 @@
             this.label1lblCodigoPassagem.AccessibleName = "";
             this.label1lblCodigoPassagem.AutoSize = true;
             this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(36, 208);
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(49, 208);
             this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(157, 22);
             this.label1lblCodigoPassagem.TabIndex = 45;
@@ -189,7 +189,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(131, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(168, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

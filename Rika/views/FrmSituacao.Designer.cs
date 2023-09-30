@@ -47,7 +47,7 @@
             this.novoTextBox2.BorderSize = 1;
             this.novoTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox2.Location = new System.Drawing.Point(229, 235);
+            this.novoTextBox2.Location = new System.Drawing.Point(237, 235);
             this.novoTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox2.Multiline = false;
             this.novoTextBox2.Name = "novoTextBox2";
@@ -66,7 +66,7 @@
             this.novoTextBox1.BorderSize = 1;
             this.novoTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox1.Location = new System.Drawing.Point(229, 196);
+            this.novoTextBox1.Location = new System.Drawing.Point(237, 196);
             this.novoTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox1.Multiline = false;
             this.novoTextBox1.Name = "novoTextBox1";
@@ -87,7 +87,7 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(329, 285);
+            this.btnSair.Location = new System.Drawing.Point(337, 295);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
             this.btnSair.TabIndex = 55;
@@ -106,7 +106,7 @@
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(168, 285);
+            this.btnExcluir.Location = new System.Drawing.Point(176, 295);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
             this.btnExcluir.TabIndex = 54;
@@ -125,7 +125,7 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(8, 285);
+            this.btnSalvar.Location = new System.Drawing.Point(16, 295);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
             this.btnSalvar.TabIndex = 53;
@@ -138,7 +138,7 @@
             // 
             this.lblAeroDecolagem.AutoSize = true;
             this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDecolagem.Location = new System.Drawing.Point(8, 235);
+            this.lblAeroDecolagem.Location = new System.Drawing.Point(16, 235);
             this.lblAeroDecolagem.Name = "lblAeroDecolagem";
             this.lblAeroDecolagem.Size = new System.Drawing.Size(95, 22);
             this.lblAeroDecolagem.TabIndex = 46;
@@ -149,7 +149,7 @@
             this.label1lblCodigoPassagem.AccessibleName = "";
             this.label1lblCodigoPassagem.AutoSize = true;
             this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(8, 196);
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(16, 196);
             this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(172, 22);
             this.label1lblCodigoPassagem.TabIndex = 45;
@@ -158,7 +158,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(129, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(168, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

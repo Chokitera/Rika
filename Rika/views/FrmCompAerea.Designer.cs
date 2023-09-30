@@ -51,7 +51,7 @@
             this.novoTextBox4.BorderSize = 1;
             this.novoTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox4.Location = new System.Drawing.Point(280, 308);
+            this.novoTextBox4.Location = new System.Drawing.Point(275, 317);
             this.novoTextBox4.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox4.Multiline = false;
             this.novoTextBox4.Name = "novoTextBox4";
@@ -70,7 +70,7 @@
             this.novoTextBox3.BorderSize = 1;
             this.novoTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox3.Location = new System.Drawing.Point(280, 269);
+            this.novoTextBox3.Location = new System.Drawing.Point(275, 278);
             this.novoTextBox3.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox3.Multiline = false;
             this.novoTextBox3.Name = "novoTextBox3";
@@ -89,7 +89,7 @@
             this.novoTextBox2.BorderSize = 1;
             this.novoTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox2.Location = new System.Drawing.Point(280, 230);
+            this.novoTextBox2.Location = new System.Drawing.Point(275, 239);
             this.novoTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox2.Multiline = false;
             this.novoTextBox2.Name = "novoTextBox2";
@@ -108,7 +108,7 @@
             this.novoTextBox1.BorderSize = 1;
             this.novoTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.novoTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox1.Location = new System.Drawing.Point(280, 191);
+            this.novoTextBox1.Location = new System.Drawing.Point(275, 200);
             this.novoTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.novoTextBox1.Multiline = false;
             this.novoTextBox1.Name = "novoTextBox1";
@@ -129,7 +129,7 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(380, 346);
+            this.btnSair.Location = new System.Drawing.Point(375, 379);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
             this.btnSair.TabIndex = 55;
@@ -148,7 +148,7 @@
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(219, 346);
+            this.btnExcluir.Location = new System.Drawing.Point(214, 379);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
             this.btnExcluir.TabIndex = 54;
@@ -167,7 +167,7 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(59, 346);
+            this.btnSalvar.Location = new System.Drawing.Point(54, 379);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
             this.btnSalvar.TabIndex = 53;
@@ -180,7 +180,7 @@
             // 
             this.lblDataSaida.AutoSize = true;
             this.lblDataSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataSaida.Location = new System.Drawing.Point(59, 308);
+            this.lblDataSaida.Location = new System.Drawing.Point(54, 317);
             this.lblDataSaida.Name = "lblDataSaida";
             this.lblDataSaida.Size = new System.Drawing.Size(86, 22);
             this.lblDataSaida.TabIndex = 49;
@@ -190,7 +190,7 @@
             // 
             this.lblAeroDestino.AutoSize = true;
             this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDestino.Location = new System.Drawing.Point(59, 269);
+            this.lblAeroDestino.Location = new System.Drawing.Point(54, 278);
             this.lblAeroDestino.Name = "lblAeroDestino";
             this.lblAeroDestino.Size = new System.Drawing.Size(95, 22);
             this.lblAeroDestino.TabIndex = 47;
@@ -200,7 +200,7 @@
             // 
             this.lblAeroDecolagem.AutoSize = true;
             this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDecolagem.Location = new System.Drawing.Point(59, 230);
+            this.lblAeroDecolagem.Location = new System.Drawing.Point(54, 239);
             this.lblAeroDecolagem.Name = "lblAeroDecolagem";
             this.lblAeroDecolagem.Size = new System.Drawing.Size(62, 22);
             this.lblAeroDecolagem.TabIndex = 46;
@@ -211,7 +211,7 @@
             this.label1lblCodigoPassagem.AccessibleName = "";
             this.label1lblCodigoPassagem.AutoSize = true;
             this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(59, 191);
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(54, 200);
             this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(221, 22);
             this.label1lblCodigoPassagem.TabIndex = 45;
@@ -220,7 +220,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(170, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(204, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(180, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -232,7 +232,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(575, 410);
+            this.ClientSize = new System.Drawing.Size(575, 431);
             this.Controls.Add(this.novoTextBox4);
             this.Controls.Add(this.novoTextBox3);
             this.Controls.Add(this.novoTextBox2);
