@@ -103,6 +103,26 @@ namespace Rika.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imagem {
+            get {
+                object obj = ResourceManager.GetObject("imagem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagem_128px {
+            get {
+                object obj = ResourceManager.GetObject("imagem 128px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap janela_minimizada {
             get {
                 object obj = ResourceManager.GetObject("janela-minimizada", resourceCulture);
@@ -136,6 +156,26 @@ namespace Rika.Properties {
         internal static System.Drawing.Bitmap menu_hamburguer {
             get {
                 object obj = ResourceManager.GetObject("menu-hamburguer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pasta {
+            get {
+                object obj = ResourceManager.GetObject("pasta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pasta_128px {
+            get {
+                object obj = ResourceManager.GetObject("pasta 128px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

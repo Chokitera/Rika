@@ -28,22 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblDataSaida = new System.Windows.Forms.Label();
+            this.lblAeroDecolagem = new System.Windows.Forms.Label();
+            this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblAeroDestino = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbTipoUsuario = new Rika.controls.novosComboBox();
+            this.txtSenha = new Rika.controls.novoTextBox();
             this.txtNomeUsuario = new Rika.controls.novoTextBox();
             this.txtNome = new Rika.controls.novoTextBox();
             this.txtCodUsuario = new Rika.controls.novoTextBox();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
-            this.lblDataSaida = new System.Windows.Forms.Label();
-            this.lblAeroDecolagem = new System.Windows.Forms.Label();
-            this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtSenha = new Rika.controls.novoTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblAeroDestino = new System.Windows.Forms.Label();
-            this.cmbTipoUsuario = new Rika.controls.novosComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblDataSaida
+            // 
+            this.lblDataSaida.AutoSize = true;
+            this.lblDataSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataSaida.Location = new System.Drawing.Point(43, 322);
+            this.lblDataSaida.Name = "lblDataSaida";
+            this.lblDataSaida.Size = new System.Drawing.Size(77, 22);
+            this.lblDataSaida.TabIndex = 72;
+            this.lblDataSaida.Text = "Usuário:";
+            // 
+            // lblAeroDecolagem
+            // 
+            this.lblAeroDecolagem.AutoSize = true;
+            this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAeroDecolagem.Location = new System.Drawing.Point(43, 244);
+            this.lblAeroDecolagem.Name = "lblAeroDecolagem";
+            this.lblAeroDecolagem.Size = new System.Drawing.Size(62, 22);
+            this.lblAeroDecolagem.TabIndex = 70;
+            this.lblAeroDecolagem.Text = "Nome:";
+            // 
+            // label1lblCodigoPassagem
+            // 
+            this.label1lblCodigoPassagem.AccessibleName = "";
+            this.label1lblCodigoPassagem.AutoSize = true;
+            this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(43, 205);
+            this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
+            this.label1lblCodigoPassagem.Size = new System.Drawing.Size(164, 22);
+            this.label1lblCodigoPassagem.TabIndex = 69;
+            this.label1lblCodigoPassagem.Text = "Código do Usuário:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(43, 362);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 22);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "Senha:";
+            // 
+            // lblAeroDestino
+            // 
+            this.lblAeroDestino.AutoSize = true;
+            this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAeroDestino.Location = new System.Drawing.Point(43, 283);
+            this.lblAeroDestino.Name = "lblAeroDestino";
+            this.lblAeroDestino.Size = new System.Drawing.Size(118, 22);
+            this.lblAeroDestino.TabIndex = 71;
+            this.lblAeroDestino.Text = "Tipo Usuário:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
+            this.pictureBox1.Location = new System.Drawing.Point(191, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 166);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 68;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cmbTipoUsuario
+            // 
+            this.cmbTipoUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbTipoUsuario.BorderColor = System.Drawing.Color.DimGray;
+            this.cmbTipoUsuario.BorderSize = 1;
+            this.cmbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbTipoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbTipoUsuario.ForeColor = System.Drawing.Color.DimGray;
+            this.cmbTipoUsuario.IconColor = System.Drawing.Color.DimGray;
+            this.cmbTipoUsuario.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cmbTipoUsuario.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmbTipoUsuario.Location = new System.Drawing.Point(236, 283);
+            this.cmbTipoUsuario.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmbTipoUsuario.Name = "cmbTipoUsuario";
+            this.cmbTipoUsuario.Padding = new System.Windows.Forms.Padding(1);
+            this.cmbTipoUsuario.Size = new System.Drawing.Size(250, 30);
+            this.cmbTipoUsuario.TabIndex = 82;
+            this.cmbTipoUsuario.Texts = "";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSenha.BorderColor = System.Drawing.Color.DimGray;
+            this.txtSenha.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtSenha.BorderSize = 1;
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSenha.Location = new System.Drawing.Point(236, 362);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSenha.Multiline = false;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSenha.PasswordChar = false;
+            this.txtSenha.Size = new System.Drawing.Size(250, 31);
+            this.txtSenha.TabIndex = 81;
+            this.txtSenha.TextNew = "";
+            this.txtSenha.UnderlinedStyle = false;
             // 
             // txtNomeUsuario
             // 
@@ -53,7 +152,7 @@
             this.txtNomeUsuario.BorderSize = 1;
             this.txtNomeUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNomeUsuario.Location = new System.Drawing.Point(236, 316);
+            this.txtNomeUsuario.Location = new System.Drawing.Point(236, 322);
             this.txtNomeUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtNomeUsuario.Multiline = false;
             this.txtNomeUsuario.Name = "txtNomeUsuario";
@@ -72,7 +171,7 @@
             this.txtNome.BorderSize = 1;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNome.Location = new System.Drawing.Point(236, 238);
+            this.txtNome.Location = new System.Drawing.Point(236, 244);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
@@ -91,7 +190,7 @@
             this.txtCodUsuario.BorderSize = 1;
             this.txtCodUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCodUsuario.Location = new System.Drawing.Point(236, 199);
+            this.txtCodUsuario.Location = new System.Drawing.Point(236, 205);
             this.txtCodUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodUsuario.Multiline = false;
             this.txtCodUsuario.Name = "txtCodUsuario";
@@ -112,7 +211,7 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(364, 419);
+            this.btnSair.Location = new System.Drawing.Point(364, 431);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
             this.btnSair.TabIndex = 75;
@@ -131,7 +230,7 @@
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(203, 419);
+            this.btnExcluir.Location = new System.Drawing.Point(203, 431);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
             this.btnExcluir.TabIndex = 74;
@@ -150,7 +249,7 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(43, 419);
+            this.btnSalvar.Location = new System.Drawing.Point(43, 431);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
             this.btnSalvar.TabIndex = 73;
@@ -158,105 +257,6 @@
             this.btnSalvar.TextColor = System.Drawing.Color.White;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalvar.UseVisualStyleBackColor = false;
-            // 
-            // lblDataSaida
-            // 
-            this.lblDataSaida.AutoSize = true;
-            this.lblDataSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataSaida.Location = new System.Drawing.Point(43, 316);
-            this.lblDataSaida.Name = "lblDataSaida";
-            this.lblDataSaida.Size = new System.Drawing.Size(77, 22);
-            this.lblDataSaida.TabIndex = 72;
-            this.lblDataSaida.Text = "Usuário:";
-            // 
-            // lblAeroDecolagem
-            // 
-            this.lblAeroDecolagem.AutoSize = true;
-            this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDecolagem.Location = new System.Drawing.Point(43, 238);
-            this.lblAeroDecolagem.Name = "lblAeroDecolagem";
-            this.lblAeroDecolagem.Size = new System.Drawing.Size(62, 22);
-            this.lblAeroDecolagem.TabIndex = 70;
-            this.lblAeroDecolagem.Text = "Nome:";
-            // 
-            // label1lblCodigoPassagem
-            // 
-            this.label1lblCodigoPassagem.AccessibleName = "";
-            this.label1lblCodigoPassagem.AutoSize = true;
-            this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(43, 199);
-            this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
-            this.label1lblCodigoPassagem.Size = new System.Drawing.Size(164, 22);
-            this.label1lblCodigoPassagem.TabIndex = 69;
-            this.label1lblCodigoPassagem.Text = "Código do Usuário:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(191, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 68;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSenha.BorderColor = System.Drawing.Color.DimGray;
-            this.txtSenha.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtSenha.BorderSize = 1;
-            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSenha.Location = new System.Drawing.Point(236, 356);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSenha.Multiline = false;
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Padding = new System.Windows.Forms.Padding(7);
-            this.txtSenha.PasswordChar = false;
-            this.txtSenha.Size = new System.Drawing.Size(250, 31);
-            this.txtSenha.TabIndex = 81;
-            this.txtSenha.TextNew = "";
-            this.txtSenha.UnderlinedStyle = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 356);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 22);
-            this.label1.TabIndex = 80;
-            this.label1.Text = "Senha:";
-            // 
-            // lblAeroDestino
-            // 
-            this.lblAeroDestino.AutoSize = true;
-            this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDestino.Location = new System.Drawing.Point(43, 277);
-            this.lblAeroDestino.Name = "lblAeroDestino";
-            this.lblAeroDestino.Size = new System.Drawing.Size(118, 22);
-            this.lblAeroDestino.TabIndex = 71;
-            this.lblAeroDestino.Text = "Tipo Usuário:";
-            // 
-            // cmbTipoUsuario
-            // 
-            this.cmbTipoUsuario.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cmbTipoUsuario.BorderColor = System.Drawing.Color.DimGray;
-            this.cmbTipoUsuario.BorderSize = 1;
-            this.cmbTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cmbTipoUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmbTipoUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.cmbTipoUsuario.IconColor = System.Drawing.Color.DimGray;
-            this.cmbTipoUsuario.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cmbTipoUsuario.ListTextColor = System.Drawing.Color.DimGray;
-            this.cmbTipoUsuario.Location = new System.Drawing.Point(236, 277);
-            this.cmbTipoUsuario.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cmbTipoUsuario.Name = "cmbTipoUsuario";
-            this.cmbTipoUsuario.Padding = new System.Windows.Forms.Padding(1);
-            this.cmbTipoUsuario.Size = new System.Drawing.Size(250, 30);
-            this.cmbTipoUsuario.TabIndex = 82;
-            this.cmbTipoUsuario.Texts = "";
             // 
             // FrmConsultaUsuarios
             // 

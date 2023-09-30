@@ -69,6 +69,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -150,6 +151,12 @@
     <Compile Include="views\FrmConsultaUsuarios.Designer.cs">
       <DependentUpon>FrmConsultaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmExibirImagemPassagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmExibirImagemPassagem.Designer.cs">
+      <DependentUpon>FrmExibirImagemPassagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +237,9 @@
     <EmbeddedResource Include="views\FrmConsultaUsuarios.resx">
       <DependentUpon>FrmConsultaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmExibirImagemPassagem.resx">
+      <DependentUpon>FrmExibirImagemPassagem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +315,10 @@
   <ItemGroup>
     <Content Include="iconRikaBranco.ico" />
     <Content Include="iconRikaPreto.ico" />
+    <None Include="resources\pasta 128px.png" />
+    <None Include="resources\imagem 128px.png" />
+    <None Include="resources\imagem.png" />
+    <None Include="resources\pasta.png" />
     <None Include="resources\seta-correta.png" />
     <None Include="resources\seta-direita.png" />
     <None Include="resources\icon-cadeado.png" />

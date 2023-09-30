@@ -4,24 +4,21 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Org.BouncyCastle.Asn1.Crmf;
-using Rika.models;
 
 namespace Rika.views
 {
-    public partial class FrmCadastroPassagem : Form
+    public partial class FrmExibirImagemPassagem : Form
     {
-        private string caminhoOriginal = ""; //Utilizado na Imagem da Passagem
-        private string caminhoNovo = ""; //Utilizado na Imagem da Passagem
-        public FrmCadastroPassagem()
+        public FrmExibirImagemPassagem(string imagemPassagem)
         {
             InitializeComponent();
+
+            ptbImagemPassagem.Image = Image.FromFile(imagemPassagem); //Exibe a imagem do caminho passado
         }
 
         #region Ajustes da Borda
@@ -67,7 +64,7 @@ namespace Rika.views
             }
         }
 
-        private void FrmTelaAdministrativa_Paint(object sender, PaintEventArgs e)
+        private void FrmExibirImagemPassagem_Paint(object sender, PaintEventArgs e)
         {
             // Ajusta as bordas
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
@@ -108,100 +105,6 @@ namespace Rika.views
             //Chamada dos métodos para arrastar o formulário
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-        #endregion
-
-        private void FrmTelaAdministrativa_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnExcluir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            //Instânciando a clase Passagem
-           /* Passagem passagem = new Passagem();
-            passagem.Id = int.Parse(txtCodPassagem.Text);
-            passagem.Nome_Voo.Id = int.Parse(txtVoo.Text);*/
-        }
-
-        private void lblVoo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        #region Le a imagem e salva na aplicação
-        private void btnAbrirPasta_Click(object sender, EventArgs e)
-        {
-            var openFile = new OpenFileDialog(); //Cria a abertura do arquivo
-            openFile.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png"; //Extensões permitidas
-            openFile.Multiselect = false; //Seleciona somente 1 arquivo
-            string nomeArquivo = "";
-            string pastaDestino = @"C:\projetos-csharp\RIKA\Rika\fotos\";
-
-
-            if (openFile.ShowDialog() == DialogResult.OK) //Se confirmou o arquivo
-            {
-                caminhoOriginal = openFile.FileName; //Caminho
-                nomeArquivo = openFile.SafeFileName; //Nome do Arquivo
-                caminhoNovo = pastaDestino + nomeArquivo; //Novo caminho com o nome do arquivo
-                txtImagem.Text = nomeArquivo;
-            }
-            else
-                return;
-
-            //Utilizado no momento como teste para verificar a cópia, depois vai para o evento confirmar
-            GravaImagem();
-        }
-        #endregion
-
-        #region Copia a imagem para o destino e grava no banco
-        public void GravaImagem()
-        {
-            //Verifica se já existe algum arquivo com esse nome na pasta
-            if (File.Exists(caminhoNovo))
-            {
-                MessageBox.Show("Já existe um arquivo com esse mesmo nome!\n\nEscolha outro nome de arquivo.", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            //Grava o novo arquivo em um novo caminho - SÓ VAI COPIAR E SALVAR NO BANCO DEPOIS DE CLICAR EM "CONFIRMAR"... DEPOIS RETIRAR DO EVENTO btnAbrirPasta_Click
-            System.IO.File.Copy(caminhoOriginal, caminhoNovo, false);
-
-            //Verifica se o arquivo foi salvo e mostra o nome no textbox
-            if (File.Exists(caminhoNovo))
-            {
-                //Salva o caminho da imagem no banco
-                //Fazer aqui a chamada do método
-            }
-            else
-                MessageBox.Show("Arquivo não copiado!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        #endregion
-
-        #region Visualizar a imagem
-        private void btnVisualizarImagem_Click(object sender, EventArgs e)
-        {
-            if (txtImagem.Text != "") //Se existir imagem ele exibe
-            {
-                if (File.Exists(caminhoNovo))
-                {
-                    using (var frm = new FrmExibirImagemPassagem(caminhoNovo))//Exibe o formulário com a imagem do caminho novo
-                    {
-                        frm.ShowDialog();
-                    }
-                }
-                else
-                {
-                    using (var frm = new FrmExibirImagemPassagem(caminhoOriginal))//Exibe o formulário com a imagem do caminho antigo
-                    {
-                        frm.ShowDialog();
-                    }
-                }
-            }
         }
         #endregion
     }

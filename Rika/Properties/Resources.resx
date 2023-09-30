@@ -118,37 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icon-perfil-de-usuario-new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\icon-perfil-de-usuario-new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon-nome" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\icon-nome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="janela-minimizada" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\janela-minimizada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="seta-correta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\seta-correta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-perfil-de-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icon-perfil-de-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Logo_Rika_Branco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\Logo_Rika_Branco1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="seta-direita" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\seta-direita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon-cadeado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\icon-cadeado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon-nome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icon-nome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="menu-hamburguer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\menu-hamburguer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imagem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\imagem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imagem 128px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\imagem 128px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pasta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\pasta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo_Rika_Preto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\Logo_Rika_Preto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon-perfil-de-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\icon-perfil-de-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="seta-direita" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\seta-direita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="seta-correta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\seta-correta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="janela-minimizada" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\janela-minimizada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-perfil-de-usuario-new" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\icon-perfil-de-usuario-new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pasta 128px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\pasta 128px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
