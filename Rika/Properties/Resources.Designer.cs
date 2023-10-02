@@ -143,9 +143,39 @@ namespace Rika.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo_Rika_Branco1 {
+            get {
+                object obj = ResourceManager.GetObject("Logo_Rika_Branco1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_Rika_Preto {
             get {
                 object obj = ResourceManager.GetObject("Logo_Rika_Preto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maldivas {
+            get {
+                object obj = ResourceManager.GetObject("maldivas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maldivas_2 {
+            get {
+                object obj = ResourceManager.GetObject("maldivas 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +226,26 @@ namespace Rika.Properties {
         internal static System.Drawing.Bitmap seta_direita {
             get {
                 object obj = ResourceManager.GetObject("seta-direita", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sinal_de_seta_para_baixo_para_navegar {
+            get {
+                object obj = ResourceManager.GetObject("sinal-de-seta-para-baixo-para-navegar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sinal_de_seta_para_baixo_para_navegar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("sinal-de-seta-para-baixo-para-navegar (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

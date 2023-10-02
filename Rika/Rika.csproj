@@ -322,6 +322,11 @@
     <None Include="resources\Logo_Rika_Preto.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\maldivas 2.jpg" />
+    <None Include="resources\maldivas.jpg" />
+    <None Include="resources\sinal-de-seta-para-baixo-para-navegar %281%29.png" />
+    <None Include="resources\sinal-de-seta-para-baixo-para-navegar.png" />
+    <None Include="fotos\Logo_Rika_Branco.png" />
     <Content Include="iconRikaBranco.ico" />
     <Content Include="iconRikaPreto.ico" />
     <None Include="resources\pasta 128px.png" />

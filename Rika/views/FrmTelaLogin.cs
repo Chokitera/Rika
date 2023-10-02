@@ -85,7 +85,6 @@ namespace Rika.views
             if (usuario.NomeUsuario != null)
                 txtUsuario.TextNew = usuario.NomeUsuario;
         }
-
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             txtUsuario.Focus();
