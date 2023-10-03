@@ -104,7 +104,7 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"select from usuarios where nome_usuario = @nome_usuario";
+                string sql = @"select nome_usuario from usuarios where nome_usuario = @nome_usuario";
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
 
                 executacmd.Parameters.AddWithValue("@nome_usuario", usuario.NomeUsuario);
