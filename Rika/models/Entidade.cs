@@ -8,6 +8,6 @@ namespace Rika.models
 {
     public class Entidade
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
     }
 }

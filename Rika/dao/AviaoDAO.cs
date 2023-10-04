@@ -29,9 +29,11 @@ namespace Rika.dao
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@qtd_acentos", aviao.Qtd_Acento);
                 executacmd.Parameters.AddWithValue("@modelo", aviao.Modelo);
+                //executacmd.Parameters.AddWithValue("@comp", aviao.comp.Id);
+                //executacmd.Parameters.AddWithValue("@voo", aviao.voo.Id);
 
                 //Consultar último usuário para consulta
-                string sql2 = @"select id from usuarios order by id desc limit 1";
+                string sql2 = @"select idaviao from aviao order by idaviao desc limit 1";
                 MySqlCommand executacmd2 = new MySqlCommand(sql2, conexao);
 
                 //Executa SQL
@@ -41,7 +43,7 @@ namespace Rika.dao
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 aviao.Id = reader.GetInt32(0);
-                MessageBox.Show("Avião " + aviao.Id + " - " + aviao.Modelo +  "cadastrado com sucesso!  ",  "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Avião " + aviao.Id + " - " + aviao.Modelo +  " cadastrado com sucesso!  ",  "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;

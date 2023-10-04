@@ -39,10 +39,10 @@ namespace Rika.views
         public void CadastroAviao() {
             //Instancia do Model
             Aviao aviao = new Aviao();
-            aviao.Qtd_Acento = 1; //int.Parse(txtQtdAcentos.TextNew);
-            aviao.Modelo = "1"; //txtModelAviao.TextNew;
-            aviao.Cod_Companhia.Id = 1; //int.Parse(txtCompAerea.TextNew);
-            aviao.Cod_Voo.Id = 1; //int.Parse(txtVoo.TextNew);
+            aviao.Qtd_Acento = int.Parse(txtQtdAcentos.TextNew);
+            aviao.Modelo = txtModelAviao.TextNew;
+            aviao.comp.Id = int.Parse(txtCompAerea.TextNew);
+            aviao.voo.Id = int.Parse(txtVoo.TextNew);
 
             if (VerificaCampoBranco(aviao))
             {
@@ -58,14 +58,14 @@ namespace Rika.views
         public bool VerificaCampoBranco(Aviao aviao)
         {
 
-            if (aviao.Cod_Voo.Id == null)
+            if (aviao.voo.Id == null)
             {
                 MessageBox.Show("Necessário preencher o campo Códido do Avião!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtVoo.Focus();
                 return false;
             }
 
-            if (aviao.Cod_Companhia.Id == null)
+            if (aviao.comp.Id == null)
             {
                 MessageBox.Show("Necessário preencher o campo Companhia Aerea!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCompAerea.Focus();
