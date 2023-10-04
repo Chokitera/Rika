@@ -8,9 +8,11 @@ namespace Rika.models
 {
     public class Aviao : Entidade
     {
+        public int idAviao { get ; set; }
         public int Qtd_Acento { get; set; }
         public string Modelo { get; set; }
-        public CompanhiaAerea Nome_Companhia { get; set; }
+        public CompanhiaAerea Cod_Companhia { get; set; }
+        public Voo Cod_Voo { get; set; }
 
     }
 }
