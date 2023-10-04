@@ -70,6 +70,22 @@ namespace Rika.views
 
         #endregion
 
+        #region Excluir país da tabela
+
+        public void ExcluirPais()
+        {
+            //Instanciar o model e atribuir os valores
+            Pais pais = new Pais();
+
+            PaisDAO dao = new PaisDAO();
+
+            bool exclusao = dao.ExcluirPais(pais);
+
+            if (exclusao) { }   
+        }
+
+        #endregion
+
         #region Ações dos botões
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -77,7 +93,7 @@ namespace Rika.views
         }
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-
+            ExcluirPais();
         }
         private void btnSair_Click(object sender, EventArgs e)
         {

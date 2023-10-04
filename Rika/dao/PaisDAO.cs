@@ -58,7 +58,31 @@ namespace Rika.dao
 
         #endregion
 
-        #region Método
+        #region Método para exclusão de país
+
+        public bool ExcluirPais(Pais pais)
+        {
+            try
+            {
+                string sql = @"delete from pais where nome = nome and sigla = sigla;";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
 
 
 
