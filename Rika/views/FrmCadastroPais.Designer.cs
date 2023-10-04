@@ -28,54 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.novoTextBox2 = new Rika.controls.novoTextBox();
-            this.novoTextBox1 = new Rika.controls.novoTextBox();
-            this.btnSair = new Rika.controls.ModeloBotao();
-            this.btnExcluir = new Rika.controls.ModeloBotao();
-            this.btnSalvar = new Rika.controls.ModeloBotao();
             this.lblAeroDecolagem = new System.Windows.Forms.Label();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSiglaPais = new Rika.controls.novoTextBox();
+            this.txtNomePais = new Rika.controls.novoTextBox();
+            this.txtIdPais = new Rika.controls.novoTextBox();
+            this.btnSair = new Rika.controls.ModeloBotao();
+            this.btnExcluir = new Rika.controls.ModeloBotao();
+            this.btnSalvar = new Rika.controls.ModeloBotao();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // novoTextBox2
+            // lblAeroDecolagem
             // 
-            this.novoTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox2.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox2.BorderSize = 1;
-            this.novoTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox2.Location = new System.Drawing.Point(244, 248);
-            this.novoTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox2.Multiline = false;
-            this.novoTextBox2.Name = "novoTextBox2";
-            this.novoTextBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox2.PasswordChar = false;
-            this.novoTextBox2.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox2.TabIndex = 89;
-            this.novoTextBox2.TextNew = "";
-            this.novoTextBox2.UnderlinedStyle = false;
+            this.lblAeroDecolagem.AutoSize = true;
+            this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAeroDecolagem.Location = new System.Drawing.Point(23, 209);
+            this.lblAeroDecolagem.Name = "lblAeroDecolagem";
+            this.lblAeroDecolagem.Size = new System.Drawing.Size(62, 22);
+            this.lblAeroDecolagem.TabIndex = 77;
+            this.lblAeroDecolagem.Text = "Nome:";
             // 
-            // novoTextBox1
+            // label1lblCodigoPassagem
             // 
-            this.novoTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox1.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox1.BorderSize = 1;
-            this.novoTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox1.Location = new System.Drawing.Point(244, 209);
-            this.novoTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox1.Multiline = false;
-            this.novoTextBox1.Name = "novoTextBox1";
-            this.novoTextBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox1.PasswordChar = false;
-            this.novoTextBox1.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox1.TabIndex = 88;
-            this.novoTextBox1.TextNew = "";
-            this.novoTextBox1.UnderlinedStyle = false;
+            this.label1lblCodigoPassagem.AccessibleName = "";
+            this.label1lblCodigoPassagem.AutoSize = true;
+            this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(23, 170);
+            this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
+            this.label1lblCodigoPassagem.Size = new System.Drawing.Size(137, 22);
+            this.label1lblCodigoPassagem.TabIndex = 76;
+            this.label1lblCodigoPassagem.Text = "Código do País:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
+            this.pictureBox1.Location = new System.Drawing.Point(181, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(152, 121);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 75;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(23, 248);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 22);
+            this.label1.TabIndex = 91;
+            this.label1.Text = "Sigla:";
+            // 
+            // txtSiglaPais
+            // 
+            this.txtSiglaPais.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSiglaPais.BorderColor = System.Drawing.Color.DimGray;
+            this.txtSiglaPais.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtSiglaPais.BorderSize = 1;
+            this.txtSiglaPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSiglaPais.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSiglaPais.Location = new System.Drawing.Point(244, 239);
+            this.txtSiglaPais.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSiglaPais.Multiline = false;
+            this.txtSiglaPais.Name = "txtSiglaPais";
+            this.txtSiglaPais.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSiglaPais.PasswordChar = false;
+            this.txtSiglaPais.Size = new System.Drawing.Size(250, 31);
+            this.txtSiglaPais.TabIndex = 90;
+            this.txtSiglaPais.TextNew = "";
+            this.txtSiglaPais.UnderlinedStyle = false;
+            // 
+            // txtNomePais
+            // 
+            this.txtNomePais.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNomePais.BorderColor = System.Drawing.Color.DimGray;
+            this.txtNomePais.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtNomePais.BorderSize = 1;
+            this.txtNomePais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomePais.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNomePais.Location = new System.Drawing.Point(244, 200);
+            this.txtNomePais.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNomePais.Multiline = false;
+            this.txtNomePais.Name = "txtNomePais";
+            this.txtNomePais.Padding = new System.Windows.Forms.Padding(7);
+            this.txtNomePais.PasswordChar = false;
+            this.txtNomePais.Size = new System.Drawing.Size(250, 31);
+            this.txtNomePais.TabIndex = 89;
+            this.txtNomePais.TextNew = "";
+            this.txtNomePais.UnderlinedStyle = false;
+            // 
+            // txtIdPais
+            // 
+            this.txtIdPais.BackColor = System.Drawing.SystemColors.Window;
+            this.txtIdPais.BorderColor = System.Drawing.Color.DimGray;
+            this.txtIdPais.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtIdPais.BorderSize = 1;
+            this.txtIdPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdPais.ForeColor = System.Drawing.Color.DimGray;
+            this.txtIdPais.Location = new System.Drawing.Point(244, 161);
+            this.txtIdPais.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdPais.Multiline = false;
+            this.txtIdPais.Name = "txtIdPais";
+            this.txtIdPais.Padding = new System.Windows.Forms.Padding(7);
+            this.txtIdPais.PasswordChar = false;
+            this.txtIdPais.Size = new System.Drawing.Size(250, 31);
+            this.txtIdPais.TabIndex = 88;
+            this.txtIdPais.TextNew = "";
+            this.txtIdPais.UnderlinedStyle = false;
             // 
             // btnSair
             // 
@@ -95,6 +157,7 @@
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnExcluir
             // 
@@ -114,6 +177,7 @@
             this.btnExcluir.TextColor = System.Drawing.Color.White;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 
@@ -133,46 +197,18 @@
             this.btnSalvar.TextColor = System.Drawing.Color.White;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // lblAeroDecolagem
-            // 
-            this.lblAeroDecolagem.AutoSize = true;
-            this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDecolagem.Location = new System.Drawing.Point(23, 248);
-            this.lblAeroDecolagem.Name = "lblAeroDecolagem";
-            this.lblAeroDecolagem.Size = new System.Drawing.Size(62, 22);
-            this.lblAeroDecolagem.TabIndex = 77;
-            this.lblAeroDecolagem.Text = "Nome:";
-            // 
-            // label1lblCodigoPassagem
-            // 
-            this.label1lblCodigoPassagem.AccessibleName = "";
-            this.label1lblCodigoPassagem.AutoSize = true;
-            this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(23, 209);
-            this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
-            this.label1lblCodigoPassagem.Size = new System.Drawing.Size(137, 22);
-            this.label1lblCodigoPassagem.TabIndex = 76;
-            this.label1lblCodigoPassagem.Text = "Código do País:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(181, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 75;
-            this.pictureBox1.TabStop = false;
-            // 
-            // FrmPais
+            // FrmCadastroPais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(528, 349);
-            this.Controls.Add(this.novoTextBox2);
-            this.Controls.Add(this.novoTextBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtSiglaPais);
+            this.Controls.Add(this.txtNomePais);
+            this.Controls.Add(this.txtIdPais);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);
@@ -180,7 +216,7 @@
             this.Controls.Add(this.label1lblCodigoPassagem);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmPais";
+            this.Name = "FrmCadastroPais";
             this.Text = "FrmPais";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -189,13 +225,15 @@
         }
 
         #endregion
-        private controls.novoTextBox novoTextBox2;
-        private controls.novoTextBox novoTextBox1;
+        private controls.novoTextBox txtNomePais;
+        private controls.novoTextBox txtIdPais;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnExcluir;
         private controls.ModeloBotao btnSalvar;
         private System.Windows.Forms.Label lblAeroDecolagem;
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private controls.novoTextBox txtSiglaPais;
+        private System.Windows.Forms.Label label1;
     }
 }

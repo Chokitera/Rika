@@ -74,8 +74,8 @@ namespace Rika.dao
                 executacmd.Parameters.AddWithValue("@senha", usuario.Senha);
                 executacmd.Parameters.AddWithValue("@tipo", usuario.Tipo);
 
-                //Consultar último usuário para consulta
-                string sql2 = @"select id from usuarios order by id desc limit 1";
+                //Consultar último usuário
+                string sql2 = @"select id from usuarios order by id desc limit 1;";
                 MySqlCommand executacmd2 = new MySqlCommand(sql2, conexao);
 
                 //Executa SQL
