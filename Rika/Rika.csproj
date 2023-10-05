@@ -120,6 +120,7 @@
     <Compile Include="controls\textBoxComImagem.Designer.cs">
       <DependentUpon>textBoxComImagem.cs</DependentUpon>
     </Compile>
+    <Compile Include="dao\AviaoDAO.cs" />
     <Compile Include="dao\PaisDAO.cs" />
     <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="models\Pais.cs" />
