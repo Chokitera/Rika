@@ -153,6 +153,12 @@
     <Compile Include="views\FrmCadastroUsuario.Designer.cs">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmCarrinhoCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmCarrinhoCompra.Designer.cs">
+      <DependentUpon>FrmCarrinhoCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmConsultaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmCadastroUsuario.resx">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmCarrinhoCompra.resx">
+      <DependentUpon>FrmCarrinhoCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmConsultaUsuario.resx">
       <DependentUpon>FrmConsultaUsuario.cs</DependentUpon>
