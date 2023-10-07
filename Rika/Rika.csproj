@@ -135,6 +135,7 @@
     <Compile Include="dao\AviaoDAO.cs" />
     <Compile Include="dao\PaisDAO.cs" />
     <Compile Include="dao\UsuarioDAO.cs" />
+    <Compile Include="models\Endereço.cs" />
     <Compile Include="models\Pais.cs" />
     <Compile Include="views\FrmCadastroAeroporto.cs">
       <SubType>Form</SubType>
