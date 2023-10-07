@@ -13,6 +13,7 @@ namespace Rika.dao
 {
     public class UsuarioDAO
     {
+        //Conexao Banco
         private MySqlConnection conexao;
         public UsuarioDAO() {
             this.conexao = new ConnectionFactory().getconnection();
