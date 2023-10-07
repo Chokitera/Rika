@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Rika.models
 {
-    public class Pais
+    public class Pais : Entidade
     {
         public string Nome {  get; set; }
         public string Sigla { get; set; }
-        public int Id { get; set; }
     }
 }

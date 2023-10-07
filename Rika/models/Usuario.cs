@@ -13,9 +13,8 @@ namespace Rika.models
         Admin = 1
     }
 
-    public class Usuario
+    public class Usuario : Entidade
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
         public string SobreNome { get; set; }
         public string NomeUsuario { get; set; }

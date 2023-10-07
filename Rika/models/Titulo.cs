@@ -8,8 +8,7 @@ namespace Rika.models
 {
     public class Titulo : Entidade
     {
-        public decimal Valor { get; set; }
-        public Valores Nome_Valores { get; set; }
-        public TipoVenda Nome_TipoVenda { get; set; }
+        public double Valor { get; set; }
+        public TipoVenda tipovenda = new TipoVenda();
     }
 }

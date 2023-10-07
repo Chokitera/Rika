@@ -10,8 +10,11 @@ namespace Rika.models
     {
         public string Cod_Passagem { get; set; }
         public string Descricao { get; set; }
-        public Situacao Nome_Situacao { get; set; }
-        public Valores Nome_Valores { get; set; }
-        public Voo Nome_Voo { get; set; }
+        public Situacao situacao = new Situacao();  
+        public Voo voo = new Voo();
+        public Classe classe = new Classe();
+        public double Valor {  get; set; }
+        public string Direto_Escala { get; set; }
+        public string Caminho_Img { get; set; }
     }
 }

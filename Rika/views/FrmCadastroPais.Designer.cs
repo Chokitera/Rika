@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroPais));
             this.lblAeroDecolagem = new System.Windows.Forms.Label();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -216,6 +217,7 @@
             this.Controls.Add(this.label1lblCodigoPassagem);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroPais";
             this.Text = "FrmPais";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

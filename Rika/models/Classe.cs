@@ -9,6 +9,6 @@ namespace Rika.models
     public class Classe : Entidade
     {
         public string Descricao { get; set; }
-        public Passagem Nome_Passagem { get; set; }
+        public string Nome { get; set; }
     }
 }

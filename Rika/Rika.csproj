@@ -152,6 +152,7 @@
     <Compile Include="dao\SituacaoDAO.cs" />
     <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="dao\VooDAO.cs" />
+    <Compile Include="models\Endereço.cs" />
     <Compile Include="models\Pais.cs" />
     <Compile Include="views\FrmCadastroAeroporto.cs">
       <SubType>Form</SubType>
@@ -229,7 +230,6 @@
     <Compile Include="models\Situacao.cs" />
     <Compile Include="models\TipoVenda.cs" />
     <Compile Include="models\Titulo.cs" />
-    <Compile Include="models\Valores.cs" />
     <Compile Include="models\Voo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
