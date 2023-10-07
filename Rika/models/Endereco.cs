@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Rika.models
 {
-    internal class Endereço : Entidade
+    internal class Endereco : Entidade
     {
         public Pais pais = new Pais();
         public string Cidade { get; set; }

@@ -107,6 +107,7 @@
     <Compile Include="controllers\CarrinhoCompraController.cs" />
     <Compile Include="controllers\ClasseController.cs" />
     <Compile Include="controllers\CompAereaController.cs" />
+    <Compile Include="controllers\EnderecoController.cs" />
     <Compile Include="controllers\PaisController.cs" />
     <Compile Include="controllers\PassagemController.cs" />
     <Compile Include="controllers\SituacaoController.cs" />
@@ -147,12 +148,13 @@
     <Compile Include="dao\CarrinhoCompraDAO.cs" />
     <Compile Include="dao\ClasseDAO.cs" />
     <Compile Include="dao\CompAereaDAO.cs" />
+    <Compile Include="dao\EnderecoDAO.cs" />
     <Compile Include="dao\PaisDAO.cs" />
     <Compile Include="dao\PassagemDAO.cs" />
     <Compile Include="dao\SituacaoDAO.cs" />
     <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="dao\VooDAO.cs" />
-    <Compile Include="models\Endereço.cs" />
+    <Compile Include="models\Endereco.cs" />
     <Compile Include="models\Pais.cs" />
     <Compile Include="views\FrmCadastroAeroporto.cs">
       <SubType>Form</SubType>
