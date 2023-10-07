@@ -52,11 +52,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAplicarCupom = new Rika.controls.ModeloBotao();
-            this.txtCupomDesconto = new Rika.controls.novoTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtCupomDesconto = new Rika.controls.novoTextBoxTextAlign();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -113,6 +113,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.txtCupomDesconto);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.txtTaxaEntrega);
             this.panel1.Controls.Add(this.txtTempoEntrega);
@@ -129,7 +130,6 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnAplicarCupom);
-            this.panel1.Controls.Add(this.txtCupomDesconto);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(634, 106);
@@ -398,25 +398,6 @@
             this.btnAplicarCupom.TextColor = System.Drawing.Color.White;
             this.btnAplicarCupom.UseVisualStyleBackColor = false;
             // 
-            // txtCupomDesconto
-            // 
-            this.txtCupomDesconto.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtCupomDesconto.BorderColor = System.Drawing.Color.White;
-            this.txtCupomDesconto.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtCupomDesconto.BorderSize = 0;
-            this.txtCupomDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCupomDesconto.ForeColor = System.Drawing.Color.Gray;
-            this.txtCupomDesconto.Location = new System.Drawing.Point(22, 90);
-            this.txtCupomDesconto.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCupomDesconto.Multiline = false;
-            this.txtCupomDesconto.Name = "txtCupomDesconto";
-            this.txtCupomDesconto.Padding = new System.Windows.Forms.Padding(7);
-            this.txtCupomDesconto.PasswordChar = false;
-            this.txtCupomDesconto.Size = new System.Drawing.Size(191, 35);
-            this.txtCupomDesconto.TabIndex = 31;
-            this.txtCupomDesconto.TextNew = "Cupom de Desconto";
-            this.txtCupomDesconto.UnderlinedStyle = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -458,6 +439,30 @@
             this.panel3.Size = new System.Drawing.Size(500, 2);
             this.panel3.TabIndex = 53;
             // 
+            // txtCupomDesconto
+            // 
+            this.txtCupomDesconto.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtCupomDesconto.BorderColor = System.Drawing.Color.White;
+            this.txtCupomDesconto.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCupomDesconto.BorderSize = 0;
+            this.txtCupomDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtCupomDesconto.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCupomDesconto.Location = new System.Drawing.Point(22, 90);
+            this.txtCupomDesconto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCupomDesconto.Multiline = false;
+            this.txtCupomDesconto.Name = "txtCupomDesconto";
+            this.txtCupomDesconto.Padding = new System.Windows.Forms.Padding(7);
+            this.txtCupomDesconto.PasswordChar = false;
+            this.txtCupomDesconto.ReadOnly = false;
+            this.txtCupomDesconto.Size = new System.Drawing.Size(191, 35);
+            this.txtCupomDesconto.TabIndex = 53;
+            this.txtCupomDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtCupomDesconto.TextNew = "Cupom de Desconto";
+            this.txtCupomDesconto.UnderlinedStyle = false;
+            this.txtCupomDesconto._TextChanged += new System.EventHandler(this.txtCupomDesconto__TextChanged_1);
+            this.txtCupomDesconto.Enter += new System.EventHandler(this.txtCupomDesconto_Enter);
+            this.txtCupomDesconto.Leave += new System.EventHandler(this.txtCupomDesconto_Leave);
+            // 
             // FrmCarrinhoCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,6 +478,7 @@
             this.Name = "FrmCarrinhoCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carrinho Compra";
+            this.Load += new System.EventHandler(this.FrmCarrinhoCompra_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
@@ -502,7 +508,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private controls.ModeloBotao btnAplicarCupom;
-        private controls.novoTextBox txtCupomDesconto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private controls.novoTextBoxTextAlign txtTotalCarrinho;
@@ -516,5 +521,6 @@
         private System.Windows.Forms.Panel panel8;
         private controls.novoTextBoxTextAlign txtTaxaEntrega;
         private controls.novoTextBoxTextAlign txtTempoEntrega;
+        private controls.novoTextBoxTextAlign txtCupomDesconto;
     }
 }

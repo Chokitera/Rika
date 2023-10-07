@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.novoTextBox4 = new Rika.controls.novoTextBox();
-            this.novoTextBox3 = new Rika.controls.novoTextBox();
-            this.novoTextBox2 = new Rika.controls.novoTextBox();
-            this.novoTextBox1 = new Rika.controls.novoTextBox();
+            this.txtDescricao = new Rika.controls.novoTextBox();
+            this.txtNome = new Rika.controls.novoTextBox();
+            this.txtPais = new Rika.controls.novoTextBox();
+            this.txtCodAeroporto = new Rika.controls.novoTextBox();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
@@ -43,81 +43,81 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // novoTextBox4
+            // txtDescricao
             // 
-            this.novoTextBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox4.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox4.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox4.BorderSize = 1;
-            this.novoTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox4.Location = new System.Drawing.Point(227, 324);
-            this.novoTextBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox4.Multiline = false;
-            this.novoTextBox4.Name = "novoTextBox4";
-            this.novoTextBox4.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox4.PasswordChar = false;
-            this.novoTextBox4.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox4.TabIndex = 67;
-            this.novoTextBox4.TextNew = "";
-            this.novoTextBox4.UnderlinedStyle = false;
+            this.txtDescricao.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDescricao.BorderColor = System.Drawing.Color.DimGray;
+            this.txtDescricao.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDescricao.BorderSize = 1;
+            this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDescricao.Location = new System.Drawing.Point(227, 324);
+            this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescricao.Multiline = false;
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Padding = new System.Windows.Forms.Padding(7);
+            this.txtDescricao.PasswordChar = false;
+            this.txtDescricao.Size = new System.Drawing.Size(250, 31);
+            this.txtDescricao.TabIndex = 67;
+            this.txtDescricao.TextNew = "";
+            this.txtDescricao.UnderlinedStyle = false;
             // 
-            // novoTextBox3
+            // txtNome
             // 
-            this.novoTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox3.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox3.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox3.BorderSize = 1;
-            this.novoTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox3.Location = new System.Drawing.Point(227, 285);
-            this.novoTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox3.Multiline = false;
-            this.novoTextBox3.Name = "novoTextBox3";
-            this.novoTextBox3.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox3.PasswordChar = false;
-            this.novoTextBox3.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox3.TabIndex = 66;
-            this.novoTextBox3.TextNew = "";
-            this.novoTextBox3.UnderlinedStyle = false;
+            this.txtNome.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNome.BorderColor = System.Drawing.Color.DimGray;
+            this.txtNome.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtNome.BorderSize = 1;
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNome.Location = new System.Drawing.Point(227, 285);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNome.Multiline = false;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Padding = new System.Windows.Forms.Padding(7);
+            this.txtNome.PasswordChar = false;
+            this.txtNome.Size = new System.Drawing.Size(250, 31);
+            this.txtNome.TabIndex = 66;
+            this.txtNome.TextNew = "";
+            this.txtNome.UnderlinedStyle = false;
             // 
-            // novoTextBox2
+            // txtPais
             // 
-            this.novoTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox2.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox2.BorderSize = 1;
-            this.novoTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox2.Location = new System.Drawing.Point(227, 246);
-            this.novoTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox2.Multiline = false;
-            this.novoTextBox2.Name = "novoTextBox2";
-            this.novoTextBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox2.PasswordChar = false;
-            this.novoTextBox2.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox2.TabIndex = 65;
-            this.novoTextBox2.TextNew = "";
-            this.novoTextBox2.UnderlinedStyle = false;
+            this.txtPais.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPais.BorderColor = System.Drawing.Color.DimGray;
+            this.txtPais.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPais.BorderSize = 1;
+            this.txtPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPais.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPais.Location = new System.Drawing.Point(227, 246);
+            this.txtPais.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPais.Multiline = false;
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Padding = new System.Windows.Forms.Padding(7);
+            this.txtPais.PasswordChar = false;
+            this.txtPais.Size = new System.Drawing.Size(250, 31);
+            this.txtPais.TabIndex = 65;
+            this.txtPais.TextNew = "";
+            this.txtPais.UnderlinedStyle = false;
             // 
-            // novoTextBox1
+            // txtCodAeroporto
             // 
-            this.novoTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.novoTextBox1.BorderColor = System.Drawing.Color.DimGray;
-            this.novoTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.novoTextBox1.BorderSize = 1;
-            this.novoTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.novoTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.novoTextBox1.Location = new System.Drawing.Point(227, 207);
-            this.novoTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.novoTextBox1.Multiline = false;
-            this.novoTextBox1.Name = "novoTextBox1";
-            this.novoTextBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.novoTextBox1.PasswordChar = false;
-            this.novoTextBox1.Size = new System.Drawing.Size(250, 31);
-            this.novoTextBox1.TabIndex = 64;
-            this.novoTextBox1.TextNew = "";
-            this.novoTextBox1.UnderlinedStyle = false;
+            this.txtCodAeroporto.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCodAeroporto.BorderColor = System.Drawing.Color.DimGray;
+            this.txtCodAeroporto.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCodAeroporto.BorderSize = 1;
+            this.txtCodAeroporto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodAeroporto.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCodAeroporto.Location = new System.Drawing.Point(227, 207);
+            this.txtCodAeroporto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodAeroporto.Multiline = false;
+            this.txtCodAeroporto.Name = "txtCodAeroporto";
+            this.txtCodAeroporto.Padding = new System.Windows.Forms.Padding(7);
+            this.txtCodAeroporto.PasswordChar = false;
+            this.txtCodAeroporto.Size = new System.Drawing.Size(250, 31);
+            this.txtCodAeroporto.TabIndex = 64;
+            this.txtCodAeroporto.TextNew = "";
+            this.txtCodAeroporto.UnderlinedStyle = false;
             // 
             // btnSair
             // 
@@ -202,9 +202,9 @@
             this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAeroDecolagem.Location = new System.Drawing.Point(29, 246);
             this.lblAeroDecolagem.Name = "lblAeroDecolagem";
-            this.lblAeroDecolagem.Size = new System.Drawing.Size(92, 22);
+            this.lblAeroDecolagem.Size = new System.Drawing.Size(45, 22);
             this.lblAeroDecolagem.TabIndex = 46;
-            this.lblAeroDecolagem.Text = "Endereço:";
+            this.lblAeroDecolagem.Text = "Pais";
             // 
             // label1lblCodigoPassagem
             // 
@@ -227,16 +227,16 @@
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
             // 
-            // FrmAeroporto
+            // FrmCadastroAeroporto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(504, 445);
-            this.Controls.Add(this.novoTextBox4);
-            this.Controls.Add(this.novoTextBox3);
-            this.Controls.Add(this.novoTextBox2);
-            this.Controls.Add(this.novoTextBox1);
+            this.Controls.Add(this.txtDescricao);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.txtPais);
+            this.Controls.Add(this.txtCodAeroporto);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);
@@ -246,7 +246,7 @@
             this.Controls.Add(this.label1lblCodigoPassagem);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmAeroporto";
+            this.Name = "FrmCadastroAeroporto";
             this.Text = "Aeroporto";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -255,10 +255,10 @@
         }
 
         #endregion
-        private controls.novoTextBox novoTextBox4;
-        private controls.novoTextBox novoTextBox3;
-        private controls.novoTextBox novoTextBox2;
-        private controls.novoTextBox novoTextBox1;
+        private controls.novoTextBox txtDescricao;
+        private controls.novoTextBox txtNome;
+        private controls.novoTextBox txtPais;
+        private controls.novoTextBox txtCodAeroporto;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnExcluir;
         private controls.ModeloBotao btnSalvar;
