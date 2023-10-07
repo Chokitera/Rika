@@ -102,11 +102,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controls\novoTextBoxReadOnly .cs">
+    <Compile Include="controls\ModeloItemNoCarrinho.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="controls\novoTextBoxReadOnly .Designer.cs">
-      <DependentUpon>novoTextBoxReadOnly .cs</DependentUpon>
+    <Compile Include="controls\ModeloItemNoCarrinho.Designer.cs">
+      <DependentUpon>ModeloItemNoCarrinho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\novoTextBoxReadOnly  - Cópia .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\novoTextBoxReadOnly  - Cópia .Designer.cs">
+      <DependentUpon>novoTextBoxReadOnly  - Cópia .cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\novoTextBoxTextAlign .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\novoTextBoxTextAlign .Designer.cs">
+      <DependentUpon>novoTextBoxTextAlign .cs</DependentUpon>
     </Compile>
     <Compile Include="controls\PassagensAerea.cs">
       <SubType>UserControl</SubType>
@@ -228,8 +240,14 @@
     <Compile Include="views\FrmCadastroVoo.Designer.cs">
       <DependentUpon>FrmCadastroVoo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="controls\novoTextBoxReadOnly .resx">
-      <DependentUpon>novoTextBoxReadOnly .cs</DependentUpon>
+    <EmbeddedResource Include="controls\ModeloItemNoCarrinho.resx">
+      <DependentUpon>ModeloItemNoCarrinho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\novoTextBoxReadOnly  - Cópia .resx">
+      <DependentUpon>novoTextBoxReadOnly  - Cópia .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\novoTextBoxTextAlign .resx">
+      <DependentUpon>novoTextBoxTextAlign .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controls\PassagensAerea.resx">
       <DependentUpon>PassagensAerea.cs</DependentUpon>
@@ -334,6 +352,7 @@
     <None Include="resources\Logo_Rika_Preto.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\marca-de-verificacao.png" />
     <None Include="resources\maldivas 2.jpg" />
     <None Include="resources\maldivas.jpg" />
     <None Include="resources\sinal-de-seta-para-baixo-para-navegar %281%29.png" />
