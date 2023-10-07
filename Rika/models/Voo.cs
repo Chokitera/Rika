@@ -15,6 +15,7 @@ namespace Rika.models
         public DateTime Duracao { get; set; }
         public DateTime HorarioSaida { get; set; }
         public DateTime HorarioChegada { get; set; }
+
         public Aviao aviao = new Aviao();
         public Aeroporto aeroporto = new Aeroporto();
     }

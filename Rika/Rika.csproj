@@ -154,6 +154,7 @@
     <Compile Include="dao\SituacaoDAO.cs" />
     <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="dao\VooDAO.cs" />
+    <Compile Include="models\CarrinhoCompra.cs" />
     <Compile Include="models\Endereco.cs" />
     <Compile Include="models\Pais.cs" />
     <Compile Include="views\FrmCadastroAeroporto.cs">
