@@ -212,7 +212,6 @@
     <Compile Include="models\Situacao.cs" />
     <Compile Include="models\TipoVenda.cs" />
     <Compile Include="models\Titulo.cs" />
-    <Compile Include="models\Valores.cs" />
     <Compile Include="models\Voo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

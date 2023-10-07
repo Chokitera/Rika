@@ -9,6 +9,8 @@ namespace Rika.models
     public class Aeroporto : Entidade
     {
         public string Descricao { get; set; }
-        public Passagem Nome_Passagem { get; set; }
+        public Pais pais = new Pais();
+        public Passagem passagem = new Passagem();
+        public string Nome { get; set; }
     }
 }

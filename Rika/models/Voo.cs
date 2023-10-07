@@ -8,7 +8,6 @@ namespace Rika.models
 {
     public class Voo : Entidade
     {
-        public string Descricao { get; set; }
         public int Destino { get; set; }
         public int Decolagem { get; set; }
         public DateTime DataSaida { get; set; }
@@ -16,6 +15,7 @@ namespace Rika.models
         public DateTime Duracao { get; set; }
         public DateTime HorarioSaida { get; set; }
         public DateTime HorarioChegada { get; set; }
-        public Aviao Cod_Aviao { get; set; }
+        public Aviao aviao = new Aviao();
+        public Aeroporto aeroporto = new Aeroporto();
     }
 }

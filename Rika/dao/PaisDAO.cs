@@ -64,10 +64,11 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"delete from pais where nome = nome and sigla = sigla;";
+                string sql = @"delete from pais where idpais = @id;";
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                
+                executacmd.Parameters.AddWithValue(@"id", pais.Id);
+
                 //Executa SQL
                 conexao.Open();
                 executacmd.ExecuteNonQuery();

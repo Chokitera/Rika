@@ -81,7 +81,10 @@ namespace Rika.views
 
             bool exclusao = dao.ExcluirPais(pais);
 
-            if (exclusao) { }   
+            if (exclusao) 
+            {
+
+            }   
         }
 
         #endregion
