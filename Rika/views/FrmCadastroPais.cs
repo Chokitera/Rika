@@ -89,6 +89,12 @@ namespace Rika.views
 
         #endregion
 
+        #region
+
+
+
+        #endregion
+
         #region Ações dos botões
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -96,7 +102,13 @@ namespace Rika.views
         }
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            ExcluirPais();
+            if (txtIdPais.TextNew != "")
+            {
+                ExcluirPais();
+            }
+            else
+                MessageBox.Show("O campo Código não pode estar vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
         private void btnSair_Click(object sender, EventArgs e)
         {

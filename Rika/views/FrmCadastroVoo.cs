@@ -31,7 +31,7 @@ namespace Rika.views
             voo.Duracao = DateTime.Parse(txtDuracao.Text);
             voo.HorarioSaida = DateTime.Parse(txtHoraSaida.Text);
             voo.HorarioChegada = DateTime.Parse(txtHoraChegada.Text);
-            voo.Cod_Aviao.Id = int.Parse(txtAviao.Text);
+            //voo.Cod_Aviao.Id = int.Parse(txtAviao.Text);
         }
 
         //Botão Excluir
