@@ -41,8 +41,7 @@ namespace Rika.views
             Aviao aviao = new Aviao();
             aviao.Qtd_Acento = int.Parse(txtQtdAcentos.TextNew);
             aviao.Modelo = txtModelAviao.TextNew;
-            aviao.comp.Id = int.Parse(txtCompAerea.TextNew);
-            aviao.voo.Id = int.Parse(txtVoo.TextNew);
+            aviao.comp.Id = int.Parse(txtCodCompAerea.TextNew);
 
             if (VerificaCampoBranco(aviao))
             {
@@ -57,15 +56,7 @@ namespace Rika.views
         #region Verificar campos em branco
         public bool VerificaCampoBranco(Aviao aviao)
         {
-
-            if (aviao.voo.Id == null)
-            {
-                MessageBox.Show("Necessário preencher o campo Códido do Avião!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtVoo.Focus();
-                return false;
-            }
-
-            if (aviao.comp.Id == null)
+            if (aviao.comp.Id == 0)
             {
                 MessageBox.Show("Necessário preencher o campo Companhia Aerea!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCompAerea.Focus();
@@ -79,7 +70,7 @@ namespace Rika.views
                 return false;
             }
 
-            if (aviao.Qtd_Acento == null)
+            if (aviao.Qtd_Acento == 0)
             {
                 MessageBox.Show("Necessário preencher o campo Quantidade de Acentos!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtQtdAcentos.Focus();

@@ -24,14 +24,14 @@ namespace Rika.views
             //Instânciando a classe Voo
             Voo voo = new Voo();
             voo.Id = int.Parse(txtCodVoo.Text);
-            voo.Destino = int.Parse(txtDestino.Text);
-            voo.Decolagem = int.Parse(txtDecolagem.Text);
+            voo.Destino = int.Parse(txtCodAeroportoDestino.Text);
+            voo.Decolagem = int.Parse(txtCodAeroportoDecolagem.Text);
             voo.DataSaida = DateTime.Parse(txtDataSaida.Text);
             voo.DataChegada = DateTime.Parse(txtDataChegada.Text);
             voo.Duracao = DateTime.Parse(txtDuracao.Text);
             voo.HorarioSaida = DateTime.Parse(txtHoraSaida.Text);
             voo.HorarioChegada = DateTime.Parse(txtHoraChegada.Text);
-            voo.Cod_Aviao.Id = int.Parse(txtAviao.Text);
+            voo.aviao.Id = int.Parse(txtCodAviao.Text);
         }
 
         //Botão Excluir
