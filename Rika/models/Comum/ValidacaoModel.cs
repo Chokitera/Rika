@@ -19,7 +19,7 @@ namespace Rika.models.Comum
             {
                 foreach (var item in resultado) 
                 {
-                    errorMessage += " - " + item.ErrorMessage + "\n";
+                    errorMessage += item.ErrorMessage + "\n";
                 }
                 throw new Exception(errorMessage);
             }
