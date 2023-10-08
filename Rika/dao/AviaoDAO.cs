@@ -24,16 +24,15 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"insert into aviao (qtd_acentos, modelo)
-                                    values (@qtd_acentos, @modelo);";
+                string sql = @"insert into aviao (qtd_acentos, modelo, IDCOMP_AEREA)
+                                    values (@qtd_acentos, @modelo, @comp);";
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@qtd_acentos", aviao.Qtd_Acento);
                 executacmd.Parameters.AddWithValue("@modelo", aviao.Modelo);
-                //executacmd.Parameters.AddWithValue("@comp", aviao.comp.Id);
-                //executacmd.Parameters.AddWithValue("@voo", aviao.voo.Id);
+                executacmd.Parameters.AddWithValue("@comp", aviao.comp.Id);
 
-                //Consultar último usuário para consulta
+                //Consultar último registro
                 string sql2 = @"select idaviao from aviao order by idaviao desc limit 1";
                 MySqlCommand executacmd2 = new MySqlCommand(sql2, conexao);
 

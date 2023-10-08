@@ -13,7 +13,7 @@ namespace Rika.models
         public string Estado { get; set; }
         public int CEP { get; set; }
         public string Logradouro { get; set; }
-        public int NumeroCasa { get; set; }
+        public int? NumeroCasa { get; set; }
         public string Complemento { get; set; }
         public Pais pais = new Pais();
     }

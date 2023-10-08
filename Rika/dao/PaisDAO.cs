@@ -43,7 +43,7 @@ namespace Rika.dao
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 pais.Id = reader.GetInt32(0);
-                MessageBox.Show("País " + pais.Id + " - " + pais.Nome + " (" + pais.Sigla + ") " + "cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("País " + pais.Id + " - " + pais.Nome + " (" + pais.Sigla + ") " + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;

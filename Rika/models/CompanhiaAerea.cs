@@ -12,6 +12,6 @@ namespace Rika.models
     {
         public string Nome { get; set; }
         public string Descricao { get; set; }
-        public string Inscrição { get; set; }
+        public string Inscricao { get; set; }
     }
 }

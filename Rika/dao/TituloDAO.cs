@@ -10,30 +10,30 @@ using System.Windows.Forms;
 
 namespace Rika.dao
 {
-    public class ClasseDAO
+    public class TituloDAO
     {
         //Conexao Banco
         private MySqlConnection conexao;
-        public ClasseDAO()
+        public TituloDAO()
         {
             this.conexao = new ConnectionFactory().getconnection();
         }
 
-        #region Método para cadastro de classe
-        public bool EfetuarCadastro(Classe classe)
+        #region Método para cadastro de título
+        public bool EfetuarCadastro(Titulo titulo)
         {
             try
             {
-                string sql = @"insert into CLASSE (nome, descricao) 
-                               values (@nome, @descricao);";
+                string sql = @"insert into TITULO (IDTIPO_VENDA, VALOR) 
+                               values (@IDTIPO_VENDA, @VALOR);";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue("@nome", classe.Nome);
-                executacmd.Parameters.AddWithValue("@descricao", classe.Descricao);
+                executacmd.Parameters.AddWithValue("@nome", titulo.tipovenda.Id);
+                executacmd.Parameters.AddWithValue("@descricao", titulo.Valor);
 
-                //Consultar registro
-                string sql2 = @"select IDCLASSE from CLASSE order by IDCLASSE desc limit 1;";
+                //Consultar o último registro
+                string sql2 = @"select IDTITULO from TITULO order by IDTITULO desc limit 1;";
                 MySqlCommand executacmd2 = new MySqlCommand(sql2, conexao);
 
                 //Executa SQL
@@ -42,8 +42,8 @@ namespace Rika.dao
 
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
-                classe.Id = reader.GetInt32(0);
-                MessageBox.Show("Classe " + classe.Id + " - " + classe.Nome + " cadastrada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                titulo.Id = reader.GetInt32(0);
+                MessageBox.Show("Título " + titulo.Id + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;

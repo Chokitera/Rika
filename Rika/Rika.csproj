@@ -152,6 +152,8 @@
     <Compile Include="dao\PaisDAO.cs" />
     <Compile Include="dao\PassagemDAO.cs" />
     <Compile Include="dao\SituacaoDAO.cs" />
+    <Compile Include="dao\TipoVendaDAO.cs" />
+    <Compile Include="dao\TituloDAO.cs" />
     <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="dao\VooDAO.cs" />
     <Compile Include="models\CarrinhoCompra.cs" />

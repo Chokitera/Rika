@@ -10,30 +10,29 @@ using System.Windows.Forms;
 
 namespace Rika.dao
 {
-    public class ClasseDAO
+    public class TipoVendaDAO
     {
         //Conexao Banco
         private MySqlConnection conexao;
-        public ClasseDAO()
+        public TipoVendaDAO()
         {
             this.conexao = new ConnectionFactory().getconnection();
         }
 
-        #region Método para cadastro de classe
-        public bool EfetuarCadastro(Classe classe)
+        #region Método para cadastro de tipo de venda
+        public bool EfetuarCadastro(TipoVenda tipoVenda)
         {
             try
             {
-                string sql = @"insert into CLASSE (nome, descricao) 
-                               values (@nome, @descricao);";
+                string sql = @"insert into TIPO_VENDA (descricao) 
+                               values (@descricao);";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue("@nome", classe.Nome);
-                executacmd.Parameters.AddWithValue("@descricao", classe.Descricao);
+                executacmd.Parameters.AddWithValue("@descricao", tipoVenda.Descricao);
 
-                //Consultar registro
-                string sql2 = @"select IDCLASSE from CLASSE order by IDCLASSE desc limit 1;";
+                //Consultar último registro
+                string sql2 = @"select IDTIPO_VENDA from TIPO_VENDA order by IDTIPO_VENDA desc limit 1;";
                 MySqlCommand executacmd2 = new MySqlCommand(sql2, conexao);
 
                 //Executa SQL
@@ -42,8 +41,8 @@ namespace Rika.dao
 
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
-                classe.Id = reader.GetInt32(0);
-                MessageBox.Show("Classe " + classe.Id + " - " + classe.Nome + " cadastrada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tipoVenda.Id = reader.GetInt32(0);
+                MessageBox.Show("Tipo de Venda " + tipoVenda.Id + " - " + tipoVenda.Descricao + " cadastrada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;

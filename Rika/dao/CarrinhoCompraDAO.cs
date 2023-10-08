@@ -16,5 +16,7 @@ namespace Rika.dao
         {
             this.conexao = new ConnectionFactory().getconnection();
         }
+
+
     }
 }

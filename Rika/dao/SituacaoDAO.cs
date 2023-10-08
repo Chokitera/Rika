@@ -1,10 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
+using Rika.models;
 using Solucao.conexao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Rika.dao
 {
@@ -16,5 +18,42 @@ namespace Rika.dao
         {
             this.conexao = new ConnectionFactory().getconnection();
         }
+
+        #region Método para cadastro de situação
+        public bool EfetuarCadastro(Situacao situacao)
+        {
+            try
+            {
+                string sql = @"insert into situacao (descricao) 
+                               values (@descricao);";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@descricao", situacao.Descricao);
+
+                //Consultar último registro
+                string sql2 = @"select idsituacao from situacao order by idsituacao desc limit 1;";
+                MySqlCommand executacmd2 = new MySqlCommand(sql2, conexao);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MySqlDataReader reader = executacmd2.ExecuteReader();
+                reader.Read();
+                situacao.Id = reader.GetInt32(0);
+                MessageBox.Show("Situação " + situacao.Id + " - " + situacao.Descricao + " cadastrada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
     }
 }

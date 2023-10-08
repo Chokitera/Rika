@@ -64,7 +64,7 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"insert into usuarios (nome, sobrenome, nome_usuario, senha, tipo) 
+                string sql = @"insert into usuarios (nome, sobrenome, nome_usuario, senha, tipousuario) 
                                values (@nome, @sobrenome, @nome_usuario, @senha, @tipo);";
 
                 //Atributos
@@ -76,7 +76,7 @@ namespace Rika.dao
                 executacmd.Parameters.AddWithValue("@tipo", usuario.Tipo);
 
                 //Consultar último usuário
-                string sql2 = @"select id from usuarios order by id desc limit 1;";
+                string sql2 = @"select idusuario from usuarios order by idusuario desc limit 1;";
                 MySqlCommand executacmd2 = new MySqlCommand(sql2, conexao);
 
                 //Executa SQL
@@ -86,7 +86,7 @@ namespace Rika.dao
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 usuario.Id = reader.GetInt32(0);
-                MessageBox.Show("Usuário cadastrado com sucesso! - " + usuario.NomeUsuario, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usuário cadastrado com sucesso!" + usuario.NomeUsuario, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
