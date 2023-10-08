@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Rika.views
 {
-    public partial class FrmTelaInicial : Form
+    public partial class FrmTelaInicialSemLogin : Form
     {
-        public FrmTelaInicial()
+        public FrmTelaInicialSemLogin()
         {
             InitializeComponent();
         }
