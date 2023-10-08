@@ -36,8 +36,10 @@ namespace Rika.views
             {
                 bool cadastro = dao.EfetuarCadastroPais(pais);
 
-                if (cadastro) { } //Cadastro feito
+                if (cadastro) //Cadastro feito
+                {
                 
+                } 
             } 
 
         }
