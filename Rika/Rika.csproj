@@ -183,6 +183,12 @@
     <Compile Include="views\FrmCadastroAviao.Designer.cs">
       <DependentUpon>FrmCadastroAviao.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmCadastroTipoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmCadastroTipoVenda.Designer.cs">
+      <DependentUpon>FrmCadastroTipoVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmCadastroAviao.resx">
       <DependentUpon>FrmCadastroAviao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmCadastroTipoVenda.resx">
+      <DependentUpon>FrmCadastroTipoVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmCadastroUsuario.resx">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
