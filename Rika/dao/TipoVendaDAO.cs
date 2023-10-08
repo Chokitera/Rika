@@ -55,5 +55,34 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para exclusão de Tipo de Venda
+        public bool ExcluirTipoVenda(TipoVenda tipoVenda)
+        {
+            try
+            {
+                string sql = @"delete from TIPO_VENDA where IDTIPO_VENDA = @id;";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", tipoVenda.Id);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                //Mensagem que aparou o registro
+                MessageBox.Show("O cadastro foi apagado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
     }
 }

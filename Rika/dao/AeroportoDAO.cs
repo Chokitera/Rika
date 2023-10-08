@@ -57,5 +57,34 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para exclusão de aeroporto
+        public bool ExcluirAeroporto(Aeroporto aeroporto)
+        {
+            try
+            {
+                string sql = @"delete from AEROPORTO where IDAEROPORTO = @id;";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", aeroporto.Id);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                //Mensagem que aparou o registro
+                MessageBox.Show("O cadastro foi apagado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
     }
 }

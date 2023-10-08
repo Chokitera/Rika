@@ -63,5 +63,34 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para exclusão de voo
+        public bool ExcluirVoo(Voo voo)
+        {
+            try
+            {
+                string sql = @"delete from VOO where IDVOO = @id;";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", voo.Id);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                //Mensagem que aparou o registro
+                MessageBox.Show("O cadastro foi apagado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
     }
 }

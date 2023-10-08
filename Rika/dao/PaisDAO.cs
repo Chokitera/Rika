@@ -59,7 +59,6 @@ namespace Rika.dao
         #endregion
 
         #region Método para exclusão de país
-
         public bool ExcluirPais(Pais pais)
         {
             try
@@ -67,13 +66,13 @@ namespace Rika.dao
                 string sql = @"delete from pais where idpais = @id;";
 
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue(@"id", pais.Id);
+                executacmd.Parameters.AddWithValue("@id", pais.Id);
 
                 //Executa SQL
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                //Mensagem se apagou do banco o país
+                //Mensagem que aparou o registro
                 MessageBox.Show("O cadastro foi apagado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
@@ -86,9 +85,6 @@ namespace Rika.dao
                 return false;
             }
         }
-
-
-
         #endregion
     }
 }
