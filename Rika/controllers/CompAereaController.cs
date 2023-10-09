@@ -58,7 +58,7 @@ namespace Rika.controllers
             try
             {
                 //Atribuição da entrada no DTO
-                ExcluirCompAereaDTO dto = new ExcluirCompAereaDTO()
+                ExcluirCompanhiaAereaDTO dto = new ExcluirCompanhiaAereaDTO()
                 {
                     Id = id
                 };
@@ -88,7 +88,7 @@ namespace Rika.controllers
             try
             {
                 //Atribuição da entrada no DTO
-                ConsultaCompanhiaDTO dto = new ConsultaCompanhiaDTO()
+                ConsultaCompanhiaAereaDTO dto = new ConsultaCompanhiaAereaDTO()
                 {
                     Id = id
                 };

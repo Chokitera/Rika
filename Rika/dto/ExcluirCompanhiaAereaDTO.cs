@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Rika.dto
 {
-    public class ExcluirCompAereaDTO : EntidadeDTO
+    public class ExcluirCompanhiaAereaDTO : EntidadeDTO
     {
         
     }
