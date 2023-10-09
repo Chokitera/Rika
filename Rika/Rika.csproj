@@ -61,6 +61,7 @@
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
@@ -102,11 +103,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controls\novoTextBoxReadOnly .cs">
+    <Compile Include="controllers\AeroportoController.cs" />
+    <Compile Include="controllers\AviaoController.cs" />
+    <Compile Include="controllers\CarrinhoCompraController.cs" />
+    <Compile Include="controllers\ClasseController.cs" />
+    <Compile Include="controllers\CompAereaController.cs" />
+    <Compile Include="controllers\EnderecoController.cs" />
+    <Compile Include="controllers\PaisController.cs" />
+    <Compile Include="controllers\PassagemController.cs" />
+    <Compile Include="controllers\SituacaoController.cs" />
+    <Compile Include="controllers\TipoVendaController.cs" />
+    <Compile Include="controllers\UsuarioController.cs" />
+    <Compile Include="controllers\VooController.cs" />
+    <Compile Include="controls\ModeloItemNoCarrinho.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="controls\novoTextBoxReadOnly .Designer.cs">
-      <DependentUpon>novoTextBoxReadOnly .cs</DependentUpon>
+    <Compile Include="controls\ModeloItemNoCarrinho.Designer.cs">
+      <DependentUpon>ModeloItemNoCarrinho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\novoTextBoxReadOnly  - Cópia .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\novoTextBoxReadOnly  - Cópia .Designer.cs">
+      <DependentUpon>novoTextBoxReadOnly  - Cópia .cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\novoTextBoxTextAlign .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\novoTextBoxTextAlign .Designer.cs">
+      <DependentUpon>novoTextBoxTextAlign .cs</DependentUpon>
     </Compile>
     <Compile Include="controls\PassagensAerea.cs">
       <SubType>UserControl</SubType>
@@ -120,9 +145,50 @@
     <Compile Include="controls\textBoxComImagem.Designer.cs">
       <DependentUpon>textBoxComImagem.cs</DependentUpon>
     </Compile>
-    <Compile Include="dao\CompanhiaAereaDAO.cs" />
+    <Compile Include="dao\AeroportoDAO.cs" />
+    <Compile Include="dao\AviaoDAO.cs" />
+    <Compile Include="dao\CarrinhoCompraDAO.cs" />
+    <Compile Include="dao\ClasseDAO.cs" />
+    <Compile Include="dao\CompAereaDAO.cs" />
+    <Compile Include="dao\EnderecoDAO.cs" />
     <Compile Include="dao\PaisDAO.cs" />
+    <Compile Include="dao\PassagemDAO.cs" />
+    <Compile Include="dao\SituacaoDAO.cs" />
+    <Compile Include="dao\TipoVendaDAO.cs" />
+    <Compile Include="dao\TituloDAO.cs" />
     <Compile Include="dao\UsuarioDAO.cs" />
+    <Compile Include="dao\VooDAO.cs" />
+    <Compile Include="dto\ConsultaAeroportoDTO.cs" />
+    <Compile Include="dto\ConsultaAviaoDTO.cs" />
+    <Compile Include="dto\ConsultaCarrinhoCompraDTO.cs" />
+    <Compile Include="dto\ConsultaClasseDTO.cs" />
+    <Compile Include="dto\ConsultaCompanhiaAereaDTO.cs" />
+    <Compile Include="dto\Comum\EntidadeDTO.cs" />
+    <Compile Include="dto\ConsultaEnderecoDTO.cs" />
+    <Compile Include="dto\ConsultaPaisDTO.cs" />
+    <Compile Include="dto\ConsultaPassagemDTO.cs" />
+    <Compile Include="dto\ConsultaSituacaoDTO.cs" />
+    <Compile Include="dto\ConsultaTipoVendaDTO.cs" />
+    <Compile Include="dto\ConsultaTituloDTO.cs" />
+    <Compile Include="dto\ConsultaUsuarioDTO.cs" />
+    <Compile Include="dto\ConsultaVooDTO.cs" />
+    <Compile Include="dto\ExcluirAeroportoDTO.cs" />
+    <Compile Include="dto\ExcluirAviaoDTO.cs" />
+    <Compile Include="dto\ExcluirCarrinhoCompraDTO.cs" />
+    <Compile Include="dto\ExcluirClasseDTO.cs" />
+    <Compile Include="dto\ExcluirCompanhiaAereaDTO.cs" />
+    <Compile Include="dto\ExcluirEnderecoDTO.cs" />
+    <Compile Include="dto\ExcluirPaisDTO.cs" />
+    <Compile Include="dto\ExcluirPassagemDTO.cs" />
+    <Compile Include="dto\ExcluirSituacaoDTO.cs" />
+    <Compile Include="dto\ExcluirTipoVendaDTO.cs" />
+    <Compile Include="dto\ExcluirTituloDTO.cs" />
+    <Compile Include="dto\ExcluirUsuarioDTO.cs" />
+    <Compile Include="dto\ExcluirVooDTO.cs" />
+    <Compile Include="models\CarrinhoCompra.cs" />
+    <Compile Include="uteis\Helpers.cs" />
+    <Compile Include="models\Comum\ValidacaoModel.cs" />
+    <Compile Include="models\Endereco.cs" />
     <Compile Include="models\Pais.cs" />
     <Compile Include="views\FrmCadastroAeroporto.cs">
       <SubType>Form</SubType>
@@ -148,11 +214,77 @@
     <Compile Include="views\FrmCadastroAviao.Designer.cs">
       <DependentUpon>FrmCadastroAviao.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmCadastroTipoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmCadastroTipoVenda.Designer.cs">
+      <DependentUpon>FrmCadastroTipoVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\FrmCadastroUsuario.Designer.cs">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmCarrinhoCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmCarrinhoCompra.Designer.cs">
+      <DependentUpon>FrmCarrinhoCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmConsultaAeroporto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaAeroporto.Designer.cs">
+      <DependentUpon>FrmConsultaAeroporto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmConsultaAviao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaAviao.Designer.cs">
+      <DependentUpon>FrmConsultaAviao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmConsultaClasse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaClasse.Designer.cs">
+      <DependentUpon>FrmConsultaClasse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmConsultaCompAerea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaCompAerea.Designer.cs">
+      <DependentUpon>FrmConsultaCompAerea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmConsultaPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaPais.Designer.cs">
+      <DependentUpon>FrmConsultaPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmConsultaPassagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaPassagem.Designer.cs">
+      <DependentUpon>FrmConsultaPassagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmConsultaSituacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaSituacao.Designer.cs">
+      <DependentUpon>FrmConsultaSituacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmConsultaTipoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaTipoVenda.Designer.cs">
+      <DependentUpon>FrmConsultaTipoVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmConsultaTitulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaTitulos.Designer.cs">
+      <DependentUpon>FrmConsultaTitulos.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FrmConsultaUsuario.cs">
       <SubType>Form</SubType>
@@ -160,11 +292,29 @@
     <Compile Include="views\FrmConsultaUsuario.Designer.cs">
       <DependentUpon>FrmConsultaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmConsultaVoo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaVoo.Designer.cs">
+      <DependentUpon>FrmConsultaVoo.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmExibirImagemPassagem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\FrmExibirImagemPassagem.Designer.cs">
       <DependentUpon>FrmExibirImagemPassagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmTelaAdministrativa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmTelaAdministrativa.Designer.cs">
+      <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmTelaInicialLogado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmTelaInicialLogado.Designer.cs">
+      <DependentUpon>FrmTelaInicialLogado.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FrmTelaLogin.cs">
       <SubType>Form</SubType>
@@ -189,12 +339,11 @@
     <Compile Include="models\Aeroporto.cs" />
     <Compile Include="models\Classe.cs" />
     <Compile Include="models\CompanhiaAerea.cs" />
-    <Compile Include="models\Entidade.cs" />
+    <Compile Include="models\Comum\Entidade.cs" />
     <Compile Include="models\Passagem.cs" />
     <Compile Include="models\Situacao.cs" />
     <Compile Include="models\TipoVenda.cs" />
     <Compile Include="models\Titulo.cs" />
-    <Compile Include="models\Valores.cs" />
     <Compile Include="models\Voo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -210,11 +359,11 @@
     <Compile Include="views\FrmCadastroSituacao.Designer.cs">
       <DependentUpon>FrmCadastroSituacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\FrmTelaInicial.cs">
+    <Compile Include="views\FrmTelaInicialSemLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\FrmTelaInicial.Designer.cs">
-      <DependentUpon>FrmTelaInicial.cs</DependentUpon>
+    <Compile Include="views\FrmTelaInicialSemLogin.Designer.cs">
+      <DependentUpon>FrmTelaInicialSemLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FrmCadastroVoo.cs">
       <SubType>Form</SubType>
@@ -222,8 +371,14 @@
     <Compile Include="views\FrmCadastroVoo.Designer.cs">
       <DependentUpon>FrmCadastroVoo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="controls\novoTextBoxReadOnly .resx">
-      <DependentUpon>novoTextBoxReadOnly .cs</DependentUpon>
+    <EmbeddedResource Include="controls\ModeloItemNoCarrinho.resx">
+      <DependentUpon>ModeloItemNoCarrinho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\novoTextBoxReadOnly  - Cópia .resx">
+      <DependentUpon>novoTextBoxReadOnly  - Cópia .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\novoTextBoxTextAlign .resx">
+      <DependentUpon>novoTextBoxTextAlign .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controls\PassagensAerea.resx">
       <DependentUpon>PassagensAerea.cs</DependentUpon>
@@ -243,14 +398,56 @@
     <EmbeddedResource Include="views\FrmCadastroAviao.resx">
       <DependentUpon>FrmCadastroAviao.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmCadastroTipoVenda.resx">
+      <DependentUpon>FrmCadastroTipoVenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\FrmCadastroUsuario.resx">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmCarrinhoCompra.resx">
+      <DependentUpon>FrmCarrinhoCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaAeroporto.resx">
+      <DependentUpon>FrmConsultaAeroporto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaAviao.resx">
+      <DependentUpon>FrmConsultaAviao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaClasse.resx">
+      <DependentUpon>FrmConsultaClasse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaCompAerea.resx">
+      <DependentUpon>FrmConsultaCompAerea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaPais.resx">
+      <DependentUpon>FrmConsultaPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaPassagem.resx">
+      <DependentUpon>FrmConsultaPassagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaSituacao.resx">
+      <DependentUpon>FrmConsultaSituacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaTipoVenda.resx">
+      <DependentUpon>FrmConsultaTipoVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaTitulos.resx">
+      <DependentUpon>FrmConsultaTitulos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmConsultaUsuario.resx">
       <DependentUpon>FrmConsultaUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaVoo.resx">
+      <DependentUpon>FrmConsultaVoo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\FrmExibirImagemPassagem.resx">
       <DependentUpon>FrmExibirImagemPassagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmTelaAdministrativa.resx">
+      <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmTelaInicialLogado.resx">
+      <DependentUpon>FrmTelaInicialLogado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmTelaLogin.resx">
       <DependentUpon>FrmTelaLogin.cs</DependentUpon>
@@ -277,8 +474,8 @@
     <EmbeddedResource Include="views\FrmCadastroSituacao.resx">
       <DependentUpon>FrmCadastroSituacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\FrmTelaInicial.resx">
-      <DependentUpon>FrmTelaInicial.cs</DependentUpon>
+    <EmbeddedResource Include="views\FrmTelaInicialSemLogin.resx">
+      <DependentUpon>FrmTelaInicialSemLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmCadastroVoo.resx">
       <DependentUpon>FrmCadastroVoo.cs</DependentUpon>
@@ -325,6 +522,7 @@
     <None Include="resources\Logo_Rika_Preto.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\marca-de-verificacao.png" />
     <None Include="resources\maldivas 2.jpg" />
     <None Include="resources\maldivas.jpg" />
     <None Include="resources\sinal-de-seta-para-baixo-para-navegar %281%29.png" />

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rika.models
+namespace Rika.dto
 {
-    public class Entidade
+    public class ExcluirSituacaoDTO : EntidadeDTO
     {
-        public int Id { get; set; }
     }
 }

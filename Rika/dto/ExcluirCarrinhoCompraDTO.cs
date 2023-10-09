@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rika.models
+namespace Rika.dto
 {
-    public class Valores : Entidade
+    public class ExcluirCarrinhoCompraDTO : EntidadeDTO
     {
-        public decimal Valor { get; set; }
     }
 }

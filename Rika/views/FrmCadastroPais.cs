@@ -1,4 +1,4 @@
-﻿using Rika.dao;
+﻿    using Rika.dao;
 using Rika.models;
 using System;
 using System.Collections.Generic;
@@ -36,8 +36,10 @@ namespace Rika.views
             {
                 bool cadastro = dao.EfetuarCadastroPais(pais);
 
-                if (cadastro) { } //Cadastro feito
+                if (cadastro) //Cadastro feito
+                {
                 
+                } 
             } 
 
         }
@@ -70,6 +72,31 @@ namespace Rika.views
 
         #endregion
 
+        #region Excluir país da tabela
+
+        public void ExcluirPais()
+        {
+            //Instanciar o model e atribuir os valores
+            Pais pais = new Pais();
+
+            PaisDAO dao = new PaisDAO();
+
+            bool exclusao = dao.ExcluirPais(pais);
+
+            if (exclusao) 
+            {
+
+            }   
+        }
+
+        #endregion
+
+        #region
+
+
+
+        #endregion
+
         #region Ações dos botões
         private void btnSalvar_Click(object sender, EventArgs e)
         {
@@ -77,6 +104,12 @@ namespace Rika.views
         }
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            if (txtIdPais.TextNew != "")
+            {
+                ExcluirPais();
+            }
+            else
+                MessageBox.Show("O campo Código não pode estar vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         private void btnSair_Click(object sender, EventArgs e)

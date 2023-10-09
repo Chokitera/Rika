@@ -43,7 +43,7 @@ namespace Rika.dao
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 pais.Id = reader.GetInt32(0);
-                MessageBox.Show("País " + pais.Id + " - " + pais.Nome + "(" + pais.Sigla + ")" + "cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("País " + pais.Id + " - " + pais.Nome + " (" + pais.Sigla + ") " + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -58,10 +58,33 @@ namespace Rika.dao
 
         #endregion
 
-        #region Método
+        #region Método para exclusão de país
+        public bool ExcluirPais(Pais pais)
+        {
+            try
+            {
+                string sql = @"delete from pais where idpais = @id;";
 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", pais.Id);
 
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
 
+                //Mensagem que aparou o registro
+                MessageBox.Show("O cadastro foi apagado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
         #endregion
     }
 }
