@@ -158,6 +158,7 @@
     <Compile Include="dao\UsuarioDAO.cs" />
     <Compile Include="dao\VooDAO.cs" />
     <Compile Include="dto\ConsultaCompanhiaDTO.cs" />
+    <Compile Include="dto\Comum\EntidadeDTO.cs" />
     <Compile Include="dto\ExcluirCompAereaDTO.cs" />
     <Compile Include="models\CarrinhoCompra.cs" />
     <Compile Include="models\Comum\Helpers.cs" />

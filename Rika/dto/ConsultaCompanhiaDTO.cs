@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Rika.dto
 {
-    public class ConsultaCompanhiaDTO
+    public class ConsultaCompanhiaDTO : EntidadeDTO
     {
-        [Required(ErrorMessage = "O campo Código não pode ser vazio!")]
-        [Range(0, int.MaxValue, ErrorMessage = "Entrada inválida, é permitido somente números no Código!")]
-        public int? Id { get; set; }
+
     }
 }
