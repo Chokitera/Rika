@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rika.dto
 {
-    internal class ExcluirAviaoDTO
+    public class ExcluirAviaoDTO : EntidadeDTO
     {
     }
 }
