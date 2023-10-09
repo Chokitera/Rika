@@ -128,7 +128,10 @@ namespace Rika.views
             passagem.Id = int.Parse(txtCodPassagem.Text);
             passagem.Nome_Voo.Id = int.Parse(txtVoo.Text);*/
         }
-
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void lblVoo_Click(object sender, EventArgs e)
         {
 
@@ -212,5 +215,7 @@ namespace Rika.views
             
         }
         #endregion
+
+        
     }
 }
