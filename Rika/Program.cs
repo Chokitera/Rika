@@ -8,7 +8,7 @@ using Rika.views;
 
 namespace Rika
 {
-    internal static class Program
+    internal static class Program 
     {
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
@@ -18,7 +18,7 @@ namespace Rika
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmCadastroCompAerea());
+            Application.Run(new FrmTelaPrincipal());
         }
     }
 }

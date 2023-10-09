@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroAeroporto));
             this.lblDataSaida = new System.Windows.Forms.Label();
             this.lblAeroDestino = new System.Windows.Forms.Label();
             this.lblAeroDecolagem = new System.Windows.Forms.Label();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.iconFechar = new System.Windows.Forms.PictureBox();
+            this.iconMinimizar = new System.Windows.Forms.PictureBox();
+            this.txtEndereco = new Rika.controls.novoTextBox();
             this.txtDescricao = new Rika.controls.novoTextBox();
             this.txtNome = new Rika.controls.novoTextBox();
             this.txtCodEndereco = new Rika.controls.novoTextBox();
@@ -40,10 +45,6 @@
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.iconFechar = new System.Windows.Forms.PictureBox();
-            this.iconMinimizar = new System.Windows.Forms.PictureBox();
-            this.txtEndereco = new Rika.controls.novoTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
@@ -100,6 +101,62 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.iconFechar);
+            this.panel2.Controls.Add(this.iconMinimizar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(533, 30);
+            this.panel2.TabIndex = 68;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // iconFechar
+            // 
+            this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconFechar.Image = global::Rika.Properties.Resources.x;
+            this.iconFechar.Location = new System.Drawing.Point(503, 6);
+            this.iconFechar.Name = "iconFechar";
+            this.iconFechar.Size = new System.Drawing.Size(20, 20);
+            this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconFechar.TabIndex = 28;
+            this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
+            // 
+            // iconMinimizar
+            // 
+            this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
+            this.iconMinimizar.Location = new System.Drawing.Point(477, 6);
+            this.iconMinimizar.Name = "iconMinimizar";
+            this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
+            this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconMinimizar.TabIndex = 29;
+            this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
+            // 
+            // txtEndereco
+            // 
+            this.txtEndereco.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEndereco.BorderColor = System.Drawing.Color.DimGray;
+            this.txtEndereco.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtEndereco.BorderSize = 1;
+            this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndereco.ForeColor = System.Drawing.Color.DimGray;
+            this.txtEndereco.Location = new System.Drawing.Point(252, 354);
+            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEndereco.Multiline = false;
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Padding = new System.Windows.Forms.Padding(7);
+            this.txtEndereco.PasswordChar = false;
+            this.txtEndereco.Size = new System.Drawing.Size(250, 31);
+            this.txtEndereco.TabIndex = 69;
+            this.txtEndereco.TextNew = "";
+            this.txtEndereco.UnderlinedStyle = false;
             // 
             // txtDescricao
             // 
@@ -195,6 +252,7 @@
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnExcluir
             // 
@@ -234,59 +292,6 @@
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalvar.UseVisualStyleBackColor = false;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.iconFechar);
-            this.panel2.Controls.Add(this.iconMinimizar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(533, 30);
-            this.panel2.TabIndex = 68;
-            // 
-            // iconFechar
-            // 
-            this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconFechar.Image = global::Rika.Properties.Resources.x;
-            this.iconFechar.Location = new System.Drawing.Point(503, 6);
-            this.iconFechar.Name = "iconFechar";
-            this.iconFechar.Size = new System.Drawing.Size(20, 20);
-            this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconFechar.TabIndex = 28;
-            this.iconFechar.TabStop = false;
-            // 
-            // iconMinimizar
-            // 
-            this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
-            this.iconMinimizar.Location = new System.Drawing.Point(477, 6);
-            this.iconMinimizar.Name = "iconMinimizar";
-            this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
-            this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconMinimizar.TabIndex = 29;
-            this.iconMinimizar.TabStop = false;
-            // 
-            // txtEndereco
-            // 
-            this.txtEndereco.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEndereco.BorderColor = System.Drawing.Color.DimGray;
-            this.txtEndereco.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtEndereco.BorderSize = 1;
-            this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.ForeColor = System.Drawing.Color.DimGray;
-            this.txtEndereco.Location = new System.Drawing.Point(252, 354);
-            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEndereco.Multiline = false;
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Padding = new System.Windows.Forms.Padding(7);
-            this.txtEndereco.PasswordChar = false;
-            this.txtEndereco.Size = new System.Drawing.Size(250, 31);
-            this.txtEndereco.TabIndex = 69;
-            this.txtEndereco.TextNew = "";
-            this.txtEndereco.UnderlinedStyle = false;
-            // 
             // FrmCadastroAeroporto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,8 +313,10 @@
             this.Controls.Add(this.label1lblCodigoPassagem);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroAeroporto";
             this.Text = "Aeroporto";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroAeroporto_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
