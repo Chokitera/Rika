@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroCompAerea));
             this.lblDataSaida = new System.Windows.Forms.Label();
             this.lblAeroDestino = new System.Windows.Forms.Label();
             this.lblAeroDecolagem = new System.Windows.Forms.Label();
@@ -109,6 +110,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(530, 30);
             this.panel2.TabIndex = 88;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // iconFechar
             // 
@@ -121,6 +123,7 @@
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 28;
             this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
             // 
             // iconMinimizar
             // 
@@ -133,6 +136,7 @@
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
             // txtInscricao
             // 
@@ -291,8 +295,10 @@
             this.Controls.Add(this.lblAeroDecolagem);
             this.Controls.Add(this.label1lblCodigoPassagem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroCompAerea";
             this.Text = "CompAerea";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroCompAerea_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();

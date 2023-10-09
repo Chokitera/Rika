@@ -196,6 +196,7 @@
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnExcluir
             // 
@@ -254,6 +255,7 @@
             this.pnlArrastarFormulario.Name = "pnlArrastarFormulario";
             this.pnlArrastarFormulario.Size = new System.Drawing.Size(556, 24);
             this.pnlArrastarFormulario.TabIndex = 90;
+            this.pnlArrastarFormulario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlArrastarFormulario_MouseDown);
             // 
             // iconFechar
             // 
@@ -266,6 +268,7 @@
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 30;
             this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
             // 
             // iconMinimizar
             // 
@@ -278,6 +281,7 @@
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 31;
             this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
             // txtNomeUsuario
             // 
@@ -323,6 +327,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmConsultaUsuario";
             this.Text = "FrmConsultaUsuarios";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmConsultaUsuario_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlArrastarFormulario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();

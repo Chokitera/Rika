@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnlConteudo = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
+            this.pnlConteudo = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -46,14 +46,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(800, 30);
             this.panel2.TabIndex = 71;
-            // 
-            // pnlConteudo
-            // 
-            this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlConteudo.Location = new System.Drawing.Point(0, 30);
-            this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(800, 420);
-            this.pnlConteudo.TabIndex = 72;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // iconFechar
             // 
@@ -66,6 +59,7 @@
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 28;
             this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
             // 
             // iconMinimizar
             // 
@@ -78,6 +72,16 @@
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
+            // 
+            // pnlConteudo
+            // 
+            this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlConteudo.Location = new System.Drawing.Point(0, 30);
+            this.pnlConteudo.Name = "pnlConteudo";
+            this.pnlConteudo.Size = new System.Drawing.Size(800, 420);
+            this.pnlConteudo.TabIndex = 72;
+            this.pnlConteudo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlConteudo_Paint);
             // 
             // FrmConsultaTipoVenda
             // 

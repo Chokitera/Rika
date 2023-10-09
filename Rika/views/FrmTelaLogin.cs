@@ -217,8 +217,8 @@ namespace Rika.views
                 ((FrmTelaPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmCadastroUsuario());
             }
         }
+
         #endregion
 
-        
     }
 }

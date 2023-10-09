@@ -38,6 +38,15 @@
             this.pnlArrastarFormulario = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAbrirPasta = new System.Windows.Forms.Button();
+            this.btnVisualizarImagem = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cmbSituacao = new Rika.controls.novosComboBox();
+            this.txtVoo = new Rika.controls.novoTextBoxReadOnly();
+            this.txtClasse = new Rika.controls.novoTextBoxReadOnly();
+            this.cmbTipoPassagem = new Rika.controls.novosComboBox();
+            this.txtImagem = new Rika.controls.novoTextBoxReadOnly();
             this.txtValor = new Rika.controls.novoTextBox();
             this.txtCodClasse = new Rika.controls.novoTextBox();
             this.txtCodVoo = new Rika.controls.novoTextBox();
@@ -45,15 +54,6 @@
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAbrirPasta = new System.Windows.Forms.Button();
-            this.btnVisualizarImagem = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtImagem = new Rika.controls.novoTextBoxReadOnly();
-            this.cmbTipoPassagem = new Rika.controls.novosComboBox();
-            this.txtClasse = new Rika.controls.novoTextBoxReadOnly();
-            this.txtVoo = new Rika.controls.novoTextBoxReadOnly();
-            this.cmbSituacao = new Rika.controls.novosComboBox();
             this.pnlArrastarFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -159,6 +159,150 @@
             this.iconMinimizar.TabStop = false;
             this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(621, 256);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 22);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Situação";
+            // 
+            // btnAbrirPasta
+            // 
+            this.btnAbrirPasta.BackgroundImage = global::Rika.Properties.Resources.pasta_128px;
+            this.btnAbrirPasta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAbrirPasta.FlatAppearance.BorderSize = 0;
+            this.btnAbrirPasta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirPasta.Location = new System.Drawing.Point(527, 369);
+            this.btnAbrirPasta.Name = "btnAbrirPasta";
+            this.btnAbrirPasta.Size = new System.Drawing.Size(30, 31);
+            this.btnAbrirPasta.TabIndex = 46;
+            this.btnAbrirPasta.UseVisualStyleBackColor = true;
+            this.btnAbrirPasta.Click += new System.EventHandler(this.btnAbrirPasta_Click);
+            // 
+            // btnVisualizarImagem
+            // 
+            this.btnVisualizarImagem.BackgroundImage = global::Rika.Properties.Resources.imagem_128px;
+            this.btnVisualizarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVisualizarImagem.FlatAppearance.BorderSize = 0;
+            this.btnVisualizarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisualizarImagem.Location = new System.Drawing.Point(492, 370);
+            this.btnVisualizarImagem.Name = "btnVisualizarImagem";
+            this.btnVisualizarImagem.Size = new System.Drawing.Size(30, 31);
+            this.btnVisualizarImagem.TabIndex = 45;
+            this.btnVisualizarImagem.UseVisualStyleBackColor = true;
+            this.btnVisualizarImagem.Click += new System.EventHandler(this.btnVisualizarImagem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
+            this.pictureBox1.Location = new System.Drawing.Point(469, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 166);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cmbSituacao
+            // 
+            this.cmbSituacao.BackColor = System.Drawing.Color.White;
+            this.cmbSituacao.BorderColor = System.Drawing.Color.DimGray;
+            this.cmbSituacao.BorderSize = 1;
+            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbSituacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbSituacao.ForeColor = System.Drawing.Color.DimGray;
+            this.cmbSituacao.IconColor = System.Drawing.Color.DimGray;
+            this.cmbSituacao.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cmbSituacao.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmbSituacao.Location = new System.Drawing.Point(715, 253);
+            this.cmbSituacao.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmbSituacao.Name = "cmbSituacao";
+            this.cmbSituacao.Padding = new System.Windows.Forms.Padding(1);
+            this.cmbSituacao.Size = new System.Drawing.Size(250, 30);
+            this.cmbSituacao.TabIndex = 89;
+            this.cmbSituacao.Texts = "";
+            // 
+            // txtVoo
+            // 
+            this.txtVoo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtVoo.BorderColor = System.Drawing.Color.DimGray;
+            this.txtVoo.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtVoo.BorderSize = 1;
+            this.txtVoo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVoo.ForeColor = System.Drawing.Color.DimGray;
+            this.txtVoo.Location = new System.Drawing.Point(813, 290);
+            this.txtVoo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtVoo.Multiline = false;
+            this.txtVoo.Name = "txtVoo";
+            this.txtVoo.Padding = new System.Windows.Forms.Padding(7);
+            this.txtVoo.PasswordChar = false;
+            this.txtVoo.ReadOnly = true;
+            this.txtVoo.Size = new System.Drawing.Size(250, 31);
+            this.txtVoo.TabIndex = 87;
+            this.txtVoo.TextNew = "";
+            this.txtVoo.UnderlinedStyle = false;
+            // 
+            // txtClasse
+            // 
+            this.txtClasse.BackColor = System.Drawing.SystemColors.Window;
+            this.txtClasse.BorderColor = System.Drawing.Color.DimGray;
+            this.txtClasse.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtClasse.BorderSize = 1;
+            this.txtClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClasse.ForeColor = System.Drawing.Color.DimGray;
+            this.txtClasse.Location = new System.Drawing.Point(308, 329);
+            this.txtClasse.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClasse.Multiline = false;
+            this.txtClasse.Name = "txtClasse";
+            this.txtClasse.Padding = new System.Windows.Forms.Padding(7);
+            this.txtClasse.PasswordChar = false;
+            this.txtClasse.ReadOnly = true;
+            this.txtClasse.Size = new System.Drawing.Size(250, 31);
+            this.txtClasse.TabIndex = 84;
+            this.txtClasse.TextNew = "";
+            this.txtClasse.UnderlinedStyle = false;
+            // 
+            // cmbTipoPassagem
+            // 
+            this.cmbTipoPassagem.BackColor = System.Drawing.Color.White;
+            this.cmbTipoPassagem.BorderColor = System.Drawing.Color.DimGray;
+            this.cmbTipoPassagem.BorderSize = 1;
+            this.cmbTipoPassagem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbTipoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbTipoPassagem.ForeColor = System.Drawing.Color.DimGray;
+            this.cmbTipoPassagem.IconColor = System.Drawing.Color.DimGray;
+            this.cmbTipoPassagem.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cmbTipoPassagem.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmbTipoPassagem.Location = new System.Drawing.Point(210, 290);
+            this.cmbTipoPassagem.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cmbTipoPassagem.Name = "cmbTipoPassagem";
+            this.cmbTipoPassagem.Padding = new System.Windows.Forms.Padding(1);
+            this.cmbTipoPassagem.Size = new System.Drawing.Size(250, 30);
+            this.cmbTipoPassagem.TabIndex = 83;
+            this.cmbTipoPassagem.Texts = "";
+            // 
+            // txtImagem
+            // 
+            this.txtImagem.BackColor = System.Drawing.SystemColors.Window;
+            this.txtImagem.BorderColor = System.Drawing.Color.DimGray;
+            this.txtImagem.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtImagem.BorderSize = 1;
+            this.txtImagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtImagem.ForeColor = System.Drawing.Color.DimGray;
+            this.txtImagem.Location = new System.Drawing.Point(210, 368);
+            this.txtImagem.Margin = new System.Windows.Forms.Padding(4);
+            this.txtImagem.Multiline = false;
+            this.txtImagem.Name = "txtImagem";
+            this.txtImagem.Padding = new System.Windows.Forms.Padding(7);
+            this.txtImagem.PasswordChar = false;
+            this.txtImagem.ReadOnly = true;
+            this.txtImagem.Size = new System.Drawing.Size(275, 31);
+            this.txtImagem.TabIndex = 47;
+            this.txtImagem.TextNew = "";
+            this.txtImagem.UnderlinedStyle = false;
+            // 
             // txtValor
             // 
             this.txtValor.BackColor = System.Drawing.SystemColors.Window;
@@ -253,6 +397,7 @@
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnExcluir
             // 
@@ -293,150 +438,6 @@
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(621, 256);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 22);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Situação";
-            // 
-            // btnAbrirPasta
-            // 
-            this.btnAbrirPasta.BackgroundImage = global::Rika.Properties.Resources.pasta_128px;
-            this.btnAbrirPasta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAbrirPasta.FlatAppearance.BorderSize = 0;
-            this.btnAbrirPasta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbrirPasta.Location = new System.Drawing.Point(527, 369);
-            this.btnAbrirPasta.Name = "btnAbrirPasta";
-            this.btnAbrirPasta.Size = new System.Drawing.Size(30, 31);
-            this.btnAbrirPasta.TabIndex = 46;
-            this.btnAbrirPasta.UseVisualStyleBackColor = true;
-            this.btnAbrirPasta.Click += new System.EventHandler(this.btnAbrirPasta_Click);
-            // 
-            // btnVisualizarImagem
-            // 
-            this.btnVisualizarImagem.BackgroundImage = global::Rika.Properties.Resources.imagem_128px;
-            this.btnVisualizarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVisualizarImagem.FlatAppearance.BorderSize = 0;
-            this.btnVisualizarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizarImagem.Location = new System.Drawing.Point(492, 370);
-            this.btnVisualizarImagem.Name = "btnVisualizarImagem";
-            this.btnVisualizarImagem.Size = new System.Drawing.Size(30, 31);
-            this.btnVisualizarImagem.TabIndex = 45;
-            this.btnVisualizarImagem.UseVisualStyleBackColor = true;
-            this.btnVisualizarImagem.Click += new System.EventHandler(this.btnVisualizarImagem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(469, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txtImagem
-            // 
-            this.txtImagem.BackColor = System.Drawing.SystemColors.Window;
-            this.txtImagem.BorderColor = System.Drawing.Color.DimGray;
-            this.txtImagem.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtImagem.BorderSize = 1;
-            this.txtImagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImagem.ForeColor = System.Drawing.Color.DimGray;
-            this.txtImagem.Location = new System.Drawing.Point(210, 368);
-            this.txtImagem.Margin = new System.Windows.Forms.Padding(4);
-            this.txtImagem.Multiline = false;
-            this.txtImagem.Name = "txtImagem";
-            this.txtImagem.Padding = new System.Windows.Forms.Padding(7);
-            this.txtImagem.PasswordChar = false;
-            this.txtImagem.ReadOnly = true;
-            this.txtImagem.Size = new System.Drawing.Size(275, 31);
-            this.txtImagem.TabIndex = 47;
-            this.txtImagem.TextNew = "";
-            this.txtImagem.UnderlinedStyle = false;
-            // 
-            // cmbTipoPassagem
-            // 
-            this.cmbTipoPassagem.BackColor = System.Drawing.Color.White;
-            this.cmbTipoPassagem.BorderColor = System.Drawing.Color.DimGray;
-            this.cmbTipoPassagem.BorderSize = 1;
-            this.cmbTipoPassagem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cmbTipoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmbTipoPassagem.ForeColor = System.Drawing.Color.DimGray;
-            this.cmbTipoPassagem.IconColor = System.Drawing.Color.DimGray;
-            this.cmbTipoPassagem.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cmbTipoPassagem.ListTextColor = System.Drawing.Color.DimGray;
-            this.cmbTipoPassagem.Location = new System.Drawing.Point(210, 290);
-            this.cmbTipoPassagem.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cmbTipoPassagem.Name = "cmbTipoPassagem";
-            this.cmbTipoPassagem.Padding = new System.Windows.Forms.Padding(1);
-            this.cmbTipoPassagem.Size = new System.Drawing.Size(250, 30);
-            this.cmbTipoPassagem.TabIndex = 83;
-            this.cmbTipoPassagem.Texts = "";
-            // 
-            // txtClasse
-            // 
-            this.txtClasse.BackColor = System.Drawing.SystemColors.Window;
-            this.txtClasse.BorderColor = System.Drawing.Color.DimGray;
-            this.txtClasse.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtClasse.BorderSize = 1;
-            this.txtClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClasse.ForeColor = System.Drawing.Color.DimGray;
-            this.txtClasse.Location = new System.Drawing.Point(308, 329);
-            this.txtClasse.Margin = new System.Windows.Forms.Padding(4);
-            this.txtClasse.Multiline = false;
-            this.txtClasse.Name = "txtClasse";
-            this.txtClasse.Padding = new System.Windows.Forms.Padding(7);
-            this.txtClasse.PasswordChar = false;
-            this.txtClasse.ReadOnly = true;
-            this.txtClasse.Size = new System.Drawing.Size(250, 31);
-            this.txtClasse.TabIndex = 84;
-            this.txtClasse.TextNew = "";
-            this.txtClasse.UnderlinedStyle = false;
-            // 
-            // txtVoo
-            // 
-            this.txtVoo.BackColor = System.Drawing.SystemColors.Window;
-            this.txtVoo.BorderColor = System.Drawing.Color.DimGray;
-            this.txtVoo.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtVoo.BorderSize = 1;
-            this.txtVoo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVoo.ForeColor = System.Drawing.Color.DimGray;
-            this.txtVoo.Location = new System.Drawing.Point(813, 290);
-            this.txtVoo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtVoo.Multiline = false;
-            this.txtVoo.Name = "txtVoo";
-            this.txtVoo.Padding = new System.Windows.Forms.Padding(7);
-            this.txtVoo.PasswordChar = false;
-            this.txtVoo.ReadOnly = true;
-            this.txtVoo.Size = new System.Drawing.Size(250, 31);
-            this.txtVoo.TabIndex = 87;
-            this.txtVoo.TextNew = "";
-            this.txtVoo.UnderlinedStyle = false;
-            // 
-            // cmbSituacao
-            // 
-            this.cmbSituacao.BackColor = System.Drawing.Color.White;
-            this.cmbSituacao.BorderColor = System.Drawing.Color.DimGray;
-            this.cmbSituacao.BorderSize = 1;
-            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cmbSituacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmbSituacao.ForeColor = System.Drawing.Color.DimGray;
-            this.cmbSituacao.IconColor = System.Drawing.Color.DimGray;
-            this.cmbSituacao.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cmbSituacao.ListTextColor = System.Drawing.Color.DimGray;
-            this.cmbSituacao.Location = new System.Drawing.Point(715, 253);
-            this.cmbSituacao.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cmbSituacao.Name = "cmbSituacao";
-            this.cmbSituacao.Padding = new System.Windows.Forms.Padding(1);
-            this.cmbSituacao.Size = new System.Drawing.Size(250, 30);
-            this.cmbSituacao.TabIndex = 89;
-            this.cmbSituacao.Texts = "";
             // 
             // FrmCadastroPassagem
             // 
