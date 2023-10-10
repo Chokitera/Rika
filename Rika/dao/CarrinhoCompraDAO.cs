@@ -86,5 +86,81 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para editar Carrinho de Compra
+        public bool EfetuarEdicao(CarrinhoCompra carrinhocompra)
+        {
+            try
+            {
+                string sql = @"update CARRINHOCOMPRA set idusuario=@idusuario, idpassagem=@idpassagem, dt_adicao=@dt_adicao
+                               where IDCARRINHO = @id;";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", carrinhocompra.Id);
+                executacmd.Parameters.AddWithValue("@idusuario", carrinhocompra.Usuario.Id);
+                executacmd.Parameters.AddWithValue("@idpassagem", carrinhocompra.passagem.Id);
+                executacmd.Parameters.AddWithValue("@dt_adicao", carrinhocompra.Dt_Adicao);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Carrinho " + carrinhocompra.Id + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
+        #region Método para consultar específico carrinho de compra
+        public CarrinhoCompra ConsultarCompanhiaPorId(CarrinhoCompra carrinhoCompra)
+        {
+            try
+            {
+                //Sql
+                string sql = @"select * from CARRIHNOCOMPRA where IDCARRINHO = @id;";
+
+                //Comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", carrinhoCompra.Id);
+
+                //Executa SQL
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                //Le os dados
+                if (!reader.Read())
+                {
+                    carrinhoCompra.Id = 0;
+                    MessageBox.Show("Carrinho não encontrado!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    carrinhoCompra.Usuario.Id = reader.GetInt32(1);
+                    carrinhoCompra.passagem.Id = reader.GetInt32(2);
+                    carrinhoCompra.Dt_Adicao = reader.GetDateTime(3);
+                }
+
+                conexao.Close();
+
+                return carrinhoCompra;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return carrinhoCompra;
+            }
+        }
+        #endregion
     }
 }

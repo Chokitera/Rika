@@ -84,5 +84,78 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para editar Tipo de Venda
+        public bool EfetuarEdicao(TipoVenda tipovenda)
+        {
+            try
+            {
+                string sql = @"update TIPO_VENDA set nome=@nome, descricao=@descricao
+                               where IDTIPO_VENDA = @id;";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", tipovenda.Id);
+                executacmd.Parameters.AddWithValue("@nome", tipovenda.Nome);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Tipo de Venda " + tipovenda.Id + " - " + tipovenda.Nome + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
+        #region Método para consultar específica Tipo de Venda
+        public TipoVenda ConsultarTipoVendaPorId(TipoVenda tipovenda)
+        {
+            try
+            {
+                //Sql
+                string sql = @"select * from TIPO_VENDA where IDTIPO_VENDA = @id;";
+
+                //Comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", tipovenda.Id);
+
+                //Executa SQL
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                //Le os dados
+                if (!reader.Read())
+                {
+                    tipovenda.Nome = "";
+                    MessageBox.Show("Tipo de venda não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    tipovenda.Nome = reader[1].ToString();
+                    tipovenda.Descricao = reader[2].ToString();
+                }
+
+                conexao.Close();
+
+                return tipovenda;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return tipovenda;
+            }
+        }
+        #endregion
     }
 }
