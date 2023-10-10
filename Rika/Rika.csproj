@@ -191,6 +191,7 @@
     <Compile Include="dto\ExcluirTituloDTO.cs" />
     <Compile Include="dto\ExcluirUsuarioDTO.cs" />
     <Compile Include="dto\ExcluirVooDTO.cs" />
+    <Compile Include="dto\LoginUsuarioDTO.cs" />
     <Compile Include="models\CarrinhoCompra.cs" />
     <Compile Include="uteis\Helpers.cs" />
     <Compile Include="models\Comum\ValidacaoModel.cs" />

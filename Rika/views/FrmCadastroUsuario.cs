@@ -1,4 +1,5 @@
-﻿using Rika.dao;
+﻿using Rika.controllers;
+using Rika.dao;
 using Rika.models;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,12 @@ namespace Rika.views
 {
     public partial class FrmCadastroUsuario : Form
     {
+        private UsuarioController usuarioController;
         public FrmCadastroUsuario()
         {
             InitializeComponent();
+
+            usuarioController = new UsuarioController();
         }
         private void txtNome_Load(object sender, EventArgs e)
         {
@@ -221,85 +225,30 @@ namespace Rika.views
             usuario.Senha = txtSenha.Text;
             usuario.ConfirmarSenha = txtConfirmarSenha.Text;
 
-            //Instancia do dao
-            UsuarioDAO dao = new UsuarioDAO();
-
-            if (VerificaCampoVazioCadastro(usuario))
+            if (VerificarSenhas(usuario))
             {
-                if (VerificarSenhas())
+                //Chamada do Controlador
+                bool isValid = usuarioController.SalvaUsuario(usuario);
+
+                if (isValid) // Se efetuou o cadastro
                 {
-                    bool cadastro = dao.EfetuarCadastro(usuario);
+                    var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                                    where frm is FrmTelaPrincipal
+                                    select frm;
 
-                    if (cadastro) // Se efetuou o cadastro
+                    if (qrForm != null && qrForm.Count() > 0)
                     {
-                        var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                                     where frm is FrmTelaPrincipal
-                                     select frm;
-
-                        if (qrForm != null && qrForm.Count() > 0)
-                        {
-                            ((FrmTelaPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmTelaLogin(usuario));
-                        }
+                        ((FrmTelaPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmTelaLogin(usuario));
                     }
                 }
-                else
-                {
-                    // Avisa que a senha não bate...
-                }
             }
         }
-        #endregion
-
-        #region Verificar campos vazios
-
-        public bool VerificaCampoVazioCadastro(Usuario usuario)
-        {
-            if (usuario.Nome == "" || usuario.Nome == "Nome")
-            {
-                MessageBox.Show("Necessário preencher o campo Nome!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNome.Focus();
-                return false;
-            }
-            if (usuario.SobreNome == "" || usuario.SobreNome == "Sobrenome")
-            {
-                MessageBox.Show("Necessário preencher o campo Sobrenome!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtSobrenome.Focus();
-                return false;
-            }
-            if (usuario.NomeUsuario == "" || usuario.NomeUsuario == "Usuário")
-            {
-                MessageBox.Show("Necessário preencher o campo Usuário!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtUsuario.Focus();
-                return false;
-            }
-            if (usuario.Senha == "" || usuario.Senha == "Senha")
-            {
-                MessageBox.Show("Necessário preencher o campo Senha!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtSenha.Focus();
-                return false;
-            }
-            if (usuario.ConfirmarSenha == "" || usuario.ConfirmarSenha == "Confirmar Senha")
-            {
-                MessageBox.Show("Necessário preencher o campo Confirmar Senha!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtConfirmarSenha.Focus();
-                return false;
-            }
-            return true;
-        }
-
         #endregion
 
         #region Verifica se confirmar senha é igual a senha
 
-        public bool VerificarSenhas()
+        public bool VerificarSenhas(Usuario usuario)
         {
-            Usuario usuario = new Usuario();
-
-            usuario.Senha = txtSenha.Text;
-            usuario.ConfirmarSenha = txtConfirmarSenha.Text;
-
-            UsuarioDAO dao = new UsuarioDAO();
-
             if(usuario.Senha.Length < 8) //Verifica se a senha possue 8 caracteres
             {
                 MessageBox.Show("A senha precisa ter no mínimo 8 caracteres! Tente novamente", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);

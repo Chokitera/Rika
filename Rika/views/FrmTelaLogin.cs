@@ -1,4 +1,5 @@
-﻿using Rika.dao;
+﻿using Rika.controllers;
+using Rika.dao;
 using Rika.models;
 using System;
 using System.Collections.Generic;
@@ -79,11 +80,14 @@ namespace Rika.views
         }
         #endregion
 
+        private UsuarioController usuarioController;
         public FrmTelaLogin(Usuario usuario)
         {
             InitializeComponent();
             if (usuario.NomeUsuario != null)
                 txtUsuario.TextNew = usuario.NomeUsuario;
+
+            usuarioController = new UsuarioController();
         }
         private void FrmLogin_Load(object sender, EventArgs e)
         {
@@ -167,70 +171,17 @@ namespace Rika.views
             usuario.NomeUsuario = txtUsuario.Text;
             usuario.Senha = txtSenha.Text;
 
-            //Instancia do dao
-            UsuarioDAO dao = new UsuarioDAO();
+            //Chamada do Controlador
+            bool isValid = usuarioController.RealizarLogin(usuario);
 
-            if (VerificaCampoVazioLogin(usuario))
+            //Verifica se efetuou o login
+            if (isValid)
             {
-                bool login = dao.EfetuarLogin(usuario);
-
-                if (login) //Se efetuou o login
-                {
-                    usuario = dao.ValidarTipoUsuario(usuario); //Verifica o Tipo de usuário. 0 = NORMAL, 1 = ADM
-
-                    if(usuario.Tipo == 0)
-                    {
-                        //Se ele é usuário normal
-                        FrmTelaInicialLogado tela = new FrmTelaInicialLogado();
-
-                        var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                                     where frm is FrmTelaPrincipal
-                                     select frm;
-
-                        if (qrForm != null && qrForm.Count() >= 0)
-                        {
-                            ((FrmTelaPrincipal)qrForm.First()).FecharFormulario(tela);
-                        }
-                    }
-                    else
-                    {
-                        //Se ele é ADM
-                        FrmTelaAdministrativa tela = new FrmTelaAdministrativa();
-
-                        var qrForm = from frm in Application.OpenForms.Cast<Form>()
-                                     where frm is FrmTelaPrincipal
-                                     select frm;
-
-                        if (qrForm != null && qrForm.Count() >= 0)
-                        {
-                            ((FrmTelaPrincipal)qrForm.First()).FecharFormulario(tela);
-                        }
-                    }
-                }
-                else
-                    txtSenha.Focus();
+                //Verifica o Tipo de usuário. 0 = NORMAL, 1 = ADM e chama a sua tela
+                usuarioController.ValidarTipoUsuario(usuario); 
             }
-        }
-        #endregion
-
-        #region Método para verificar se existe campo não preenchido no login
-        public bool VerificaCampoVazioLogin(Usuario usuario)
-        {
-            if (usuario.NomeUsuario == null || usuario.NomeUsuario == "Usuário")
-            {
-                MessageBox.Show("Necessário preencher o campo Usuário!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtUsuario.Focus();
-                return false;
-            }
-
-            if (usuario.Senha == null || usuario.Senha == "Senha")
-            {
-                MessageBox.Show("Necessário preencher o campo Senha!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
                 txtSenha.Focus();
-                return false;
-            }
-
-            return true; //Se não caiu em nenhum if
         }
         #endregion
 
@@ -248,7 +199,6 @@ namespace Rika.views
         }
 
         #endregion
-
 
         #region Entrar sem Login
         private void lblContinuarSemLogin_Click(object sender, EventArgs e)

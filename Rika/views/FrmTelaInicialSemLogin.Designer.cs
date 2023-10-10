@@ -98,7 +98,7 @@
             this.pnlCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCabecalho.Location = new System.Drawing.Point(0, 0);
             this.pnlCabecalho.Name = "pnlCabecalho";
-            this.pnlCabecalho.Size = new System.Drawing.Size(1387, 92);
+            this.pnlCabecalho.Size = new System.Drawing.Size(1338, 92);
             this.pnlCabecalho.TabIndex = 1;
             this.pnlCabecalho.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlCabecalho_MouseDown);
             // 
@@ -107,7 +107,7 @@
             this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
-            this.iconMinimizar.Location = new System.Drawing.Point(1327, 6);
+            this.iconMinimizar.Location = new System.Drawing.Point(1278, 6);
             this.iconMinimizar.Name = "iconMinimizar";
             this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,7 +120,7 @@
             this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconFechar.Image = global::Rika.Properties.Resources.x;
-            this.iconFechar.Location = new System.Drawing.Point(1353, 6);
+            this.iconFechar.Location = new System.Drawing.Point(1304, 6);
             this.iconFechar.Name = "iconFechar";
             this.iconFechar.Size = new System.Drawing.Size(20, 20);
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -312,7 +312,7 @@
             this.pnlEspaco2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlEspaco2.Location = new System.Drawing.Point(0, 1376);
             this.pnlEspaco2.Name = "pnlEspaco2";
-            this.pnlEspaco2.Size = new System.Drawing.Size(1387, 55);
+            this.pnlEspaco2.Size = new System.Drawing.Size(1338, 55);
             this.pnlEspaco2.TabIndex = 53;
             // 
             // pnlInformacoes
@@ -336,7 +336,7 @@
             this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlInformacoes.Location = new System.Drawing.Point(0, 1431);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(1387, 304);
+            this.pnlInformacoes.Size = new System.Drawing.Size(1338, 304);
             this.pnlInformacoes.TabIndex = 52;
             // 
             // label18
@@ -520,7 +520,7 @@
             this.pnlEspaco.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlEspaco.Location = new System.Drawing.Point(0, 1735);
             this.pnlEspaco.Name = "pnlEspaco";
-            this.pnlEspaco.Size = new System.Drawing.Size(1387, 55);
+            this.pnlEspaco.Size = new System.Drawing.Size(1338, 55);
             this.pnlEspaco.TabIndex = 51;
             // 
             // panel1
@@ -530,7 +530,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 1790);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1387, 75);
+            this.panel1.Size = new System.Drawing.Size(1338, 75);
             this.panel1.TabIndex = 50;
             // 
             // lblCopyrigth
@@ -596,7 +596,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1404, 704);
+            this.ClientSize = new System.Drawing.Size(1355, 704);
             this.Controls.Add(this.pnlEspaco2);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlEspaco);

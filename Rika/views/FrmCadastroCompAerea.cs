@@ -17,13 +17,13 @@ namespace Rika.views
 {
     public partial class FrmCadastroCompAerea : Form
     {
-        private CompAereaController CompAereaController; //Controlador
+        private CompAereaController compAereaController; //Controlador
         public FrmCadastroCompAerea()
         {
             InitializeComponent();
             txtCodigo.Focus();
 
-            CompAereaController = new CompAereaController();
+            compAereaController = new CompAereaController();
         }
         #region Ajustes da Borda
         //Campos para alterar a borda
@@ -116,7 +116,7 @@ namespace Rika.views
             companhiaAerea.Inscricao = txtInscricao.Text;
 
             //Chamada do Controlador
-            bool isValid = CompAereaController.SalvaCompanhia(companhiaAerea);
+            bool isValid = compAereaController.SalvaCompanhia(companhiaAerea);
 
             //Se realizou o processo limpa a tela
             if (isValid)
@@ -138,7 +138,7 @@ namespace Rika.views
                 };
 
                 //Chamada do Controlador
-                bool isValid = CompAereaController.ExcluirCompanhia(companhiaAerea.Id);
+                bool isValid = compAereaController.ExcluirCompanhia(companhiaAerea.Id);
 
                 //Se realizou o processo limpa a tela
                 if (isValid)
@@ -178,7 +178,7 @@ namespace Rika.views
                 };
 
                 //Consulta
-                companhiaAerea = CompAereaController.ConsultaCompanhiaPorId(companhiaAerea.Id);
+                companhiaAerea = compAereaController.ConsultaCompanhiaPorId(companhiaAerea.Id);
 
                 //Atribuição da consulta
                 if (companhiaAerea.Nome != "")
