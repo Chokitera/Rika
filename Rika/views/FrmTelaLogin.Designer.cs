@@ -152,10 +152,10 @@
             this.txtSenha.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.txtSenha.ForeColor = System.Drawing.Color.DimGray;
             this.txtSenha.Location = new System.Drawing.Point(47, 289);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Multiline = false;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSenha.Padding = new System.Windows.Forms.Padding(7);
             this.txtSenha.PasswordChar = true;
             this.txtSenha.Size = new System.Drawing.Size(325, 38);
             this.txtSenha.TabIndex = 41;
@@ -174,10 +174,10 @@
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
             this.txtUsuario.Location = new System.Drawing.Point(47, 241);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Multiline = false;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtUsuario.Padding = new System.Windows.Forms.Padding(7);
             this.txtUsuario.PasswordChar = false;
             this.txtUsuario.Size = new System.Drawing.Size(325, 38);
             this.txtUsuario.TabIndex = 40;
@@ -196,10 +196,10 @@
             this.txtSenha2.Font = new System.Drawing.Font("Segoe UI", 12.75F);
             this.txtSenha2.ForeColor = System.Drawing.Color.DimGray;
             this.txtSenha2.Location = new System.Drawing.Point(47, 289);
-            this.txtSenha2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSenha2.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha2.Multiline = false;
             this.txtSenha2.Name = "txtSenha2";
-            this.txtSenha2.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtSenha2.Padding = new System.Windows.Forms.Padding(7);
             this.txtSenha2.PasswordChar = false;
             this.txtSenha2.Size = new System.Drawing.Size(325, 38);
             this.txtSenha2.TabIndex = 45;
@@ -212,8 +212,9 @@
             // lblContinuarSemLogin
             // 
             this.lblContinuarSemLogin.AutoSize = true;
+            this.lblContinuarSemLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblContinuarSemLogin.ForeColor = System.Drawing.Color.DimGray;
-            this.lblContinuarSemLogin.Location = new System.Drawing.Point(161, 490);
+            this.lblContinuarSemLogin.Location = new System.Drawing.Point(161, 491);
             this.lblContinuarSemLogin.Name = "lblContinuarSemLogin";
             this.lblContinuarSemLogin.Size = new System.Drawing.Size(99, 13);
             this.lblContinuarSemLogin.TabIndex = 46;

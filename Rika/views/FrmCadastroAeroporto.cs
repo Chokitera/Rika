@@ -17,9 +17,12 @@ namespace Rika.views
 {
     public partial class FrmCadastroAeroporto : Form
     {
+        private AeroportoController aeroportoController;
         public FrmCadastroAeroporto()
         {
             InitializeComponent();
+
+            aeroportoController = new AeroportoController();
         }
 
         #region Ajustes da Borda
@@ -126,7 +129,7 @@ namespace Rika.views
             aeroporto.endereco.Id = int.Parse(txtCodEndereco.Text);
 
             //Chamada do Controlador
-            bool isValid = AeroportoController.SalvaAeroporto(aeroporto);
+            bool isValid = aeroportoController.SalvaAeroporto(aeroporto);
 
             //Se realizou o processo limpa a tela
             if (isValid)
@@ -148,7 +151,7 @@ namespace Rika.views
                 };
 
                 //Chamada do Controlador
-                bool isValid = AeroportoController.ExcluirAeroporto(aeroporto.Id);
+                bool isValid = aeroportoController.ExcluirAeroporto(aeroporto.Id);
 
                 //Se realizou o processo limpa a tela
                 if (isValid)
@@ -175,7 +178,7 @@ namespace Rika.views
                 };
 
                 //Consulta
-                aeroporto = AeroportoController.ConsultaAeroportoPorId(aeroporto.Id);
+                aeroporto = aeroportoController.ConsultaAeroportoPorId(aeroporto.Id);
 
                 //Atribuição da consulta
                 if (aeroporto.Nome != "")

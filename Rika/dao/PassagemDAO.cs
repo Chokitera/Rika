@@ -128,7 +128,7 @@ namespace Rika.dao
         #endregion
 
         #region Método para consultar específica Passagem
-        public Passagem ConsultarCompanhiaPorId(Passagem passagem)
+        public Passagem ConsultarPassagemPorId(Passagem passagem)
         {
             try
             {

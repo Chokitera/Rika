@@ -85,7 +85,6 @@
             this.txtNome.TabIndex = 65;
             this.txtNome.TextNew = "";
             this.txtNome.UnderlinedStyle = false;
-            this.txtNome.Paint += new System.Windows.Forms.PaintEventHandler(this.txtNome_Paint);
             // 
             // txtCodClasse
             // 
@@ -207,7 +206,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(517, 30);
             this.panel2.TabIndex = 71;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // iconFechar
             // 
@@ -220,7 +218,6 @@
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 28;
             this.iconFechar.TabStop = false;
-            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
             // 
             // iconMinimizar
             // 
@@ -233,7 +230,6 @@
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
-            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
             // pictureBox1
             // 

@@ -121,7 +121,7 @@ namespace Rika.dao
         #endregion
 
         #region Método para consultar específico carrinho de compra
-        public CarrinhoCompra ConsultarCompanhiaPorId(CarrinhoCompra carrinhoCompra)
+        public CarrinhoCompra ConsultarCarrinhoCompraPorId(CarrinhoCompra carrinhoCompra)
         {
             try
             {

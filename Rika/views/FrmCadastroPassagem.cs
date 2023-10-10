@@ -21,9 +21,12 @@ namespace Rika.views
     {
         private string caminhoOriginal = ""; //Utilizado na Imagem da Passagem
         private string caminhoNovo = ""; //Utilizado na Imagem da Passagem
+        private PassagemController passagemController;
         public FrmCadastroPassagem()
         {
             InitializeComponent();
+
+            passagemController = new PassagemController();
         }
 
         #region Ajustes da Borda
@@ -130,7 +133,7 @@ namespace Rika.views
                 };
 
                 //Chamada do Controlador
-                bool isValid = PassagemController.ExcluirPassagem(passagem.Id);
+                bool isValid = passagemController.Excluirpassagem(passagem.Id);
 
                 //Se realizou o processo limpa a tela
                 if (isValid)
@@ -157,7 +160,7 @@ namespace Rika.views
             passagem.Valor = int.Parse(txtValor.Text);
 
             //Chamada do Controlador
-            bool isValid = PassagemController.SalvaPassagem(passagem);
+            bool isValid = passagemController.Salvapassagem(passagem);
 
             //Se realizou o processo limpa a tela
             if (isValid)
@@ -188,7 +191,7 @@ namespace Rika.views
                 };
 
                 //Consulta
-                passagem = PassagemController.ConsultaPassagemPorId(passagem.Id);
+                passagem = passagemController.ConsultapassagemPorId(passagem.Id);
 
                 //Atribuição da consulta
                 if (passagem.Direto_Escala != "")

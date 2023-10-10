@@ -17,9 +17,12 @@ namespace Rika.views
 {
     public partial class FrmCadastroVoo : Form
     {
+        private VooController vooController;
         public FrmCadastroVoo()
         {
             InitializeComponent();
+
+            vooController = new VooController();
         }
 
         #region Ajustes da Borda
@@ -121,7 +124,7 @@ namespace Rika.views
             voo.aviao.Id = int.Parse(txtCodAviao.Text);
 
             //Chamada do Controlador
-            bool isValid = VooController.SalvaVoo(voo);
+            bool isValid = vooController.Salvavoo(voo);
 
             //Se realizou o processo limpa a tela
             if (isValid)
@@ -144,7 +147,7 @@ namespace Rika.views
                 };
 
                 //Chamada do Controlador
-                bool isValid = VooController.ExcluirVoo(voo.Id);
+                bool isValid = vooController.Excluirvoo(voo.Id);
 
                 //Se realizou o processo limpa a tela
                 if (isValid)
@@ -188,10 +191,10 @@ namespace Rika.views
                 };
 
                 //Consulta
-                voo = VooController.ConsultaVooPorId(voo.Id);
+                voo = vooController.ConsultavooPorId(voo.Id);
 
                 //Atribuição da consulta
-                if (voo.Decolagem != "")
+                if (voo.Decolagem != 0)
                 {
                     txtCodVoo.Text = voo.Id.ToString();
                     txtCodAeroportoDecolagem.Text = voo.Decolagem.ToString();

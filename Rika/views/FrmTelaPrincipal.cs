@@ -169,6 +169,16 @@ namespace Rika
         }
         #endregion
 
+        #region Método para fechar o Formulário
+        public void FecharFormulario(object Formulario)
+        {
+            Form form = Formulario as Form;
+            form.Show();
+
+            this.Visible = false;
+        }
+        #endregion
+
         private void panelConteudo_Paint(object sender, PaintEventArgs e)
         {
 

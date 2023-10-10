@@ -17,9 +17,12 @@ namespace Rika.views
 {
     public partial class FrmCadastroSituacao : Form
     {
+        private SituacaoController situacaoController;
         public FrmCadastroSituacao()
         {
             InitializeComponent();
+
+            situacaoController = new SituacaoController();
         }
 
         #region Ajustes da Borda
@@ -130,7 +133,7 @@ namespace Rika.views
                 };
 
                 //Chamada do Controlador
-                bool isValid = SituacaoController.ExcluirSituacao(situacao.Id);
+                bool isValid = situacaoController.Excluirsituacao(situacao.Id);
 
                 //Se realizou o processo limpa a tela
                 if (isValid)
@@ -154,7 +157,7 @@ namespace Rika.views
             situacao.Descricao = txtDescricao.Text;
 
             //Chamada do Controlador
-            bool isValid = SituacaoController.SalvaSituacao(situacao);
+            bool isValid = situacaoController.Salvasituacao(situacao);
 
             //Se realizou o processo limpa a tela
             if (isValid)
@@ -177,7 +180,7 @@ namespace Rika.views
                 };
 
                 //Consulta
-                situacao = SituacaoController.ConsultaSituacaoPorId(situacao.Id);
+                situacao = situacaoController.ConsultasituacaoPorId(situacao.Id);
 
                 //Atribuição da consulta
                 if (situacao.Nome != "")

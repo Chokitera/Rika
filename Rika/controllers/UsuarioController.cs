@@ -38,7 +38,7 @@ namespace Rika.controllers
                 }
                 else
                 {
-                    usuarioDAO.EfetuarEdicao(usuario);
+                    //usuarioDAO.EfetuarEdicao(usuario);
                 }
 
                 return true; //Se Ok retorna verdadeiro
@@ -99,7 +99,7 @@ namespace Rika.controllers
                 usuario.Id = dto.Id;
 
                 //Executa o processo
-                usuario = usuarioDAO.ConsultarUsuarioPorId(usuario);
+                //usuario = usuarioDAO.ConsultarUsuarioPorId(usuario);
 
                 return usuario;
             }

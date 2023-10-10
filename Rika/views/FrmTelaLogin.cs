@@ -226,8 +226,17 @@ namespace Rika.views
         {
             FrmTelaInicialSemLogin tela = new FrmTelaInicialSemLogin();
 
-            tela.Show();
-            this.Close();
+            //tela.Show();
+            //Close();
+
+            var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                         where frm is FrmTelaPrincipal
+                         select frm;
+
+            if (qrForm != null && qrForm.Count() >= 0)
+            {
+                ((FrmTelaPrincipal)qrForm.First()).FecharFormulario(tela);
+            }
         }
         #endregion
     }

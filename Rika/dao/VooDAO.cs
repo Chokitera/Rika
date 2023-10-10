@@ -133,7 +133,7 @@ namespace Rika.dao
         #endregion
 
         #region Método para consultar específica voo 
-        public Voo ConsultarCompanhiaPorId(Voo voo)
+        public Voo ConsultarVooPorId(Voo voo)
         {
             try
             {

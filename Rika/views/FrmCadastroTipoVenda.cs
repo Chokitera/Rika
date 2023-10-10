@@ -17,9 +17,12 @@ namespace Rika.views
 {
     public partial class FrmCadastroTipoVenda : Form
     {
+        private TipoVendaController tipoVendaController;
         public FrmCadastroTipoVenda()
         {
             InitializeComponent();
+
+            tipoVendaController = new TipoVendaController();
         }
 
         #region Cabeçalho / funções
@@ -129,7 +132,7 @@ namespace Rika.views
             tipovenda.Descricao = txtDescricao.Text;
 
             //Chamada do Controlador
-            bool isValid = TipoVendaController.SalvaTipoVenda(tipovenda);
+            bool isValid = tipoVendaController.SalvatipoVenda(tipovenda);
 
             //Se realizou o processo limpa a tela
             if (isValid)
@@ -151,7 +154,7 @@ namespace Rika.views
                 };
 
                 //Chamada do Controlador
-                bool isValid = TipoVendaController.ExcluirTipoVenda(tipovenda.Id);
+                bool isValid = tipoVendaController.ExcluirtipoVenda(tipovenda.Id);
 
                 //Se realizou o processo limpa a tela
                 if (isValid)
@@ -177,7 +180,7 @@ namespace Rika.views
                 };
 
                 //Consulta
-                tipovenda = TipoVendaController.ConsultaTipoVendaPorId(tipovenda.Id);
+                tipovenda = tipoVendaController.ConsultatipoVendaPorId(tipovenda.Id);
 
                 //Atribuição da consulta
                 if (tipovenda.Nome != "")
@@ -197,7 +200,3 @@ namespace Rika.views
 
     }
 }
-
-
-
-// borda redonda

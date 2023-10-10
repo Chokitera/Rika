@@ -18,9 +18,12 @@ namespace Rika.views
 {
     public partial class FrmCadastroAviao : Form
     {
+        private AviaoController aviaoController;
         public FrmCadastroAviao()
         {
             InitializeComponent();
+
+            aviaoController = new AviaoController();
         }
         #region Ajustes da Borda
         //Campos para alterar a borda
@@ -114,7 +117,7 @@ namespace Rika.views
             aviao.Qtd_Acento = int.Parse(txtQtdAcentos.Text);
 
             //Chamada do Controlador
-            bool isValid = AviaoController.SalvaAviao(aviao);
+            bool isValid = aviaoController.Salvaaviao(aviao);
 
             //Se realizou o processo limpa a tela
             if (isValid)
@@ -136,7 +139,7 @@ namespace Rika.views
                 };
 
                 //Chamada do Controlador
-                bool isValid = AviaoController.ExcluirAviao(aviao.Id);
+                bool isValid = aviaoController.Excluiraviao(aviao.Id);
 
                 //Se realizou o processo limpa a tela
                 if (isValid)
@@ -175,7 +178,7 @@ namespace Rika.views
                 };
 
                 //Consulta
-                aviao = AviaoController.ConsultaAviaoPorId(aviao.Id);
+                aviao = aviaoController.ConsultaAviaoPorId(aviao.Id);
 
                 //Atribuição da consulta
                 if (aviao.Modelo != "")
