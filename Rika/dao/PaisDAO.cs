@@ -86,5 +86,79 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para editar pais
+        public bool EfetuarEdicao(Pais pais)
+        {
+            try
+            {
+                string sql = @"update pais set nome=@nome, sigla=@sigla
+                               where IDpais = @id;";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", pais.Id);
+                executacmd.Parameters.AddWithValue("@nome", pais.Nome);
+                executacmd.Parameters.AddWithValue("@sigla", pais.Sigla);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("País " + pais.Id + " - " + pais.Nome + " atualizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
+        #region Método para consultar específica pais
+        public Pais ConsultarPaisPorId(Pais pais)
+        {
+            try
+            {
+                //Sql
+                string sql = @"select * from pais where idpais = @id;";
+
+                //Comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", pais.Id);
+
+                //Executa SQL
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                //Le os dados
+                if (!reader.Read())
+                {
+                    pais.Nome = "";
+                    MessageBox.Show("País não encontrado!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    pais.Nome = reader[1].ToString();
+                    pais.Sigla = reader[2].ToString();
+                }
+
+                conexao.Close();
+
+                return pais;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return pais;
+            }
+        }
+        #endregion
     }
 }

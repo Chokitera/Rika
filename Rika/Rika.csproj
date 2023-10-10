@@ -139,6 +139,12 @@
     <Compile Include="controls\PassagensAerea.Designer.cs">
       <DependentUpon>PassagensAerea.cs</DependentUpon>
     </Compile>
+    <Compile Include="controls\textBoxComImagemDireita.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\textBoxComImagemDireita.Designer.cs">
+      <DependentUpon>textBoxComImagemDireita.cs</DependentUpon>
+    </Compile>
     <Compile Include="controls\textBoxComImagem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -382,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controls\PassagensAerea.resx">
       <DependentUpon>PassagensAerea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\textBoxComImagemDireita.resx">
+      <DependentUpon>textBoxComImagemDireita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controls\textBoxComImagem.resx">
       <DependentUpon>textBoxComImagem.cs</DependentUpon>

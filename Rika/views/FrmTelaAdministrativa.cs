@@ -16,5 +16,11 @@ namespace Rika.views
         {
             InitializeComponent();
         }
+
+        private void btnCadastroProduto_Click(object sender, EventArgs e)
+        {
+            FrmCadastroPassagem tela = new FrmCadastroPassagem();
+            tela.ShowDialog();
+        }
     }
 }

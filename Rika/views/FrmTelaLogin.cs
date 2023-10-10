@@ -217,8 +217,18 @@ namespace Rika.views
                 ((FrmTelaPrincipal)qrForm.First()).ColocarFormNoPainel(new FrmCadastroUsuario());
             }
         }
+
         #endregion
 
-        
+
+        #region Entrar sem Login
+        private void lblContinuarSemLogin_Click(object sender, EventArgs e)
+        {
+            FrmTelaInicialSemLogin tela = new FrmTelaInicialSemLogin();
+
+            tela.Show();
+            this.Close();
+        }
+        #endregion
     }
 }

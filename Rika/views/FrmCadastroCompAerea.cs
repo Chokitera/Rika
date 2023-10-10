@@ -82,7 +82,7 @@ namespace Rika.views
         #region Evento Código Leave
         private void txtCodigo_Leave(object sender, EventArgs e)
         {
-            if(txtCodigo.Text != "")
+            if (txtCodigo.Text != "")
             {
                 //Instancia do model
                 CompanhiaAerea companhiaAerea = new CompanhiaAerea
@@ -108,6 +108,8 @@ namespace Rika.views
                     txtCodigo.Focus();
                 }
             }
+            else
+                new Helpers().LimparTela(this);
         }
         #endregion
     }

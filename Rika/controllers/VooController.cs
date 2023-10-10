@@ -1,10 +1,12 @@
 ﻿using Rika.dao;
+using Rika.dto;
 using Rika.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Rika.controllers
 {
@@ -17,5 +19,103 @@ namespace Rika.controllers
             voo = new Voo();
             vooDAO = new VooDAO();
         }
+
+        #region Salvar voo
+        public bool Salvavoo(Voo model)
+        {
+            try
+            {
+                //Atribuição da entrada
+                voo = model;
+
+                //Verifica se as informações estão preenchidas e OK
+                new models.Comum.ValidacaoModel().Validacao(voo);
+
+                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
+                if (voo.Id == 0)
+                {
+                    vooDAO.EfetuarCadastro(voo);
+                }
+                else
+                {
+                    vooDAO.EfetuarEdicao(voo);
+                }
+
+                return true; //Se Ok retorna verdadeiro
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false; //Se deu ruim retorna falso
+            }
+        }
+        #endregion
+
+        #region Excluir voo
+        public bool Excluirvoo(int? id)
+        {
+            try
+            {
+                //Atribuição da entrada no DTO
+                ExcluirVooDTO dto = new ExcluirVooDTO()
+                {
+                    Id = id
+                };
+
+                //Verifica se as informações estão preenchidas e OK
+                new models.Comum.ValidacaoModel().Validacao(dto);
+
+                //Atribuição do DTO no DAO
+                voo.Id = dto.Id;
+
+                //Executa o processo
+                vooDAO.ExcluirVoo(voo);
+
+                return true; //Se Ok retorna verdadeiro
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false; //Se deu ruim retorna falso
+            }
+        }
+        #endregion
+
+        #region Consulta voo por Id
+        public Voo ConsultavooPorId(int? id)
+        {
+            try
+            {
+                //Atribuição da entrada no DTO
+                ConsultaVooDTO dto = new ConsultaVooDTO()
+                {
+                    Id = id
+                };
+
+                //Verifica se as informações estão preenchidas e OK
+                new models.Comum.ValidacaoModel().Validacao(dto);
+
+                //Atribuição do DTO no DAO
+                voo.Id = dto.Id;
+
+                //Executa o processo
+                voo = vooDAO.ConsultarVooPorId(voo);
+
+                return voo;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return voo; //Se deu ruim retorna falso
+            }
+        }
+        #endregion
+
+        #region Pegar informações da voo
+        public Voo GetInfovoo()
+        {
+            return voo;
+        }
+        #endregion
     }
 }

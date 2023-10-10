@@ -1,10 +1,12 @@
 ﻿using Rika.dao;
+using Rika.dto;
 using Rika.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Rika.controllers
 {
@@ -17,5 +19,103 @@ namespace Rika.controllers
             classe = new Classe();
             classeDAO = new ClasseDAO();
         }
+
+        #region Salvar classe
+        public bool SalvaClasse(Classe model)
+        {
+            try
+            {
+                //Atribuição da entrada
+                classe = model;
+
+                //Verifica se as informações estão preenchidas e OK
+                new models.Comum.ValidacaoModel().Validacao(classe);
+
+                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
+                if (classe.Id == 0)
+                {
+                    classeDAO.EfetuarCadastro(classe);
+                }
+                else
+                {
+                    classeDAO.EfetuarEdicao(classe);
+                }
+
+                return true; //Se Ok retorna verdadeiro
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false; //Se deu ruim retorna falso
+            }
+        }
+        #endregion
+
+        #region Excluir classe
+        public bool ExcluirClasse(int? id)
+        {
+            try
+            {
+                //Atribuição da entrada no DTO
+                ExcluirClasseDTO dto = new ExcluirClasseDTO()
+                {
+                    Id = id
+                };
+
+                //Verifica se as informações estão preenchidas e OK
+                new models.Comum.ValidacaoModel().Validacao(dto);
+
+                //Atribuição do DTO no DAO
+                classe.Id = dto.Id;
+
+                //Executa o processo
+                classeDAO.ExcluirClasse(classe);
+
+                return true; //Se Ok retorna verdadeiro
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false; //Se deu ruim retorna falso
+            }
+        }
+        #endregion
+
+        #region Consulta classe por Id
+        public Classe ConsultaClassePorId(int? id)
+        {
+            try
+            {
+                //Atribuição da entrada no DTO
+                ConsultaClasseDTO dto = new ConsultaClasseDTO()
+                {
+                    Id = id
+                };
+
+                //Verifica se as informações estão preenchidas e OK
+                new models.Comum.ValidacaoModel().Validacao(dto);
+
+                //Atribuição do DTO no DAO
+                classe.Id = dto.Id;
+
+                //Executa o processo
+                classe = classeDAO.ConsultarClassePorId(classe);
+
+                return classe;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return classe; //Se deu ruim retorna falso
+            }
+        }
+        #endregion
+
+        #region Pegar informações da classe
+        public Classe GetInfoclasse()
+        {
+            return classe;
+        }
+        #endregion
     }
 }

@@ -16,5 +16,13 @@ namespace Rika.views
         {
             InitializeComponent();
         }
+
+        #region Evento/Ações dos Botões
+
+        #endregion
+
+        #region Evento Código Leave
+
+        #endregion
     }
 }
