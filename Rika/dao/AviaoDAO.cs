@@ -58,7 +58,7 @@ namespace Rika.dao
 
         #endregion
 
-        #region Método para exclusão de avião
+        #region Método para exclusão de Avião
         public bool ExcluirAviao(Aviao aviao)
         {
             try
@@ -86,5 +86,82 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para editar Avião
+        public bool EfetuarEdicao(Aviao aviao)
+        {
+            try
+            {
+                string sql = @"update AVIAO set modelo=@modelo, idComp_Aerea=@idComp_Aerea, Qtd_Acento=@Qtd_Acento
+                               where AVIAO = @id;";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", aviao.Id);
+                executacmd.Parameters.AddWithValue("@modelo", aviao.Modelo);
+                executacmd.Parameters.AddWithValue("@idComp_Aerea", aviao.comp.Id);
+                executacmd.Parameters.AddWithValue("@Qtd_Acento", aviao.Qtd_Acento);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Avião " + aviao.Id + " - " + aviao.Modelo + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
+        #region Método para consultar específico Avião 
+        public Aviao ConsultarAviaoPorId(Aviao aviao)
+        {
+            try
+            {
+                //Sql
+                string sql = @"select * from AVIAO where IDAVIAO = @id;";
+
+                //Comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", aviao.Id);
+
+                //Executa SQL
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                //Le os dados
+                if (!reader.Read())
+                {
+                    aviao.Modelo = "";
+                    MessageBox.Show("Modelo não encontrado!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    aviao.comp.Id = reader.GetInt32(1);
+                    aviao.Modelo = reader[2].ToString();
+                    aviao.Qtd_Acento = reader.GetInt32(3);
+                }
+
+                conexao.Close();
+
+                return aviao;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return aviao;
+            }
+        }
+        #endregion
+
     }
 }

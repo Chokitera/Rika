@@ -92,5 +92,94 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para editar voo 
+        public bool EfetuarEdicao( Voo voo)
+        {
+            try
+            {
+                string sql = @"update VOO set IdAeropoto=@IdAeroporto, IdAviao=@IdAviao, Dt_Saida=@Dt_Saida, Dt_Chegada=@Dt_Chegada, Duracao=@Duracao, Horario_Saida=@Horario_Saida, 
+                                              Horario_Chegada=@Horario_Chegada, Destino=@Destino, Decolagem=@Decolagem
+                               where IDVOO = @id;";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@IdAeroporto", voo.aeroporto.Id);
+                executacmd.Parameters.AddWithValue("@IdAviao", voo.aviao.Id);
+                executacmd.Parameters.AddWithValue("@Dt_Saida", voo.DataSaida);
+                executacmd.Parameters.AddWithValue("@Dt_Chegada", voo.DataChegada);
+                executacmd.Parameters.AddWithValue("@Duracao", voo.Duracao);
+                executacmd.Parameters.AddWithValue("@Horario_Saida", voo.HorarioSaida);
+                executacmd.Parameters.AddWithValue("@Horario_Chegada", voo.HorarioChegada);
+                executacmd.Parameters.AddWithValue("@Destino", voo.Destino);
+                executacmd.Parameters.AddWithValue("@Decolagem", voo.Decolagem);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Voo " + voo.Id + " - " + voo.Destino + " atualizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
+        #region Método para consultar específica voo 
+        public Voo ConsultarCompanhiaPorId(Voo voo)
+        {
+            try
+            {
+                //Sql
+                string sql = @"select * from VOO where IDVOO = @id;";
+
+                //Comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", voo.Id);
+
+                //Executa SQL
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                //Le os dados
+                if (!reader.Read())
+                {
+                    voo.Destino = 0;
+                    MessageBox.Show("Voo não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    voo.aeroporto.Id = reader.GetInt32(1);
+                    voo.aviao.Id = reader.GetInt32(2);
+                    voo.DataSaida = reader.GetDateTime(3);
+                    voo.DataChegada = reader.GetDateTime(4);
+                    voo.Duracao = reader.GetDateTime(5);
+                    voo.HorarioSaida = reader.GetDateTime(6);
+                    voo.HorarioChegada = reader.GetDateTime(7);
+                    voo.Destino = reader.GetInt32(8);
+                    voo.Decolagem = reader.GetInt32(9);
+                }
+
+                conexao.Close();
+
+                return voo;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return voo;
+            }
+        }
+        #endregion
+
     }
 }
