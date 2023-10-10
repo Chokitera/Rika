@@ -9,7 +9,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Rika.controllers;
 using Rika.models;
+using Rika.models.Comum;
 
 namespace Rika.views
 {
@@ -97,27 +99,60 @@ namespace Rika.views
         }
         #endregion
 
-        #region Botões/Ações
+        #region Evento/Ações dos Botões
         //Botão Salvar
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            //Instânciando a classe Voo
+            //Instancia do model
             Voo voo = new Voo();
-            voo.Id = int.Parse(txtCodVoo.Text);
-            voo.Destino = int.Parse(txtCodAeroportoDestino.Text);
+
+            //Atribuições
+            if (txtCodVoo.Text == "")
+                voo.Id = 0;
+            else
+                voo.Id = int.Parse(txtCodVoo.Text);
             voo.Decolagem = int.Parse(txtCodAeroportoDecolagem.Text);
-            voo.DataSaida = DateTime.Parse(txtDataSaida.Text);
-            voo.DataChegada = DateTime.Parse(txtDataChegada.Text);
-            voo.Duracao = DateTime.Parse(txtDuracao.Text);
-            voo.HorarioSaida = DateTime.Parse(txtHoraSaida.Text);
-            voo.HorarioChegada = DateTime.Parse(txtHoraChegada.Text);
+            voo.Destino = int.Parse(txtCodAeroportoDestino.Text);
+            voo.DataSaida = Convert.ToDateTime(txtDataSaida.Text);
+            voo.DataChegada = Convert.ToDateTime(txtDataChegada.Text);
+            voo.Duracao = Convert.ToDateTime(txtDuracao.Text);
+            voo.HorarioSaida = Convert.ToDateTime(txtHoraSaida.Text);
+            voo.HorarioChegada = Convert.ToDateTime(txtHoraChegada.Text);
             voo.aviao.Id = int.Parse(txtCodAviao.Text);
+
+            //Chamada do Controlador
+            bool isValid = VooController.SalvaVoo(voo);
+
+            //Se realizou o processo limpa a tela
+            if (isValid)
+            {
+                new Helpers().LimparTela(this);
+                txtCodVoo.Focus();
+            }
         }
 
         //Botão Excluir
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            if (txtCodVoo.Text != "")
+            {
+                //Instancia do model
+                Voo voo = new Voo
+                {
+                    //Atribuições
+                    Id = int.Parse(txtCodVoo.Text)
+                };
 
+                //Chamada do Controlador
+                bool isValid = VooController.ExcluirVoo(voo.Id);
+
+                //Se realizou o processo limpa a tela
+                if (isValid)
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodVoo.Focus();
+                }
+            }
         }
 
         //Botão Sair
@@ -138,6 +173,43 @@ namespace Rika.views
             this.Close();
         }
 
+        #endregion
+
+        #region Evento Código Leave
+        private void txtCodVoo_Leave(object sender, EventArgs e)
+        {
+            if (txtCodVoo.Text != "")
+            {
+                //Instancia do model
+                Voo voo = new Voo
+                {
+                    //Atribuição
+                    Id = int.Parse(txtCodVoo.Text),
+                };
+
+                //Consulta
+                voo = VooController.ConsultaVooPorId(voo.Id);
+
+                //Atribuição da consulta
+                if (voo.Decolagem != "")
+                {
+                    txtCodVoo.Text = voo.Id.ToString();
+                    txtCodAeroportoDecolagem.Text = voo.Decolagem.ToString();
+                    txtCodAeroportoDestino.Text = voo.Destino.ToString();
+                    txtDataSaida.Text = voo.DataSaida.ToString();
+                    txtDataChegada.Text = voo.DataChegada.ToString();
+                    txtDuracao.Text = voo.Duracao.ToString();
+                    txtHoraSaida.Text = voo.HorarioSaida.ToString();
+                    txtHoraChegada.Text = voo.HorarioChegada.ToString();
+                    txtCodAviao.Text = voo.aviao.Id.ToString();
+                }
+                else
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodVoo.Focus();
+                }
+            }
+        }
         #endregion
 
 

@@ -235,6 +235,7 @@
             this.txtCodAviao.TabIndex = 64;
             this.txtCodAviao.TextNew = "";
             this.txtCodAviao.UnderlinedStyle = false;
+            this.txtCodAviao.Leave += new System.EventHandler(this.txtCodAviao_Leave);
             // 
             // btnSair
             // 

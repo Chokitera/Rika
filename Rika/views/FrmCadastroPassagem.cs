@@ -11,7 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Org.BouncyCastle.Asn1.Crmf;
+using Rika.controllers;
 using Rika.models;
+using Rika.models.Comum;
 
 namespace Rika.views
 {
@@ -115,18 +117,54 @@ namespace Rika.views
         {
 
         }
-
+        #region Evento/Ações dos Botões
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            if (txtCodigo.Text != "")
+            {
+                //Instancia do model
+                Passagem passagem = new Passagem
+                {
+                    //Atribuições
+                    Id = int.Parse(txtCodigo.Text)
+                };
 
+                //Chamada do Controlador
+                bool isValid = PassagemController.ExcluirPassagem(passagem.Id);
+
+                //Se realizou o processo limpa a tela
+                if (isValid)
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodigo.Focus();
+                }
+            }
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            //Instânciando a clase Passagem
-           /* Passagem passagem = new Passagem();
-            passagem.Id = int.Parse(txtCodPassagem.Text);
-            passagem.Nome_Voo.Id = int.Parse(txtVoo.Text);*/
+            //Instancia do model
+            Passagem passagem = new Passagem();
+
+            //Atribuições
+            if (txtCodigo.Text == "")
+                passagem.Id = 0;
+            else
+                passagem.Id = int.Parse(txtCodigo.Text);
+            passagem.classe.Id = int.Parse(txtCodClasse.Text);
+            passagem.Caminho_Img = txtImagem.Text;
+            passagem.voo.Id = int.Parse(txtCodVoo.Text);
+            passagem.Valor = int.Parse(txtValor.Text);
+
+            //Chamada do Controlador
+            bool isValid = PassagemController.SalvaPassagem(passagem);
+
+            //Se realizou o processo limpa a tela
+            if (isValid)
+            {
+                new Helpers().LimparTela(this);
+                txtCodigo.Focus();
+            }
         }
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -136,6 +174,40 @@ namespace Rika.views
         {
 
         }
+        #endregion
+        #region Evento Código Leave
+        private void txtCodigo_Leave(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text != "")
+            {
+                //Instancia do model
+                Passagem passagem = new Passagem
+                {
+                    //Atribuição
+                    Id = int.Parse(txtCodigo.Text),
+                };
+
+                //Consulta
+                passagem = PassagemController.ConsultaPassagemPorId(passagem.Id);
+
+                //Atribuição da consulta
+                if (passagem.Direto_Escala != "")
+                {
+                    txtCodigo.Text = passagem.Id.ToString();
+                    txtCodClasse.Text = passagem.classe.Id.ToString();
+                    txtImagem.Text = passagem.Caminho_Img;
+                    txtCodVoo.Text = passagem.voo.Id.ToString();
+                    txtValor.Text = passagem.Valor.ToString();
+                }
+                else
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodigo.Focus();
+                }
+            }
+        }
+        #endregion
+
 
         #region Le a imagem e salva na aplicação
         private void btnAbrirPasta_Click(object sender, EventArgs e)
@@ -214,6 +286,7 @@ namespace Rika.views
             }
             
         }
+
         #endregion
 
         

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Rika.controllers;
+using Rika.models.Comum;
+using Rika.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -114,6 +117,83 @@ namespace Rika.views
         }
 
         #endregion
-       
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text != "")
+            {
+                //Instancia do model
+                Situacao situacao = new Situacao
+                {
+                    //Atribuições
+                    Id = int.Parse(txtCodigo.Text)
+                };
+
+                //Chamada do Controlador
+                bool isValid = SituacaoController.ExcluirSituacao(situacao.Id);
+
+                //Se realizou o processo limpa a tela
+                if (isValid)
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodigo.Focus();
+                }
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            //Instancia do model
+            Situacao situacao = new Situacao();
+
+            //Atribuições
+            if (txtCodigo.Text == "")
+                situacao.Id = 0;
+            else
+                situacao.Id = int.Parse(txtCodigo.Text);
+            situacao.Descricao = txtDescricao.Text;
+
+            //Chamada do Controlador
+            bool isValid = SituacaoController.SalvaSituacao(situacao);
+
+            //Se realizou o processo limpa a tela
+            if (isValid)
+            {
+                new Helpers().LimparTela(this);
+                txtCodigo.Focus();
+            }
+        }
+
+        #region Evento Código Leave
+        private void txtCodigo_Leave(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text != "")
+            {
+                //Instancia do model
+                Situacao situacao = new Situacao
+                {
+                    //Atribuição
+                    Id = int.Parse(txtCodigo.Text),
+                };
+
+                //Consulta
+                situacao = SituacaoController.ConsultaSituacaoPorId(situacao.Id);
+
+                //Atribuição da consulta
+                if (situacao.Nome != "")
+                {
+                    txtCodigo.Text = situacao.Id.ToString();
+                    txtDescricao.Text = situacao.Descricao;
+                }
+                else
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodigo.Focus();
+                }
+            }
+        }
+        #endregion
+
+
     }
 }

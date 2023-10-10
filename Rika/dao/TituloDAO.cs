@@ -85,5 +85,81 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para editar Titulos
+        public bool EfetuarEdicao(Titulo titulo)
+        {
+            try
+            {
+                string sql = @"update TITULO set idpassagem=@idpassagem, idtipo_venda=@idtipo_venda, valor=@valor
+                               where IDTITULO = @id;";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", titulo.Id);
+                executacmd.Parameters.AddWithValue("@idpassagem", titulo.passagem.Id);
+                executacmd.Parameters.AddWithValue("@idtipo_venda", titulo.tipovenda.Id);
+                executacmd.Parameters.AddWithValue("@valor", titulo.Valor);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Título " + titulo.Id + " - " + titulo.Valor + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
+        #region Método para consultar específico Titulo
+        public Titulo ConsultarCompanhiaPorId(Titulo titulo)
+        {
+            try
+            {
+                //Sql
+                string sql = @"select * from TITULO where IDTITULO = @id;";
+
+                //Comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", titulo.Id);
+
+                //Executa SQL
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                //Le os dados
+                if (!reader.Read())
+                {
+                    titulo.Valor = 0;
+                    MessageBox.Show("Título não encontrado!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    titulo.passagem.Id = reader.GetInt32(1);
+                    titulo.tipovenda.Id = reader.GetInt32(2);
+                    titulo.Valor = reader.GetDouble(3);
+                }
+
+                conexao.Close();
+
+                return titulo;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return titulo;
+            }
+        }
+        #endregion
     }
 }

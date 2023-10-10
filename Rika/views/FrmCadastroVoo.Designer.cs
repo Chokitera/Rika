@@ -391,6 +391,7 @@
             this.txtCodVoo.TabIndex = 64;
             this.txtCodVoo.TextNew = "";
             this.txtCodVoo.UnderlinedStyle = false;
+            this.txtCodVoo.Leave += new System.EventHandler(this.txtCodVoo_Leave);
             // 
             // btnSair
             // 

@@ -120,17 +120,17 @@ namespace Rika.dao
         }
         #endregion
 
-        #region Método para consultar específica Companhia Aérea
-        public CompanhiaAerea ConsultarCompanhiaPorId(CompanhiaAerea companhiaAerea)
+        #region Método para consultar específico Aeroporto
+        public Aeroporto ConsultarAeroportoPorId(Aeroporto aeroporto)
         {
             try
             {
                 //Sql
-                string sql = @"select * from COMP_AEREA where IDCOMP_AEREA = @id;";
+                string sql = @"select * from aeroporto where IDAEROPORTO = @id;";
 
                 //Comando
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue("@id", companhiaAerea.Id);
+                executacmd.Parameters.AddWithValue("@id", aeroporto.Id);
 
                 //Executa SQL
                 conexao.Open();
@@ -140,25 +140,24 @@ namespace Rika.dao
                 //Le os dados
                 if (!reader.Read())
                 {
-                    companhiaAerea.Nome = "";
-                    MessageBox.Show("Companhia Aérea não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    aeroporto.Nome = "";
+                    MessageBox.Show("Aeroporto não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    companhiaAerea.Nome = reader[1].ToString();
-                    companhiaAerea.Inscricao = reader[2].ToString();
-                    companhiaAerea.Descricao = reader[3].ToString();
+                    aeroporto.Nome = reader[1].ToString();
+                    aeroporto.Descricao = reader[2].ToString();
                 }
 
                 conexao.Close();
 
-                return companhiaAerea;
+                return aeroporto;
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conexao.Close();
-                return companhiaAerea;
+                return aeroporto;
             }
         }
         #endregion

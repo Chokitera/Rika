@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Rika.controllers;
+using Rika.models.Comum;
+using Rika.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -95,7 +98,7 @@ namespace Rika.views
 
         #endregion
 
-        #region Botões
+        #region Evento/Ações dos Botões
         private void iconFechar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -108,9 +111,90 @@ namespace Rika.views
         {
             this.Close();
         }
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            //Instancia do model
+            Aeroporto aeroporto = new Aeroporto();
+
+            //Atribuições
+            if (txtCodAeroporto.Text == "")
+                aeroporto.Id = 0;
+            else
+                aeroporto.Id = int.Parse(txtCodAeroporto.Text);
+            aeroporto.Nome = txtNome.Text;
+            aeroporto.Descricao = txtDescricao.Text;
+            aeroporto.endereco.Id = int.Parse(txtCodEndereco.Text);
+
+            //Chamada do Controlador
+            bool isValid = AeroportoController.SalvaAeroporto(aeroporto);
+
+            //Se realizou o processo limpa a tela
+            if (isValid)
+            {
+                new Helpers().LimparTela(this);
+                txtCodAeroporto.Focus();
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtCodAeroporto.Text != "")
+            {
+                //Instancia do model
+                Aeroporto aeroporto = new Aeroporto
+                {
+                    //Atribuições
+                    Id = int.Parse(txtCodAeroporto.Text)
+                };
+
+                //Chamada do Controlador
+                bool isValid = AeroportoController.ExcluirAeroporto(aeroporto.Id);
+
+                //Se realizou o processo limpa a tela
+                if (isValid)
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodAeroporto.Focus();
+                }
+            }
+        }
 
         #endregion
 
-        
+        #region Evento Código Leave
+
+        private void txtCodAeroporto_Leave(object sender, EventArgs e)
+        {
+            if (txtCodAeroporto.Text != "")
+            {
+                //Instancia do model
+                Aeroporto aeroporto = new Aeroporto
+                {
+                    //Atribuição
+                    Id = int.Parse(txtCodAeroporto.Text),
+                };
+
+                //Consulta
+                aeroporto = AeroportoController.ConsultaAeroportoPorId(aeroporto.Id);
+
+                //Atribuição da consulta
+                if (aeroporto.Nome != "")
+                {
+                    txtCodAeroporto.Text = aeroporto.Id.ToString();
+                    txtNome.Text = aeroporto.Nome;
+                    txtCodEndereco.Text = aeroporto.endereco.Id.ToString();
+                    txtDescricao.Text = aeroporto.Descricao;
+                }
+                else
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodAeroporto.Focus();
+                }
+            }
+        }
+
+        #endregion
+
+
     }
 }
