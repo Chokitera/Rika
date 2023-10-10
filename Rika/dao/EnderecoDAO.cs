@@ -90,5 +90,89 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para editar Endereço
+        public bool EfetuarEdicao(Endereco endereco)
+        {
+            try
+            {
+                string sql = @"update ENDERECO set pais=idpais, cidade=@cidade, estado=@estado, cep=@cep, logradouro=@logradouro, numero=@numero, complemento=@complemento
+                               where IDCOMP_AEREA = @id;";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", endereco.Id);
+                executacmd.Parameters.AddWithValue("@idpais", endereco.pais.Id);
+                executacmd.Parameters.AddWithValue("@cidade", endereco.Cidade);
+                executacmd.Parameters.AddWithValue("@estado", endereco.Estado);
+                executacmd.Parameters.AddWithValue("@cep", endereco.CEP);
+                executacmd.Parameters.AddWithValue("@logradouro", endereco.Logradouro);
+                executacmd.Parameters.AddWithValue("@numero", endereco.NumeroCasa);
+                executacmd.Parameters.AddWithValue("@complemento", endereco.Complemento);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Endereço " + endereco.Id + " - " + endereco.Cidade + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
+        #region Método para consultar específica Companhia Aérea
+        public Endereco ConsultarEnderecoPorId(Endereco endereco)
+        {
+            try
+            {
+                //Sql
+                string sql = @"select * from ENDERECO where IDENDERECO = @id;";
+
+                //Comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", endereco.Id);
+
+                //Executa SQL
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                //Le os dados
+                if (!reader.Read())
+                {
+                    endereco.Cidade = "";
+                    MessageBox.Show("Endereço não encontrado!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    endereco.pais.Id = reader.GetInt32(1);
+                    endereco.Cidade = reader[2].ToString();
+                    endereco.Estado = reader[3].ToString();
+                    endereco.CEP = reader[4].ToString();
+                    endereco.Logradouro = reader[5].ToString();
+                    endereco.NumeroCasa = reader.GetInt32(7);
+                    endereco.Complemento = reader[7].ToString();
+                }
+
+                conexao.Close();
+
+                return endereco;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return endereco;
+            }
+        }
+        #endregion
     }
 }
