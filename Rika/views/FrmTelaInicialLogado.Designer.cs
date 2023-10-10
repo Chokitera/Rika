@@ -609,7 +609,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTelaInicialLogado";
-            this.Text = "FrmTelaInicialLogado";
+            this.Text = "Principal";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmTelaInicialLogado_Paint);
             this.pnlCabecalho.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();

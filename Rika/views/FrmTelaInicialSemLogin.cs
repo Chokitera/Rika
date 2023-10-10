@@ -106,5 +106,11 @@ namespace Rika.views
             this.WindowState = FormWindowState.Minimized;
         }
         #endregion
+
+        private void modeloBotao3_Click(object sender, EventArgs e)
+        {
+            FrmCarrinhoCompra form = new FrmCarrinhoCompra();
+            form.ShowDialog();
+        }
     }
 }

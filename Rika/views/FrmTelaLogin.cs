@@ -176,7 +176,36 @@ namespace Rika.views
 
                 if (login) //Se efetuou o login
                 {
-                    //Tela inicial
+                    usuario = dao.ValidarTipoUsuario(usuario); //Verifica o Tipo de usuário. 0 = NORMAL, 1 = ADM
+
+                    if(usuario.Tipo == 0)
+                    {
+                        //Se ele é usuário normal
+                        FrmTelaInicialLogado tela = new FrmTelaInicialLogado();
+
+                        var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                                     where frm is FrmTelaPrincipal
+                                     select frm;
+
+                        if (qrForm != null && qrForm.Count() >= 0)
+                        {
+                            ((FrmTelaPrincipal)qrForm.First()).FecharFormulario(tela);
+                        }
+                    }
+                    else
+                    {
+                        //Se ele é ADM
+                        FrmTelaAdministrativa tela = new FrmTelaAdministrativa();
+
+                        var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                                     where frm is FrmTelaPrincipal
+                                     select frm;
+
+                        if (qrForm != null && qrForm.Count() >= 0)
+                        {
+                            ((FrmTelaPrincipal)qrForm.First()).FecharFormulario(tela);
+                        }
+                    }
                 }
                 else
                     txtSenha.Focus();
@@ -225,9 +254,6 @@ namespace Rika.views
         private void lblContinuarSemLogin_Click(object sender, EventArgs e)
         {
             FrmTelaInicialSemLogin tela = new FrmTelaInicialSemLogin();
-
-            //tela.Show();
-            //Close();
 
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
                          where frm is FrmTelaPrincipal

@@ -480,7 +480,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCarrinhoCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Carrinho Compra";
+            this.Text = "Carrinho de Compra";
             this.Load += new System.EventHandler(this.FrmCarrinhoCompra_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCarrinhoCompra_Paint);
             this.panel2.ResumeLayout(false);

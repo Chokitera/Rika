@@ -24,10 +24,10 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"select * from usuarios where nome_usuario = @nome and senha = @senha";
+                string sql = @"select * from usuarios where NOMEUSUARIO = @NOMEUSUARIO and senha = @senha";
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
 
-                executacmd.Parameters.AddWithValue("nome", usuario.NomeUsuario);
+                executacmd.Parameters.AddWithValue("NOMEUSUARIO", usuario.NomeUsuario);
                 executacmd.Parameters.AddWithValue("senha", usuario.Senha);
 
                 conexao.Open();
@@ -64,14 +64,14 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"insert into usuarios (nome, sobrenome, nome_usuario, senha, tipousuario) 
-                               values (@nome, @sobrenome, @nome_usuario, @senha, @tipo);";
+                string sql = @"insert into usuarios (nome, sobrenome, NOMEUSUARIO, senha, tipousuario) 
+                               values (@nome, @sobrenome, @NOMEUSUARIO, @senha, @tipo);";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@nome", usuario.Nome);
                 executacmd.Parameters.AddWithValue("@sobrenome", usuario.SobreNome);
-                executacmd.Parameters.AddWithValue("@nome_usuario", usuario.NomeUsuario);
+                executacmd.Parameters.AddWithValue("@NOMEUSUARIO", usuario.NomeUsuario);
                 executacmd.Parameters.AddWithValue("@senha", usuario.Senha);
                 executacmd.Parameters.AddWithValue("@tipo", usuario.Tipo);
 
@@ -86,7 +86,7 @@ namespace Rika.dao
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 usuario.Id = reader.GetInt32(0);
-                MessageBox.Show("Usuário cadastrado com sucesso!" + usuario.NomeUsuario, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Usuário " + usuario.NomeUsuario + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -105,10 +105,10 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"select nome_usuario from usuarios where nome_usuario = @nome_usuario";
+                string sql = @"select NOMEUSUARIO from usuarios where NOMEUSUARIO = @NOMEUSUARIO";
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
 
-                executacmd.Parameters.AddWithValue("@nome_usuario", usuario.NomeUsuario);
+                executacmd.Parameters.AddWithValue("@NOMEUSUARIO", usuario.NomeUsuario);
 
                 conexao.Open();
 
@@ -161,6 +161,32 @@ namespace Rika.dao
         }
         #endregion
 
+        #region Método para verificar se o usuário é Administrador
+        public Usuario ValidarTipoUsuario(Usuario usuario)
+        {
+            try
+            {
+                string sql = @"select TIPOUSUARIO from usuarios where IDUSUARIO = @id";
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+
+                executacmd.Parameters.AddWithValue("@id", usuario.Id);
+
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+                usuario.Tipo = (TipoUsuario)reader.GetInt32(0);
+
+                conexao.Close();
+                return usuario;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return usuario;
+            }
+        }
+        #endregion
 
     }
 }

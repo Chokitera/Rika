@@ -41,8 +41,6 @@
             this.modeloBotao1 = new Rika.controls.ModeloBotao();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.modeloBotao6 = new Rika.controls.ModeloBotao();
-            this.btnVoltarCompras = new Rika.controls.ModeloBotao();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -69,6 +67,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblCopyrigth = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.modeloBotao6 = new Rika.controls.ModeloBotao();
+            this.btnVoltarCompras = new Rika.controls.ModeloBotao();
             this.pnlCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
@@ -98,7 +98,7 @@
             this.pnlCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCabecalho.Location = new System.Drawing.Point(0, 0);
             this.pnlCabecalho.Name = "pnlCabecalho";
-            this.pnlCabecalho.Size = new System.Drawing.Size(1336, 92);
+            this.pnlCabecalho.Size = new System.Drawing.Size(1387, 92);
             this.pnlCabecalho.TabIndex = 1;
             this.pnlCabecalho.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlCabecalho_MouseDown);
             // 
@@ -107,7 +107,7 @@
             this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
-            this.iconMinimizar.Location = new System.Drawing.Point(1276, 6);
+            this.iconMinimizar.Location = new System.Drawing.Point(1327, 6);
             this.iconMinimizar.Name = "iconMinimizar";
             this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,7 +120,7 @@
             this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconFechar.Image = global::Rika.Properties.Resources.x;
-            this.iconFechar.Location = new System.Drawing.Point(1302, 6);
+            this.iconFechar.Location = new System.Drawing.Point(1353, 6);
             this.iconFechar.Name = "iconFechar";
             this.iconFechar.Size = new System.Drawing.Size(20, 20);
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -199,13 +199,14 @@
             this.modeloBotao3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modeloBotao3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.modeloBotao3.ForeColor = System.Drawing.Color.White;
-            this.modeloBotao3.Location = new System.Drawing.Point(988, 31);
+            this.modeloBotao3.Location = new System.Drawing.Point(978, 31);
             this.modeloBotao3.Name = "modeloBotao3";
-            this.modeloBotao3.Size = new System.Drawing.Size(136, 30);
+            this.modeloBotao3.Size = new System.Drawing.Size(146, 30);
             this.modeloBotao3.TabIndex = 5;
-            this.modeloBotao3.Text = "Status de voos";
+            this.modeloBotao3.Text = "Carrinho de Compra";
             this.modeloBotao3.TextColor = System.Drawing.Color.White;
             this.modeloBotao3.UseVisualStyleBackColor = false;
+            this.modeloBotao3.Click += new System.EventHandler(this.modeloBotao3_Click);
             // 
             // modeloBotao2
             // 
@@ -268,42 +269,6 @@
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
             // 
-            // modeloBotao6
-            // 
-            this.modeloBotao6.BackColor = System.Drawing.Color.White;
-            this.modeloBotao6.BackgroundColor = System.Drawing.Color.White;
-            this.modeloBotao6.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao6.BorderRadius = 5;
-            this.modeloBotao6.BorderSize = 1;
-            this.modeloBotao6.FlatAppearance.BorderSize = 0;
-            this.modeloBotao6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modeloBotao6.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao6.Location = new System.Drawing.Point(524, 1327);
-            this.modeloBotao6.Name = "modeloBotao6";
-            this.modeloBotao6.Size = new System.Drawing.Size(283, 49);
-            this.modeloBotao6.TabIndex = 49;
-            this.modeloBotao6.Text = "Mostrar mais ofertas";
-            this.modeloBotao6.TextColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao6.UseVisualStyleBackColor = false;
-            // 
-            // btnVoltarCompras
-            // 
-            this.btnVoltarCompras.BackColor = System.Drawing.Color.White;
-            this.btnVoltarCompras.BackgroundColor = System.Drawing.Color.White;
-            this.btnVoltarCompras.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnVoltarCompras.BorderRadius = 5;
-            this.btnVoltarCompras.BorderSize = 1;
-            this.btnVoltarCompras.FlatAppearance.BorderSize = 0;
-            this.btnVoltarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltarCompras.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnVoltarCompras.Location = new System.Drawing.Point(524, 925);
-            this.btnVoltarCompras.Name = "btnVoltarCompras";
-            this.btnVoltarCompras.Size = new System.Drawing.Size(283, 49);
-            this.btnVoltarCompras.TabIndex = 48;
-            this.btnVoltarCompras.Text = "Mostrar mais ofertas";
-            this.btnVoltarCompras.TextColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnVoltarCompras.UseVisualStyleBackColor = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -347,7 +312,7 @@
             this.pnlEspaco2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlEspaco2.Location = new System.Drawing.Point(0, 1376);
             this.pnlEspaco2.Name = "pnlEspaco2";
-            this.pnlEspaco2.Size = new System.Drawing.Size(1336, 55);
+            this.pnlEspaco2.Size = new System.Drawing.Size(1387, 55);
             this.pnlEspaco2.TabIndex = 53;
             // 
             // pnlInformacoes
@@ -371,7 +336,7 @@
             this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlInformacoes.Location = new System.Drawing.Point(0, 1431);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(1336, 304);
+            this.pnlInformacoes.Size = new System.Drawing.Size(1387, 304);
             this.pnlInformacoes.TabIndex = 52;
             // 
             // label18
@@ -555,7 +520,7 @@
             this.pnlEspaco.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlEspaco.Location = new System.Drawing.Point(0, 1735);
             this.pnlEspaco.Name = "pnlEspaco";
-            this.pnlEspaco.Size = new System.Drawing.Size(1336, 55);
+            this.pnlEspaco.Size = new System.Drawing.Size(1387, 55);
             this.pnlEspaco.TabIndex = 51;
             // 
             // panel1
@@ -565,7 +530,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 1790);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1336, 75);
+            this.panel1.Size = new System.Drawing.Size(1387, 75);
             this.panel1.TabIndex = 50;
             // 
             // lblCopyrigth
@@ -589,13 +554,49 @@
             this.pictureBox4.TabIndex = 22;
             this.pictureBox4.TabStop = false;
             // 
+            // modeloBotao6
+            // 
+            this.modeloBotao6.BackColor = System.Drawing.Color.White;
+            this.modeloBotao6.BackgroundColor = System.Drawing.Color.White;
+            this.modeloBotao6.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.modeloBotao6.BorderRadius = 5;
+            this.modeloBotao6.BorderSize = 1;
+            this.modeloBotao6.FlatAppearance.BorderSize = 0;
+            this.modeloBotao6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modeloBotao6.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.modeloBotao6.Location = new System.Drawing.Point(524, 1327);
+            this.modeloBotao6.Name = "modeloBotao6";
+            this.modeloBotao6.Size = new System.Drawing.Size(283, 49);
+            this.modeloBotao6.TabIndex = 49;
+            this.modeloBotao6.Text = "Mostrar mais ofertas";
+            this.modeloBotao6.TextColor = System.Drawing.Color.MediumSlateBlue;
+            this.modeloBotao6.UseVisualStyleBackColor = false;
+            // 
+            // btnVoltarCompras
+            // 
+            this.btnVoltarCompras.BackColor = System.Drawing.Color.White;
+            this.btnVoltarCompras.BackgroundColor = System.Drawing.Color.White;
+            this.btnVoltarCompras.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnVoltarCompras.BorderRadius = 5;
+            this.btnVoltarCompras.BorderSize = 1;
+            this.btnVoltarCompras.FlatAppearance.BorderSize = 0;
+            this.btnVoltarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltarCompras.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnVoltarCompras.Location = new System.Drawing.Point(524, 925);
+            this.btnVoltarCompras.Name = "btnVoltarCompras";
+            this.btnVoltarCompras.Size = new System.Drawing.Size(283, 49);
+            this.btnVoltarCompras.TabIndex = 48;
+            this.btnVoltarCompras.Text = "Mostrar mais ofertas";
+            this.btnVoltarCompras.TextColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnVoltarCompras.UseVisualStyleBackColor = false;
+            // 
             // FrmTelaInicialSemLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1353, 704);
+            this.ClientSize = new System.Drawing.Size(1404, 704);
             this.Controls.Add(this.pnlEspaco2);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlEspaco);
@@ -611,7 +612,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTelaInicialSemLogin";
-            this.Text = "Tela Inicial";
+            this.Text = "Principal";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmTelaInicial_Paint);
             this.pnlCabecalho.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
