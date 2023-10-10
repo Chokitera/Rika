@@ -22,5 +22,15 @@ namespace Rika.views
             FrmCadastroPassagem tela = new FrmCadastroPassagem();
             tela.ShowDialog();
         }
+
+        private void iconFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void iconMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

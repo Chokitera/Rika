@@ -105,12 +105,21 @@ namespace Rika.views
         {
             this.Close();
         }
+
+
+
+
+
         #endregion
 
-        
+        private void iconFechar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-        
-
-        
+        private void iconMinimizar_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
