@@ -84,5 +84,79 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para editar situacao
+        public bool EfetuarEdicao(Situacao situacao)
+        {
+            try
+            {
+                string sql = @"update SITUACAO set nome=@nome, descricao=@descricao
+                               where IDSITUACAO = @id;";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", situacao.Id);
+                executacmd.Parameters.AddWithValue("@nome", situacao.Nome);
+                executacmd.Parameters.AddWithValue("@descricao", situacao.Descricao);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Situação " + situacao.Id + " - " + situacao.Nome + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
+        #region Método para consultar específica Situação
+        public Situacao ConsultarSituacaoPorId(Situacao situacao)
+        {
+            try
+            {
+                //Sql
+                string sql = @"select * from SITUACAO where IDSITUACAO = @id;";
+
+                //Comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", situacao.Id);
+
+                //Executa SQL
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                //Le os dados
+                if (!reader.Read())
+                {
+                    situacao.Nome = "";
+                    MessageBox.Show("Situação não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    situacao.Nome = reader[1].ToString();
+                    situacao.Descricao = reader[2].ToString();
+                }
+
+                conexao.Close();
+
+                return situacao;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return situacao;
+            }
+        }
+        #endregion
     }
 }

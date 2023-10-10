@@ -86,5 +86,80 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para editar Aeroporto
+        public bool EfetuarEdicao(Aeroporto aeroporto)
+        {
+            try
+            {
+                string sql = @"update AEROPORTO set nome=@nome, descricao=@descricao, inscricao=@inscricao, endereco=@endereco
+                               where AEROPORTO = @id;";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", aeroporto.Id);
+                executacmd.Parameters.AddWithValue("@endereco", aeroporto.endereco);
+                executacmd.Parameters.AddWithValue("@nome", aeroporto.Nome);
+                executacmd.Parameters.AddWithValue("@descricao", aeroporto.Descricao);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Aeroporto " + aeroporto.Id + " - " + aeroporto.Nome + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
+        #region Método para consultar específico Aeroporto
+        public Aeroporto ConsultarAeroportoPorId(Aeroporto aeroporto)
+        {
+            try
+            {
+                //Sql
+                string sql = @"select * from aeroporto where IDAEROPORTO = @id;";
+
+                //Comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", aeroporto.Id);
+
+                //Executa SQL
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                //Le os dados
+                if (!reader.Read())
+                {
+                    aeroporto.Nome = "";
+                    MessageBox.Show("Aeroporto não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    aeroporto.Nome = reader[1].ToString();
+                    aeroporto.Descricao = reader[2].ToString();
+                }
+
+                conexao.Close();
+
+                return aeroporto;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return aeroporto;
+            }
+        }
+        #endregion
     }
 }

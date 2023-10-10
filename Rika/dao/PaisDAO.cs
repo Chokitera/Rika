@@ -87,25 +87,25 @@ namespace Rika.dao
         }
         #endregion
 
-        #region Método para editar pais
+        #region Método para editar País
         public bool EfetuarEdicao(Pais pais)
         {
             try
             {
-                string sql = @"update pais set nome=@nome, sigla=@sigla
-                               where IDpais = @id;";
+                string sql = @"update PAIS set nome=@nome, sigla=@sigla
+                               where IDPAIS = @id;";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", pais.Id);
-                executacmd.Parameters.AddWithValue("@nome", pais.Nome);
-                executacmd.Parameters.AddWithValue("@sigla", pais.Sigla);
+                executacmd.Parameters.AddWithValue("@nome", pais.Nome) ;
+                executacmd.Parameters.AddWithValue("@descricao", pais.Sigla);
 
                 //Executa SQL
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("País " + pais.Id + " - " + pais.Nome + " atualizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("País " + pais.Id + " - " + pais.Nome + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -119,13 +119,13 @@ namespace Rika.dao
         }
         #endregion
 
-        #region Método para consultar específica pais
+        #region Método para consultar específica Pais
         public Pais ConsultarPaisPorId(Pais pais)
         {
             try
             {
                 //Sql
-                string sql = @"select * from pais where idpais = @id;";
+                string sql = @"select * from PAIS where IDPAIS = @id;";
 
                 //Comando
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
@@ -140,7 +140,7 @@ namespace Rika.dao
                 if (!reader.Read())
                 {
                     pais.Nome = "";
-                    MessageBox.Show("País não encontrado!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("País não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

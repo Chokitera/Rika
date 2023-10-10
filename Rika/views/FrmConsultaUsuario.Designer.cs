@@ -31,7 +31,7 @@
             this.pnlArrastarFormulario = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
-            this.pnlConteudo = new System.Windows.Forms.Panel();
+            this.pnlUsuario = new System.Windows.Forms.Panel();
             this.txtNomeUsuario = new Rika.controls.novoTextBoxReadOnly();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cmbTipoUsuario = new Rika.controls.novosComboBox();
@@ -49,7 +49,7 @@
             this.pnlArrastarFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
-            this.pnlConteudo.SuspendLayout();
+            this.pnlUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,27 +87,27 @@
             this.iconMinimizar.TabIndex = 31;
             this.iconMinimizar.TabStop = false;
             // 
-            // pnlConteudo
+            // pnlUsuario
             // 
-            this.pnlConteudo.Controls.Add(this.txtNomeUsuario);
-            this.pnlConteudo.Controls.Add(this.pictureBox2);
-            this.pnlConteudo.Controls.Add(this.cmbTipoUsuario);
-            this.pnlConteudo.Controls.Add(this.txtSenha);
-            this.pnlConteudo.Controls.Add(this.label1);
-            this.pnlConteudo.Controls.Add(this.txtNome);
-            this.pnlConteudo.Controls.Add(this.txtCodUsuario);
-            this.pnlConteudo.Controls.Add(this.btnSair);
-            this.pnlConteudo.Controls.Add(this.btnExcluir);
-            this.pnlConteudo.Controls.Add(this.btnSalvar);
-            this.pnlConteudo.Controls.Add(this.lblDataSaida);
-            this.pnlConteudo.Controls.Add(this.lblAeroDestino);
-            this.pnlConteudo.Controls.Add(this.lblAeroDecolagem);
-            this.pnlConteudo.Controls.Add(this.label1lblCodigoPassagem);
-            this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlConteudo.Location = new System.Drawing.Point(0, 24);
-            this.pnlConteudo.Name = "pnlConteudo";
-            this.pnlConteudo.Size = new System.Drawing.Size(556, 469);
-            this.pnlConteudo.TabIndex = 91;
+            this.pnlUsuario.Controls.Add(this.txtNomeUsuario);
+            this.pnlUsuario.Controls.Add(this.pictureBox2);
+            this.pnlUsuario.Controls.Add(this.cmbTipoUsuario);
+            this.pnlUsuario.Controls.Add(this.txtSenha);
+            this.pnlUsuario.Controls.Add(this.label1);
+            this.pnlUsuario.Controls.Add(this.txtNome);
+            this.pnlUsuario.Controls.Add(this.txtCodUsuario);
+            this.pnlUsuario.Controls.Add(this.btnSair);
+            this.pnlUsuario.Controls.Add(this.btnExcluir);
+            this.pnlUsuario.Controls.Add(this.btnSalvar);
+            this.pnlUsuario.Controls.Add(this.lblDataSaida);
+            this.pnlUsuario.Controls.Add(this.lblAeroDestino);
+            this.pnlUsuario.Controls.Add(this.lblAeroDecolagem);
+            this.pnlUsuario.Controls.Add(this.label1lblCodigoPassagem);
+            this.pnlUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlUsuario.Location = new System.Drawing.Point(0, 24);
+            this.pnlUsuario.Name = "pnlUsuario";
+            this.pnlUsuario.Size = new System.Drawing.Size(556, 469);
+            this.pnlUsuario.TabIndex = 91;
             // 
             // txtNomeUsuario
             // 
@@ -329,7 +329,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(556, 493);
-            this.Controls.Add(this.pnlConteudo);
+            this.Controls.Add(this.pnlUsuario);
             this.Controls.Add(this.pnlArrastarFormulario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmConsultaUsuario";
@@ -337,8 +337,8 @@
             this.pnlArrastarFormulario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
-            this.pnlConteudo.ResumeLayout(false);
-            this.pnlConteudo.PerformLayout();
+            this.pnlUsuario.ResumeLayout(false);
+            this.pnlUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -348,7 +348,7 @@
         private System.Windows.Forms.Panel pnlArrastarFormulario;
         private System.Windows.Forms.PictureBox iconFechar;
         private System.Windows.Forms.PictureBox iconMinimizar;
-        private System.Windows.Forms.Panel pnlConteudo;
+        private System.Windows.Forms.Panel pnlUsuario;
         private controls.novoTextBoxReadOnly txtNomeUsuario;
         private System.Windows.Forms.PictureBox pictureBox2;
         private controls.novosComboBox cmbTipoUsuario;

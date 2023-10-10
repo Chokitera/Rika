@@ -10,19 +10,24 @@ using System.Windows.Forms;
 
 namespace Rika.views
 {
-    public partial class FrmConsultaPassagem : Form
+    public partial class FrmCadastroEndereco : Form
     {
-        public FrmConsultaPassagem()
+        public FrmCadastroEndereco()
         {
             InitializeComponent();
         }
 
-        private void FrmConsultaPassagem_Load(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
 
         }

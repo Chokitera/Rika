@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Rika.controllers;
+using Rika.models.Comum;
+using Rika.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,14 +61,6 @@ namespace Rika.views
 
         #endregion
 
-        #region Botões formulário
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        #endregion
-
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
@@ -114,6 +109,89 @@ namespace Rika.views
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
         }
 
+        #endregion
+
+        #region Botões formulário
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            //Instancia do model
+            TipoVenda tipovenda = new TipoVenda();
+
+            //Atribuições
+            if (txtCodigo.Text == "")
+                tipovenda.Id = 0;
+            else
+                tipovenda.Id = int.Parse(txtCodigo.Text);
+            tipovenda.Descricao = txtDescricao.Text;
+
+            //Chamada do Controlador
+            bool isValid = TipoVendaController.SalvaTipoVenda(tipovenda);
+
+            //Se realizou o processo limpa a tela
+            if (isValid)
+            {
+                new Helpers().LimparTela(this);
+                txtCodigo.Focus();
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text != "")
+            {
+                //Instancia do model
+                TipoVenda tipovenda = new TipoVenda
+                {
+                    //Atribuições
+                    Id = int.Parse(txtCodigo.Text)
+                };
+
+                //Chamada do Controlador
+                bool isValid = TipoVendaController.ExcluirTipoVenda(tipovenda.Id);
+
+                //Se realizou o processo limpa a tela
+                if (isValid)
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodigo.Focus();
+                }
+            }
+        }
+
+        #endregion
+
+        #region Evento Código Leave
+        private void txtCodigo_Leave(object sender, EventArgs e)
+        {
+            if (txtCodigo.Text != "")
+            {
+                //Instancia do model
+                TipoVenda tipovenda = new TipoVenda
+                {
+                    //Atribuição
+                    Id = int.Parse(txtCodigo.Text),
+                };
+
+                //Consulta
+                tipovenda = TipoVendaController.ConsultaTipoVendaPorId(tipovenda.Id);
+
+                //Atribuição da consulta
+                if (tipovenda.Nome != "")
+                {
+                    txtCodigo.Text = tipovenda.Id.ToString();
+                    txtDescricao.Text = tipovenda.Descricao;
+                }
+                else
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodigo.Focus();
+                }
+            }
+        }
         #endregion
 
 

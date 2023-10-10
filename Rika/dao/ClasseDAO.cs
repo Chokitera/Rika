@@ -85,5 +85,79 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Método para editar Classe
+        public bool EfetuarEdicao(Classe classe)
+        {
+            try
+            {
+                string sql = @"update CLASSE set nome=@nome, descricao=@descricao
+                               where IDCLASSE = @id;";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", classe.Id);
+                executacmd.Parameters.AddWithValue("@nome", classe.Nome);
+                executacmd.Parameters.AddWithValue("@descricao", classe.Descricao);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Classe " + classe.Id + " - " + classe.Nome + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
+        #region Método para consultar específica Classe
+        public Classe ConsultarClassePorId(Classe classe)
+        {
+            try
+            {
+                //Sql
+                string sql = @"select * from CLASSE where IDCLASSE = @id;";
+
+                //Comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", classe.Id);
+
+                //Executa SQL
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                //Le os dados
+                if (!reader.Read())
+                {
+                    classe.Nome = "";
+                    MessageBox.Show("Classe não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    classe.Nome = reader[1].ToString();
+                    classe.Descricao = reader[2].ToString();
+                }
+
+                conexao.Close();
+
+                return classe;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return classe;
+            }
+        }
+        #endregion
     }
 }

@@ -16,5 +16,10 @@ namespace Rika.views
         {
             InitializeComponent();
         }
+
+        private void FrmConsultaSituacao_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
