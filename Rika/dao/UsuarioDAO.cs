@@ -166,15 +166,19 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"select TIPOUSUARIO from usuarios where IDUSUARIO = @id";
+                string sql = @"select TIPOUSUARIO from usuarios where NOMEUSUARIO = @NOMEUSUARIO AND SENHA = @SENHA";
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
 
-                executacmd.Parameters.AddWithValue("@id", usuario.Id);
+                executacmd.Parameters.AddWithValue("@NOMEUSUARIO", usuario.NomeUsuario);
+                executacmd.Parameters.AddWithValue("@SENHA", usuario.Senha);
 
                 conexao.Open();
 
                 MySqlDataReader reader = executacmd.ExecuteReader();
-                usuario.Tipo = (TipoUsuario)reader.GetInt32(0);
+                if (reader.Read())
+                 {
+                    usuario.Tipo = reader.GetInt32(0);
+                }
 
                 conexao.Close();
                 return usuario;

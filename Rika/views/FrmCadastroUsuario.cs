@@ -219,10 +219,22 @@ namespace Rika.views
             //Instancia do model e atribuições
             Usuario usuario = new Usuario();
 
-            usuario.Nome = txtNome.Text;
-            usuario.SobreNome = txtSobrenome.Text;
-            usuario.NomeUsuario = txtUsuario.Text;
-            usuario.Senha = txtSenha.Text;
+            if (txtNome.Text == "Nome")
+                txtNome.Text = "";
+            else
+                usuario.Nome = txtNome.Text;
+            if (txtSobrenome.Text == "Sobrenome")
+                usuario.SobreNome = "";
+            else
+                usuario.SobreNome = txtSobrenome.Text;
+            if (txtUsuario.Text == "Usuário")
+                usuario.NomeUsuario = "";
+            else
+                usuario.NomeUsuario = txtUsuario.Text;
+            if (txtSenha.Text == "Senha")
+                usuario.Senha = "";
+            else
+                usuario.Senha = txtSenha.Text;
             usuario.ConfirmarSenha = txtConfirmarSenha.Text;
 
             if (VerificarSenhas(usuario))
@@ -242,6 +254,8 @@ namespace Rika.views
                     }
                 }
             }
+            else
+                txtNome.Focus();
         }
         #endregion
 

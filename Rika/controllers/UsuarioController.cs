@@ -33,15 +33,9 @@ namespace Rika.controllers
                 //Verifica se as informações estão preenchidas e OK
                 new models.Comum.ValidacaoModel().Validacao(usuario);
 
-                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
-                if (usuario.Id == 0)
-                {
-                    SalvaDados = usuarioDAO.EfetuarCadastro(usuario);
-                }
-                else
-                {
-                    //usuarioDAO.EfetuarEdicao(usuario);
-                }
+                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza                
+                SalvaDados = usuarioDAO.EfetuarCadastro(usuario);
+                
 
                 return SalvaDados; //Se Ok retorna verdadeiro
             }

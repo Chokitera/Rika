@@ -8,12 +8,6 @@ using System.Threading.Tasks;
 
 namespace Rika.models
 {
-    public enum TipoUsuario
-    {
-        Normal = 0,
-        Admin = 1
-    }
-
     public class Usuario : Entidade
     {
         [Required(ErrorMessage = "O campo Nome não pode ser vazio!")]
@@ -24,8 +18,8 @@ namespace Rika.models
         [StringLength(250, ErrorMessage = "O Sobrenome pode conter no máximo 250 caracteres!")]
         public string SobreNome { get; set; }
 
-        [Required(ErrorMessage = "O campo Sobrenome não pode ser vazio!")]
-        [StringLength(50, ErrorMessage = "O Sobrenome pode conter no máximo 50 caracteres!")]
+        [Required(ErrorMessage = "O campo Nome de Usuário não pode ser vazio!")]
+        [StringLength(50, ErrorMessage = "O Nome de Usuário pode conter no máximo 50 caracteres!")]
         public string NomeUsuario { get; set; }
 
         [Required(ErrorMessage = "O campo Senha não pode ser vazio!")]
@@ -35,6 +29,6 @@ namespace Rika.models
         [Required(ErrorMessage = "O campo Confirmar Senha não pode ser vazio!")]
         [StringLength(20, ErrorMessage = "A Confirmação da Senha pode conter no máximo 20 caracteres!")]
         public string ConfirmarSenha { get; set; }
-        public TipoUsuario Tipo { get; set; }
+        public int Tipo { get; set; }
     }
 }

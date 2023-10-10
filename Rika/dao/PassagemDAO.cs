@@ -133,7 +133,7 @@ namespace Rika.dao
             try
             {
                 //Sql
-                string sql = @"select * from PASSAGEM where IDPASAGEM = @id;";
+                string sql = @"select * from PASSAGEM where IDPASSAGEM = @id;";
 
                 //Comando
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
