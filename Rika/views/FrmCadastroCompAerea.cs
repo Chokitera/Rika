@@ -99,6 +99,7 @@ namespace Rika.views
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         #endregion
+
         #region Evento/Ações dos Botões
         private void btnSalvar_Click(object sender, EventArgs e)
         {

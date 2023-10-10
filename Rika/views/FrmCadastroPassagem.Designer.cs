@@ -378,6 +378,7 @@
             this.txtCodigo.TabIndex = 25;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
+            this.txtCodigo.Leave += new System.EventHandler(this.txtCodigo_Leave);
             // 
             // btnSair
             // 

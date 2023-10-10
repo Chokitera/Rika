@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Rika.controllers;
 using Rika.dao;
 using Rika.models;
+using Rika.models.Comum;
 
 namespace Rika.views
 {
@@ -96,15 +98,53 @@ namespace Rika.views
 
         #endregion
 
-        #region Botões
+        #region Evento/Ações dos Botões
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            CadastroAviao();
+            //Instancia do model
+            Aviao aviao = new Aviao();
+
+            //Atribuições
+            if (txtCodAviao.Text == "")
+                aviao.Id = 0;
+            else
+                aviao.Id = int.Parse(txtCodAviao.Text);
+            aviao.Modelo = txtModelAviao.Text;
+            aviao.comp.Id = int.Parse(txtCodCompAerea.Text);
+            aviao.Qtd_Acento = int.Parse(txtQtdAcentos.Text);
+
+            //Chamada do Controlador
+            bool isValid = AviaoController.SalvaAviao(aviao);
+
+            //Se realizou o processo limpa a tela
+            if (isValid)
+            {
+                new Helpers().LimparTela(this);
+                txtCodAviao.Focus();
+            }
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            if (txtCodAviao.Text != "")
+            {
+                //Instancia do model
+                Aviao aviao = new Aviao
+                {
+                    //Atribuições
+                    Id = int.Parse(txtCodAviao.Text)
+                };
 
+                //Chamada do Controlador
+                bool isValid = AviaoController.ExcluirAviao(aviao.Id);
+
+                //Se realizou o processo limpa a tela
+                if (isValid)
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodAviao.Focus();
+                }
+            }
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -122,55 +162,38 @@ namespace Rika.views
         }
         #endregion
 
-        #region Cadastro de Avião
-
-        public void CadastroAviao() {
-            //Instancia do Model
-            Aviao aviao = new Aviao();
-            aviao.Qtd_Acento = int.Parse(txtQtdAcentos.TextNew);
-            aviao.Modelo = txtModelAviao.TextNew;
-            aviao.comp.Id = int.Parse(txtCodCompAerea.TextNew);
-
-            if (VerificaCampoBranco(aviao))
-            {
-                //Instancia do DAO
-                AviaoDAO aviaoDAO = new AviaoDAO();
-                aviaoDAO.CadastrarAviao(aviao);
-            }
-
-        }
-        #endregion
-
-        #region Verificar campos em branco
-        public bool VerificaCampoBranco(Aviao aviao)
+        #region Evento Código Leave
+        private void txtCodAviao_Leave(object sender, EventArgs e)
         {
-            if (aviao.comp.Id == 0)
+            if (txtCodAviao.Text != "")
             {
-                MessageBox.Show("Necessário preencher o campo Companhia Aerea!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtCompAerea.Focus();
-                return false;
-            }
+                //Instancia do model
+                Aviao aviao = new Aviao
+                {
+                    //Atribuição
+                    Id = int.Parse(txtCodAviao.Text),
+                };
 
-            if (aviao.Modelo == "" || aviao.Modelo == null)
-            {
-                MessageBox.Show("Necessário preencher o campo Modelo!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtModelAviao.Focus();
-                return false;
-            }
+                //Consulta
+                aviao = AviaoController.ConsultaAviaoPorId(aviao.Id);
 
-            if (aviao.Qtd_Acento == 0)
-            {
-                MessageBox.Show("Necessário preencher o campo Quantidade de Acentos!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtQtdAcentos.Focus();
-                return false;
+                //Atribuição da consulta
+                if (aviao.Modelo != "")
+                {
+                    txtCodAviao.Text = aviao.Id.ToString();
+                    txtModelAviao.Text = aviao.Modelo;
+                    txtCodCompAerea.Text = aviao.comp.Id.ToString();
+                    txtQtdAcentos.Text = aviao.Qtd_Acento.ToString();
+                }
+                else
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodAviao.Focus();
+                }
             }
-
-            return true;
         }
-
-
         #endregion
 
-       
+
     }
 }

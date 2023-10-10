@@ -233,6 +233,7 @@
             this.txtCodAeroporto.TabIndex = 64;
             this.txtCodAeroporto.TextNew = "";
             this.txtCodAeroporto.UnderlinedStyle = false;
+            this.txtCodAeroporto.Leave += new System.EventHandler(this.txtCodAeroporto_Leave);
             // 
             // btnSair
             // 
@@ -272,6 +273,7 @@
             this.btnExcluir.TextColor = System.Drawing.Color.White;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 
@@ -291,6 +293,7 @@
             this.btnSalvar.TextColor = System.Drawing.Color.White;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalvar.UseVisualStyleBackColor = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // FrmCadastroAeroporto
             // 
