@@ -96,13 +96,13 @@ namespace Rika.dao
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", tipovenda.Id);
-                executacmd.Parameters.AddWithValue("@nome", tipovenda.Nome);
+                executacmd.Parameters.AddWithValue("@nome", tipovenda.Descricao);
 
                 //Executa SQL
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Tipo de Venda " + tipovenda.Id + " - " + tipovenda.Nome + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Tipo de Venda " + tipovenda.Id + " - " + tipovenda.Descricao + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -136,13 +136,12 @@ namespace Rika.dao
                 //Le os dados
                 if (!reader.Read())
                 {
-                    tipovenda.Nome = "";
+                    tipovenda.Descricao = "";
                     MessageBox.Show("Tipo de venda não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    tipovenda.Nome = reader[1].ToString();
-                    tipovenda.Descricao = reader[2].ToString();
+                    tipovenda.Descricao = reader[1].ToString();
                 }
 
                 conexao.Close();

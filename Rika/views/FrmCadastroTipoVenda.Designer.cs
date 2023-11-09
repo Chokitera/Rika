@@ -211,6 +211,7 @@
             this.txtCodigo.TabIndex = 91;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             this.txtCodigo.Leave += new System.EventHandler(this.txtCodigo_Leave);
             // 
             // FrmCadastroTipoVenda
@@ -231,7 +232,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroTipoVenda";
-            this.Text = "TipoVenda";
+            this.Text = "Cadastro de Tipo de Venda";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroTipoVenda_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlArrastarFormulario.ResumeLayout(false);
