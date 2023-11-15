@@ -56,7 +56,7 @@
             this.txtDescricao.BorderSize = 1;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricao.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDescricao.Location = new System.Drawing.Point(188, 287);
+            this.txtDescricao.Location = new System.Drawing.Point(179, 274);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricao.Multiline = false;
             this.txtDescricao.Name = "txtDescricao";
@@ -75,7 +75,7 @@
             this.txtNome.BorderSize = 1;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNome.Location = new System.Drawing.Point(188, 248);
+            this.txtNome.Location = new System.Drawing.Point(179, 235);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
@@ -94,7 +94,7 @@
             this.txtCodClasse.BorderSize = 1;
             this.txtCodClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodClasse.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCodClasse.Location = new System.Drawing.Point(188, 209);
+            this.txtCodClasse.Location = new System.Drawing.Point(179, 196);
             this.txtCodClasse.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodClasse.Multiline = false;
             this.txtCodClasse.Name = "txtCodClasse";
@@ -116,7 +116,7 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(347, 360);
+            this.btnSair.Location = new System.Drawing.Point(346, 333);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
             this.btnSair.TabIndex = 55;
@@ -136,7 +136,7 @@
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(186, 360);
+            this.btnExcluir.Location = new System.Drawing.Point(185, 333);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
             this.btnExcluir.TabIndex = 54;
@@ -156,7 +156,7 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(26, 360);
+            this.btnSalvar.Location = new System.Drawing.Point(25, 333);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
             this.btnSalvar.TabIndex = 53;
@@ -170,7 +170,7 @@
             // 
             this.lblAeroDestino.AutoSize = true;
             this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDestino.Location = new System.Drawing.Point(62, 287);
+            this.lblAeroDestino.Location = new System.Drawing.Point(82, 277);
             this.lblAeroDestino.Name = "lblAeroDestino";
             this.lblAeroDestino.Size = new System.Drawing.Size(90, 22);
             this.lblAeroDestino.TabIndex = 47;
@@ -180,7 +180,7 @@
             // 
             this.lblAeroDecolagem.AutoSize = true;
             this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDecolagem.Location = new System.Drawing.Point(62, 248);
+            this.lblAeroDecolagem.Location = new System.Drawing.Point(82, 238);
             this.lblAeroDecolagem.Name = "lblAeroDecolagem";
             this.lblAeroDecolagem.Size = new System.Drawing.Size(57, 22);
             this.lblAeroDecolagem.TabIndex = 46;
@@ -191,7 +191,7 @@
             this.label1lblCodigoPassagem.AccessibleName = "";
             this.label1lblCodigoPassagem.AutoSize = true;
             this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(62, 209);
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(82, 199);
             this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
             this.label1lblCodigoPassagem.TabIndex = 45;
@@ -204,39 +204,42 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(517, 30);
+            this.panel2.Size = new System.Drawing.Size(528, 30);
             this.panel2.TabIndex = 71;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // iconFechar
             // 
             this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconFechar.Image = global::Rika.Properties.Resources.x;
-            this.iconFechar.Location = new System.Drawing.Point(487, 6);
+            this.iconFechar.Location = new System.Drawing.Point(498, 6);
             this.iconFechar.Name = "iconFechar";
             this.iconFechar.Size = new System.Drawing.Size(20, 20);
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 28;
             this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
             // 
             // iconMinimizar
             // 
             this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
-            this.iconMinimizar.Location = new System.Drawing.Point(461, 6);
+            this.iconMinimizar.Location = new System.Drawing.Point(472, 6);
             this.iconMinimizar.Name = "iconMinimizar";
             this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(183, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(188, 47);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 126);
+            this.pictureBox1.Size = new System.Drawing.Size(152, 121);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 72;
             this.pictureBox1.TabStop = false;
@@ -246,7 +249,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(517, 421);
+            this.ClientSize = new System.Drawing.Size(528, 390);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtDescricao);
@@ -261,7 +264,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroClasse";
-            this.Text = "Classe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro de Classe";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroClasse_Paint);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();

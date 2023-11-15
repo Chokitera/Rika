@@ -98,6 +98,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(528, 30);
             this.panel2.TabIndex = 92;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // iconFechar
             // 
@@ -110,6 +111,7 @@
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 28;
             this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
             // 
             // iconMinimizar
             // 
@@ -122,6 +124,7 @@
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
             // txtSiglaPais
             // 
@@ -260,7 +263,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroPais";
-            this.Text = "CadastroPais";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro de Pais";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroPais_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
