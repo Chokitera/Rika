@@ -223,5 +223,10 @@ namespace Rika.controls
         {
 
         }
+
+        private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            this.OnKeyPress(e);
+        }
     }
 }

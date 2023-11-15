@@ -182,6 +182,7 @@
             this.txtIdPais.TabIndex = 88;
             this.txtIdPais.TextNew = "";
             this.txtIdPais.UnderlinedStyle = false;
+            this.txtIdPais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdPais_KeyPress);
             // 
             // btnSair
             // 

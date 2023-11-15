@@ -202,14 +202,17 @@ namespace Rika.views
 
 
 
+
         #endregion
 
-        //private void txtCodClasse_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
-        //    {
-        //        e.Handled = true;
-        //    }
-        //}
+        #region Eventos
+        private void txtCodClasse_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }
