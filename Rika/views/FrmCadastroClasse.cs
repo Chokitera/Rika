@@ -164,7 +164,7 @@ namespace Rika.views
         #endregion
 
         #region Evento Código Leave
-        private void txtCodClasse_Leave(object sender, EventArgs e)
+        private void txtCodClasse_Leave_1(object sender, EventArgs e)
         {
             if (txtCodClasse.Text != "")
             {
@@ -195,14 +195,6 @@ namespace Rika.views
                 new Helpers().LimparTela(this);
         }
 
-        private void txtCodClasse_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-
-
-
         #endregion
 
         #region Eventos
@@ -214,5 +206,7 @@ namespace Rika.views
             }
         }
         #endregion
+
+       
     }
 }

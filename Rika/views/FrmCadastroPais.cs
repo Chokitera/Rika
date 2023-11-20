@@ -167,13 +167,39 @@ namespace Rika.views
         #endregion
 
         #region Evento Código Leave
-        //FAZER
+        private void txtIdPais_Leave(object sender, EventArgs e)
+        {
+            if (txtIdPais.Text != "")
+            {
+                //Instancia do model
+                Pais pais = new Pais
+                {
+                    //Atribuição
+                    Id = int.Parse(txtIdPais.Text),
+                };
+
+                //Consulta
+                pais = paisController.ConsultaPaisPorId(pais.Id);
+
+                //Atribuição da consulta
+                if (pais.Nome != "")
+                {
+                    txtIdPais.Text = pais.Id.ToString();
+                    txtNomePais.Text = pais.Nome;
+                    txtSiglaPais.Text = pais.Sigla;
+                }
+                else
+                {
+                    new Helpers().LimparTela(this);
+                    txtIdPais.Focus();
+                }
+            }
+            else
+                new Helpers().LimparTela(this);
+        }
         #endregion
 
         #region Eventos
-
-        #endregion
-
         private void txtIdPais_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
@@ -181,5 +207,9 @@ namespace Rika.views
                 e.Handled = true;
             }
         }
+
+        #endregion
+
+        
     }
 }

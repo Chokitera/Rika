@@ -4,6 +4,7 @@ using Solucao.conexao;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,6 +99,52 @@ namespace Rika.dao
                 return false;
             }
         }
+        #endregion
+
+        #region Buscar usuário pelo ID
+
+        public Usuario ConsultarUsuarioPorId(Usuario usuario)
+        {
+            try
+            {
+                //SQL
+                string sql = @"select * from USUARIOS where IDUSUARIO = @id;";
+
+                //Comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", usuario.Id);
+
+                //Executa SQL
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                //Lê os dados
+                if (!reader.Read()) 
+                {
+                    usuario.Nome = "";
+                    MessageBox.Show("Usuário não encontrado!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    usuario.Nome = reader[1].ToString();
+                    usuario.NomeUsuario = reader[2].ToString();
+                    //usuario.Senha = reader[3].ToString();
+                    //Tipo = reader[4];
+                }
+
+                conexao.Close();
+
+                return usuario;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return usuario;
+            }
+        }
+
         #endregion
 
         #region Método para verificar se ja possuí o nome de usuário cadastrado

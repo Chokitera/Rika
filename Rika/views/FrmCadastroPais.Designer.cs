@@ -183,6 +183,7 @@
             this.txtIdPais.TextNew = "";
             this.txtIdPais.UnderlinedStyle = false;
             this.txtIdPais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdPais_KeyPress);
+            this.txtIdPais.Leave += new System.EventHandler(this.txtIdPais_Leave);
             // 
             // btnSair
             // 

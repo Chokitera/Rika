@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Rika.controllers;
+using Rika.models.Comum;
+using Rika.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,17 +17,20 @@ namespace Rika.views
 {
     public partial class FrmConsultaUsuario : Form
     {
+        private UsuarioController usuarioController;
         public FrmConsultaUsuario()
         {
             InitializeComponent();
+            usuarioController = new UsuarioController();  
         }
+
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.FromArgb(255, 255, 255);
 
-        private GraphicsPath GetRoundedPath(Rectangle rect, float radius)
+        private GraphicsPath CriaBordaFormulario(Rectangle rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
             float curveSize = radius * 2F;
@@ -37,11 +43,11 @@ namespace Rika.views
             return path;
         }
 
-        private void FormRegionAndBorder(Form form, float radius, Graphics graph, Color borderColor, float borderSize)
+        private void AjustaBordaFormulario(Form form, float radius, Graphics graph, Color borderColor, float borderSize)
         {
             if (this.WindowState != FormWindowState.Minimized)
             {
-                using (GraphicsPath roundPath = GetRoundedPath(form.ClientRectangle, radius))
+                using (GraphicsPath roundPath = CriaBordaFormulario(form.ClientRectangle, radius))
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 using (Matrix transform = new Matrix())
                 {
@@ -60,11 +66,10 @@ namespace Rika.views
                 }
             }
         }
-
-        private void FrmConsultaUsuario_Paint(object sender, PaintEventArgs e)
+        private void pnlUsuario_Paint(object sender, PaintEventArgs e)
         {
             // Ajusta as bordas
-            FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
+            AjustaBordaFormulario(this, borderRadius, e.Graphics, borderColor, borderSize);
         }
         #endregion
 
@@ -87,15 +92,18 @@ namespace Rika.views
             }
         }
 
-        private void pnlArrastarFormulario_MouseDown(object sender, MouseEventArgs e)
+        private void pnlArrastarFormulario_MouseDown_1(object sender, MouseEventArgs e)
         {
             //Chamada dos métodos para arrastar o formulário
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+
         #endregion
 
         #region Botões/Ações
+
         private void iconMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -110,12 +118,109 @@ namespace Rika.views
         {
             this.Close();
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            //Instancia do model
+            Usuario usuario = new Usuario();
+
+            //Atribuições
+            if (txtCodUsuario.Text == "")
+            {
+                txtCodUsuario.Focus();
+                MessageBox.Show("Não é possível cadastrar um usuário. Por favor, procure a tela de cadastro!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                new Helpers().LimparTela(this);
+            }
+            else
+            {
+                usuario.Id = int.Parse(txtCodUsuario.Text);
+                usuario.Nome = txtNome.Text;
+                //Tipo usuario
+                usuario.NomeUsuario = txtNomeUsuario.Text;
+                usuario.Senha = txtSenha.Text;
+
+                //Chamada do Controlador
+                bool isValid = usuarioController.SalvaUsuario(usuario);
+
+                //Se realizou o processo limpa a tela
+                if (isValid)
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodUsuario.Focus();
+                }
+            }
+            
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtCodUsuario.Text != "")
+            {
+                //Instancia do model
+                Usuario usuario = new Usuario
+                {
+                    //Atribuições
+                    Id = int.Parse(txtCodUsuario.Text)
+                };
+
+                //Chamada do Controlador
+                bool isValid = usuarioController.Excluirusuario(usuario.Id);
+
+                //Se realizou o processo limpa a tela
+                if (isValid)
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodUsuario.Focus();
+                }
+            }
+        }
+
+        #endregion
+  
+        #region Eventos
+        private void txtCodUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
         #endregion
 
-        
+        #region Evento Leave
+        private void txtCodUsuario_Leave(object sender, EventArgs e)
+        {
+            if (txtCodUsuario.Text != "")
+            {
+                //Instancia do model
+                Usuario usuario = new Usuario
+                {
+                    //Atribuição
+                    Id = int.Parse(txtCodUsuario.Text),
+                };
 
-        
+                //Consulta
+                usuario = usuarioController.ConsultausuarioPorId(usuario.Id);
 
-       
+                //Atribuição da consulta
+                if (usuario.Nome != "")
+                {
+                    txtCodUsuario.Text = usuario.Id.ToString();
+                    txtNome.Text = usuario.Nome;
+                    //tipo usuario
+                    txtNomeUsuario.Text = usuario.NomeUsuario;
+
+                }
+                else
+                {
+                    new Helpers().LimparTela(this);
+                    txtCodUsuario.Focus();
+                }
+            }
+            else
+                new Helpers().LimparTela(this);
+        }
+        #endregion
     }
 }
