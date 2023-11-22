@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Rika.controllers;
+using Rika.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +16,13 @@ namespace Rika.views
 {
     public partial class FrmConsultaPais : Form
     {
+        private PaisController paisController;
         public FrmConsultaPais()
         {
             InitializeComponent();
+
+            paisController = new PaisController();
+            ListarPaises();
         }
         #region Ajustes da Borda
         //Campos para alterar a borda
@@ -105,12 +111,44 @@ namespace Rika.views
         {
             this.Close();
         }
+
+
+
+
+
         #endregion
 
-        
+        #region Botão Confirmar
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            //Fazer futuramente
+        }
+        #endregion
 
-        
+        #region Eventos em Geral
+        private void txtNome__TextChanged(object sender, EventArgs e)
+        {
+            ListarPaises();
+        }
+        #endregion
 
-        
+        #region  Métodos
+
+            #region Listar Paises
+            public void ListarPaises()
+            {
+                DataTable dataTable = new DataTable();
+                //Instancia do Model
+                Pais pais = new Pais
+                {
+                    Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
+                };
+
+                //Consulta os paises e atribui a DataGrid
+                tabelaPaises.DataSource = paisController.ConsultarPaises(pais);
+            }
+            #endregion
+
+        #endregion
     }
 }

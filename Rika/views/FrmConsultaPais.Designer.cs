@@ -28,23 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.pnlPais = new System.Windows.Forms.Panel();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnConfirmar = new Rika.controls.ModeloBotao();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabelaPaises = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new Rika.controls.novoTextBox();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.txtNome = new Rika.controls.novoTextBox();
             this.lblAeroDestino = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.idpais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomepais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siglapais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             this.pnlPais.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaPaises)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +96,7 @@
             // 
             this.pnlPais.Controls.Add(this.btnSair);
             this.pnlPais.Controls.Add(this.btnConfirmar);
-            this.pnlPais.Controls.Add(this.dataGridView1);
+            this.pnlPais.Controls.Add(this.tabelaPaises);
             this.pnlPais.Controls.Add(this.txtCodigo);
             this.pnlPais.Controls.Add(this.label1lblCodigoPassagem);
             this.pnlPais.Controls.Add(this.txtNome);
@@ -137,17 +145,59 @@
             this.btnConfirmar.TextColor = System.Drawing.Color.White;
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // dataGridView1
+            // tabelaPaises
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 224);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 316);
-            this.dataGridView1.TabIndex = 101;
+            this.tabelaPaises.AllowUserToAddRows = false;
+            this.tabelaPaises.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.tabelaPaises.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tabelaPaises.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tabelaPaises.BackgroundColor = System.Drawing.Color.DimGray;
+            this.tabelaPaises.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tabelaPaises.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tabelaPaises.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nexa XBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaPaises.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tabelaPaises.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaPaises.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idpais,
+            this.nomepais,
+            this.siglapais});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumPurple;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaPaises.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tabelaPaises.EnableHeadersVisualStyles = false;
+            this.tabelaPaises.Location = new System.Drawing.Point(38, 224);
+            this.tabelaPaises.MultiSelect = false;
+            this.tabelaPaises.Name = "tabelaPaises";
+            this.tabelaPaises.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaPaises.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.tabelaPaises.RowHeadersWidth = 20;
+            this.tabelaPaises.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.tabelaPaises.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.tabelaPaises.Size = new System.Drawing.Size(749, 316);
+            this.tabelaPaises.TabIndex = 101;
             // 
             // txtCodigo
             // 
@@ -167,6 +217,7 @@
             this.txtCodigo.TabIndex = 100;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
+            this.txtCodigo.Visible = false;
             // 
             // label1lblCodigoPassagem
             // 
@@ -178,6 +229,7 @@
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
             this.label1lblCodigoPassagem.TabIndex = 99;
             this.label1lblCodigoPassagem.Text = "Código";
+            this.label1lblCodigoPassagem.Visible = false;
             // 
             // txtNome
             // 
@@ -197,6 +249,7 @@
             this.txtNome.TabIndex = 98;
             this.txtNome.TextNew = "";
             this.txtNome.UnderlinedStyle = false;
+            this.txtNome._TextChanged += new System.EventHandler(this.txtNome__TextChanged);
             // 
             // lblAeroDestino
             // 
@@ -218,6 +271,30 @@
             this.pictureBox1.TabIndex = 96;
             this.pictureBox1.TabStop = false;
             // 
+            // idpais
+            // 
+            this.idpais.DataPropertyName = "IDPAIS";
+            this.idpais.FillWeight = 45.68528F;
+            this.idpais.HeaderText = "Código";
+            this.idpais.Name = "idpais";
+            this.idpais.ReadOnly = true;
+            // 
+            // nomepais
+            // 
+            this.nomepais.DataPropertyName = "NOME";
+            this.nomepais.FillWeight = 161.8271F;
+            this.nomepais.HeaderText = "Nome";
+            this.nomepais.Name = "nomepais";
+            this.nomepais.ReadOnly = true;
+            // 
+            // siglapais
+            // 
+            this.siglapais.DataPropertyName = "SIGLA";
+            this.siglapais.FillWeight = 92.48762F;
+            this.siglapais.HeaderText = "Sigla";
+            this.siglapais.Name = "siglapais";
+            this.siglapais.ReadOnly = true;
+            // 
             // FrmConsultaPais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,7 +311,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
             this.pnlPais.ResumeLayout(false);
             this.pnlPais.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaPaises)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -247,11 +324,14 @@
         private System.Windows.Forms.Panel pnlPais;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnConfirmar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tabelaPaises;
         private controls.novoTextBox txtCodigo;
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private controls.novoTextBox txtNome;
         private System.Windows.Forms.Label lblAeroDestino;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomepais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn siglapais;
     }
 }

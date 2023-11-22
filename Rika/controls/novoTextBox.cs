@@ -221,7 +221,8 @@ namespace Rika.controls
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-
+            if (_TextChanged != null)
+                _TextChanged.Invoke(sender, e);
         }
 
         private void textBox1_KeyPress_1(object sender, KeyPressEventArgs e)
