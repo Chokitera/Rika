@@ -34,11 +34,6 @@
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.modeloBotao5 = new Rika.controls.ModeloBotao();
-            this.modeloBotao4 = new Rika.controls.ModeloBotao();
-            this.modeloBotao3 = new Rika.controls.ModeloBotao();
-            this.modeloBotao2 = new Rika.controls.ModeloBotao();
-            this.modeloBotao1 = new Rika.controls.ModeloBotao();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,6 +64,11 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.modeloBotao6 = new Rika.controls.ModeloBotao();
             this.btnVoltarCompras = new Rika.controls.ModeloBotao();
+            this.modeloBotao5 = new Rika.controls.ModeloBotao();
+            this.modeloBotao4 = new Rika.controls.ModeloBotao();
+            this.modeloBotao3 = new Rika.controls.ModeloBotao();
+            this.modeloBotao2 = new Rika.controls.ModeloBotao();
+            this.modeloBotao1 = new Rika.controls.ModeloBotao();
             this.pnlCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
@@ -98,7 +98,7 @@
             this.pnlCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCabecalho.Location = new System.Drawing.Point(0, 0);
             this.pnlCabecalho.Name = "pnlCabecalho";
-            this.pnlCabecalho.Size = new System.Drawing.Size(1338, 92);
+            this.pnlCabecalho.Size = new System.Drawing.Size(1372, 92);
             this.pnlCabecalho.TabIndex = 1;
             this.pnlCabecalho.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlCabecalho_MouseDown);
             // 
@@ -107,7 +107,7 @@
             this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
-            this.iconMinimizar.Location = new System.Drawing.Point(1278, 6);
+            this.iconMinimizar.Location = new System.Drawing.Point(1312, 6);
             this.iconMinimizar.Name = "iconMinimizar";
             this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,7 +120,7 @@
             this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconFechar.Image = global::Rika.Properties.Resources.x;
-            this.iconFechar.Location = new System.Drawing.Point(1304, 6);
+            this.iconFechar.Location = new System.Drawing.Point(1338, 6);
             this.iconFechar.Name = "iconFechar";
             this.iconFechar.Size = new System.Drawing.Size(20, 20);
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -147,105 +147,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
-            // 
-            // modeloBotao5
-            // 
-            this.modeloBotao5.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao5.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.modeloBotao5.BorderRadius = 15;
-            this.modeloBotao5.BorderSize = 0;
-            this.modeloBotao5.FlatAppearance.BorderSize = 0;
-            this.modeloBotao5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modeloBotao5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.modeloBotao5.ForeColor = System.Drawing.Color.White;
-            this.modeloBotao5.Location = new System.Drawing.Point(264, 31);
-            this.modeloBotao5.Name = "modeloBotao5";
-            this.modeloBotao5.Size = new System.Drawing.Size(147, 30);
-            this.modeloBotao5.TabIndex = 7;
-            this.modeloBotao5.Text = "Ofertas e destinos";
-            this.modeloBotao5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.modeloBotao5.TextColor = System.Drawing.Color.White;
-            this.modeloBotao5.UseVisualStyleBackColor = false;
-            // 
-            // modeloBotao4
-            // 
-            this.modeloBotao4.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao4.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.modeloBotao4.BorderRadius = 15;
-            this.modeloBotao4.BorderSize = 0;
-            this.modeloBotao4.FlatAppearance.BorderSize = 0;
-            this.modeloBotao4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modeloBotao4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.modeloBotao4.ForeColor = System.Drawing.Color.White;
-            this.modeloBotao4.Location = new System.Drawing.Point(417, 31);
-            this.modeloBotao4.Name = "modeloBotao4";
-            this.modeloBotao4.Size = new System.Drawing.Size(133, 30);
-            this.modeloBotao4.TabIndex = 6;
-            this.modeloBotao4.Text = "Minhas viagens";
-            this.modeloBotao4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.modeloBotao4.TextColor = System.Drawing.Color.White;
-            this.modeloBotao4.UseVisualStyleBackColor = false;
-            // 
-            // modeloBotao3
-            // 
-            this.modeloBotao3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao3.BorderColor = System.Drawing.Color.Black;
-            this.modeloBotao3.BorderRadius = 15;
-            this.modeloBotao3.BorderSize = 0;
-            this.modeloBotao3.FlatAppearance.BorderSize = 0;
-            this.modeloBotao3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modeloBotao3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.modeloBotao3.ForeColor = System.Drawing.Color.White;
-            this.modeloBotao3.Location = new System.Drawing.Point(978, 31);
-            this.modeloBotao3.Name = "modeloBotao3";
-            this.modeloBotao3.Size = new System.Drawing.Size(146, 30);
-            this.modeloBotao3.TabIndex = 5;
-            this.modeloBotao3.Text = "Carrinho de Compra";
-            this.modeloBotao3.TextColor = System.Drawing.Color.White;
-            this.modeloBotao3.UseVisualStyleBackColor = false;
-            this.modeloBotao3.Click += new System.EventHandler(this.modeloBotao3_Click);
-            // 
-            // modeloBotao2
-            // 
-            this.modeloBotao2.BackColor = System.Drawing.Color.SlateBlue;
-            this.modeloBotao2.BackgroundColor = System.Drawing.Color.SlateBlue;
-            this.modeloBotao2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.modeloBotao2.BorderRadius = 15;
-            this.modeloBotao2.BorderSize = 0;
-            this.modeloBotao2.FlatAppearance.BorderSize = 0;
-            this.modeloBotao2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modeloBotao2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.modeloBotao2.ForeColor = System.Drawing.Color.White;
-            this.modeloBotao2.Location = new System.Drawing.Point(1130, 31);
-            this.modeloBotao2.Name = "modeloBotao2";
-            this.modeloBotao2.Size = new System.Drawing.Size(107, 30);
-            this.modeloBotao2.TabIndex = 4;
-            this.modeloBotao2.Text = "Fazer login";
-            this.modeloBotao2.TextColor = System.Drawing.Color.White;
-            this.modeloBotao2.UseVisualStyleBackColor = false;
-            // 
-            // modeloBotao1
-            // 
-            this.modeloBotao1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.modeloBotao1.BorderRadius = 15;
-            this.modeloBotao1.BorderSize = 0;
-            this.modeloBotao1.FlatAppearance.BorderSize = 0;
-            this.modeloBotao1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modeloBotao1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.modeloBotao1.ForeColor = System.Drawing.Color.White;
-            this.modeloBotao1.Location = new System.Drawing.Point(556, 31);
-            this.modeloBotao1.Name = "modeloBotao1";
-            this.modeloBotao1.Size = new System.Drawing.Size(147, 30);
-            this.modeloBotao1.TabIndex = 2;
-            this.modeloBotao1.Text = "Central de ajuda";
-            this.modeloBotao1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.modeloBotao1.TextColor = System.Drawing.Color.White;
-            this.modeloBotao1.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -312,7 +213,7 @@
             this.pnlEspaco2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlEspaco2.Location = new System.Drawing.Point(0, 1376);
             this.pnlEspaco2.Name = "pnlEspaco2";
-            this.pnlEspaco2.Size = new System.Drawing.Size(1338, 55);
+            this.pnlEspaco2.Size = new System.Drawing.Size(1372, 55);
             this.pnlEspaco2.TabIndex = 53;
             // 
             // pnlInformacoes
@@ -336,7 +237,7 @@
             this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlInformacoes.Location = new System.Drawing.Point(0, 1431);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(1338, 304);
+            this.pnlInformacoes.Size = new System.Drawing.Size(1372, 304);
             this.pnlInformacoes.TabIndex = 52;
             // 
             // label18
@@ -520,7 +421,7 @@
             this.pnlEspaco.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlEspaco.Location = new System.Drawing.Point(0, 1735);
             this.pnlEspaco.Name = "pnlEspaco";
-            this.pnlEspaco.Size = new System.Drawing.Size(1338, 55);
+            this.pnlEspaco.Size = new System.Drawing.Size(1372, 55);
             this.pnlEspaco.TabIndex = 51;
             // 
             // panel1
@@ -530,7 +431,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 1790);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1338, 75);
+            this.panel1.Size = new System.Drawing.Size(1372, 75);
             this.panel1.TabIndex = 50;
             // 
             // lblCopyrigth
@@ -590,13 +491,112 @@
             this.btnVoltarCompras.TextColor = System.Drawing.Color.MediumSlateBlue;
             this.btnVoltarCompras.UseVisualStyleBackColor = false;
             // 
+            // modeloBotao5
+            // 
+            this.modeloBotao5.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.modeloBotao5.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.modeloBotao5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.modeloBotao5.BorderRadius = 15;
+            this.modeloBotao5.BorderSize = 0;
+            this.modeloBotao5.FlatAppearance.BorderSize = 0;
+            this.modeloBotao5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modeloBotao5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.modeloBotao5.ForeColor = System.Drawing.Color.White;
+            this.modeloBotao5.Location = new System.Drawing.Point(264, 31);
+            this.modeloBotao5.Name = "modeloBotao5";
+            this.modeloBotao5.Size = new System.Drawing.Size(147, 30);
+            this.modeloBotao5.TabIndex = 7;
+            this.modeloBotao5.Text = "Ofertas e destinos";
+            this.modeloBotao5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.modeloBotao5.TextColor = System.Drawing.Color.White;
+            this.modeloBotao5.UseVisualStyleBackColor = false;
+            // 
+            // modeloBotao4
+            // 
+            this.modeloBotao4.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.modeloBotao4.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.modeloBotao4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.modeloBotao4.BorderRadius = 15;
+            this.modeloBotao4.BorderSize = 0;
+            this.modeloBotao4.FlatAppearance.BorderSize = 0;
+            this.modeloBotao4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modeloBotao4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.modeloBotao4.ForeColor = System.Drawing.Color.White;
+            this.modeloBotao4.Location = new System.Drawing.Point(417, 31);
+            this.modeloBotao4.Name = "modeloBotao4";
+            this.modeloBotao4.Size = new System.Drawing.Size(133, 30);
+            this.modeloBotao4.TabIndex = 6;
+            this.modeloBotao4.Text = "Minhas viagens";
+            this.modeloBotao4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.modeloBotao4.TextColor = System.Drawing.Color.White;
+            this.modeloBotao4.UseVisualStyleBackColor = false;
+            // 
+            // modeloBotao3
+            // 
+            this.modeloBotao3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.modeloBotao3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.modeloBotao3.BorderColor = System.Drawing.Color.Black;
+            this.modeloBotao3.BorderRadius = 15;
+            this.modeloBotao3.BorderSize = 0;
+            this.modeloBotao3.FlatAppearance.BorderSize = 0;
+            this.modeloBotao3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modeloBotao3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.modeloBotao3.ForeColor = System.Drawing.Color.White;
+            this.modeloBotao3.Location = new System.Drawing.Point(978, 31);
+            this.modeloBotao3.Name = "modeloBotao3";
+            this.modeloBotao3.Size = new System.Drawing.Size(146, 30);
+            this.modeloBotao3.TabIndex = 5;
+            this.modeloBotao3.Text = "Carrinho de Compra";
+            this.modeloBotao3.TextColor = System.Drawing.Color.White;
+            this.modeloBotao3.UseVisualStyleBackColor = false;
+            this.modeloBotao3.Click += new System.EventHandler(this.modeloBotao3_Click);
+            // 
+            // modeloBotao2
+            // 
+            this.modeloBotao2.BackColor = System.Drawing.Color.SlateBlue;
+            this.modeloBotao2.BackgroundColor = System.Drawing.Color.SlateBlue;
+            this.modeloBotao2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.modeloBotao2.BorderRadius = 15;
+            this.modeloBotao2.BorderSize = 0;
+            this.modeloBotao2.FlatAppearance.BorderSize = 0;
+            this.modeloBotao2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modeloBotao2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.modeloBotao2.ForeColor = System.Drawing.Color.White;
+            this.modeloBotao2.Location = new System.Drawing.Point(1130, 31);
+            this.modeloBotao2.Name = "modeloBotao2";
+            this.modeloBotao2.Size = new System.Drawing.Size(107, 30);
+            this.modeloBotao2.TabIndex = 4;
+            this.modeloBotao2.Text = "Fazer login";
+            this.modeloBotao2.TextColor = System.Drawing.Color.White;
+            this.modeloBotao2.UseVisualStyleBackColor = false;
+            // 
+            // modeloBotao1
+            // 
+            this.modeloBotao1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.modeloBotao1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.modeloBotao1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.modeloBotao1.BorderRadius = 15;
+            this.modeloBotao1.BorderSize = 0;
+            this.modeloBotao1.FlatAppearance.BorderSize = 0;
+            this.modeloBotao1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modeloBotao1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.modeloBotao1.ForeColor = System.Drawing.Color.White;
+            this.modeloBotao1.Location = new System.Drawing.Point(556, 31);
+            this.modeloBotao1.Name = "modeloBotao1";
+            this.modeloBotao1.Size = new System.Drawing.Size(147, 30);
+            this.modeloBotao1.TabIndex = 2;
+            this.modeloBotao1.Text = "Central de ajuda";
+            this.modeloBotao1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.modeloBotao1.TextColor = System.Drawing.Color.White;
+            this.modeloBotao1.UseVisualStyleBackColor = false;
+            // 
             // FrmTelaInicialSemLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1355, 704);
+            this.ClientSize = new System.Drawing.Size(1389, 704);
             this.Controls.Add(this.pnlEspaco2);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlEspaco);
@@ -612,6 +612,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTelaInicialSemLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmTelaInicial_Paint);
             this.pnlCabecalho.ResumeLayout(false);

@@ -210,6 +210,5 @@ namespace Rika.views
 
         #endregion
 
-        
     }
 }
