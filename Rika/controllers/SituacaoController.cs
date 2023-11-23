@@ -135,7 +135,7 @@ namespace Rika.controllers
                 //Consultar as situações
                 situacoes = situacaoDAO.ConsultarSituacao(this.situacao);
 
-                return situacoes; //Retorna os paises - DataTable
+                return situacoes; //Retorna a situação - DataTable
             }
             catch (Exception erro)
             {

@@ -28,19 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaSituacao));
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.pnlSituacao = new System.Windows.Forms.Panel();
-            this.btnSair = new Rika.controls.ModeloBotao();
-            this.btnConfirmar = new Rika.controls.ModeloBotao();
             this.tabelaSituacoes = new System.Windows.Forms.DataGridView();
-            this.txtCodigo = new Rika.controls.novoTextBox();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
-            this.txtNome = new Rika.controls.novoTextBox();
             this.lblAeroDestino = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSair = new Rika.controls.ModeloBotao();
+            this.btnConfirmar = new Rika.controls.ModeloBotao();
+            this.txtCodigo = new Rika.controls.novoTextBox();
+            this.txtNome = new Rika.controls.novoTextBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -88,9 +95,9 @@
             // 
             // pnlSituacao
             // 
+            this.pnlSituacao.Controls.Add(this.tabelaSituacoes);
             this.pnlSituacao.Controls.Add(this.btnSair);
             this.pnlSituacao.Controls.Add(this.btnConfirmar);
-            this.pnlSituacao.Controls.Add(this.tabelaSituacoes);
             this.pnlSituacao.Controls.Add(this.txtCodigo);
             this.pnlSituacao.Controls.Add(this.label1lblCodigoPassagem);
             this.pnlSituacao.Controls.Add(this.txtNome);
@@ -101,6 +108,89 @@
             this.pnlSituacao.Name = "pnlSituacao";
             this.pnlSituacao.Size = new System.Drawing.Size(820, 602);
             this.pnlSituacao.TabIndex = 74;
+            // 
+            // tabelaSituacoes
+            // 
+            this.tabelaSituacoes.AllowUserToAddRows = false;
+            this.tabelaSituacoes.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.tabelaSituacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tabelaSituacoes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tabelaSituacoes.BackgroundColor = System.Drawing.Color.DimGray;
+            this.tabelaSituacoes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tabelaSituacoes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tabelaSituacoes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaSituacoes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tabelaSituacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaSituacoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Descricao});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumPurple;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaSituacoes.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tabelaSituacoes.EnableHeadersVisualStyles = false;
+            this.tabelaSituacoes.Location = new System.Drawing.Point(38, 224);
+            this.tabelaSituacoes.MultiSelect = false;
+            this.tabelaSituacoes.Name = "tabelaSituacoes";
+            this.tabelaSituacoes.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaSituacoes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.tabelaSituacoes.RowHeadersWidth = 20;
+            this.tabelaSituacoes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.tabelaSituacoes.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.tabelaSituacoes.Size = new System.Drawing.Size(749, 316);
+            this.tabelaSituacoes.TabIndex = 104;
+            // 
+            // label1lblCodigoPassagem
+            // 
+            this.label1lblCodigoPassagem.AccessibleName = "";
+            this.label1lblCodigoPassagem.AutoSize = true;
+            this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(506, 178);
+            this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
+            this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
+            this.label1lblCodigoPassagem.TabIndex = 99;
+            this.label1lblCodigoPassagem.Text = "Código";
+            this.label1lblCodigoPassagem.Visible = false;
+            // 
+            // lblAeroDestino
+            // 
+            this.lblAeroDestino.AutoSize = true;
+            this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAeroDestino.Location = new System.Drawing.Point(34, 178);
+            this.lblAeroDestino.Name = "lblAeroDestino";
+            this.lblAeroDestino.Size = new System.Drawing.Size(57, 22);
+            this.lblAeroDestino.TabIndex = 97;
+            this.lblAeroDestino.Text = "Nome";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
+            this.pictureBox1.Location = new System.Drawing.Point(331, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(170, 126);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 96;
+            this.pictureBox1.TabStop = false;
             // 
             // btnSair
             // 
@@ -141,17 +231,6 @@
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
-            // tabelaSituacoes
-            // 
-            this.tabelaSituacoes.AllowUserToAddRows = false;
-            this.tabelaSituacoes.AllowUserToDeleteRows = false;
-            this.tabelaSituacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabelaSituacoes.Location = new System.Drawing.Point(38, 224);
-            this.tabelaSituacoes.Name = "tabelaSituacoes";
-            this.tabelaSituacoes.ReadOnly = true;
-            this.tabelaSituacoes.Size = new System.Drawing.Size(749, 316);
-            this.tabelaSituacoes.TabIndex = 101;
-            // 
             // txtCodigo
             // 
             this.txtCodigo.BackColor = System.Drawing.SystemColors.Window;
@@ -162,7 +241,7 @@
             this.txtCodigo.ForeColor = System.Drawing.Color.DimGray;
             this.txtCodigo.Location = new System.Drawing.Point(592, 174);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodigo.Multiline = false;
+            this.txtCodigo.Multiline = true;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodigo.PasswordChar = false;
@@ -170,17 +249,7 @@
             this.txtCodigo.TabIndex = 100;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
-            // 
-            // label1lblCodigoPassagem
-            // 
-            this.label1lblCodigoPassagem.AccessibleName = "";
-            this.label1lblCodigoPassagem.AutoSize = true;
-            this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(506, 178);
-            this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
-            this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
-            this.label1lblCodigoPassagem.TabIndex = 99;
-            this.label1lblCodigoPassagem.Text = "Código";
+            this.txtCodigo.Visible = false;
             // 
             // txtNome
             // 
@@ -202,25 +271,21 @@
             this.txtNome.UnderlinedStyle = false;
             this.txtNome._TextChanged += new System.EventHandler(this.txtNome__TextChanged);
             // 
-            // lblAeroDestino
+            // Id
             // 
-            this.lblAeroDestino.AutoSize = true;
-            this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDestino.Location = new System.Drawing.Point(34, 178);
-            this.lblAeroDestino.Name = "lblAeroDestino";
-            this.lblAeroDestino.Size = new System.Drawing.Size(57, 22);
-            this.lblAeroDestino.TabIndex = 97;
-            this.lblAeroDestino.Text = "Nome";
+            this.Id.DataPropertyName = "IdSituacao";
+            this.Id.FillWeight = 30.45685F;
+            this.Id.HeaderText = "Código";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
-            // pictureBox1
+            // Descricao
             // 
-            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(331, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 126);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 96;
-            this.pictureBox1.TabStop = false;
+            this.Descricao.DataPropertyName = "descricao";
+            this.Descricao.FillWeight = 169.5432F;
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
             // 
             // FrmConsultaSituacao
             // 
@@ -254,11 +319,13 @@
         private System.Windows.Forms.Panel pnlSituacao;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnConfirmar;
-        private System.Windows.Forms.DataGridView tabelaSituacoes;
         private controls.novoTextBox txtCodigo;
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private controls.novoTextBox txtNome;
         private System.Windows.Forms.Label lblAeroDestino;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView tabelaSituacoes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
     }
 }
