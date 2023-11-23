@@ -18,7 +18,7 @@ namespace Rika
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTelaPrincipal());
+            Application.Run(new FrmCadastroSituacao());
         }
     }
 }

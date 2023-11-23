@@ -183,7 +183,7 @@ namespace Rika.views
                 situacao = situacaoController.ConsultasituacaoPorId(situacao.Id);
 
                 //Atribuição da consulta
-                if (situacao.Nome != "")
+                if (situacao.Id != 0)
                 {
                     txtCodigo.Text = situacao.Id.ToString();
                     txtDescricao.Text = situacao.Descricao;
@@ -195,8 +195,30 @@ namespace Rika.views
                 }
             }
         }
+
         #endregion
 
+        private void txtCodigo__TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void FrmCadastroSituacao_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo__TextChanged_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

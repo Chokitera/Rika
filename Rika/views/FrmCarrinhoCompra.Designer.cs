@@ -57,6 +57,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.modeloItemNoCarrinho1 = new Rika.controls.ModeloItemNoCarrinho();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -466,12 +467,20 @@
             this.panel3.Size = new System.Drawing.Size(500, 2);
             this.panel3.TabIndex = 53;
             // 
+            // modeloItemNoCarrinho1
+            // 
+            this.modeloItemNoCarrinho1.Location = new System.Drawing.Point(41, 116);
+            this.modeloItemNoCarrinho1.Name = "modeloItemNoCarrinho1";
+            this.modeloItemNoCarrinho1.Size = new System.Drawing.Size(562, 258);
+            this.modeloItemNoCarrinho1.TabIndex = 53;
+            // 
             // FrmCarrinhoCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1007, 690);
+            this.Controls.Add(this.modeloItemNoCarrinho1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -526,5 +535,6 @@
         private controls.novoTextBoxTextAlign txtTaxaEntrega;
         private controls.novoTextBoxTextAlign txtTempoEntrega;
         private controls.novoTextBoxTextAlign txtCupomDesconto;
+        private controls.ModeloItemNoCarrinho modeloItemNoCarrinho1;
     }
 }

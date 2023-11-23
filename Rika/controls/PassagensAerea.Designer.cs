@@ -37,6 +37,7 @@
             this.txtDataViagem = new Rika.controls.novoTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgPassagem = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPassagem)).BeginInit();
             this.SuspendLayout();
@@ -149,11 +150,21 @@
             this.imgPassagem.TabIndex = 2;
             this.imgPassagem.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(280, 157);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "label1";
+            // 
             // PassagensAerea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblPrecoFinal);
             this.Controls.Add(this.txtDiretoEscala);
@@ -185,5 +196,6 @@
         private System.Windows.Forms.TextBox txtDiretoEscala;
         private System.Windows.Forms.Label lblPrecoFinal;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

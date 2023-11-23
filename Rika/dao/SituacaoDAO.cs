@@ -96,14 +96,13 @@ namespace Rika.dao
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", situacao.Id);
-                executacmd.Parameters.AddWithValue("@nome", situacao.Nome);
                 executacmd.Parameters.AddWithValue("@descricao", situacao.Descricao);
 
                 //Executa SQL
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Situação " + situacao.Id + " - " + situacao.Nome + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Situação " + situacao.Id + " - " + situacao.Descricao + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -137,13 +136,12 @@ namespace Rika.dao
                 //Le os dados
                 if (!reader.Read())
                 {
-                    situacao.Nome = "";
+                    situacao.Descricao = "";
                     MessageBox.Show("Situação não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    situacao.Nome = reader[1].ToString();
-                    situacao.Descricao = reader[2].ToString();
+                    situacao.Descricao = reader[1].ToString();
                 }
 
                 conexao.Close();

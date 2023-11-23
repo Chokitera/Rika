@@ -215,11 +215,22 @@ namespace Rika.controls
 
         private string _dataViagem;
 
+        
+
         public string DataViagem
         {
             get { return _dataViagem; }
             set { _dataViagem = value; txtDataViagem.Text = value; }
         }
+
+        private int myVar;
+
+        public int MyProperty
+        {
+            get { return myVar; }
+            set { myVar = value; }
+        }
+
 
         private string _destino;
 
