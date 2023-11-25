@@ -40,14 +40,14 @@
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnConfirmar = new Rika.controls.ModeloBotao();
             this.tabelaPaises = new System.Windows.Forms.DataGridView();
+            this.idpais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomepais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siglapais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCodigo = new Rika.controls.novoTextBox();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.txtNome = new Rika.controls.novoTextBox();
             this.lblAeroDestino = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.idpais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomepais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.siglapais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -160,7 +160,7 @@
             this.tabelaPaises.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nexa XBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -198,6 +198,30 @@
             this.tabelaPaises.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.tabelaPaises.Size = new System.Drawing.Size(749, 316);
             this.tabelaPaises.TabIndex = 101;
+            // 
+            // idpais
+            // 
+            this.idpais.DataPropertyName = "IDPAIS";
+            this.idpais.FillWeight = 45.68528F;
+            this.idpais.HeaderText = "Código";
+            this.idpais.Name = "idpais";
+            this.idpais.ReadOnly = true;
+            // 
+            // nomepais
+            // 
+            this.nomepais.DataPropertyName = "NOME";
+            this.nomepais.FillWeight = 161.8271F;
+            this.nomepais.HeaderText = "Nome";
+            this.nomepais.Name = "nomepais";
+            this.nomepais.ReadOnly = true;
+            // 
+            // siglapais
+            // 
+            this.siglapais.DataPropertyName = "SIGLA";
+            this.siglapais.FillWeight = 92.48762F;
+            this.siglapais.HeaderText = "Sigla";
+            this.siglapais.Name = "siglapais";
+            this.siglapais.ReadOnly = true;
             // 
             // txtCodigo
             // 
@@ -270,30 +294,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 96;
             this.pictureBox1.TabStop = false;
-            // 
-            // idpais
-            // 
-            this.idpais.DataPropertyName = "IDPAIS";
-            this.idpais.FillWeight = 45.68528F;
-            this.idpais.HeaderText = "Código";
-            this.idpais.Name = "idpais";
-            this.idpais.ReadOnly = true;
-            // 
-            // nomepais
-            // 
-            this.nomepais.DataPropertyName = "NOME";
-            this.nomepais.FillWeight = 161.8271F;
-            this.nomepais.HeaderText = "Nome";
-            this.nomepais.Name = "nomepais";
-            this.nomepais.ReadOnly = true;
-            // 
-            // siglapais
-            // 
-            this.siglapais.DataPropertyName = "SIGLA";
-            this.siglapais.FillWeight = 92.48762F;
-            this.siglapais.HeaderText = "Sigla";
-            this.siglapais.Name = "siglapais";
-            this.siglapais.ReadOnly = true;
             // 
             // FrmConsultaPais
             // 
