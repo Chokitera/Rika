@@ -124,8 +124,6 @@ namespace Rika.controllers
         #region Consulta situação (DataTable)
         public DataTable ConsultarSituacao(Situacao situacao)
         {
-            try
-            {
                 //Criar a DataTable
                 DataTable situacoes = new DataTable();
 
@@ -136,12 +134,6 @@ namespace Rika.controllers
                 situacoes = situacaoDAO.ConsultarSituacao(this.situacao);
 
                 return situacoes; //Retorna a situação - DataTable
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Ocorreu um erro na consulta: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return null; //Se não deu certo retorna nulo
-            }
         }
 
         #endregion
