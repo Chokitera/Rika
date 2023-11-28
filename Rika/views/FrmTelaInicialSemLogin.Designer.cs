@@ -64,9 +64,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.modeloBotao6 = new Rika.controls.ModeloBotao();
             this.btnVoltarCompras = new Rika.controls.ModeloBotao();
-            this.passagensAerea3 = new Rika.controls.PassagensAerea();
-            this.passagensAerea1 = new Rika.controls.PassagensAerea();
-            this.passagensAerea2 = new Rika.controls.PassagensAerea();
             this.modeloBotao5 = new Rika.controls.ModeloBotao();
             this.modeloBotao4 = new Rika.controls.ModeloBotao();
             this.modeloBotao3 = new Rika.controls.ModeloBotao();
@@ -79,8 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.pnlInformacoes.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -103,7 +98,7 @@
             this.pnlCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlCabecalho.Location = new System.Drawing.Point(0, 0);
             this.pnlCabecalho.Name = "pnlCabecalho";
-            this.pnlCabecalho.Size = new System.Drawing.Size(1338, 92);
+            this.pnlCabecalho.Size = new System.Drawing.Size(1372, 92);
             this.pnlCabecalho.TabIndex = 1;
             this.pnlCabecalho.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlCabecalho_MouseDown);
             // 
@@ -112,7 +107,7 @@
             this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
-            this.iconMinimizar.Location = new System.Drawing.Point(1278, 6);
+            this.iconMinimizar.Location = new System.Drawing.Point(1312, 6);
             this.iconMinimizar.Name = "iconMinimizar";
             this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -125,7 +120,7 @@
             this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconFechar.Image = global::Rika.Properties.Resources.x;
-            this.iconFechar.Location = new System.Drawing.Point(1304, 6);
+            this.iconFechar.Location = new System.Drawing.Point(1338, 6);
             this.iconFechar.Name = "iconFechar";
             this.iconFechar.Size = new System.Drawing.Size(20, 20);
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,7 +163,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::Rika.Properties.Resources.maldivas_2;
-            this.pictureBox5.Location = new System.Drawing.Point(12, 429);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 92);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(1315, 443);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,7 +175,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label1.Location = new System.Drawing.Point(35, 1319);
+            this.label1.Location = new System.Drawing.Point(35, 982);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 31);
             this.label1.TabIndex = 46;
@@ -189,8 +184,7 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.Controls.Add(this.passagensAerea3);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(41, 1362);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(41, 1025);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1266, 302);
             this.flowLayoutPanel2.TabIndex = 47;
@@ -198,9 +192,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.passagensAerea1);
-            this.flowLayoutPanel1.Controls.Add(this.passagensAerea2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(44, 954);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(44, 617);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1266, 302);
             this.flowLayoutPanel1.TabIndex = 45;
@@ -210,7 +202,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label4.Location = new System.Drawing.Point(38, 909);
+            this.label4.Location = new System.Drawing.Point(38, 572);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(377, 31);
             this.label4.TabIndex = 44;
@@ -219,9 +211,9 @@
             // pnlEspaco2
             // 
             this.pnlEspaco2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlEspaco2.Location = new System.Drawing.Point(0, 1713);
+            this.pnlEspaco2.Location = new System.Drawing.Point(0, 1376);
             this.pnlEspaco2.Name = "pnlEspaco2";
-            this.pnlEspaco2.Size = new System.Drawing.Size(1338, 55);
+            this.pnlEspaco2.Size = new System.Drawing.Size(1372, 55);
             this.pnlEspaco2.TabIndex = 53;
             // 
             // pnlInformacoes
@@ -243,9 +235,9 @@
             this.pnlInformacoes.Controls.Add(this.label3);
             this.pnlInformacoes.Controls.Add(this.label2);
             this.pnlInformacoes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlInformacoes.Location = new System.Drawing.Point(0, 1768);
+            this.pnlInformacoes.Location = new System.Drawing.Point(0, 1431);
             this.pnlInformacoes.Name = "pnlInformacoes";
-            this.pnlInformacoes.Size = new System.Drawing.Size(1338, 304);
+            this.pnlInformacoes.Size = new System.Drawing.Size(1372, 304);
             this.pnlInformacoes.TabIndex = 52;
             // 
             // label18
@@ -427,9 +419,9 @@
             // pnlEspaco
             // 
             this.pnlEspaco.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlEspaco.Location = new System.Drawing.Point(0, 2072);
+            this.pnlEspaco.Location = new System.Drawing.Point(0, 1735);
             this.pnlEspaco.Name = "pnlEspaco";
-            this.pnlEspaco.Size = new System.Drawing.Size(1338, 55);
+            this.pnlEspaco.Size = new System.Drawing.Size(1372, 55);
             this.pnlEspaco.TabIndex = 51;
             // 
             // panel1
@@ -437,9 +429,9 @@
             this.panel1.Controls.Add(this.lblCopyrigth);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 2127);
+            this.panel1.Location = new System.Drawing.Point(0, 1790);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1338, 75);
+            this.panel1.Size = new System.Drawing.Size(1372, 75);
             this.panel1.TabIndex = 50;
             // 
             // lblCopyrigth
@@ -473,7 +465,7 @@
             this.modeloBotao6.FlatAppearance.BorderSize = 0;
             this.modeloBotao6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modeloBotao6.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao6.Location = new System.Drawing.Point(524, 1664);
+            this.modeloBotao6.Location = new System.Drawing.Point(524, 1327);
             this.modeloBotao6.Name = "modeloBotao6";
             this.modeloBotao6.Size = new System.Drawing.Size(283, 49);
             this.modeloBotao6.TabIndex = 49;
@@ -491,58 +483,13 @@
             this.btnVoltarCompras.FlatAppearance.BorderSize = 0;
             this.btnVoltarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltarCompras.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnVoltarCompras.Location = new System.Drawing.Point(524, 1262);
+            this.btnVoltarCompras.Location = new System.Drawing.Point(524, 925);
             this.btnVoltarCompras.Name = "btnVoltarCompras";
             this.btnVoltarCompras.Size = new System.Drawing.Size(283, 49);
             this.btnVoltarCompras.TabIndex = 48;
             this.btnVoltarCompras.Text = "Mostrar mais ofertas";
             this.btnVoltarCompras.TextColor = System.Drawing.Color.MediumSlateBlue;
             this.btnVoltarCompras.UseVisualStyleBackColor = false;
-            // 
-            // passagensAerea3
-            // 
-            this.passagensAerea3.BackColor = System.Drawing.Color.White;
-            this.passagensAerea3.Classe = "A";
-            this.passagensAerea3.DataViagem = "01/01/2024";
-            this.passagensAerea3.Destino = "São Paulo";
-            this.passagensAerea3.DiretoEscala = "Direto";
-            this.passagensAerea3.Idavolta = null;
-            this.passagensAerea3.ImagemPassagem = global::Rika.Properties.Resources.maldivas;
-            this.passagensAerea3.Location = new System.Drawing.Point(3, 3);
-            this.passagensAerea3.Name = "passagensAerea3";
-            this.passagensAerea3.Size = new System.Drawing.Size(410, 298);
-            this.passagensAerea3.TabIndex = 1;
-            this.passagensAerea3.Valor = "R$ 499,99";
-            // 
-            // passagensAerea1
-            // 
-            this.passagensAerea1.BackColor = System.Drawing.Color.White;
-            this.passagensAerea1.Classe = "A";
-            this.passagensAerea1.DataViagem = "01/01/2024";
-            this.passagensAerea1.Destino = "São Paulo";
-            this.passagensAerea1.DiretoEscala = "Direto";
-            this.passagensAerea1.Idavolta = null;
-            this.passagensAerea1.ImagemPassagem = global::Rika.Properties.Resources.maldivas;
-            this.passagensAerea1.Location = new System.Drawing.Point(3, 3);
-            this.passagensAerea1.Name = "passagensAerea1";
-            this.passagensAerea1.Size = new System.Drawing.Size(410, 298);
-            this.passagensAerea1.TabIndex = 0;
-            this.passagensAerea1.Valor = "R$ 499,99";
-            // 
-            // passagensAerea2
-            // 
-            this.passagensAerea2.BackColor = System.Drawing.Color.White;
-            this.passagensAerea2.Classe = "A";
-            this.passagensAerea2.DataViagem = "01/01/2024";
-            this.passagensAerea2.Destino = "São Paulo";
-            this.passagensAerea2.DiretoEscala = "Direto";
-            this.passagensAerea2.Idavolta = null;
-            this.passagensAerea2.ImagemPassagem = global::Rika.Properties.Resources.maldivas;
-            this.passagensAerea2.Location = new System.Drawing.Point(419, 3);
-            this.passagensAerea2.Name = "passagensAerea2";
-            this.passagensAerea2.Size = new System.Drawing.Size(410, 298);
-            this.passagensAerea2.TabIndex = 1;
-            this.passagensAerea2.Valor = "R$ 499,99";
             // 
             // modeloBotao5
             // 
@@ -649,7 +596,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1355, 704);
+            this.ClientSize = new System.Drawing.Size(1389, 704);
             this.Controls.Add(this.pnlEspaco2);
             this.Controls.Add(this.pnlInformacoes);
             this.Controls.Add(this.pnlEspaco);
@@ -665,6 +612,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmTelaInicialSemLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmTelaInicial_Paint);
             this.pnlCabecalho.ResumeLayout(false);
@@ -674,8 +622,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.pnlInformacoes.ResumeLayout(false);
             this.pnlInformacoes.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -728,8 +674,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblCopyrigth;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private controls.PassagensAerea passagensAerea1;
-        private controls.PassagensAerea passagensAerea3;
-        private controls.PassagensAerea passagensAerea2;
     }
 }

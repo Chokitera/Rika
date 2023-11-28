@@ -3,6 +3,7 @@ using Rika.dto;
 using Rika.models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -115,6 +116,30 @@ namespace Rika.controllers
         public Pais GetInfopais()
         {
             return pais;
+        }
+        #endregion
+
+        #region Consulta Pais (DataTable)
+        public DataTable ConsultarPaises(Pais pais)
+        {
+            try
+            {
+                //Cria a DataTable
+                DataTable paises = new DataTable();
+
+                //Atribuicao da entrada
+                this.pais = pais;
+
+                //Consultar os Paises
+                paises = paisDAO.ConsultarPaises(this.pais);
+
+                return paises; //Retorna os paises - DataTable
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro na consulta: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null; //Se não deu certo retorna nulo
+            }
         }
         #endregion
     }

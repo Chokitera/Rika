@@ -1,8 +1,10 @@
-﻿using Rika.dao;
+﻿using Org.BouncyCastle.Math;
+using Rika.dao;
 using Rika.dto;
 using Rika.models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -117,6 +119,23 @@ namespace Rika.controllers
         {
             return situacao;
         }
+        #endregion
+
+        #region Consulta situação (DataTable)
+        public DataTable ConsultarSituacao(Situacao situacao)
+        {
+                //Criar a DataTable
+                DataTable situacoes = new DataTable();
+
+                //Atribuição da entrada
+                this.situacao = situacao;
+
+                //Consultar as situações
+                situacoes = situacaoDAO.ConsultarSituacao(this.situacao);
+
+                return situacoes; //Retorna a situação - DataTable
+        }
+
         #endregion
     }
 }

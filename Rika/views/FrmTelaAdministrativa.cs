@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,12 @@ namespace Rika.views
         public FrmTelaAdministrativa()
         {
             InitializeComponent();
+
+            //Scroll Adicional - Se Precisar
+            //vScrollConteudo.Value = pnlConteudo.VerticalScroll.Value;
+            //vScrollConteudo.Minimum = pnlConteudo.VerticalScroll.Minimum;
+            //vScrollConteudo.Maximum = pnlConteudo.VerticalScroll.Maximum;
+            //vScrollConteudo.Scroll += vScrollConteudo_Scroll;
         }
 
         #region Ajustes da Borda
@@ -96,12 +103,7 @@ namespace Rika.views
         }
         #endregion
 
-        private void btnCadastroProduto_Click(object sender, EventArgs e)
-        {
-            FrmCadastroPassagem tela = new FrmCadastroPassagem();
-            tela.ShowDialog();
-        }
-
+        #region Botões Superiores
         private void iconFechar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -111,5 +113,26 @@ namespace Rika.views
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        #endregion
+
+        private void btnCadastroProduto_Click(object sender, EventArgs e)
+        {
+            FrmCadastroPassagem tela = new FrmCadastroPassagem();
+            tela.ShowDialog();
+        }
+
+        #region Retirar o foco quando é clicado em algo
+        protected override Point ScrollToControl(System.Windows.Forms.Control activeControl)
+        {
+            return DisplayRectangle.Location;
+        }
+        #endregion
+
+        #region Scroll adicional
+        //private void vScrollConteudo_Scroll(object sender, ScrollEventArgs e)
+        //{
+        //    pnlConteudo.VerticalScroll.Value = vScrollConteudo.Value;
+        //}
+        #endregion
     }
 }
