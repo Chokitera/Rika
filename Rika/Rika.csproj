@@ -341,6 +341,12 @@
     <Compile Include="views\FrmCadastroPais.Designer.cs">
       <DependentUpon>FrmCadastroPais.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmTelaModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmTelaModelo.Designer.cs">
+      <DependentUpon>FrmTelaModelo.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmTelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -473,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmCadastroPais.resx">
       <DependentUpon>FrmCadastroPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmTelaModelo.resx">
+      <DependentUpon>FrmTelaModelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmTelaPrincipal.resx">
       <DependentUpon>FrmTelaPrincipal.cs</DependentUpon>
