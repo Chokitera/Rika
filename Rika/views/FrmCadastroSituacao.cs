@@ -155,6 +155,7 @@ namespace Rika.views
             else
                 situacao.Id = int.Parse(txtCodigo.Text);
             situacao.Descricao = txtDescricao.Text;
+            situacao.Nome = txtNome.Text;
 
             //Chamada do Controlador
             bool isValid = situacaoController.Salvasituacao(situacao);
@@ -186,7 +187,7 @@ namespace Rika.views
                 if (situacao.Nome != "")
                 {
                     txtCodigo.Text = situacao.Id.ToString();
-                    txtDescricao.Text = situacao.Descricao;
+                    txtNome.Text = situacao.Descricao;
                 }
                 else
                 {
@@ -195,8 +196,12 @@ namespace Rika.views
                 }
             }
         }
+
         #endregion
 
+        private void FrmCadastroSituacao_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
