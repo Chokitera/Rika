@@ -3,6 +3,7 @@ using Rika.models;
 using Solucao.conexao;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -181,5 +182,47 @@ namespace Rika.dao
         }
         #endregion
 
+        #region Método para consultar voo e preencher a DataTable
+        public DataTable ConsultarVoos(Voo voo)
+        {
+            try
+            {
+                //Criacao do DataTable
+                DataTable dt = new DataTable();
+
+                //Sql
+                string sql = @"select a.modelo, v.idvoo, v.dt_saida, v.dt_chegada, v.duracao, v.horario_saida, v.horario_chegada from aviao a 
+                               inner join voo v on a.idaviao = v.idaviao
+                               where a.modelo like @modelo;";
+
+                //Atribuição de parametro
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@modelo", voo.aviao.Modelo);
+                executacmd.Parameters.AddWithValue("@idvoo", voo.aviao.Modelo);
+                executacmd.Parameters.AddWithValue("@dt_saida", voo.aviao.Modelo);
+                executacmd.Parameters.AddWithValue("@dt_chegada", voo.aviao.Modelo);
+                executacmd.Parameters.AddWithValue("@duracao", voo.aviao.Modelo);
+                executacmd.Parameters.AddWithValue("@horario_saida", voo.aviao.Modelo);
+                executacmd.Parameters.AddWithValue("@horario_chegada", voo.aviao.Modelo);
+
+                //Abre a conexao e executa Sql
+                conexao.Open();
+
+                //Preenche o DataTable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(dt);
+
+                conexao.Close();
+
+                return dt; //Retorna a DT
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return null;
+            }
+        }
+        #endregion
     }
 }

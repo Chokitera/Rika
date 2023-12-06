@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace Rika.views
 {
     public partial class FrmExibirImagemPassagem : Form
-    {
+    {  
         public FrmExibirImagemPassagem(string imagemPassagem)
         {
             InitializeComponent();

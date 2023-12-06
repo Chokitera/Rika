@@ -19,11 +19,15 @@ namespace Rika.views
     public partial class FrmCadastroAviao : Form
     {
         private AviaoController aviaoController;
+
+        private CompAereaController compAereaController;
+
         public FrmCadastroAviao()
         {
             InitializeComponent();
 
             aviaoController = new AviaoController();
+            compAereaController = new CompAereaController();
         }
         #region Ajustes da Borda
         //Campos para alterar a borda
@@ -195,8 +199,20 @@ namespace Rika.views
                 }
             }
         }
+
         #endregion
 
+        private void txtCodAviao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void FrmCadastroAviao_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

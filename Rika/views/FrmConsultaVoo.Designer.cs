@@ -28,23 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaVoo));
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.pnlVoo = new System.Windows.Forms.Panel();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnConfirmar = new Rika.controls.ModeloBotao();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabelaVoos = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new Rika.controls.novoTextBox();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.txtNome = new Rika.controls.novoTextBox();
             this.lblAeroDestino = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.idvoo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dt_saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dt_chegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duracao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Horario_saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Horario_Chegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             this.pnlVoo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaVoos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +65,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(820, 30);
             this.panel2.TabIndex = 71;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown_1);
             // 
             // iconFechar
             // 
@@ -69,6 +78,7 @@
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 28;
             this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click_1);
             // 
             // iconMinimizar
             // 
@@ -81,12 +91,13 @@
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click_1);
             // 
             // pnlVoo
             // 
             this.pnlVoo.Controls.Add(this.btnSair);
             this.pnlVoo.Controls.Add(this.btnConfirmar);
-            this.pnlVoo.Controls.Add(this.dataGridView1);
+            this.pnlVoo.Controls.Add(this.tabelaVoos);
             this.pnlVoo.Controls.Add(this.txtCodigo);
             this.pnlVoo.Controls.Add(this.label1lblCodigoPassagem);
             this.pnlVoo.Controls.Add(this.txtNome);
@@ -116,6 +127,7 @@
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnConfirmar
             // 
@@ -135,17 +147,26 @@
             this.btnConfirmar.TextColor = System.Drawing.Color.White;
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // dataGridView1
+            // tabelaVoos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 239);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 316);
-            this.dataGridView1.TabIndex = 101;
+            this.tabelaVoos.AllowUserToAddRows = false;
+            this.tabelaVoos.AllowUserToDeleteRows = false;
+            this.tabelaVoos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaVoos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idvoo,
+            this.Modelo,
+            this.dt_saida,
+            this.dt_chegada,
+            this.Duracao,
+            this.Horario_saida,
+            this.Horario_Chegada});
+            this.tabelaVoos.Location = new System.Drawing.Point(38, 239);
+            this.tabelaVoos.Name = "tabelaVoos";
+            this.tabelaVoos.ReadOnly = true;
+            this.tabelaVoos.Size = new System.Drawing.Size(749, 316);
+            this.tabelaVoos.TabIndex = 101;
             // 
             // txtCodigo
             // 
@@ -165,6 +186,7 @@
             this.txtCodigo.TabIndex = 100;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // label1lblCodigoPassagem
             // 
@@ -195,6 +217,7 @@
             this.txtNome.TabIndex = 98;
             this.txtNome.TextNew = "";
             this.txtNome.UnderlinedStyle = false;
+            this.txtNome._TextChanged += new System.EventHandler(this.txtNome__TextChanged_1);
             // 
             // lblAeroDestino
             // 
@@ -216,6 +239,57 @@
             this.pictureBox1.TabIndex = 96;
             this.pictureBox1.TabStop = false;
             // 
+            // idvoo
+            // 
+            this.idvoo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.idvoo.DataPropertyName = "IDVOO";
+            this.idvoo.HeaderText = "Código";
+            this.idvoo.Name = "idvoo";
+            this.idvoo.ReadOnly = true;
+            this.idvoo.Width = 65;
+            // 
+            // Modelo
+            // 
+            this.Modelo.DataPropertyName = "MODELO";
+            this.Modelo.HeaderText = "Modelo Avião";
+            this.Modelo.Name = "Modelo";
+            this.Modelo.ReadOnly = true;
+            // 
+            // dt_saida
+            // 
+            this.dt_saida.DataPropertyName = "dt_saida";
+            this.dt_saida.HeaderText = "Data Saída";
+            this.dt_saida.Name = "dt_saida";
+            this.dt_saida.ReadOnly = true;
+            // 
+            // dt_chegada
+            // 
+            this.dt_chegada.DataPropertyName = "DT_CHEGADA";
+            this.dt_chegada.HeaderText = "Data Chegada";
+            this.dt_chegada.Name = "dt_chegada";
+            this.dt_chegada.ReadOnly = true;
+            // 
+            // Duracao
+            // 
+            this.Duracao.DataPropertyName = "DURACAO";
+            this.Duracao.HeaderText = "Duracao";
+            this.Duracao.Name = "Duracao";
+            this.Duracao.ReadOnly = true;
+            // 
+            // Horario_saida
+            // 
+            this.Horario_saida.DataPropertyName = "HORARIO_SAIDA";
+            this.Horario_saida.HeaderText = "Horário de Saída";
+            this.Horario_saida.Name = "Horario_saida";
+            this.Horario_saida.ReadOnly = true;
+            // 
+            // Horario_Chegada
+            // 
+            this.Horario_Chegada.DataPropertyName = "HORARIO_CHEGADA";
+            this.Horario_Chegada.HeaderText = "Horário de Chegada";
+            this.Horario_Chegada.Name = "Horario_Chegada";
+            this.Horario_Chegada.ReadOnly = true;
+            // 
             // FrmConsultaVoo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,14 +299,17 @@
             this.Controls.Add(this.pnlVoo);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaVoo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Voo";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmConsultaVoo_Paint);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
             this.pnlVoo.ResumeLayout(false);
             this.pnlVoo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaVoos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -246,11 +323,18 @@
         private System.Windows.Forms.Panel pnlVoo;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnConfirmar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tabelaVoos;
         private controls.novoTextBox txtCodigo;
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private controls.novoTextBox txtNome;
         private System.Windows.Forms.Label lblAeroDestino;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idvoo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt_saida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dt_chegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Duracao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Horario_saida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Horario_Chegada;
     }
 }

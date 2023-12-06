@@ -28,23 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaTipoVenda));
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.pnlTipoVenda = new System.Windows.Forms.Panel();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnConfirmar = new Rika.controls.ModeloBotao();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabelaTipoVendas = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new Rika.controls.novoTextBox();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.txtNome = new Rika.controls.novoTextBox();
             this.lblAeroDestino = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             this.pnlTipoVenda.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaTipoVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +60,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(820, 30);
             this.panel2.TabIndex = 71;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown_1);
             // 
             // iconFechar
             // 
@@ -69,6 +73,7 @@
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 28;
             this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click_1);
             // 
             // iconMinimizar
             // 
@@ -81,12 +86,13 @@
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click_1);
             // 
             // pnlTipoVenda
             // 
             this.pnlTipoVenda.Controls.Add(this.btnSair);
             this.pnlTipoVenda.Controls.Add(this.btnConfirmar);
-            this.pnlTipoVenda.Controls.Add(this.dataGridView1);
+            this.pnlTipoVenda.Controls.Add(this.tabelaTipoVendas);
             this.pnlTipoVenda.Controls.Add(this.txtCodigo);
             this.pnlTipoVenda.Controls.Add(this.label1lblCodigoPassagem);
             this.pnlTipoVenda.Controls.Add(this.txtNome);
@@ -116,6 +122,7 @@
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnConfirmar
             // 
@@ -136,16 +143,19 @@
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // tabelaTipoVendas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 224);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 316);
-            this.dataGridView1.TabIndex = 101;
+            this.tabelaTipoVendas.AllowUserToAddRows = false;
+            this.tabelaTipoVendas.AllowUserToDeleteRows = false;
+            this.tabelaTipoVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaTipoVendas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nome,
+            this.Descricao});
+            this.tabelaTipoVendas.Location = new System.Drawing.Point(38, 224);
+            this.tabelaTipoVendas.Name = "tabelaTipoVendas";
+            this.tabelaTipoVendas.ReadOnly = true;
+            this.tabelaTipoVendas.Size = new System.Drawing.Size(749, 316);
+            this.tabelaTipoVendas.TabIndex = 101;
             // 
             // txtCodigo
             // 
@@ -195,6 +205,7 @@
             this.txtNome.TabIndex = 98;
             this.txtNome.TextNew = "";
             this.txtNome.UnderlinedStyle = false;
+            this.txtNome._TextChanged += new System.EventHandler(this.txtNome__TextChanged_1);
             // 
             // lblAeroDestino
             // 
@@ -216,6 +227,24 @@
             this.pictureBox1.TabIndex = 96;
             this.pictureBox1.TabStop = false;
             // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Nome.DataPropertyName = "NOME";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Nome.Width = 60;
+            // 
+            // Descricao
+            // 
+            this.Descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descricao.DataPropertyName = "DESCRICAO";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            // 
             // FrmConsultaTipoVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,14 +254,17 @@
             this.Controls.Add(this.pnlTipoVenda);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaTipoVenda";
-            this.Text = "FrmConsultaTipoVenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Formulário de Consulta do Tipo de Venda";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmConsultaTipoVenda_Paint);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
             this.pnlTipoVenda.ResumeLayout(false);
             this.pnlTipoVenda.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaTipoVendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -246,11 +278,13 @@
         private System.Windows.Forms.Panel pnlTipoVenda;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnConfirmar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tabelaTipoVendas;
         private controls.novoTextBox txtCodigo;
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private controls.novoTextBox txtNome;
         private System.Windows.Forms.Label lblAeroDestino;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
     }
 }

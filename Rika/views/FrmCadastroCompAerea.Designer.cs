@@ -213,6 +213,7 @@
             this.txtCodigo.TabIndex = 1;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             this.txtCodigo.Leave += new System.EventHandler(this.txtCodigo_Leave);
             // 
             // btnSair
@@ -297,7 +298,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroCompAerea";
-            this.Text = "CompAerea";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro Companhia Aérea";
+            this.Load += new System.EventHandler(this.FrmCadastroCompAerea_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroCompAerea_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
