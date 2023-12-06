@@ -21,7 +21,7 @@ namespace Rika
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmConsultaTipoVenda());
+            Application.Run(new FrmCadastroAviao());
         }
     }
 }

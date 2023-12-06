@@ -35,6 +35,8 @@
             this.pnlArrastarFormulario = new System.Windows.Forms.Panel();
             this.BtnClose = new System.Windows.Forms.PictureBox();
             this.BtnMin = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNome = new Rika.controls.novoTextBox();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
@@ -49,7 +51,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox2.Location = new System.Drawing.Point(177, 42);
+            this.pictureBox2.Location = new System.Drawing.Point(218, 44);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(170, 126);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -61,7 +63,7 @@
             this.label1lblCodigoPassagem.AccessibleName = "";
             this.label1lblCodigoPassagem.AutoSize = true;
             this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(68, 196);
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(87, 196);
             this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
             this.label1lblCodigoPassagem.TabIndex = 93;
@@ -71,7 +73,7 @@
             // 
             this.lblAeroDecolagem.AutoSize = true;
             this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDecolagem.Location = new System.Drawing.Point(68, 235);
+            this.lblAeroDecolagem.Location = new System.Drawing.Point(87, 274);
             this.lblAeroDecolagem.Name = "lblAeroDecolagem";
             this.lblAeroDecolagem.Size = new System.Drawing.Size(90, 22);
             this.lblAeroDecolagem.TabIndex = 94;
@@ -84,7 +86,7 @@
             this.pnlArrastarFormulario.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlArrastarFormulario.Location = new System.Drawing.Point(0, 0);
             this.pnlArrastarFormulario.Name = "pnlArrastarFormulario";
-            this.pnlArrastarFormulario.Size = new System.Drawing.Size(513, 27);
+            this.pnlArrastarFormulario.Size = new System.Drawing.Size(597, 27);
             this.pnlArrastarFormulario.TabIndex = 100;
             this.pnlArrastarFormulario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlArrastarFormulario_MouseDown);
             // 
@@ -93,7 +95,7 @@
             this.BtnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnClose.Image = global::Rika.Properties.Resources.x;
-            this.BtnClose.Location = new System.Drawing.Point(480, 4);
+            this.BtnClose.Location = new System.Drawing.Point(564, 4);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(20, 20);
             this.BtnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -106,13 +108,42 @@
             this.BtnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMin.Image = global::Rika.Properties.Resources.janela_minimizada;
-            this.BtnMin.Location = new System.Drawing.Point(454, 4);
+            this.BtnMin.Location = new System.Drawing.Point(538, 4);
             this.BtnMin.Name = "BtnMin";
             this.BtnMin.Size = new System.Drawing.Size(20, 20);
             this.BtnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnMin.TabIndex = 31;
             this.BtnMin.TabStop = false;
             this.BtnMin.Click += new System.EventHandler(this.BtnMin_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(87, 235);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 22);
+            this.label1.TabIndex = 102;
+            this.label1.Text = "Nome";
+            // 
+            // txtNome
+            // 
+            this.txtNome.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNome.BorderColor = System.Drawing.Color.DimGray;
+            this.txtNome.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtNome.BorderSize = 1;
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNome.Location = new System.Drawing.Point(205, 235);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNome.Multiline = false;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Padding = new System.Windows.Forms.Padding(7);
+            this.txtNome.PasswordChar = false;
+            this.txtNome.Size = new System.Drawing.Size(250, 31);
+            this.txtNome.TabIndex = 2;
+            this.txtNome.TextNew = "";
+            this.txtNome.UnderlinedStyle = false;
             // 
             // btnSair
             // 
@@ -124,10 +155,10 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(340, 295);
+            this.btnSair.Location = new System.Drawing.Point(374, 376);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
-            this.btnSair.TabIndex = 97;
+            this.btnSair.TabIndex = 6;
             this.btnSair.Text = "Sair";
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -144,10 +175,10 @@
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(179, 295);
+            this.btnExcluir.Location = new System.Drawing.Point(213, 376);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
-            this.btnExcluir.TabIndex = 96;
+            this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextColor = System.Drawing.Color.White;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -164,10 +195,10 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(19, 295);
+            this.btnSalvar.Location = new System.Drawing.Point(53, 376);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
-            this.btnSalvar.TabIndex = 95;
+            this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextColor = System.Drawing.Color.White;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -182,14 +213,14 @@
             this.txtDescricao.BorderSize = 1;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescricao.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDescricao.Location = new System.Drawing.Point(180, 235);
+            this.txtDescricao.Location = new System.Drawing.Point(205, 274);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescricao.Multiline = false;
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Padding = new System.Windows.Forms.Padding(7);
             this.txtDescricao.PasswordChar = false;
             this.txtDescricao.Size = new System.Drawing.Size(250, 31);
-            this.txtDescricao.TabIndex = 92;
+            this.txtDescricao.TabIndex = 3;
             this.txtDescricao.TextNew = "";
             this.txtDescricao.UnderlinedStyle = false;
             // 
@@ -201,14 +232,14 @@
             this.txtCodigo.BorderSize = 1;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCodigo.Location = new System.Drawing.Point(180, 196);
+            this.txtCodigo.Location = new System.Drawing.Point(205, 196);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Multiline = false;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodigo.PasswordChar = false;
             this.txtCodigo.Size = new System.Drawing.Size(250, 31);
-            this.txtCodigo.TabIndex = 91;
+            this.txtCodigo.TabIndex = 1;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
@@ -219,7 +250,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(513, 357);
+            this.ClientSize = new System.Drawing.Size(597, 453);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.pnlArrastarFormulario);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnExcluir);
@@ -232,7 +265,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroTipoVenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Tipo de Venda";
+            this.Load += new System.EventHandler(this.FrmCadastroTipoVenda_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroTipoVenda_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlArrastarFormulario.ResumeLayout(false);
@@ -256,5 +291,7 @@
         private System.Windows.Forms.Panel pnlArrastarFormulario;
         private System.Windows.Forms.PictureBox BtnClose;
         private System.Windows.Forms.PictureBox BtnMin;
+        private System.Windows.Forms.Label label1;
+        private controls.novoTextBox txtNome;
     }
 }

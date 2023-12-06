@@ -145,6 +145,7 @@
             this.txtCompAerea.BorderColor = System.Drawing.Color.DimGray;
             this.txtCompAerea.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtCompAerea.BorderSize = 1;
+            this.txtCompAerea.Enabled = false;
             this.txtCompAerea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCompAerea.ForeColor = System.Drawing.Color.DimGray;
             this.txtCompAerea.Location = new System.Drawing.Point(316, 282);
@@ -155,7 +156,7 @@
             this.txtCompAerea.PasswordChar = false;
             this.txtCompAerea.ReadOnly = true;
             this.txtCompAerea.Size = new System.Drawing.Size(250, 31);
-            this.txtCompAerea.TabIndex = 69;
+            this.txtCompAerea.TabIndex = 4;
             this.txtCompAerea.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCompAerea.TextNew = "";
             this.txtCompAerea.UnderlinedStyle = false;
@@ -175,7 +176,7 @@
             this.txtCodCompAerea.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodCompAerea.PasswordChar = false;
             this.txtCodCompAerea.Size = new System.Drawing.Size(90, 31);
-            this.txtCodCompAerea.TabIndex = 68;
+            this.txtCodCompAerea.TabIndex = 3;
             this.txtCodCompAerea.TextNew = "";
             this.txtCodCompAerea.UnderlinedStyle = false;
             // 
@@ -194,7 +195,7 @@
             this.txtQtdAcentos.Padding = new System.Windows.Forms.Padding(7);
             this.txtQtdAcentos.PasswordChar = false;
             this.txtQtdAcentos.Size = new System.Drawing.Size(90, 31);
-            this.txtQtdAcentos.TabIndex = 67;
+            this.txtQtdAcentos.TabIndex = 5;
             this.txtQtdAcentos.TextNew = "";
             this.txtQtdAcentos.UnderlinedStyle = false;
             // 
@@ -213,7 +214,7 @@
             this.txtModelAviao.Padding = new System.Windows.Forms.Padding(7);
             this.txtModelAviao.PasswordChar = false;
             this.txtModelAviao.Size = new System.Drawing.Size(347, 31);
-            this.txtModelAviao.TabIndex = 66;
+            this.txtModelAviao.TabIndex = 2;
             this.txtModelAviao.TextNew = "";
             this.txtModelAviao.UnderlinedStyle = false;
             // 
@@ -232,9 +233,10 @@
             this.txtCodAviao.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodAviao.PasswordChar = false;
             this.txtCodAviao.Size = new System.Drawing.Size(90, 31);
-            this.txtCodAviao.TabIndex = 64;
+            this.txtCodAviao.TabIndex = 1;
             this.txtCodAviao.TextNew = "";
             this.txtCodAviao.UnderlinedStyle = false;
+            this.txtCodAviao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodAviao_KeyPress);
             this.txtCodAviao.Leave += new System.EventHandler(this.txtCodAviao_Leave);
             // 
             // btnSair
@@ -250,7 +252,7 @@
             this.btnSair.Location = new System.Drawing.Point(378, 394);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
-            this.btnSair.TabIndex = 55;
+            this.btnSair.TabIndex = 8;
             this.btnSair.Text = "Sair";
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -270,7 +272,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(217, 394);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
-            this.btnExcluir.TabIndex = 54;
+            this.btnExcluir.TabIndex = 7;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextColor = System.Drawing.Color.White;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -290,7 +292,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(57, 394);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
-            this.btnSalvar.TabIndex = 53;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextColor = System.Drawing.Color.White;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -321,7 +323,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroAviao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAviao";
+            this.Text = "Cadastro de Avião";
+            this.Load += new System.EventHandler(this.FrmCadastroAviao_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroAviao_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

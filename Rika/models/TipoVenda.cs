@@ -13,8 +13,8 @@ namespace Rika.models
         [StringLength(100, ErrorMessage = "A Descrição pode conter no máximo 100 caracteres!")]
         public string Descricao { get; set; }
 
-        [Required(ErrorMessage = "A Descrição é obrigatória, não pode ser vazia!")]
-        [StringLength(100, ErrorMessage = "A Descrição pode conter no máximo 100 caracteres!")]
+        [Required(ErrorMessage = "O Nome é obrigatório, não pode ser vazio!")]
+        [StringLength(100, ErrorMessage = "O Nome pode conter no máximo 100 caracteres!")]
         public string Nome { get; set; }
     }
 }
