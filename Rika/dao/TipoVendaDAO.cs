@@ -3,6 +3,7 @@ using Rika.models;
 using Solucao.conexao;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,12 +25,14 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"insert into TIPO_VENDA (descricao) 
-                               values (@descricao);";
+                string sql = @"insert into TIPO_VENDA (nome, descricao) 
+                               values (@nome, @descricao);";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@descricao", tipoVenda.Descricao);
+                executacmd.Parameters.AddWithValue("@nome", tipoVenda.Nome); //RICHARD
+
 
                 //Consultar último registro
                 string sql2 = @"select IDTIPO_VENDA from TIPO_VENDA order by IDTIPO_VENDA desc limit 1;";
@@ -42,7 +45,7 @@ namespace Rika.dao
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 tipoVenda.Id = reader.GetInt32(0);
-                MessageBox.Show("Tipo de Venda " + tipoVenda.Id + " - " + tipoVenda.Descricao + " cadastrada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Tipo de Venda " + tipoVenda.Id + " - " + tipoVenda.Nome+ " cadastrada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -71,7 +74,7 @@ namespace Rika.dao
                 executacmd.ExecuteNonQuery();
 
                 //Mensagem que aparou o registro
-                MessageBox.Show("O cadastro foi apagado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("O cadastro foi excluído com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -96,13 +99,14 @@ namespace Rika.dao
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", tipovenda.Id);
-                executacmd.Parameters.AddWithValue("@nome", tipovenda.Descricao);
+                executacmd.Parameters.AddWithValue("@descricao", tipovenda.Descricao);
+                executacmd.Parameters.AddWithValue("@nome", tipovenda.Nome);
 
                 //Executa SQL
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Tipo de Venda " + tipovenda.Id + " - " + tipovenda.Descricao + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Tipo de Venda " + tipovenda.Id + " - " + tipovenda.Nome + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -141,7 +145,8 @@ namespace Rika.dao
                 }
                 else
                 {
-                    tipovenda.Descricao = reader[1].ToString();
+                    tipovenda.Nome = reader[1].ToString();
+                    tipovenda.Descricao = reader[2].ToString();
                 }
 
                 conexao.Close();
@@ -153,6 +158,41 @@ namespace Rika.dao
                 MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conexao.Close();
                 return tipovenda;
+            }
+        }
+        #endregion
+
+        #region Método para consultar os tipos de vendas e preencher a DataTable
+        public DataTable ConsultarTipoVendas(TipoVenda tipoVenda)
+        {
+            try
+            {
+                //Criacao do DataTable
+                DataTable dt = new DataTable();
+
+                //Sql
+                string sql = @"select * from tipo_venda where nome like @nome";
+
+                //Atribuição de parametro
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", tipoVenda.Nome);
+
+                //Abre a conexao e executa Sql
+                conexao.Open();
+
+                //Preenche o DataTable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(dt);
+
+                conexao.Close();
+
+                return dt; //Retorna a DT
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return null;
             }
         }
         #endregion

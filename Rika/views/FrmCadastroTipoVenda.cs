@@ -130,6 +130,7 @@ namespace Rika.views
             else
                 tipovenda.Id = int.Parse(txtCodigo.Text);
             tipovenda.Descricao = txtDescricao.Text;
+            tipovenda.Nome = txtNome.Text; //RICHARD
 
             //Chamada do Controlador
             bool isValid = tipoVendaController.SalvatipoVenda(tipovenda);
@@ -187,6 +188,7 @@ namespace Rika.views
                 {
                     txtCodigo.Text = tipovenda.Id.ToString();
                     txtDescricao.Text = tipovenda.Descricao;
+                    txtNome.Text = tipovenda.Nome; //RICHARD
                 }
                 else
                 {
@@ -205,5 +207,10 @@ namespace Rika.views
                     e.Handled = true;
                 }
             }
+
+        private void FrmCadastroTipoVenda_Load(object sender, EventArgs e)
+        {
+
         }
+    }
     }

@@ -33,20 +33,20 @@
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.pnlUsuario = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblDataSaida = new System.Windows.Forms.Label();
-            this.lblAeroDestino = new System.Windows.Forms.Label();
-            this.lblAeroDecolagem = new System.Windows.Forms.Label();
-            this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
+            this.txtSenha = new Rika.controls.novoTextBoxReadOnly();
             this.txtNomeUsuario = new Rika.controls.novoTextBoxReadOnly();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cmbTipoUsuario = new Rika.controls.novosComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new Rika.controls.novoTextBox();
             this.txtCodUsuario = new Rika.controls.novoTextBox();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
-            this.txtSenha = new Rika.controls.novoTextBoxReadOnly();
+            this.lblDataSaida = new System.Windows.Forms.Label();
+            this.lblAeroDestino = new System.Windows.Forms.Label();
+            this.lblAeroDecolagem = new System.Windows.Forms.Label();
+            this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.pnlArrastarFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -107,72 +107,32 @@
             this.pnlUsuario.Controls.Add(this.lblAeroDestino);
             this.pnlUsuario.Controls.Add(this.lblAeroDecolagem);
             this.pnlUsuario.Controls.Add(this.label1lblCodigoPassagem);
-            this.pnlUsuario.Location = new System.Drawing.Point(0, 0);
+            this.pnlUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlUsuario.Location = new System.Drawing.Point(0, 24);
             this.pnlUsuario.Name = "pnlUsuario";
             this.pnlUsuario.Size = new System.Drawing.Size(556, 469);
             this.pnlUsuario.TabIndex = 91;
             this.pnlUsuario.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUsuario_Paint);
             // 
-            // pictureBox2
+            // txtSenha
             // 
-            this.pictureBox2.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox2.Location = new System.Drawing.Point(190, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(170, 126);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 103;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(66, 337);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 22);
-            this.label1.TabIndex = 99;
-            this.label1.Text = "Senha";
-            // 
-            // lblDataSaida
-            // 
-            this.lblDataSaida.AutoSize = true;
-            this.lblDataSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataSaida.Location = new System.Drawing.Point(66, 297);
-            this.lblDataSaida.Name = "lblDataSaida";
-            this.lblDataSaida.Size = new System.Drawing.Size(149, 22);
-            this.lblDataSaida.TabIndex = 93;
-            this.lblDataSaida.Text = "Nome de Usuário";
-            // 
-            // lblAeroDestino
-            // 
-            this.lblAeroDestino.AutoSize = true;
-            this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDestino.Location = new System.Drawing.Point(66, 258);
-            this.lblAeroDestino.Name = "lblAeroDestino";
-            this.lblAeroDestino.Size = new System.Drawing.Size(113, 22);
-            this.lblAeroDestino.TabIndex = 92;
-            this.lblAeroDestino.Text = "Tipo Usuário";
-            // 
-            // lblAeroDecolagem
-            // 
-            this.lblAeroDecolagem.AutoSize = true;
-            this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDecolagem.Location = new System.Drawing.Point(66, 219);
-            this.lblAeroDecolagem.Name = "lblAeroDecolagem";
-            this.lblAeroDecolagem.Size = new System.Drawing.Size(57, 22);
-            this.lblAeroDecolagem.TabIndex = 91;
-            this.lblAeroDecolagem.Text = "Nome";
-            // 
-            // label1lblCodigoPassagem
-            // 
-            this.label1lblCodigoPassagem.AccessibleName = "";
-            this.label1lblCodigoPassagem.AutoSize = true;
-            this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(66, 180);
-            this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
-            this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
-            this.label1lblCodigoPassagem.TabIndex = 90;
-            this.label1lblCodigoPassagem.Text = "Código";
+            this.txtSenha.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSenha.BorderColor = System.Drawing.Color.DimGray;
+            this.txtSenha.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtSenha.BorderSize = 1;
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSenha.Location = new System.Drawing.Point(238, 337);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSenha.Multiline = false;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSenha.PasswordChar = true;
+            this.txtSenha.ReadOnly = true;
+            this.txtSenha.Size = new System.Drawing.Size(250, 31);
+            this.txtSenha.TabIndex = 104;
+            this.txtSenha.TextNew = "12345678";
+            this.txtSenha.UnderlinedStyle = false;
             // 
             // txtNomeUsuario
             // 
@@ -194,6 +154,16 @@
             this.txtNomeUsuario.TextNew = "";
             this.txtNomeUsuario.UnderlinedStyle = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
+            this.pictureBox2.Location = new System.Drawing.Point(190, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(170, 126);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 103;
+            this.pictureBox2.TabStop = false;
+            // 
             // cmbTipoUsuario
             // 
             this.cmbTipoUsuario.BackColor = System.Drawing.Color.White;
@@ -212,6 +182,16 @@
             this.cmbTipoUsuario.Size = new System.Drawing.Size(250, 30);
             this.cmbTipoUsuario.TabIndex = 101;
             this.cmbTipoUsuario.Texts = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(66, 337);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 22);
+            this.label1.TabIndex = 99;
+            this.label1.Text = "Senha";
             // 
             // txtNome
             // 
@@ -313,25 +293,46 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // txtSenha
+            // lblDataSaida
             // 
-            this.txtSenha.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSenha.BorderColor = System.Drawing.Color.DimGray;
-            this.txtSenha.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtSenha.BorderSize = 1;
-            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSenha.Location = new System.Drawing.Point(238, 337);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSenha.Multiline = false;
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Padding = new System.Windows.Forms.Padding(7);
-            this.txtSenha.PasswordChar = true;
-            this.txtSenha.ReadOnly = true;
-            this.txtSenha.Size = new System.Drawing.Size(250, 31);
-            this.txtSenha.TabIndex = 104;
-            this.txtSenha.TextNew = "12345678";
-            this.txtSenha.UnderlinedStyle = false;
+            this.lblDataSaida.AutoSize = true;
+            this.lblDataSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataSaida.Location = new System.Drawing.Point(66, 297);
+            this.lblDataSaida.Name = "lblDataSaida";
+            this.lblDataSaida.Size = new System.Drawing.Size(149, 22);
+            this.lblDataSaida.TabIndex = 93;
+            this.lblDataSaida.Text = "Nome de Usuário";
+            // 
+            // lblAeroDestino
+            // 
+            this.lblAeroDestino.AutoSize = true;
+            this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAeroDestino.Location = new System.Drawing.Point(66, 258);
+            this.lblAeroDestino.Name = "lblAeroDestino";
+            this.lblAeroDestino.Size = new System.Drawing.Size(113, 22);
+            this.lblAeroDestino.TabIndex = 92;
+            this.lblAeroDestino.Text = "Tipo Usuário";
+            // 
+            // lblAeroDecolagem
+            // 
+            this.lblAeroDecolagem.AutoSize = true;
+            this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAeroDecolagem.Location = new System.Drawing.Point(66, 219);
+            this.lblAeroDecolagem.Name = "lblAeroDecolagem";
+            this.lblAeroDecolagem.Size = new System.Drawing.Size(57, 22);
+            this.lblAeroDecolagem.TabIndex = 91;
+            this.lblAeroDecolagem.Text = "Nome";
+            // 
+            // label1lblCodigoPassagem
+            // 
+            this.label1lblCodigoPassagem.AccessibleName = "";
+            this.label1lblCodigoPassagem.AutoSize = true;
+            this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(66, 180);
+            this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
+            this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
+            this.label1lblCodigoPassagem.TabIndex = 90;
+            this.label1lblCodigoPassagem.Text = "Código";
             // 
             // FrmConsultaUsuario
             // 

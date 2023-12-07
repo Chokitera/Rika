@@ -155,6 +155,7 @@ namespace Rika.views
             else
                 situacao.Id = int.Parse(txtCodigo.Text);
             situacao.Descricao = txtDescricao.Text;
+            situacao.Nome = txtNome.Text;
 
             //Chamada do Controlador
             bool isValid = situacaoController.Salvasituacao(situacao);
@@ -183,10 +184,10 @@ namespace Rika.views
                 situacao = situacaoController.ConsultasituacaoPorId(situacao.Id);
 
                 //Atribuição da consulta
-                if (situacao.Id != 0)
+                if (situacao.Nome != "")
                 {
                     txtCodigo.Text = situacao.Id.ToString();
-                    txtDescricao.Text = situacao.Descricao;
+                    txtNome.Text = situacao.Descricao;
                 }
                 else
                 {
@@ -198,27 +199,9 @@ namespace Rika.views
 
         #endregion
 
-        private void txtCodigo__TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmCadastroSituacao_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void txtCodigo__TextChanged_1(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
-            {
-                e.Handled = true;
-            }
         }
     }
 }

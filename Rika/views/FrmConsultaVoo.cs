@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Rika.controllers;
+using Rika.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +16,15 @@ namespace Rika.views
 {
     public partial class FrmConsultaVoo : Form
     {
+        private VooController vooController;
         public FrmConsultaVoo()
         {
             InitializeComponent();
+
+            vooController = new VooController();
+            ListarVoos();
         }
+
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
@@ -60,8 +67,7 @@ namespace Rika.views
                 }
             }
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void FrmConsultaVoo_Paint(object sender, PaintEventArgs e)
         {
             // Ajusta as bordas
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
@@ -86,8 +92,7 @@ namespace Rika.views
                 return cp;
             }
         }
-
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        private void panel2_MouseDown_1(object sender, MouseEventArgs e)
         {
             //Chamada dos métodos para arrastar o formulário
             ReleaseCapture();
@@ -96,20 +101,60 @@ namespace Rika.views
         #endregion
 
         #region Botões/Ações
-        private void iconMinimizar_Click(object sender, EventArgs e)
+        private void iconMinimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void iconFechar_Click(object sender, EventArgs e)
+        private void iconFechar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            //a fazer...
+        }
+
+
         #endregion
 
-        
+        #region Eventos
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
 
-       
+        #region Eventos em Geral
+        private void txtNome__TextChanged_1(object sender, EventArgs e)
+        {
+            ListarVoos();
+        }
+        #endregion
+
+        #region  Métodos
+
+        #region Listar Voos
+        public void ListarVoos()
+        {
+            DataTable dataTable = new DataTable();
+            //Instancia do Model
+            Voo voo = new Voo();
+
+            voo.aviao.Modelo = "%" + txtNome.Text + "%"; //Porcentagem utilizada no .LIKE
+
+            //Consulta os paises e atribui a DataGrid
+            tabelaVoos.DataSource = vooController.ConsultarVoos(voo);
+        }
+        #endregion
+
+        #endregion
 
         
     }

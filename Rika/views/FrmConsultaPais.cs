@@ -113,10 +113,6 @@ namespace Rika.views
             this.Close();
         }
 
-
-
-
-
         #endregion
 
         #region Botão Confirmar

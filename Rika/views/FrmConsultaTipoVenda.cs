@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Rika.controllers;
+using Rika.models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +14,16 @@ using System.Windows.Forms;
 
 namespace Rika.views
 {
+    
     public partial class FrmConsultaTipoVenda : Form
     {
+        private TipoVendaController tipoVendaController;
         public FrmConsultaTipoVenda()
         {
             InitializeComponent();
+
+            tipoVendaController = new TipoVendaController();
+            ListarTipoVendas();
         }
         #region Ajustes da Borda
         //Campos para alterar a borda
@@ -61,7 +68,7 @@ namespace Rika.views
             }
         }
 
-        private void pnlConteudo_Paint(object sender, PaintEventArgs e)
+        private void FrmConsultaTipoVenda_Paint(object sender, PaintEventArgs e)
         {
             // Ajusta as bordas
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
@@ -86,8 +93,7 @@ namespace Rika.views
                 return cp;
             }
         }
-
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        private void panel2_MouseDown_1(object sender, MouseEventArgs e)
         {
             //Chamada dos métodos para arrastar o formulário
             ReleaseCapture();
@@ -96,21 +102,48 @@ namespace Rika.views
         #endregion
 
         #region Botões/Ações
-        private void iconMinimizar_Click(object sender, EventArgs e)
+        private void iconMinimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void iconFechar_Click(object sender, EventArgs e)
+        private void iconFechar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         #endregion
 
-        
+        #region Eventos em Geral
+        private void txtNome__TextChanged_1(object sender, EventArgs e)
+        {
+            ListarTipoVendas();
+        }
+        #endregion
 
-       
+        #region  Métodos
 
-        
+        #region Listar Tipo de Vendas
+        public void ListarTipoVendas()
+        {
+            DataTable dataTable = new DataTable();
+            //Instancia do Model
+            TipoVenda tipoVenda = new TipoVenda
+            {
+                Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
+            };
+
+            //Consulta os paises e atribui a DataGrid
+            tabelaTipoVendas.DataSource = tipoVendaController.ConsultarTipoVendas(tipoVenda);
+        }
+        #endregion
+
+        #endregion
+
     }
 }
