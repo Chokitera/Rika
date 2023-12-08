@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaPassagem));
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.pnlPassagem = new System.Windows.Forms.Panel();
-            this.btnSair = new Rika.controls.ModeloBotao();
-            this.btnConfirmar = new Rika.controls.ModeloBotao();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtCodigo = new Rika.controls.novoTextBox();
+            this.tabelaPassagens = new System.Windows.Forms.DataGridView();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
-            this.txtNome = new Rika.controls.novoTextBox();
             this.lblAeroDestino = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSair = new Rika.controls.ModeloBotao();
+            this.btnConfirmar = new Rika.controls.ModeloBotao();
+            this.txtCodigo = new Rika.controls.novoTextBox();
+            this.txtNome = new Rika.controls.novoTextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             this.pnlPassagem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaPassagens)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(820, 30);
             this.panel2.TabIndex = 71;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown_1);
             // 
             // iconFechar
             // 
@@ -70,6 +71,7 @@
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 28;
             this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
             // 
             // iconMinimizar
             // 
@@ -82,12 +84,13 @@
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
             // pnlPassagem
             // 
             this.pnlPassagem.Controls.Add(this.btnSair);
             this.pnlPassagem.Controls.Add(this.btnConfirmar);
-            this.pnlPassagem.Controls.Add(this.dataGridView1);
+            this.pnlPassagem.Controls.Add(this.tabelaPassagens);
             this.pnlPassagem.Controls.Add(this.txtCodigo);
             this.pnlPassagem.Controls.Add(this.label1lblCodigoPassagem);
             this.pnlPassagem.Controls.Add(this.txtNome);
@@ -98,74 +101,18 @@
             this.pnlPassagem.Name = "pnlPassagem";
             this.pnlPassagem.Size = new System.Drawing.Size(820, 632);
             this.pnlPassagem.TabIndex = 72;
+            this.pnlPassagem.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPassagem_Paint);
             // 
-            // btnSair
+            // tabelaPassagens
             // 
-            this.btnSair.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnSair.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnSair.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSair.BorderRadius = 20;
-            this.btnSair.BorderSize = 0;
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(419, 566);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(150, 45);
-            this.btnSair.TabIndex = 103;
-            this.btnSair.Text = "Sair";
-            this.btnSair.TextColor = System.Drawing.Color.White;
-            this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnSair.UseVisualStyleBackColor = false;
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnConfirmar.BackgroundColor = System.Drawing.Color.LimeGreen;
-            this.btnConfirmar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnConfirmar.BorderRadius = 20;
-            this.btnConfirmar.BorderSize = 0;
-            this.btnConfirmar.FlatAppearance.BorderSize = 0;
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.Location = new System.Drawing.Point(263, 566);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(150, 45);
-            this.btnConfirmar.TabIndex = 102;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.TextColor = System.Drawing.Color.White;
-            this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 239);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 316);
-            this.dataGridView1.TabIndex = 101;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCodigo.BorderColor = System.Drawing.Color.DimGray;
-            this.txtCodigo.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtCodigo.BorderSize = 1;
-            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCodigo.Location = new System.Drawing.Point(592, 189);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodigo.Multiline = false;
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Padding = new System.Windows.Forms.Padding(7);
-            this.txtCodigo.PasswordChar = false;
-            this.txtCodigo.Size = new System.Drawing.Size(90, 31);
-            this.txtCodigo.TabIndex = 100;
-            this.txtCodigo.TextNew = "";
-            this.txtCodigo.UnderlinedStyle = false;
+            this.tabelaPassagens.AllowUserToAddRows = false;
+            this.tabelaPassagens.AllowUserToDeleteRows = false;
+            this.tabelaPassagens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaPassagens.Location = new System.Drawing.Point(38, 239);
+            this.tabelaPassagens.Name = "tabelaPassagens";
+            this.tabelaPassagens.ReadOnly = true;
+            this.tabelaPassagens.Size = new System.Drawing.Size(749, 316);
+            this.tabelaPassagens.TabIndex = 101;
             // 
             // label1lblCodigoPassagem
             // 
@@ -177,25 +124,6 @@
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
             this.label1lblCodigoPassagem.TabIndex = 99;
             this.label1lblCodigoPassagem.Text = "Código";
-            // 
-            // txtNome
-            // 
-            this.txtNome.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNome.BorderColor = System.Drawing.Color.DimGray;
-            this.txtNome.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtNome.BorderSize = 1;
-            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNome.Location = new System.Drawing.Point(117, 189);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNome.Multiline = false;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Padding = new System.Windows.Forms.Padding(7);
-            this.txtNome.PasswordChar = false;
-            this.txtNome.Size = new System.Drawing.Size(347, 31);
-            this.txtNome.TabIndex = 98;
-            this.txtNome.TextNew = "";
-            this.txtNome.UnderlinedStyle = false;
             // 
             // lblAeroDestino
             // 
@@ -217,6 +145,85 @@
             this.pictureBox1.TabIndex = 96;
             this.pictureBox1.TabStop = false;
             // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSair.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSair.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSair.BorderRadius = 20;
+            this.btnSair.BorderSize = 0;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.ForeColor = System.Drawing.Color.White;
+            this.btnSair.Location = new System.Drawing.Point(419, 566);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(150, 45);
+            this.btnSair.TabIndex = 103;
+            this.btnSair.Text = "Sair";
+            this.btnSair.TextColor = System.Drawing.Color.White;
+            this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnConfirmar.BackgroundColor = System.Drawing.Color.LimeGreen;
+            this.btnConfirmar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConfirmar.BorderRadius = 20;
+            this.btnConfirmar.BorderSize = 0;
+            this.btnConfirmar.FlatAppearance.BorderSize = 0;
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmar.Location = new System.Drawing.Point(263, 566);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(150, 45);
+            this.btnConfirmar.TabIndex = 102;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.TextColor = System.Drawing.Color.White;
+            this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCodigo.BorderColor = System.Drawing.Color.DimGray;
+            this.txtCodigo.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCodigo.BorderSize = 1;
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCodigo.Location = new System.Drawing.Point(592, 189);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigo.Multiline = false;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Padding = new System.Windows.Forms.Padding(7);
+            this.txtCodigo.PasswordChar = false;
+            this.txtCodigo.Size = new System.Drawing.Size(90, 31);
+            this.txtCodigo.TabIndex = 100;
+            this.txtCodigo.TextNew = "";
+            this.txtCodigo.UnderlinedStyle = false;
+            // 
+            // txtNome
+            // 
+            this.txtNome.BackColor = System.Drawing.SystemColors.Window;
+            this.txtNome.BorderColor = System.Drawing.Color.DimGray;
+            this.txtNome.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtNome.BorderSize = 1;
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.ForeColor = System.Drawing.Color.DimGray;
+            this.txtNome.Location = new System.Drawing.Point(117, 189);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNome.Multiline = false;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Padding = new System.Windows.Forms.Padding(7);
+            this.txtNome.PasswordChar = false;
+            this.txtNome.Size = new System.Drawing.Size(347, 31);
+            this.txtNome.TabIndex = 98;
+            this.txtNome.TextNew = "";
+            this.txtNome.UnderlinedStyle = false;
+            this.txtNome._TextChanged += new System.EventHandler(this.txtNome__TextChanged_1);
+            // 
             // FrmConsultaPassagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,15 +233,16 @@
             this.Controls.Add(this.pnlPassagem);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaPassagem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Passagem";
-            this.Load += new System.EventHandler(this.FrmConsultaPassagem_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
             this.pnlPassagem.ResumeLayout(false);
             this.pnlPassagem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaPassagens)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -248,7 +256,7 @@
         private System.Windows.Forms.Panel pnlPassagem;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnConfirmar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tabelaPassagens;
         private controls.novoTextBox txtCodigo;
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private controls.novoTextBox txtNome;
