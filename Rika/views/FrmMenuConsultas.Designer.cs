@@ -55,6 +55,7 @@
             this.menuConUsuario.Size = new System.Drawing.Size(394, 127);
             this.menuConUsuario.TabIndex = 39;
             this.menuConUsuario.Titulo = "Consulta Usuário";
+            this.menuConUsuario.Click += new System.EventHandler(this.menuConUsuario_Click);
             // 
             // menuConVoo
             // 
@@ -66,6 +67,7 @@
             this.menuConVoo.Size = new System.Drawing.Size(394, 127);
             this.menuConVoo.TabIndex = 38;
             this.menuConVoo.Titulo = "Consulta Voo";
+            this.menuConVoo.Click += new System.EventHandler(this.menuConVoo_Click);
             // 
             // menuConEndereco
             // 
@@ -77,6 +79,7 @@
             this.menuConEndereco.Size = new System.Drawing.Size(394, 127);
             this.menuConEndereco.TabIndex = 37;
             this.menuConEndereco.Titulo = "Consulta Endereço";
+            this.menuConEndereco.Click += new System.EventHandler(this.menuConEndereco_Click);
             // 
             // menuConTitulo
             // 
@@ -88,6 +91,7 @@
             this.menuConTitulo.Size = new System.Drawing.Size(394, 127);
             this.menuConTitulo.TabIndex = 36;
             this.menuConTitulo.Titulo = "Consulta Título";
+            this.menuConTitulo.Click += new System.EventHandler(this.menuConTitulo_Click);
             // 
             // menuConTipoVenda
             // 
@@ -99,6 +103,7 @@
             this.menuConTipoVenda.Size = new System.Drawing.Size(394, 127);
             this.menuConTipoVenda.TabIndex = 35;
             this.menuConTipoVenda.Titulo = "Consulta Tipo de Venda";
+            this.menuConTipoVenda.Click += new System.EventHandler(this.menuConTipoVenda_Click);
             // 
             // menuConSituacao
             // 
@@ -110,6 +115,7 @@
             this.menuConSituacao.Size = new System.Drawing.Size(394, 127);
             this.menuConSituacao.TabIndex = 34;
             this.menuConSituacao.Titulo = "Consulta Situação";
+            this.menuConSituacao.Click += new System.EventHandler(this.menuConSituacao_Click);
             // 
             // menuConPassagem
             // 
@@ -121,6 +127,7 @@
             this.menuConPassagem.Size = new System.Drawing.Size(394, 127);
             this.menuConPassagem.TabIndex = 33;
             this.menuConPassagem.Titulo = "Consulta Passagem";
+            this.menuConPassagem.Click += new System.EventHandler(this.menuConPassagem_Click);
             // 
             // menuConPais
             // 
@@ -132,6 +139,7 @@
             this.menuConPais.Size = new System.Drawing.Size(394, 127);
             this.menuConPais.TabIndex = 32;
             this.menuConPais.Titulo = "Consulta País";
+            this.menuConPais.Click += new System.EventHandler(this.menuConPais_Click);
             // 
             // menuConCompAerea
             // 
@@ -143,6 +151,7 @@
             this.menuConCompAerea.Size = new System.Drawing.Size(394, 127);
             this.menuConCompAerea.TabIndex = 31;
             this.menuConCompAerea.Titulo = "Consulta Companhia Aérea";
+            this.menuConCompAerea.Click += new System.EventHandler(this.menuConCompAerea_Click);
             // 
             // menuConClasse
             // 
@@ -154,6 +163,7 @@
             this.menuConClasse.Size = new System.Drawing.Size(394, 127);
             this.menuConClasse.TabIndex = 30;
             this.menuConClasse.Titulo = "Consulta Classe";
+            this.menuConClasse.Click += new System.EventHandler(this.menuConClasse_Click);
             // 
             // menuConAviao
             // 
@@ -165,6 +175,7 @@
             this.menuConAviao.Size = new System.Drawing.Size(394, 127);
             this.menuConAviao.TabIndex = 29;
             this.menuConAviao.Titulo = "Consulta Avião";
+            this.menuConAviao.Click += new System.EventHandler(this.menuConAviao_Click);
             // 
             // menuConAeroporto
             // 
@@ -176,6 +187,7 @@
             this.menuConAeroporto.Size = new System.Drawing.Size(394, 127);
             this.menuConAeroporto.TabIndex = 28;
             this.menuConAeroporto.Titulo = "Consulta Aeroporto";
+            this.menuConAeroporto.Click += new System.EventHandler(this.menuConAeroporto_Click);
             // 
             // pictureBox1
             // 
