@@ -23,7 +23,6 @@ namespace Rika.views
             situacaoController = new SituacaoController();
         }
 
-
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
@@ -101,9 +100,7 @@ namespace Rika.views
         }
         #endregion
 
-
-
-        #region
+        #region Ajustes nos botões principais da tela
         private void iconFechar_Click(object sender, EventArgs e)
         {
             this.Close();

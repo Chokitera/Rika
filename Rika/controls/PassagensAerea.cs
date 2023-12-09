@@ -188,8 +188,6 @@ namespace Rika.controls
         public PassagensAerea()
         {
             InitializeComponent();
-
-            
         }
 
         private void PassagensAerea_Load(object sender, EventArgs e)

@@ -115,6 +115,12 @@
     <Compile Include="controllers\TipoVendaController.cs" />
     <Compile Include="controllers\UsuarioController.cs" />
     <Compile Include="controllers\VooController.cs" />
+    <Compile Include="controls\MenuCategorias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\MenuCategorias.Designer.cs">
+      <DependentUpon>MenuCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="controls\ModeloItemNoCarrinho.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -317,6 +323,18 @@
     <Compile Include="views\FrmExibirImagemPassagem.Designer.cs">
       <DependentUpon>FrmExibirImagemPassagem.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmMenuCadastros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmMenuCadastros.Designer.cs">
+      <DependentUpon>FrmMenuCadastros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmMenuConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmMenuConsultas.Designer.cs">
+      <DependentUpon>FrmMenuConsultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmTelaAdministrativa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +408,9 @@
     <Compile Include="views\FrmCadastroVoo.Designer.cs">
       <DependentUpon>FrmCadastroVoo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="controls\MenuCategorias.resx">
+      <DependentUpon>MenuCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controls\ModeloItemNoCarrinho.resx">
       <DependentUpon>ModeloItemNoCarrinho.cs</DependentUpon>
     </EmbeddedResource>
@@ -467,6 +488,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmExibirImagemPassagem.resx">
       <DependentUpon>FrmExibirImagemPassagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmMenuCadastros.resx">
+      <DependentUpon>FrmMenuCadastros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmMenuConsultas.resx">
+      <DependentUpon>FrmMenuConsultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmTelaAdministrativa.resx">
       <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
