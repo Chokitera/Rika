@@ -577,6 +577,7 @@
     <None Include="resources\Logo_Rika_Preto.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\procurar.png" />
     <None Include="resources\menu-titulos.png" />
     <None Include="resources\menu-tipovenda.png" />
     <None Include="resources\menu-situacao.png" />
