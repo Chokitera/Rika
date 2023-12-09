@@ -68,7 +68,20 @@ namespace Rika.views
 
         private void menuCadTitulo_Click(object sender, EventArgs e)
         {
-            //Criar tela
+            FrmCadastroTitulo tela = new FrmCadastroTitulo();
+            tela.ShowDialog();
+        }
+
+        private void menuCadEndereco_Click(object sender, EventArgs e)
+        {
+            FrmCadastroEndereco tela = new FrmCadastroEndereco();
+            tela.ShowDialog();
+        }
+
+        private void menuCadVoo_Click(object sender, EventArgs e)
+        {
+            FrmCadastroVoo tela = new FrmCadastroVoo();
+            tela.ShowDialog();
         }
         #endregion
     }

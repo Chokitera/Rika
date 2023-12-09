@@ -16,6 +16,7 @@ namespace Rika.views
         {
             InitializeComponent();
         }
+
         #region Acesso aos Menus
         private void menuConAeroporto_Click(object sender, EventArgs e)
         {
@@ -68,6 +69,24 @@ namespace Rika.views
         private void menuConTitulo_Click(object sender, EventArgs e)
         {
             FrmConsultaTitulos tela = new FrmConsultaTitulos();
+            tela.ShowDialog();
+        }
+
+        private void menuConEndereco_Click(object sender, EventArgs e)
+        {
+            FrmConsultaEndereco tela = new FrmConsultaEndereco();
+            tela.ShowDialog();
+        }
+
+        private void menuConVoo_Click(object sender, EventArgs e)
+        {
+            FrmConsultaVoo tela = new FrmConsultaVoo();
+            tela.ShowDialog();
+        }
+
+        private void menuConUsuario_Click(object sender, EventArgs e)
+        {
+            FrmConsultaUsuario tela = new FrmConsultaUsuario();
             tela.ShowDialog();
         }
         #endregion

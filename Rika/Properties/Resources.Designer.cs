@@ -63,6 +63,16 @@ namespace Rika.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap endereco {
+            get {
+                object obj = ResourceManager.GetObject("endereco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_cadeado {
             get {
                 object obj = ResourceManager.GetObject("icon-cadeado", resourceCulture);
@@ -223,6 +233,26 @@ namespace Rika.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menu_classe_fina {
+            get {
+                object obj = ResourceManager.GetObject("menu-classe-fina", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_classe_fina1 {
+            get {
+                object obj = ResourceManager.GetObject("menu-classe-fina1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu_compaerea {
             get {
                 object obj = ResourceManager.GetObject("menu-compaerea", resourceCulture);
@@ -293,6 +323,36 @@ namespace Rika.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menu_titulos_fino {
+            get {
+                object obj = ResourceManager.GetObject("menu-titulos-fino", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_titulos_fino1 {
+            get {
+                object obj = ResourceManager.GetObject("menu-titulos-fino1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_usuario {
+            get {
+                object obj = ResourceManager.GetObject("menu-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pasta {
             get {
                 object obj = ResourceManager.GetObject("pasta", resourceCulture);
@@ -356,6 +416,16 @@ namespace Rika.Properties {
         internal static System.Drawing.Bitmap sinal_de_seta_para_baixo_para_navegar__1_ {
             get {
                 object obj = ResourceManager.GetObject("sinal-de-seta-para-baixo-para-navegar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap voo_direto {
+            get {
+                object obj = ResourceManager.GetObject("voo-direto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

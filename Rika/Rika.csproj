@@ -239,6 +239,12 @@
     <Compile Include="views\FrmCadastroTipoVenda.Designer.cs">
       <DependentUpon>FrmCadastroTipoVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmCadastroTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmCadastroTitulo.Designer.cs">
+      <DependentUpon>FrmCadastroTitulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,12 @@
     </Compile>
     <Compile Include="views\FrmConsultaCompAerea.Designer.cs">
       <DependentUpon>FrmConsultaCompAerea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmConsultaEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaEndereco.Designer.cs">
+      <DependentUpon>FrmConsultaEndereco.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FrmConsultaPais.cs">
       <SubType>Form</SubType>
@@ -447,6 +459,9 @@
     <EmbeddedResource Include="views\FrmCadastroTipoVenda.resx">
       <DependentUpon>FrmCadastroTipoVenda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmCadastroTitulo.resx">
+      <DependentUpon>FrmCadastroTitulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\FrmCadastroUsuario.resx">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +479,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmConsultaCompAerea.resx">
       <DependentUpon>FrmConsultaCompAerea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaEndereco.resx">
+      <DependentUpon>FrmConsultaEndereco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmConsultaPais.resx">
       <DependentUpon>FrmConsultaPais.cs</DependentUpon>
@@ -577,6 +595,11 @@
     <None Include="resources\Logo_Rika_Preto.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\menu-usuario.png" />
+    <None Include="resources\menu-titulos-fino.png" />
+    <None Include="resources\menu-classe-fina.png" />
+    <None Include="resources\voo-direto.png" />
+    <None Include="resources\endereco.png" />
     <None Include="resources\procurar.png" />
     <None Include="resources\menu-titulos.png" />
     <None Include="resources\menu-tipovenda.png" />
