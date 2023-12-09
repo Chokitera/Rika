@@ -16,5 +16,60 @@ namespace Rika.views
         {
             InitializeComponent();
         }
+        #region Acesso aos Menus
+        private void menuConAeroporto_Click(object sender, EventArgs e)
+        {
+            FrmConsultaAeroporto tela = new FrmConsultaAeroporto();
+            tela.ShowDialog();
+        }
+
+        private void menuConAviao_Click(object sender, EventArgs e)
+        {
+            FrmConsultaAviao tela = new FrmConsultaAviao();
+            tela.ShowDialog();
+        }
+
+        private void menuConClasse_Click(object sender, EventArgs e)
+        {
+            FrmConsultaClasse tela = new FrmConsultaClasse();
+            tela.ShowDialog();
+        }
+
+        private void menuConCompAerea_Click(object sender, EventArgs e)
+        {
+            FrmConsultaCompAerea tela = new FrmConsultaCompAerea();
+            tela.ShowDialog();
+        }
+
+        private void menuConPais_Click(object sender, EventArgs e)
+        {
+            FrmConsultaPais tela = new FrmConsultaPais();
+            tela.ShowDialog();
+        }
+
+        private void menuConPassagem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaPassagem tela = new FrmConsultaPassagem();
+            tela.ShowDialog();
+        }
+
+        private void menuConSituacao_Click(object sender, EventArgs e)
+        {
+            FrmConsultaSituacao tela = new FrmConsultaSituacao();
+            tela.ShowDialog();
+        }
+
+        private void menuConTipoVenda_Click(object sender, EventArgs e)
+        {
+            FrmConsultaTipoVenda tela = new FrmConsultaTipoVenda();
+            tela.ShowDialog();
+        }
+
+        private void menuConTitulo_Click(object sender, EventArgs e)
+        {
+            FrmConsultaTitulos tela = new FrmConsultaTitulos();
+            tela.ShowDialog();
+        }
+        #endregion
     }
 }

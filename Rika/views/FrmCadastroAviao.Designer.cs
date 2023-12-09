@@ -145,7 +145,6 @@
             this.txtCompAerea.BorderColor = System.Drawing.Color.DimGray;
             this.txtCompAerea.BorderFocusColor = System.Drawing.Color.HotPink;
             this.txtCompAerea.BorderSize = 1;
-            this.txtCompAerea.Enabled = false;
             this.txtCompAerea.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCompAerea.ForeColor = System.Drawing.Color.DimGray;
             this.txtCompAerea.Location = new System.Drawing.Point(316, 282);

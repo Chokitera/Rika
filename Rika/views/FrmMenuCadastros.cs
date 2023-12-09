@@ -16,5 +16,60 @@ namespace Rika.views
         {
             InitializeComponent();
         }
+
+        #region Acesso aos Menus
+        private void menuCadAeroporto_Click(object sender, EventArgs e)
+        {
+            FrmCadastroAeroporto tela = new FrmCadastroAeroporto();
+            tela.ShowDialog();
+        }
+
+        private void menuCadAviao_Click(object sender, EventArgs e)
+        {
+            FrmCadastroAviao tela = new FrmCadastroAviao();
+            tela.ShowDialog();
+        }
+
+        private void menuCadClasse_Click(object sender, EventArgs e)
+        {
+            FrmCadastroClasse tela = new FrmCadastroClasse();
+            tela.ShowDialog();
+        }
+
+        private void menuCadCompAerea_Click(object sender, EventArgs e)
+        {
+            FrmCadastroCompAerea tela = new FrmCadastroCompAerea();
+            tela.ShowDialog();
+        }
+
+        private void menuCadPais_Click(object sender, EventArgs e)
+        {
+            FrmCadastroPais tela = new FrmCadastroPais();
+            tela.ShowDialog();
+        }
+
+        private void menuCadPassagem_Click(object sender, EventArgs e)
+        {
+            FrmCadastroPassagem tela = new FrmCadastroPassagem();
+            tela.ShowDialog();
+        }
+
+        private void menuCadSituacao_Click(object sender, EventArgs e)
+        {
+            FrmCadastroSituacao tela = new FrmCadastroSituacao();
+            tela.ShowDialog();
+        }
+
+        private void menuCadTipoVenda_Click(object sender, EventArgs e)
+        {
+            FrmCadastroTipoVenda tela = new FrmCadastroTipoVenda();
+            tela.ShowDialog();
+        }
+
+        private void menuCadTitulo_Click(object sender, EventArgs e)
+        {
+            //Criar tela
+        }
+        #endregion
     }
 }

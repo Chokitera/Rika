@@ -29,117 +29,126 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenuCadastros));
-            this.menuCategorias7 = new Rika.controls.MenuCategorias();
-            this.menuCategorias8 = new Rika.controls.MenuCategorias();
-            this.menuCategorias9 = new Rika.controls.MenuCategorias();
-            this.menuCategorias4 = new Rika.controls.MenuCategorias();
-            this.menuCategorias5 = new Rika.controls.MenuCategorias();
-            this.menuCategorias6 = new Rika.controls.MenuCategorias();
-            this.menuCategorias3 = new Rika.controls.MenuCategorias();
-            this.menuCategorias2 = new Rika.controls.MenuCategorias();
-            this.menuCategorias1 = new Rika.controls.MenuCategorias();
+            this.menuCadTitulo = new Rika.controls.MenuCategorias();
+            this.menuCadTipoVenda = new Rika.controls.MenuCategorias();
+            this.menuCadSituacao = new Rika.controls.MenuCategorias();
+            this.menuCadPassagem = new Rika.controls.MenuCategorias();
+            this.menuCadPais = new Rika.controls.MenuCategorias();
+            this.menuCadCompAerea = new Rika.controls.MenuCategorias();
+            this.menuCadClasse = new Rika.controls.MenuCategorias();
+            this.menuCadAviao = new Rika.controls.MenuCategorias();
+            this.menuCadAeroporto = new Rika.controls.MenuCategorias();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuCategorias7
+            // menuCadTitulo
             // 
-            this.menuCategorias7.BackColor = System.Drawing.Color.White;
-            this.menuCategorias7.Imagem = global::Rika.Properties.Resources.menu_titulos;
-            this.menuCategorias7.Informacao = "Cadastrar Títulos";
-            this.menuCategorias7.Location = new System.Drawing.Point(923, 519);
-            this.menuCategorias7.Name = "menuCategorias7";
-            this.menuCategorias7.Size = new System.Drawing.Size(394, 127);
-            this.menuCategorias7.TabIndex = 20;
-            this.menuCategorias7.Titulo = "Cadastro Título";
+            this.menuCadTitulo.BackColor = System.Drawing.Color.White;
+            this.menuCadTitulo.Imagem = global::Rika.Properties.Resources.menu_titulos;
+            this.menuCadTitulo.Informacao = "Cadastrar Títulos";
+            this.menuCadTitulo.Location = new System.Drawing.Point(923, 519);
+            this.menuCadTitulo.Name = "menuCadTitulo";
+            this.menuCadTitulo.Size = new System.Drawing.Size(394, 127);
+            this.menuCadTitulo.TabIndex = 20;
+            this.menuCadTitulo.Titulo = "Cadastro Título";
+            this.menuCadTitulo.Click += new System.EventHandler(this.menuCadTitulo_Click);
             // 
-            // menuCategorias8
+            // menuCadTipoVenda
             // 
-            this.menuCategorias8.BackColor = System.Drawing.Color.White;
-            this.menuCategorias8.Imagem = global::Rika.Properties.Resources.menu_tipovenda;
-            this.menuCategorias8.Informacao = "Cadastrar Tipos de Vendas";
-            this.menuCategorias8.Location = new System.Drawing.Point(497, 519);
-            this.menuCategorias8.Name = "menuCategorias8";
-            this.menuCategorias8.Size = new System.Drawing.Size(394, 127);
-            this.menuCategorias8.TabIndex = 19;
-            this.menuCategorias8.Titulo = "Cadastro Tipo de Venda";
+            this.menuCadTipoVenda.BackColor = System.Drawing.Color.White;
+            this.menuCadTipoVenda.Imagem = global::Rika.Properties.Resources.menu_tipovenda;
+            this.menuCadTipoVenda.Informacao = "Cadastrar Tipos de Vendas";
+            this.menuCadTipoVenda.Location = new System.Drawing.Point(497, 519);
+            this.menuCadTipoVenda.Name = "menuCadTipoVenda";
+            this.menuCadTipoVenda.Size = new System.Drawing.Size(394, 127);
+            this.menuCadTipoVenda.TabIndex = 19;
+            this.menuCadTipoVenda.Titulo = "Cadastro Tipo de Venda";
+            this.menuCadTipoVenda.Click += new System.EventHandler(this.menuCadTipoVenda_Click);
             // 
-            // menuCategorias9
+            // menuCadSituacao
             // 
-            this.menuCategorias9.BackColor = System.Drawing.Color.White;
-            this.menuCategorias9.Imagem = global::Rika.Properties.Resources.menu_situacao;
-            this.menuCategorias9.Informacao = "Cadastrar Situações";
-            this.menuCategorias9.Location = new System.Drawing.Point(65, 519);
-            this.menuCategorias9.Name = "menuCategorias9";
-            this.menuCategorias9.Size = new System.Drawing.Size(394, 127);
-            this.menuCategorias9.TabIndex = 18;
-            this.menuCategorias9.Titulo = "Cadastro Situação";
+            this.menuCadSituacao.BackColor = System.Drawing.Color.White;
+            this.menuCadSituacao.Imagem = global::Rika.Properties.Resources.menu_situacao;
+            this.menuCadSituacao.Informacao = "Cadastrar Situações";
+            this.menuCadSituacao.Location = new System.Drawing.Point(65, 519);
+            this.menuCadSituacao.Name = "menuCadSituacao";
+            this.menuCadSituacao.Size = new System.Drawing.Size(394, 127);
+            this.menuCadSituacao.TabIndex = 18;
+            this.menuCadSituacao.Titulo = "Cadastro Situação";
+            this.menuCadSituacao.Click += new System.EventHandler(this.menuCadSituacao_Click);
             // 
-            // menuCategorias4
+            // menuCadPassagem
             // 
-            this.menuCategorias4.BackColor = System.Drawing.Color.White;
-            this.menuCategorias4.Imagem = global::Rika.Properties.Resources.menu_passagem;
-            this.menuCategorias4.Informacao = "Cadastrar Passagens";
-            this.menuCategorias4.Location = new System.Drawing.Point(923, 369);
-            this.menuCategorias4.Name = "menuCategorias4";
-            this.menuCategorias4.Size = new System.Drawing.Size(394, 127);
-            this.menuCategorias4.TabIndex = 17;
-            this.menuCategorias4.Titulo = "Cadastro Passagem";
+            this.menuCadPassagem.BackColor = System.Drawing.Color.White;
+            this.menuCadPassagem.Imagem = global::Rika.Properties.Resources.menu_passagem;
+            this.menuCadPassagem.Informacao = "Cadastrar Passagens";
+            this.menuCadPassagem.Location = new System.Drawing.Point(923, 369);
+            this.menuCadPassagem.Name = "menuCadPassagem";
+            this.menuCadPassagem.Size = new System.Drawing.Size(394, 127);
+            this.menuCadPassagem.TabIndex = 17;
+            this.menuCadPassagem.Titulo = "Cadastro Passagem";
+            this.menuCadPassagem.Click += new System.EventHandler(this.menuCadPassagem_Click);
             // 
-            // menuCategorias5
+            // menuCadPais
             // 
-            this.menuCategorias5.BackColor = System.Drawing.Color.White;
-            this.menuCategorias5.Imagem = global::Rika.Properties.Resources.menu_pais;
-            this.menuCategorias5.Informacao = "Cadastrar Países";
-            this.menuCategorias5.Location = new System.Drawing.Point(497, 369);
-            this.menuCategorias5.Name = "menuCategorias5";
-            this.menuCategorias5.Size = new System.Drawing.Size(394, 127);
-            this.menuCategorias5.TabIndex = 16;
-            this.menuCategorias5.Titulo = "Cadastro País";
+            this.menuCadPais.BackColor = System.Drawing.Color.White;
+            this.menuCadPais.Imagem = global::Rika.Properties.Resources.menu_pais;
+            this.menuCadPais.Informacao = "Cadastrar Países";
+            this.menuCadPais.Location = new System.Drawing.Point(497, 369);
+            this.menuCadPais.Name = "menuCadPais";
+            this.menuCadPais.Size = new System.Drawing.Size(394, 127);
+            this.menuCadPais.TabIndex = 16;
+            this.menuCadPais.Titulo = "Cadastro País";
+            this.menuCadPais.Click += new System.EventHandler(this.menuCadPais_Click);
             // 
-            // menuCategorias6
+            // menuCadCompAerea
             // 
-            this.menuCategorias6.BackColor = System.Drawing.Color.White;
-            this.menuCategorias6.Imagem = global::Rika.Properties.Resources.menu_compaerea;
-            this.menuCategorias6.Informacao = "Cadastrar Companhias Aéreas";
-            this.menuCategorias6.Location = new System.Drawing.Point(65, 369);
-            this.menuCategorias6.Name = "menuCategorias6";
-            this.menuCategorias6.Size = new System.Drawing.Size(394, 127);
-            this.menuCategorias6.TabIndex = 15;
-            this.menuCategorias6.Titulo = "Cadastro Companhia Aérea";
+            this.menuCadCompAerea.BackColor = System.Drawing.Color.White;
+            this.menuCadCompAerea.Imagem = global::Rika.Properties.Resources.menu_compaerea;
+            this.menuCadCompAerea.Informacao = "Cadastrar Companhias Aéreas";
+            this.menuCadCompAerea.Location = new System.Drawing.Point(65, 369);
+            this.menuCadCompAerea.Name = "menuCadCompAerea";
+            this.menuCadCompAerea.Size = new System.Drawing.Size(394, 127);
+            this.menuCadCompAerea.TabIndex = 15;
+            this.menuCadCompAerea.Titulo = "Cadastro Companhia Aérea";
+            this.menuCadCompAerea.Click += new System.EventHandler(this.menuCadCompAerea_Click);
             // 
-            // menuCategorias3
+            // menuCadClasse
             // 
-            this.menuCategorias3.BackColor = System.Drawing.Color.White;
-            this.menuCategorias3.Imagem = global::Rika.Properties.Resources.menu_classe;
-            this.menuCategorias3.Informacao = "Cadastrar Classes";
-            this.menuCategorias3.Location = new System.Drawing.Point(923, 217);
-            this.menuCategorias3.Name = "menuCategorias3";
-            this.menuCategorias3.Size = new System.Drawing.Size(394, 127);
-            this.menuCategorias3.TabIndex = 14;
-            this.menuCategorias3.Titulo = "Cadastro Classe";
+            this.menuCadClasse.BackColor = System.Drawing.Color.White;
+            this.menuCadClasse.Imagem = global::Rika.Properties.Resources.menu_classe;
+            this.menuCadClasse.Informacao = "Cadastrar Classes";
+            this.menuCadClasse.Location = new System.Drawing.Point(923, 217);
+            this.menuCadClasse.Name = "menuCadClasse";
+            this.menuCadClasse.Size = new System.Drawing.Size(394, 127);
+            this.menuCadClasse.TabIndex = 14;
+            this.menuCadClasse.Titulo = "Cadastro Classe";
+            this.menuCadClasse.Click += new System.EventHandler(this.menuCadClasse_Click);
             // 
-            // menuCategorias2
+            // menuCadAviao
             // 
-            this.menuCategorias2.BackColor = System.Drawing.Color.White;
-            this.menuCategorias2.Imagem = global::Rika.Properties.Resources.menu_aviao;
-            this.menuCategorias2.Informacao = "Cadastrar Aviões";
-            this.menuCategorias2.Location = new System.Drawing.Point(497, 217);
-            this.menuCategorias2.Name = "menuCategorias2";
-            this.menuCategorias2.Size = new System.Drawing.Size(394, 127);
-            this.menuCategorias2.TabIndex = 13;
-            this.menuCategorias2.Titulo = "Cadastro Avião";
+            this.menuCadAviao.BackColor = System.Drawing.Color.White;
+            this.menuCadAviao.Imagem = global::Rika.Properties.Resources.menu_aviao;
+            this.menuCadAviao.Informacao = "Cadastrar Aviões";
+            this.menuCadAviao.Location = new System.Drawing.Point(497, 217);
+            this.menuCadAviao.Name = "menuCadAviao";
+            this.menuCadAviao.Size = new System.Drawing.Size(394, 127);
+            this.menuCadAviao.TabIndex = 13;
+            this.menuCadAviao.Titulo = "Cadastro Avião";
+            this.menuCadAviao.Click += new System.EventHandler(this.menuCadAviao_Click);
             // 
-            // menuCategorias1
+            // menuCadAeroporto
             // 
-            this.menuCategorias1.BackColor = System.Drawing.Color.White;
-            this.menuCategorias1.Imagem = global::Rika.Properties.Resources.menu_aeroporto;
-            this.menuCategorias1.Informacao = "Cadastrar Aeroportos";
-            this.menuCategorias1.Location = new System.Drawing.Point(65, 217);
-            this.menuCategorias1.Name = "menuCategorias1";
-            this.menuCategorias1.Size = new System.Drawing.Size(394, 127);
-            this.menuCategorias1.TabIndex = 12;
-            this.menuCategorias1.Titulo = "Cadastro Aeroporto";
+            this.menuCadAeroporto.BackColor = System.Drawing.Color.White;
+            this.menuCadAeroporto.Imagem = global::Rika.Properties.Resources.menu_aeroporto;
+            this.menuCadAeroporto.Informacao = "Cadastrar Aeroportos";
+            this.menuCadAeroporto.Location = new System.Drawing.Point(65, 217);
+            this.menuCadAeroporto.Name = "menuCadAeroporto";
+            this.menuCadAeroporto.Size = new System.Drawing.Size(394, 127);
+            this.menuCadAeroporto.TabIndex = 12;
+            this.menuCadAeroporto.Titulo = "Cadastro Aeroporto";
+            this.menuCadAeroporto.Click += new System.EventHandler(this.menuCadAeroporto_Click);
             // 
             // pictureBox1
             // 
@@ -157,21 +166,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1389, 669);
-            this.Controls.Add(this.menuCategorias7);
-            this.Controls.Add(this.menuCategorias8);
-            this.Controls.Add(this.menuCategorias9);
-            this.Controls.Add(this.menuCategorias4);
-            this.Controls.Add(this.menuCategorias5);
-            this.Controls.Add(this.menuCategorias6);
-            this.Controls.Add(this.menuCategorias3);
-            this.Controls.Add(this.menuCategorias2);
-            this.Controls.Add(this.menuCategorias1);
+            this.Controls.Add(this.menuCadTitulo);
+            this.Controls.Add(this.menuCadTipoVenda);
+            this.Controls.Add(this.menuCadSituacao);
+            this.Controls.Add(this.menuCadPassagem);
+            this.Controls.Add(this.menuCadPais);
+            this.Controls.Add(this.menuCadCompAerea);
+            this.Controls.Add(this.menuCadClasse);
+            this.Controls.Add(this.menuCadAviao);
+            this.Controls.Add(this.menuCadAeroporto);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMenuCadastros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu Cadastros";
+            this.Text = "Menu de Cadastros";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -179,15 +188,15 @@
 
         #endregion
 
-        private controls.MenuCategorias menuCategorias7;
-        private controls.MenuCategorias menuCategorias8;
-        private controls.MenuCategorias menuCategorias9;
-        private controls.MenuCategorias menuCategorias4;
-        private controls.MenuCategorias menuCategorias5;
-        private controls.MenuCategorias menuCategorias6;
-        private controls.MenuCategorias menuCategorias3;
-        private controls.MenuCategorias menuCategorias2;
-        private controls.MenuCategorias menuCategorias1;
+        private controls.MenuCategorias menuCadTitulo;
+        private controls.MenuCategorias menuCadTipoVenda;
+        private controls.MenuCategorias menuCadSituacao;
+        private controls.MenuCategorias menuCadPassagem;
+        private controls.MenuCategorias menuCadPais;
+        private controls.MenuCategorias menuCadCompAerea;
+        private controls.MenuCategorias menuCadClasse;
+        private controls.MenuCategorias menuCadAviao;
+        private controls.MenuCategorias menuCadAeroporto;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

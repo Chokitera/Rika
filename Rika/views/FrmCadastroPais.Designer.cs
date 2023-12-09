@@ -178,7 +178,7 @@
             this.txtIdPais.Name = "txtIdPais";
             this.txtIdPais.Padding = new System.Windows.Forms.Padding(7);
             this.txtIdPais.PasswordChar = false;
-            this.txtIdPais.Size = new System.Drawing.Size(250, 31);
+            this.txtIdPais.Size = new System.Drawing.Size(90, 31);
             this.txtIdPais.TabIndex = 88;
             this.txtIdPais.TextNew = "";
             this.txtIdPais.UnderlinedStyle = false;

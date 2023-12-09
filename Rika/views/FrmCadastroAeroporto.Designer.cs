@@ -37,7 +37,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
-            this.txtEndereco = new Rika.controls.novoTextBox();
             this.txtDescricao = new Rika.controls.novoTextBox();
             this.txtNome = new Rika.controls.novoTextBox();
             this.txtCodEndereco = new Rika.controls.novoTextBox();
@@ -45,6 +44,7 @@
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
+            this.txtEndereco = new Rika.controls.novoTextBoxReadOnly();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
@@ -138,25 +138,6 @@
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
             this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
-            // 
-            // txtEndereco
-            // 
-            this.txtEndereco.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEndereco.BorderColor = System.Drawing.Color.DimGray;
-            this.txtEndereco.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtEndereco.BorderSize = 1;
-            this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.ForeColor = System.Drawing.Color.DimGray;
-            this.txtEndereco.Location = new System.Drawing.Point(252, 354);
-            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEndereco.Multiline = false;
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Padding = new System.Windows.Forms.Padding(7);
-            this.txtEndereco.PasswordChar = false;
-            this.txtEndereco.Size = new System.Drawing.Size(250, 31);
-            this.txtEndereco.TabIndex = 69;
-            this.txtEndereco.TextNew = "";
-            this.txtEndereco.UnderlinedStyle = false;
             // 
             // txtDescricao
             // 
@@ -295,6 +276,26 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // txtEndereco
+            // 
+            this.txtEndereco.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEndereco.BorderColor = System.Drawing.Color.DimGray;
+            this.txtEndereco.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtEndereco.BorderSize = 1;
+            this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndereco.ForeColor = System.Drawing.Color.DimGray;
+            this.txtEndereco.Location = new System.Drawing.Point(252, 354);
+            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEndereco.Multiline = false;
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Padding = new System.Windows.Forms.Padding(7);
+            this.txtEndereco.PasswordChar = false;
+            this.txtEndereco.ReadOnly = true;
+            this.txtEndereco.Size = new System.Drawing.Size(250, 31);
+            this.txtEndereco.TabIndex = 88;
+            this.txtEndereco.TextNew = "";
+            this.txtEndereco.UnderlinedStyle = false;
+            // 
             // FrmCadastroAeroporto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +319,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroAeroporto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aeroporto";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroAeroporto_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -345,6 +347,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox iconFechar;
         private System.Windows.Forms.PictureBox iconMinimizar;
-        private controls.novoTextBox txtEndereco;
+        private controls.novoTextBoxReadOnly txtEndereco;
     }
 }
