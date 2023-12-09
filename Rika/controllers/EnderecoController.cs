@@ -124,7 +124,11 @@ namespace Rika.controllers
                 consulta.ReadXml(url);
 
                 //Retorna a consulta
-                return consulta;
+                if (consulta.Tables[0].Columns.Count > 1)
+                    return consulta;
+
+                MessageBox.Show("Endereço não encontrado, por favor digite o CEP manualmente.", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
             }
             catch (Exception)
             {

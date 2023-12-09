@@ -20,11 +20,13 @@ namespace Rika.views
     public partial class FrmCadastroEndereco : Form
     {
         private EnderecoController enderecoController;
+        private PaisController paisController;
         public FrmCadastroEndereco()
         {
             InitializeComponent();
 
             enderecoController = new EnderecoController();
+            paisController = new PaisController();
         }
 
         #region Ajustes da Borda
@@ -135,6 +137,7 @@ namespace Rika.views
                 if (isValid)
                 {
                     new Helpers().LimparTela(this);
+                    LimpaMaskedBox();
                     txtCodEndereco.Focus();
                 }
             }
@@ -150,13 +153,19 @@ namespace Rika.views
                 endereco.Id = 0;
             else
                 endereco.Id = int.Parse(txtCodEndereco.Text);
-            endereco.CEP = txtCep.Text;
+            if (txtCep.Text == "     -")//Retira a Mascara para a validação
+                endereco.CEP = null;
+            else
+                endereco.CEP = txtCep.Text;
             endereco.pais.Id = int.Parse(txtCodPais.Text);
             endereco.Estado = txtEstado.Text;
             endereco.Cidade = txtCidade.Text;
             endereco.Logradouro = txtLogradouro.Text;
             endereco.Complemento = txtComplemento.Text;
-            endereco.NumeroCasa = int.Parse(txtNumero.Text);
+            if (txtNumero.Text == "")
+                endereco.NumeroCasa = 0;
+            else
+                endereco.NumeroCasa = int.Parse(txtNumero.Text);
 
             //Chamada do Controlador
             bool isValid = enderecoController.SalvaEndereco(endereco);
@@ -165,6 +174,7 @@ namespace Rika.views
             if (isValid)
             {
                 new Helpers().LimparTela(this);
+                LimpaMaskedBox();
                 txtCodEndereco.Focus();
             }
         }
@@ -201,7 +211,8 @@ namespace Rika.views
         {
             if (txtCodEndereco.Text != "")
             {
-                //Instancia do Model
+                //Instancia dos Models
+                Pais pais = new Pais();
                 Endereco endereco = new Endereco
                 {
                     Id = int.Parse(txtCodEndereco.Text)
@@ -211,7 +222,7 @@ namespace Rika.views
                 endereco = enderecoController.ConsultaEnderecoPorId(endereco.Id);
 
                 //Atribuição da Consulta
-                if (endereco.CEP != "")
+                if (endereco.Cidade != "")
                 {
                     txtCodEndereco.Text = endereco.Id.ToString();
                     txtCep.Text = endereco.CEP;
@@ -220,16 +231,64 @@ namespace Rika.views
                     txtCidade.Text = endereco.Cidade;
                     txtLogradouro.Text = endereco.Logradouro;
                     txtComplemento.Text = endereco.Complemento;
-                    txtNumero.Text = endereco.NumeroCasa.ToString();
+                    if (endereco.NumeroCasa == 0)
+                        txtNumero.Text = "";
+                    else
+                        txtNumero.Text = endereco.NumeroCasa.ToString();
+
+                    //Atribui o nome do país a partir do código presente no BD
+                    if(txtCodPais.Text != "")
+                    {
+                        pais.Id = int.Parse(txtCodPais.Text);
+                        pais = paisController.ConsultaPaisPorId(pais.Id);
+
+                        if (pais.Nome != "")
+                            txtPais.Text = pais.Nome;
+                    }
                 }
                 else
                 {
                     new Helpers().LimparTela(this);
+                    LimpaMaskedBox();
                     txtCodEndereco.Focus();
                 }
             }
             else
+            {
                 new Helpers().LimparTela(this);
+                LimpaMaskedBox();
+            }
+        }
+        #endregion
+
+        #region Evento País Leave
+        private void txtCodPais_Leave(object sender, EventArgs e)
+        {
+            if(txtCodPais.Text != "")
+            {
+                //Instancia do Model
+                Pais pais = new Pais
+                {
+                    Id = int.Parse(txtCodPais.Text)
+                };
+
+                //Chamada do Controlador
+                pais = paisController.ConsultaPaisPorId(pais.Id);
+
+                //Atribuição da Consulta
+                if (pais.Nome != "")
+                    txtPais.Text = pais.Nome;
+                else
+                {
+                    txtPais.Text = "";
+                    txtCodPais.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código do País não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCodPais.Focus();
+            }
         }
         #endregion
 
@@ -248,6 +307,21 @@ namespace Rika.views
             {
                 e.Handled = true; //Tratado
             }
+        }
+
+        private void txtCodPais_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
+
+        #region Limpar MaskedBox
+        public void LimpaMaskedBox()
+        {
+            txtCep.Text = "";
         }
         #endregion
     }

@@ -141,7 +141,7 @@ namespace Rika.dao
                 if (!reader.Read())
                 {
                     pais.Nome = "";
-                    MessageBox.Show("País não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("País não encontrado!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

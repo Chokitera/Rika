@@ -48,7 +48,7 @@ namespace Rika.dao
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 endereco.Id = reader.GetInt32(0);
-                MessageBox.Show("Endereço " + endereco.Id + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Endereço " + endereco.Id + " - " + endereco.Cidade + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -76,8 +76,8 @@ namespace Rika.dao
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                //Mensagem que aparou o registro
-                MessageBox.Show("O cadastro foi apagado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Mensagem que apagou o registro
+                MessageBox.Show("O cadastro foi excluído com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -114,7 +114,7 @@ namespace Rika.dao
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Endereço " + endereco.Id + " - " + endereco.Cidade + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Endereço " + endereco.Id + " - " + endereco.Cidade + " atualizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -158,7 +158,7 @@ namespace Rika.dao
                     endereco.Estado = reader[3].ToString();
                     endereco.CEP = reader[4].ToString();
                     endereco.Logradouro = reader[5].ToString();
-                    endereco.NumeroCasa = reader.GetInt32(7);
+                    endereco.NumeroCasa = reader.GetInt32(6);
                     endereco.Complemento = reader[7].ToString();
                 }
 

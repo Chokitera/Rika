@@ -189,7 +189,7 @@
             this.txtCep.Mask = "00000-999";
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(137, 26);
-            this.txtCep.TabIndex = 94;
+            this.txtCep.TabIndex = 2;
             // 
             // ptbConsultaCEP
             // 
@@ -229,6 +229,7 @@
             this.txtPais.ReadOnly = true;
             this.txtPais.Size = new System.Drawing.Size(250, 31);
             this.txtPais.TabIndex = 93;
+            this.txtPais.TabStop = false;
             this.txtPais.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtPais.TextNew = "";
             this.txtPais.UnderlinedStyle = false;
@@ -269,7 +270,7 @@
             this.txtComplemento.Padding = new System.Windows.Forms.Padding(7);
             this.txtComplemento.PasswordChar = false;
             this.txtComplemento.Size = new System.Drawing.Size(348, 31);
-            this.txtComplemento.TabIndex = 8;
+            this.txtComplemento.TabIndex = 7;
             this.txtComplemento.TextNew = "";
             this.txtComplemento.UnderlinedStyle = false;
             // 
@@ -288,7 +289,7 @@
             this.txtNumero.Padding = new System.Windows.Forms.Padding(7);
             this.txtNumero.PasswordChar = false;
             this.txtNumero.Size = new System.Drawing.Size(90, 31);
-            this.txtNumero.TabIndex = 7;
+            this.txtNumero.TabIndex = 8;
             this.txtNumero.TextNew = "";
             this.txtNumero.UnderlinedStyle = false;
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
@@ -327,7 +328,7 @@
             this.txtCidade.Padding = new System.Windows.Forms.Padding(7);
             this.txtCidade.PasswordChar = false;
             this.txtCidade.Size = new System.Drawing.Size(348, 31);
-            this.txtCidade.TabIndex = 4;
+            this.txtCidade.TabIndex = 5;
             this.txtCidade.TextNew = "";
             this.txtCidade.UnderlinedStyle = false;
             // 
@@ -346,7 +347,7 @@
             this.txtEstado.Padding = new System.Windows.Forms.Padding(7);
             this.txtEstado.PasswordChar = false;
             this.txtEstado.Size = new System.Drawing.Size(90, 31);
-            this.txtEstado.TabIndex = 3;
+            this.txtEstado.TabIndex = 4;
             this.txtEstado.TextNew = "";
             this.txtEstado.UnderlinedStyle = false;
             // 
@@ -365,9 +366,11 @@
             this.txtCodPais.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodPais.PasswordChar = false;
             this.txtCodPais.Size = new System.Drawing.Size(90, 31);
-            this.txtCodPais.TabIndex = 2;
+            this.txtCodPais.TabIndex = 3;
             this.txtCodPais.TextNew = "";
             this.txtCodPais.UnderlinedStyle = false;
+            this.txtCodPais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodPais_KeyPress);
+            this.txtCodPais.Leave += new System.EventHandler(this.txtCodPais_Leave);
             // 
             // btnSair
             // 
