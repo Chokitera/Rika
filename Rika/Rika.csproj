@@ -577,6 +577,15 @@
     <None Include="resources\Logo_Rika_Preto.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\menu-titulos.png" />
+    <None Include="resources\menu-tipovenda.png" />
+    <None Include="resources\menu-situacao.png" />
+    <None Include="resources\menu-passagem.png" />
+    <None Include="resources\menu-pais.png" />
+    <None Include="resources\menu-compaerea.png" />
+    <None Include="resources\menu-classe.png" />
+    <None Include="resources\menu-aviao.png" />
+    <None Include="resources\menu-aeroporto.png" />
     <None Include="resources\marca-de-verificacao.png" />
     <None Include="resources\maldivas 2.jpg" />
     <None Include="resources\maldivas.jpg" />
