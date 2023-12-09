@@ -154,7 +154,7 @@
             this.txtDescricao.Padding = new System.Windows.Forms.Padding(7);
             this.txtDescricao.PasswordChar = false;
             this.txtDescricao.Size = new System.Drawing.Size(348, 31);
-            this.txtDescricao.TabIndex = 67;
+            this.txtDescricao.TabIndex = 3;
             this.txtDescricao.TextNew = "";
             this.txtDescricao.UnderlinedStyle = false;
             // 
@@ -173,7 +173,7 @@
             this.txtNome.Padding = new System.Windows.Forms.Padding(7);
             this.txtNome.PasswordChar = false;
             this.txtNome.Size = new System.Drawing.Size(348, 31);
-            this.txtNome.TabIndex = 66;
+            this.txtNome.TabIndex = 2;
             this.txtNome.TextNew = "";
             this.txtNome.UnderlinedStyle = false;
             // 
@@ -192,7 +192,7 @@
             this.txtCodEndereco.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodEndereco.PasswordChar = false;
             this.txtCodEndereco.Size = new System.Drawing.Size(90, 31);
-            this.txtCodEndereco.TabIndex = 65;
+            this.txtCodEndereco.TabIndex = 4;
             this.txtCodEndereco.TextNew = "";
             this.txtCodEndereco.UnderlinedStyle = false;
             // 
@@ -211,7 +211,7 @@
             this.txtCodAeroporto.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodAeroporto.PasswordChar = false;
             this.txtCodAeroporto.Size = new System.Drawing.Size(90, 31);
-            this.txtCodAeroporto.TabIndex = 64;
+            this.txtCodAeroporto.TabIndex = 1;
             this.txtCodAeroporto.TextNew = "";
             this.txtCodAeroporto.UnderlinedStyle = false;
             this.txtCodAeroporto.Leave += new System.EventHandler(this.txtCodAeroporto_Leave);
@@ -229,7 +229,7 @@
             this.btnSair.Location = new System.Drawing.Point(353, 417);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
-            this.btnSair.TabIndex = 55;
+            this.btnSair.TabIndex = 7;
             this.btnSair.Text = "Sair";
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -249,7 +249,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(192, 417);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
-            this.btnExcluir.TabIndex = 54;
+            this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextColor = System.Drawing.Color.White;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -269,7 +269,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(32, 417);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
-            this.btnSalvar.TabIndex = 53;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextColor = System.Drawing.Color.White;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -293,6 +293,7 @@
             this.txtEndereco.ReadOnly = true;
             this.txtEndereco.Size = new System.Drawing.Size(250, 31);
             this.txtEndereco.TabIndex = 88;
+            this.txtEndereco.TabStop = false;
             this.txtEndereco.TextNew = "";
             this.txtEndereco.UnderlinedStyle = false;
             // 

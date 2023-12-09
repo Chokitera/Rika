@@ -127,8 +127,9 @@ namespace Rika.controllers
                 if (consulta.Tables[0].Columns.Count > 1)
                     return consulta;
 
+                //Só cai aqui se não encontrou o endereço a partir do CEP preenchido
                 MessageBox.Show("Endereço não encontrado, por favor digite o CEP manualmente.", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return null;
+                return null; 
             }
             catch (Exception)
             {

@@ -141,7 +141,7 @@
             this.txtSiglaPais.Padding = new System.Windows.Forms.Padding(7);
             this.txtSiglaPais.PasswordChar = false;
             this.txtSiglaPais.Size = new System.Drawing.Size(250, 31);
-            this.txtSiglaPais.TabIndex = 90;
+            this.txtSiglaPais.TabIndex = 3;
             this.txtSiglaPais.TextNew = "";
             this.txtSiglaPais.UnderlinedStyle = false;
             // 
@@ -160,7 +160,7 @@
             this.txtNomePais.Padding = new System.Windows.Forms.Padding(7);
             this.txtNomePais.PasswordChar = false;
             this.txtNomePais.Size = new System.Drawing.Size(250, 31);
-            this.txtNomePais.TabIndex = 89;
+            this.txtNomePais.TabIndex = 2;
             this.txtNomePais.TextNew = "";
             this.txtNomePais.UnderlinedStyle = false;
             // 
@@ -179,7 +179,7 @@
             this.txtIdPais.Padding = new System.Windows.Forms.Padding(7);
             this.txtIdPais.PasswordChar = false;
             this.txtIdPais.Size = new System.Drawing.Size(90, 31);
-            this.txtIdPais.TabIndex = 88;
+            this.txtIdPais.TabIndex = 1;
             this.txtIdPais.TextNew = "";
             this.txtIdPais.UnderlinedStyle = false;
             this.txtIdPais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdPais_KeyPress);
@@ -198,7 +198,7 @@
             this.btnSair.Location = new System.Drawing.Point(346, 333);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
-            this.btnSair.TabIndex = 85;
+            this.btnSair.TabIndex = 6;
             this.btnSair.Text = "Sair";
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -218,7 +218,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(185, 333);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
-            this.btnExcluir.TabIndex = 84;
+            this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextColor = System.Drawing.Color.White;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -238,7 +238,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(25, 333);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
-            this.btnSalvar.TabIndex = 83;
+            this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextColor = System.Drawing.Color.White;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
