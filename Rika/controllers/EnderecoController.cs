@@ -3,6 +3,7 @@ using Rika.dto;
 using Rika.models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Rika.controllers
         }
 
         #region Salvar endereco
-        public bool Salvaendereco(Endereco model)
+        public bool SalvaEndereco(Endereco model)
         {
             try
             {
@@ -52,7 +53,7 @@ namespace Rika.controllers
         #endregion
 
         #region Excluir endereco
-        public bool Excluirendereco(int? id)
+        public bool ExcluirEndereco(int? id)
         {
             try
             {
@@ -82,7 +83,7 @@ namespace Rika.controllers
         #endregion
 
         #region Consulta endereco por Id
-        public Endereco ConsultaenderecoPorId(int? id)
+        public Endereco ConsultaEnderecoPorId(int? id)
         {
             try
             {
@@ -111,8 +112,31 @@ namespace Rika.controllers
         }
         #endregion
 
-        #region Pegar informações da endereco
-        public Endereco GetInfoendereco()
+        #region Consulta CEP por API
+        public DataSet ConsultaCEPAPI(string url)
+        {
+            try
+            {
+                //DataSet (Dados na Memória)
+                DataSet consulta = new DataSet();
+
+                //Consulta a Api a partir da rota e dados (CEP) disponibilizados
+                consulta.ReadXml(url);
+
+                //Retorna a consulta
+                return consulta;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Endereço não encontrado, por favor digite o CEP manualmente.", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }
+            
+        }
+        #endregion
+
+        #region Pegar informações do Endereço
+        public Endereco GetInfoEndereco()
         {
             return endereco;
         }

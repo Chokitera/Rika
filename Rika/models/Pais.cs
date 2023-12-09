@@ -15,7 +15,7 @@ namespace Rika.models
         public string Nome {  get; set; }
 
         [Required(ErrorMessage = "O campo Sigla não pode ser vazio!")]
-        [StringLength(2, ErrorMessage = "A Sigla pode conter no máximo 2 caracteres!")]
+        [StringLength(3, ErrorMessage = "A Sigla pode conter no máximo 3 caracteres!")]
         public string Sigla { get; set; }
     }
 }
