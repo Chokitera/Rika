@@ -39,6 +39,9 @@
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.pnlSituacao = new System.Windows.Forms.Panel();
             this.tabelaSituacoes = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnConfirmar = new Rika.controls.ModeloBotao();
             this.txtCodigo = new Rika.controls.novoTextBox();
@@ -46,9 +49,6 @@
             this.txtNome = new Rika.controls.novoTextBox();
             this.lblAeroDestino = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -162,6 +162,29 @@
             this.tabelaSituacoes.Size = new System.Drawing.Size(749, 316);
             this.tabelaSituacoes.TabIndex = 104;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "IdSituacao";
+            this.Id.FillWeight = 30.45685F;
+            this.Id.HeaderText = "Código";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // nome
+            // 
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "descricao";
+            this.Descricao.FillWeight = 169.5432F;
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            // 
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -273,29 +296,6 @@
             this.pictureBox1.TabIndex = 96;
             this.pictureBox1.TabStop = false;
             // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "IdSituacao";
-            this.Id.FillWeight = 30.45685F;
-            this.Id.HeaderText = "Código";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // nome
-            // 
-            this.nome.DataPropertyName = "nome";
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "descricao";
-            this.Descricao.FillWeight = 169.5432F;
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            // 
             // FrmConsultaSituacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,7 +308,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaSituacao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Formulário de Consulta da Situação";
+            this.Text = "Consulta de Situação";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmConsultaSituacao_Paint);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();

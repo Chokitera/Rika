@@ -33,14 +33,14 @@
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.pnlPassagem = new System.Windows.Forms.Panel();
-            this.tabelaPassagens = new System.Windows.Forms.DataGridView();
-            this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
-            this.lblAeroDestino = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnConfirmar = new Rika.controls.ModeloBotao();
+            this.tabelaPassagens = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new Rika.controls.novoTextBox();
+            this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.txtNome = new Rika.controls.novoTextBox();
+            this.lblAeroDestino = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -103,48 +103,6 @@
             this.pnlPassagem.TabIndex = 72;
             this.pnlPassagem.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPassagem_Paint);
             // 
-            // tabelaPassagens
-            // 
-            this.tabelaPassagens.AllowUserToAddRows = false;
-            this.tabelaPassagens.AllowUserToDeleteRows = false;
-            this.tabelaPassagens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabelaPassagens.Location = new System.Drawing.Point(38, 239);
-            this.tabelaPassagens.Name = "tabelaPassagens";
-            this.tabelaPassagens.ReadOnly = true;
-            this.tabelaPassagens.Size = new System.Drawing.Size(749, 316);
-            this.tabelaPassagens.TabIndex = 101;
-            // 
-            // label1lblCodigoPassagem
-            // 
-            this.label1lblCodigoPassagem.AccessibleName = "";
-            this.label1lblCodigoPassagem.AutoSize = true;
-            this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(506, 193);
-            this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
-            this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
-            this.label1lblCodigoPassagem.TabIndex = 99;
-            this.label1lblCodigoPassagem.Text = "Código";
-            // 
-            // lblAeroDestino
-            // 
-            this.lblAeroDestino.AutoSize = true;
-            this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDestino.Location = new System.Drawing.Point(34, 193);
-            this.lblAeroDestino.Name = "lblAeroDestino";
-            this.lblAeroDestino.Size = new System.Drawing.Size(57, 22);
-            this.lblAeroDestino.TabIndex = 97;
-            this.lblAeroDestino.Text = "Nome";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(331, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 126);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 96;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -185,6 +143,17 @@
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
+            // tabelaPassagens
+            // 
+            this.tabelaPassagens.AllowUserToAddRows = false;
+            this.tabelaPassagens.AllowUserToDeleteRows = false;
+            this.tabelaPassagens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaPassagens.Location = new System.Drawing.Point(38, 239);
+            this.tabelaPassagens.Name = "tabelaPassagens";
+            this.tabelaPassagens.ReadOnly = true;
+            this.tabelaPassagens.Size = new System.Drawing.Size(749, 316);
+            this.tabelaPassagens.TabIndex = 101;
+            // 
             // txtCodigo
             // 
             this.txtCodigo.BackColor = System.Drawing.SystemColors.Window;
@@ -203,6 +172,19 @@
             this.txtCodigo.TabIndex = 100;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
+            this.txtCodigo.Visible = false;
+            // 
+            // label1lblCodigoPassagem
+            // 
+            this.label1lblCodigoPassagem.AccessibleName = "";
+            this.label1lblCodigoPassagem.AutoSize = true;
+            this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(506, 193);
+            this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
+            this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
+            this.label1lblCodigoPassagem.TabIndex = 99;
+            this.label1lblCodigoPassagem.Text = "Código";
+            this.label1lblCodigoPassagem.Visible = false;
             // 
             // txtNome
             // 
@@ -223,6 +205,26 @@
             this.txtNome.TextNew = "";
             this.txtNome.UnderlinedStyle = false;
             this.txtNome._TextChanged += new System.EventHandler(this.txtNome__TextChanged_1);
+            // 
+            // lblAeroDestino
+            // 
+            this.lblAeroDestino.AutoSize = true;
+            this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAeroDestino.Location = new System.Drawing.Point(34, 193);
+            this.lblAeroDestino.Name = "lblAeroDestino";
+            this.lblAeroDestino.Size = new System.Drawing.Size(57, 22);
+            this.lblAeroDestino.TabIndex = 97;
+            this.lblAeroDestino.Text = "Nome";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
+            this.pictureBox1.Location = new System.Drawing.Point(331, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(170, 126);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 96;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmConsultaPassagem
             // 

@@ -44,6 +44,8 @@
             this.txtHoraChegada = new System.Windows.Forms.MaskedTextBox();
             this.txtHoraSaida = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.iconFechar = new System.Windows.Forms.PictureBox();
+            this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.txtAeroportoDestino = new Rika.controls.novoTextBoxReadOnly();
             this.txtAeroportoDecolagem = new Rika.controls.novoTextBoxReadOnly();
             this.txtAviao = new Rika.controls.novoTextBoxReadOnly();
@@ -55,12 +57,10 @@
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.iconFechar = new System.Windows.Forms.PictureBox();
-            this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -219,6 +219,32 @@
             this.panel2.Size = new System.Drawing.Size(1283, 30);
             this.panel2.TabIndex = 87;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // iconFechar
+            // 
+            this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconFechar.Image = global::Rika.Properties.Resources.x;
+            this.iconFechar.Location = new System.Drawing.Point(1253, 6);
+            this.iconFechar.Name = "iconFechar";
+            this.iconFechar.Size = new System.Drawing.Size(20, 20);
+            this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconFechar.TabIndex = 28;
+            this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
+            // 
+            // iconMinimizar
+            // 
+            this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
+            this.iconMinimizar.Location = new System.Drawing.Point(1227, 6);
+            this.iconMinimizar.Name = "iconMinimizar";
+            this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
+            this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconMinimizar.TabIndex = 29;
+            this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
             // txtAeroportoDestino
             // 
@@ -427,32 +453,6 @@
             this.pictureBox2.TabIndex = 88;
             this.pictureBox2.TabStop = false;
             // 
-            // iconFechar
-            // 
-            this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconFechar.Image = global::Rika.Properties.Resources.x;
-            this.iconFechar.Location = new System.Drawing.Point(1253, 6);
-            this.iconFechar.Name = "iconFechar";
-            this.iconFechar.Size = new System.Drawing.Size(20, 20);
-            this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconFechar.TabIndex = 28;
-            this.iconFechar.TabStop = false;
-            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click);
-            // 
-            // iconMinimizar
-            // 
-            this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
-            this.iconMinimizar.Location = new System.Drawing.Point(1227, 6);
-            this.iconMinimizar.Name = "iconMinimizar";
-            this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
-            this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconMinimizar.TabIndex = 29;
-            this.iconMinimizar.TabStop = false;
-            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
-            // 
             // FrmCadastroVoo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,12 +488,13 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroVoo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Voo";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroVoo_Paint);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
