@@ -246,6 +246,7 @@ namespace Rika.views
             else
             {
                 MessageBox.Show("O Código do Aeroporto Decolagem não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAeroportoDecolagem.Text = "";
                 txtCodAeroportoDecolagem.Focus();
             }
         }
@@ -277,6 +278,7 @@ namespace Rika.views
             else
             {
                 MessageBox.Show("O Código do Aeroporto Destino não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAeroportoDestino.Text = "";
                 txtCodAeroportoDestino.Focus();
             }
         }
@@ -308,6 +310,7 @@ namespace Rika.views
             else
             {
                 MessageBox.Show("O Código do Avião não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAviao.Text = "";
                 txtCodAviao.Focus();
             }
         }

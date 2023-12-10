@@ -321,6 +321,7 @@ namespace Rika.views
             else
             {
                 MessageBox.Show("O Código da Classe não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtClasse.Text = "";
                 txtCodClasse.Focus();
             }
         }
@@ -357,6 +358,7 @@ namespace Rika.views
             else
             {
                 MessageBox.Show("O Código do Voo não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtVoo.Text = "";
                 txtCodVoo.Focus();
             }
         }

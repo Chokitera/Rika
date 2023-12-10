@@ -239,8 +239,7 @@ namespace Rika.views
                     //Atribui o nome do país a partir do código presente no BD
                     if(txtCodPais.Text != "")
                     {
-                        pais.Id = int.Parse(txtCodPais.Text);
-                        pais = paisController.ConsultaPaisPorId(pais.Id);
+                        pais = paisController.ConsultaPaisPorId(endereco.pais.Id);
 
                         if (pais.Nome != "")
                             txtPais.Text = pais.Nome;
@@ -287,6 +286,7 @@ namespace Rika.views
             else
             {
                 MessageBox.Show("O Código do País não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPais.Text = "";
                 txtCodPais.Focus();
             }
         }

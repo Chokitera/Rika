@@ -128,7 +128,10 @@ namespace Rika.views
                 aeroporto.Id = int.Parse(txtCodAeroporto.Text);
             aeroporto.Nome = txtNome.Text;
             aeroporto.Descricao = txtDescricao.Text;
-            aeroporto.endereco.Id = int.Parse(txtCodEndereco.Text);
+            if (txtCodEndereco.Text == "")
+                aeroporto.endereco.Id = 0;
+            else
+                aeroporto.endereco.Id = int.Parse(txtCodEndereco.Text);
 
             //Chamada do Controlador
             bool isValid = aeroportoController.SalvaAeroporto(aeroporto);
@@ -173,6 +176,7 @@ namespace Rika.views
             if (txtCodAeroporto.Text != "")
             {
                 //Instancia do model
+                Endereco endereco = new Endereco();
                 Aeroporto aeroporto = new Aeroporto
                 {
                     //Atribuição
@@ -189,6 +193,15 @@ namespace Rika.views
                     txtNome.Text = aeroporto.Nome;
                     txtCodEndereco.Text = aeroporto.endereco.Id.ToString();
                     txtDescricao.Text = aeroporto.Descricao;
+
+                    if (txtCodEndereco.Text != "")
+                    {
+                        //Atribui o nome do Aeroporto a partir do código presente no BD
+                        endereco = enderecoController.ConsultaEnderecoPorId(aeroporto.endereco.Id);
+
+                        if (endereco.Cidade != "")
+                            txtEndereco.Text = endereco.Cidade;
+                    }
                 }
                 else
                 {
@@ -196,6 +209,8 @@ namespace Rika.views
                     txtCodAeroporto.Focus();
                 }
             }
+            else
+                new Helpers().LimparTela(this);
         }
 
 
@@ -227,6 +242,7 @@ namespace Rika.views
             else
             {
                 MessageBox.Show("O Código do Endereço não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtEndereco.Text = "";
                 txtCodEndereco.Focus();
             }
         }

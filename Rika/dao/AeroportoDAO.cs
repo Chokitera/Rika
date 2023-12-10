@@ -24,14 +24,14 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"insert into AEROPORTO (nome, descricao, endereco) 
-                               values (@nome, @descricao, @endereco);";
+                string sql = @"insert into AEROPORTO (nome, descricao, idendereco) 
+                               values (@nome, @descricao, @idendereco);";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@nome", aeroporto.Nome);
                 executacmd.Parameters.AddWithValue("@descricao", aeroporto.Descricao);
-                executacmd.Parameters.AddWithValue("@endereco", aeroporto.endereco.Id);
+                executacmd.Parameters.AddWithValue("@idendereco", aeroporto.endereco.Id);
 
                 //Consultar o último registro
                 string sql2 = @"select IDAEROPORTO from AEROPORTO order by IDAEROPORTO desc limit 1;";
@@ -145,8 +145,9 @@ namespace Rika.dao
                 }
                 else
                 {
-                    aeroporto.Nome = reader[1].ToString();
-                    aeroporto.Descricao = reader[2].ToString();
+                    aeroporto.endereco.Id = reader.GetInt32(1);
+                    aeroporto.Nome = reader[2].ToString();
+                    aeroporto.Descricao = reader[3].ToString();
                 }
 
                 conexao.Close();

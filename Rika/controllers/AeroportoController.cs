@@ -31,17 +31,22 @@ namespace Rika.controllers
                 //Verifica se as informações estão preenchidas e OK
                 new models.Comum.ValidacaoModel().Validacao(aeroporto);
 
-                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
-                if (aeroporto.Id == 0)
-                {
-                    aeroportoDAO.EfetuarCadastro(aeroporto);
-                }
-                else
-                {
-                    aeroportoDAO.EfetuarEdicao(aeroporto);
-                }
+                bool isValid = ValidaCampos(model);
 
-                return true; //Se Ok retorna verdadeiro
+                if (isValid)
+                {
+                    //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
+                    if (aeroporto.Id == 0)
+                    {
+                        aeroportoDAO.EfetuarCadastro(aeroporto);
+                    }
+                    else
+                    {
+                        aeroportoDAO.EfetuarEdicao(aeroporto);
+                    }
+                }
+                
+                return isValid; //Se Ok retorna verdadeiro
             }
             catch (Exception erro)
             {
@@ -115,6 +120,23 @@ namespace Rika.controllers
         public Aeroporto GetInfoAeroporto()
         {
             return aeroporto;
+        }
+        #endregion
+
+        #region Validações
+        public bool ValidaCampos(Aeroporto model)
+        {
+            string msg = "";
+            if (model.endereco.Id == 0)
+                msg += "O campo Endereço não pode ser vazio!" + "\n";
+
+            if(msg != string.Empty) //Se existe mensagem de erro
+            {
+                MessageBox.Show(msg, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true; //Passu por todas as validações
         }
         #endregion
     }

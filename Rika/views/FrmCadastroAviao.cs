@@ -227,6 +227,7 @@ namespace Rika.views
             else
             {
                 MessageBox.Show("O Código da Companhia Aérea não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCompAerea.Text = "";
                 txtCodCompAerea.Focus();
             }
         }
