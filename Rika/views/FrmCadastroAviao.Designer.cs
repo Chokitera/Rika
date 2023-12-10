@@ -180,6 +180,7 @@
             this.txtCodCompAerea.TextNew = "";
             this.txtCodCompAerea.UnderlinedStyle = false;
             this.txtCodCompAerea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodCompAerea_KeyPress);
+            this.txtCodCompAerea.Leave += new System.EventHandler(this.txtCodCompAerea_Leave);
             // 
             // txtQtdAcentos
             // 

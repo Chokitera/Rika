@@ -22,11 +22,17 @@ namespace Rika.views
         private string caminhoOriginal = ""; //Utilizado na Imagem da Passagem
         private string caminhoNovo = ""; //Utilizado na Imagem da Passagem
         private PassagemController passagemController;
+        private ClasseController classeController;
+        private VooController vooController;
+        private AeroportoController aeroportoController;
         public FrmCadastroPassagem()
         {
             InitializeComponent();
 
             passagemController = new PassagemController();
+            classeController = new ClasseController();
+            vooController = new VooController();
+            aeroportoController = new AeroportoController();
         }
 
         #region Ajustes da Borda
@@ -116,10 +122,6 @@ namespace Rika.views
         }
         #endregion
 
-        private void FrmTelaAdministrativa_Load(object sender, EventArgs e)
-        {
-
-        }
         #region Evento/Ações dos Botões
         private void btnExcluir_Click(object sender, EventArgs e)
         {
@@ -178,6 +180,7 @@ namespace Rika.views
 
         }
         #endregion
+
         #region Evento Código Leave
         private void txtCodigo_Leave(object sender, EventArgs e)
         {
@@ -210,7 +213,6 @@ namespace Rika.views
             }
         }
         #endregion
-
 
         #region Le a imagem e salva na aplicação
         private void btnAbrirPasta_Click(object sender, EventArgs e)
@@ -294,11 +296,70 @@ namespace Rika.views
         #endregion
 
         #region Evento Classe Leave
+        private void txtCodClasse_Leave(object sender, EventArgs e)
+        {
+            if (txtCodClasse.Text != "")
+            {
+                //Instancia do Model
+                Classe classe = new Classe
+                {
+                    Id = int.Parse(txtCodClasse.Text)
+                };
 
+                //Chamada do Controlador
+                classe = classeController.ConsultaClassePorId(classe.Id);
+
+                //Atribuições da Consulta
+                if (classe.Nome != "")
+                    txtClasse.Text = classe.Nome;
+                else
+                {
+                    txtClasse.Text = "";
+                    txtCodClasse.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código da Classe não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCodClasse.Focus();
+            }
+        }
         #endregion
 
         #region Evento Voo Leave
+        private void txtCodVoo_Leave(object sender, EventArgs e)
+        {
+            if (txtCodVoo.Text != "")
+            {
+                //Instancia do Model
+                Aeroporto aeroporto = new Aeroporto();
+                Voo voo = new Voo
+                {
+                    Id = int.Parse(txtCodVoo.Text)
+                };
 
+                //Chamada do Controlador
+                voo = vooController.ConsultavooPorId(voo.Id);
+
+                //Atribuições da Consulta
+                if (voo.Destino > 0)
+                {
+                    //Consulta o nome do Aeroporto Destino para atribuir ao texto do Voo
+                    aeroporto = aeroportoController.ConsultaAeroportoPorId(voo.Destino);
+                    txtVoo.Text = aeroporto.Nome;
+                }
+                else
+                {
+                    txtVoo.Text = "";
+                    txtCodVoo.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código do Voo não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCodVoo.Focus();
+            }
+        }
         #endregion
 
         #region Validações

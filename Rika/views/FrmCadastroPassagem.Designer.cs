@@ -345,6 +345,7 @@
             this.txtCodClasse.TextNew = "";
             this.txtCodClasse.UnderlinedStyle = false;
             this.txtCodClasse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
+            this.txtCodClasse.Leave += new System.EventHandler(this.txtCodClasse_Leave);
             // 
             // txtCodVoo
             // 
@@ -365,6 +366,7 @@
             this.txtCodVoo.TextNew = "";
             this.txtCodVoo.UnderlinedStyle = false;
             this.txtCodVoo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
+            this.txtCodVoo.Leave += new System.EventHandler(this.txtCodVoo_Leave);
             // 
             // txtCodigo
             // 
@@ -481,7 +483,6 @@
             this.Name = "FrmCadastroPassagem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Passagens";
-            this.Load += new System.EventHandler(this.FrmTelaAdministrativa_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmTelaAdministrativa_Paint);
             this.pnlArrastarFormulario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();

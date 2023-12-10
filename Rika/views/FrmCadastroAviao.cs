@@ -19,7 +19,6 @@ namespace Rika.views
     public partial class FrmCadastroAviao : Form
     {
         private AviaoController aviaoController;
-
         private CompAereaController compAereaController;
 
         public FrmCadastroAviao()
@@ -203,7 +202,34 @@ namespace Rika.views
         #endregion
 
         #region Evento Companhia Aérea Leave
+        private void txtCodCompAerea_Leave(object sender, EventArgs e)
+        {
+            if (txtCodCompAerea.Text != "")
+            {
+                //Instancia do Model
+                CompanhiaAerea companhiaAerea = new CompanhiaAerea
+                {
+                    Id = int.Parse(txtCodCompAerea.Text)
+                };
 
+                //Chamada do Controlador
+                companhiaAerea = compAereaController.ConsultaCompanhiaPorId(companhiaAerea.Id);
+
+                //Atribuições da Consulta
+                if (companhiaAerea.Nome != "")
+                    txtCompAerea.Text = companhiaAerea.Nome;
+                else
+                {
+                    txtCompAerea.Text = "";
+                    txtCodCompAerea.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código da Companhia Aérea não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCodCompAerea.Focus();
+            }
+        }
         #endregion
 
         #region Validações

@@ -196,6 +196,7 @@
             this.txtCodEndereco.TextNew = "";
             this.txtCodEndereco.UnderlinedStyle = false;
             this.txtCodEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodEndereco_KeyPress);
+            this.txtCodEndereco.Leave += new System.EventHandler(this.txtCodEndereco_Leave);
             // 
             // txtCodAeroporto
             // 

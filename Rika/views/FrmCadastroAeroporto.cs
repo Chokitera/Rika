@@ -18,11 +18,13 @@ namespace Rika.views
     public partial class FrmCadastroAeroporto : Form
     {
         private AeroportoController aeroportoController;
+        private EnderecoController enderecoController;
         public FrmCadastroAeroporto()
         {
             InitializeComponent();
 
             aeroportoController = new AeroportoController();
+            enderecoController = new EnderecoController();
         }
 
         #region Ajustes da Borda
@@ -200,7 +202,34 @@ namespace Rika.views
         #endregion
 
         #region Evento Endereço Leave
+        private void txtCodEndereco_Leave(object sender, EventArgs e)
+        {
+            if (txtCodEndereco.Text != "")
+            {
+                //Instancia do Model
+                Endereco endereco = new Endereco
+                {
+                    Id = int.Parse(txtCodEndereco.Text)
+                };
 
+                //Chamada do Controlador
+                endereco = enderecoController.ConsultaEnderecoPorId(endereco.Id);
+
+                //Atribuições da Consulta
+                if (endereco.Cidade != "")
+                    txtEndereco.Text = endereco.Cidade;
+                else
+                {
+                    txtEndereco.Text = "";
+                    txtCodEndereco.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código do Endereço não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCodEndereco.Focus();
+            }
+        }
         #endregion
 
         #region Validações

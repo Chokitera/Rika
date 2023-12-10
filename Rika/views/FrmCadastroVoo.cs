@@ -18,11 +18,15 @@ namespace Rika.views
     public partial class FrmCadastroVoo : Form
     {
         private VooController vooController;
+        private AeroportoController aeroportoController;
+        private AviaoController aviaoController;
         public FrmCadastroVoo()
         {
             InitializeComponent();
 
             vooController = new VooController();
+            aeroportoController = new AeroportoController();
+            aviaoController = new AviaoController();
         }
 
         #region Ajustes da Borda
@@ -217,17 +221,97 @@ namespace Rika.views
         #endregion
 
         #region Evento Aeroporto Decolagem Leave
+        private void txtCodAeroportoDecolagem_Leave(object sender, EventArgs e)
+        {
+            if (txtCodAeroportoDecolagem.Text != "")
+            {
+                //Instancia do Model
+                Aeroporto aeroporto = new Aeroporto
+                {
+                    Id = int.Parse(txtCodAeroportoDecolagem.Text)
+                };
 
+                //Chamada do Controlador
+                aeroporto = aeroportoController.ConsultaAeroportoPorId(aeroporto.Id);
+
+                //Atribuições da Consulta
+                if (aeroporto.Nome != "")
+                    txtAeroportoDecolagem.Text = aeroporto.Nome;
+                else
+                {
+                    txtAeroportoDecolagem.Text = "";
+                    txtCodAeroportoDecolagem.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código do Aeroporto Decolagem não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCodAeroportoDecolagem.Focus();
+            }
+        }
         #endregion
 
         #region Evento Aeroporto Destino Leave
+        private void txtCodAeroportoDestino_Leave(object sender, EventArgs e)
+        {
+            if (txtCodAeroportoDestino.Text != "")
+            {
+                //Instancia do Model
+                Aeroporto aeroporto = new Aeroporto
+                {
+                    Id = int.Parse(txtCodAeroportoDestino.Text)
+                };
 
+                //Chamada do Controlador
+                aeroporto = aeroportoController.ConsultaAeroportoPorId(aeroporto.Id);
+
+                //Atribuições da Consulta
+                if (aeroporto.Nome != "")
+                    txtAeroportoDestino.Text = aeroporto.Nome;
+                else
+                {
+                    txtAeroportoDestino.Text = "";
+                    txtCodAeroportoDestino.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código do Aeroporto Destino não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCodAeroportoDestino.Focus();
+            }
+        }
         #endregion
 
         #region Evento Avião Leave
+        private void txtCodAviao_Leave(object sender, EventArgs e)
+        {
+            if (txtCodAviao.Text != "")
+            {
+                //Instancia do Model
+                Aviao aviao = new Aviao
+                {
+                    Id = int.Parse(txtCodAviao.Text)
+                };
 
+                //Chamada do Controlador
+                aviao = aviaoController.ConsultaAviaoPorId(aviao.Id);
+
+                //Atribuições da Consulta
+                if (aviao.Modelo != "")
+                    txtAviao.Text = aviao.Modelo;
+                else
+                {
+                    txtAviao.Text = "";
+                    txtCodAviao.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código do Avião não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCodAviao.Focus();
+            }
+        }
         #endregion
-
 
         #region Validações
         private void txtCodVoo_KeyPress(object sender, KeyPressEventArgs e)

@@ -328,6 +328,7 @@
             this.txtCodAviao.TextNew = "";
             this.txtCodAviao.UnderlinedStyle = false;
             this.txtCodAviao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodVoo_KeyPress);
+            this.txtCodAviao.Leave += new System.EventHandler(this.txtCodAviao_Leave);
             // 
             // txtCodAeroportoDestino
             // 
@@ -348,6 +349,7 @@
             this.txtCodAeroportoDestino.TextNew = "";
             this.txtCodAeroportoDestino.UnderlinedStyle = false;
             this.txtCodAeroportoDestino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodVoo_KeyPress);
+            this.txtCodAeroportoDestino.Leave += new System.EventHandler(this.txtCodAeroportoDestino_Leave);
             // 
             // txtCodAeroportoDecolagem
             // 
@@ -368,6 +370,7 @@
             this.txtCodAeroportoDecolagem.TextNew = "";
             this.txtCodAeroportoDecolagem.UnderlinedStyle = false;
             this.txtCodAeroportoDecolagem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodVoo_KeyPress);
+            this.txtCodAeroportoDecolagem.Leave += new System.EventHandler(this.txtCodAeroportoDecolagem_Leave);
             // 
             // txtCodVoo
             // 
