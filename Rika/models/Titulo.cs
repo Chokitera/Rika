@@ -13,6 +13,8 @@ namespace Rika.models
         [Range(0, double.MaxValue, ErrorMessage = "Entrada inválida, é permitido somente números no Valor!")]
         public double Valor { get; set; }
 
+        public int StatusTitulo { get; set; } /* 0 - Aberto, 1 - Pago */
+
         public TipoVenda tipovenda = new TipoVenda();
         public Passagem passagem = new Passagem();
     }
