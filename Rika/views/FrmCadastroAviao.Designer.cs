@@ -179,6 +179,7 @@
             this.txtCodCompAerea.TabIndex = 3;
             this.txtCodCompAerea.TextNew = "";
             this.txtCodCompAerea.UnderlinedStyle = false;
+            this.txtCodCompAerea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodCompAerea_KeyPress);
             // 
             // txtQtdAcentos
             // 
@@ -198,6 +199,7 @@
             this.txtQtdAcentos.TabIndex = 4;
             this.txtQtdAcentos.TextNew = "";
             this.txtQtdAcentos.UnderlinedStyle = false;
+            this.txtQtdAcentos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdAcentos_KeyPress);
             // 
             // txtModelAviao
             // 
@@ -324,7 +326,6 @@
             this.Name = "FrmCadastroAviao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Avião";
-            this.Load += new System.EventHandler(this.FrmCadastroAviao_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroAviao_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

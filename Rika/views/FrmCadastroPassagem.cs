@@ -290,8 +290,25 @@ namespace Rika.views
             
         }
 
+
         #endregion
 
-        
+        #region Evento Classe Leave
+
+        #endregion
+
+        #region Evento Voo Leave
+
+        #endregion
+
+        #region Validações
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }

@@ -195,6 +195,7 @@
             this.txtCodEndereco.TabIndex = 4;
             this.txtCodEndereco.TextNew = "";
             this.txtCodEndereco.UnderlinedStyle = false;
+            this.txtCodEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodEndereco_KeyPress);
             // 
             // txtCodAeroporto
             // 
@@ -214,6 +215,7 @@
             this.txtCodAeroporto.TabIndex = 1;
             this.txtCodAeroporto.TextNew = "";
             this.txtCodAeroporto.UnderlinedStyle = false;
+            this.txtCodAeroporto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodAeroporto_KeyPress);
             this.txtCodAeroporto.Leave += new System.EventHandler(this.txtCodAeroporto_Leave);
             // 
             // btnSair

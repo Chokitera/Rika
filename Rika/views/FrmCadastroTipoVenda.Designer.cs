@@ -267,7 +267,6 @@
             this.Name = "FrmCadastroTipoVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Tipo de Venda";
-            this.Load += new System.EventHandler(this.FrmCadastroTipoVenda_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroTipoVenda_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlArrastarFormulario.ResumeLayout(false);

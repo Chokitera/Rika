@@ -196,8 +196,29 @@ namespace Rika.views
             }
         }
 
+
         #endregion
 
+        #region Evento Endereço Leave
 
+        #endregion
+
+        #region Validações
+        private void txtCodAeroporto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true; //Tratado
+            }
+        }
+
+        private void txtCodEndereco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true; //Tratado
+            }
+        }
+        #endregion
     }
 }

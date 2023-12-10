@@ -199,9 +199,14 @@ namespace Rika.views
 
         #endregion
 
-        private void FrmCadastroSituacao_Load(object sender, EventArgs e)
+        #region Validações
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
+        #endregion
     }
 }

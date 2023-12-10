@@ -200,11 +200,7 @@ namespace Rika.views
 
         #endregion
 
-        private void FrmCadastroCompAerea_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Validações
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
@@ -212,5 +208,6 @@ namespace Rika.views
                 e.Handled = true;
             }
         }
+        #endregion
     }
 }

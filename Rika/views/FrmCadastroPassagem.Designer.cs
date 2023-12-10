@@ -324,6 +324,7 @@
             this.txtValor.TabIndex = 6;
             this.txtValor.TextNew = "";
             this.txtValor.UnderlinedStyle = false;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // txtCodClasse
             // 
@@ -343,6 +344,7 @@
             this.txtCodClasse.TabIndex = 5;
             this.txtCodClasse.TextNew = "";
             this.txtCodClasse.UnderlinedStyle = false;
+            this.txtCodClasse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // txtCodVoo
             // 
@@ -362,6 +364,7 @@
             this.txtCodVoo.TabIndex = 4;
             this.txtCodVoo.TextNew = "";
             this.txtCodVoo.UnderlinedStyle = false;
+            this.txtCodVoo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // txtCodigo
             // 
@@ -381,6 +384,7 @@
             this.txtCodigo.TabIndex = 1;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             this.txtCodigo.Leave += new System.EventHandler(this.txtCodigo_Leave);
             // 
             // btnSair

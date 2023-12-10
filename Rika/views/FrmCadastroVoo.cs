@@ -213,8 +213,30 @@ namespace Rika.views
                 }
             }
         }
+
+        #endregion
+
+        #region Evento Aeroporto Decolagem Leave
+
+        #endregion
+
+        #region Evento Aeroporto Destino Leave
+
+        #endregion
+
+        #region Evento Avião Leave
+
         #endregion
 
 
+        #region Validações
+        private void txtCodVoo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }

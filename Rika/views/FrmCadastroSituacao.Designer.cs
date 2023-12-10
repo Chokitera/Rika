@@ -153,6 +153,7 @@
             this.txtCodigo.TabIndex = 1;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             this.txtCodigo.Leave += new System.EventHandler(this.txtCodigo_Leave);
             // 
             // btnSair
@@ -266,7 +267,6 @@
             this.Name = "FrmCadastroSituacao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Situacao";
-            this.Load += new System.EventHandler(this.FrmCadastroSituacao_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroSituacao_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.pnlArrastarFormulario.ResumeLayout(false);
