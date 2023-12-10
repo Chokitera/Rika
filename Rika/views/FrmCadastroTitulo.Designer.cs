@@ -47,6 +47,8 @@
             this.txtCodPassagem = new Rika.controls.novoTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.novoTextBox1 = new Rika.controls.novoTextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -334,6 +336,37 @@
             this.txtStatus.TabIndex = 106;
             this.txtStatus.Text = "Pago/Aberto";
             this.txtStatus.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.txtStatus.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(317, 359);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 22);
+            this.label2.TabIndex = 108;
+            this.label2.Text = "Valor Pago";
+            // 
+            // novoTextBox1
+            // 
+            this.novoTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.novoTextBox1.BorderColor = System.Drawing.Color.DimGray;
+            this.novoTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.novoTextBox1.BorderSize = 1;
+            this.novoTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.novoTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.novoTextBox1.Location = new System.Drawing.Point(423, 354);
+            this.novoTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.novoTextBox1.Multiline = false;
+            this.novoTextBox1.Name = "novoTextBox1";
+            this.novoTextBox1.Padding = new System.Windows.Forms.Padding(7);
+            this.novoTextBox1.PasswordChar = false;
+            this.novoTextBox1.Size = new System.Drawing.Size(90, 31);
+            this.novoTextBox1.TabIndex = 107;
+            this.novoTextBox1.TextNew = "";
+            this.novoTextBox1.UnderlinedStyle = false;
+            this.novoTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodTitulo_KeyPress);
             // 
             // FrmCadastroTitulo
             // 
@@ -341,6 +374,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(541, 478);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.novoTextBox1);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassagem);
@@ -391,5 +426,7 @@
         private controls.novoTextBox txtCodPassagem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtStatus;
+        private System.Windows.Forms.Label label2;
+        private controls.novoTextBox novoTextBox1;
     }
 }

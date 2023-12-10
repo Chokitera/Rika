@@ -24,13 +24,17 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"insert into TITULO (IDTIPO_VENDA, VALOR) 
-                               values (@IDTIPO_VENDA, @VALOR);";
+                string nomePassagem = ""; //Ajustar ainda
+                string sql = @"insert into TITULO (IDTIPO_VENDA, VALOR, IDPASSAGEM, VALOR_PAGO, STATUS_TITULO) 
+                               values (@IDTIPO_VENDA, @VALOR, @IDPASSAGEM, @VALOR_PAGO, @STATUS_TITULO);";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue("@nome", titulo.tipovenda.Id);
-                executacmd.Parameters.AddWithValue("@descricao", titulo.Valor);
+                executacmd.Parameters.AddWithValue("@IDPASSAGEM", titulo.passagem.Id);
+                executacmd.Parameters.AddWithValue("@IDTIPO_VENDA", titulo.tipovenda.Id);
+                executacmd.Parameters.AddWithValue("@VALOR", titulo.Valor);
+                executacmd.Parameters.AddWithValue("@VALOR_PAGO", titulo.ValorPago);
+                executacmd.Parameters.AddWithValue("@STATUS_TITULO", titulo.StatusTitulo);
 
                 //Consultar o último registro
                 string sql2 = @"select IDTITULO from TITULO order by IDTITULO desc limit 1;";
@@ -43,7 +47,7 @@ namespace Rika.dao
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 titulo.Id = reader.GetInt32(0);
-                MessageBox.Show("Título " + titulo.Id + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Título " + titulo.Id + " - " + nomePassagem + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -91,7 +95,8 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"update TITULO set idpassagem=@idpassagem, idtipo_venda=@idtipo_venda, valor=@valor
+                string nomePassagem = ""; //Ajustar ainda
+                string sql = @"update TITULO set idpassagem=@idpassagem, idtipo_venda=@idtipo_venda, valor=@valor, valor_pago=@valorpago, status_titulo=@statustitulo
                                where IDTITULO = @id;";
 
                 //Atributos
@@ -100,12 +105,14 @@ namespace Rika.dao
                 executacmd.Parameters.AddWithValue("@idpassagem", titulo.passagem.Id);
                 executacmd.Parameters.AddWithValue("@idtipo_venda", titulo.tipovenda.Id);
                 executacmd.Parameters.AddWithValue("@valor", titulo.Valor);
+                executacmd.Parameters.AddWithValue("@valorpago", titulo.ValorPago);
+                executacmd.Parameters.AddWithValue("@statustitulo", titulo.StatusTitulo);
 
                 //Executa SQL
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Título " + titulo.Id + " - " + titulo.Valor + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Título " + titulo.Id + " - " + nomePassagem + " atualizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -120,7 +127,7 @@ namespace Rika.dao
         #endregion
 
         #region Método para consultar específico Titulo
-        public Titulo ConsultarCompanhiaPorId(Titulo titulo)
+        public Titulo ConsultarTituloPorId(Titulo titulo)
         {
             try
             {

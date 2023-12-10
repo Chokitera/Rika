@@ -113,6 +113,7 @@
     <Compile Include="controllers\PassagemController.cs" />
     <Compile Include="controllers\SituacaoController.cs" />
     <Compile Include="controllers\TipoVendaController.cs" />
+    <Compile Include="controllers\TituloController.cs" />
     <Compile Include="controllers\UsuarioController.cs" />
     <Compile Include="controllers\VooController.cs" />
     <Compile Include="controls\MenuCategorias.cs">
