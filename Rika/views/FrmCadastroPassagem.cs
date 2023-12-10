@@ -156,10 +156,19 @@ namespace Rika.views
                 passagem.Id = 0;
             else
                 passagem.Id = int.Parse(txtCodigo.Text);
-            passagem.classe.Id = int.Parse(txtCodClasse.Text);
+            if (txtCodClasse.Text == "")
+                passagem.classe.Id = 0;
+            else
+                passagem.classe.Id = int.Parse(txtCodClasse.Text);
+            if (txtCodVoo.Text == "")
+                passagem.voo.Id = 0;
+            else
+                passagem.voo.Id = int.Parse(txtCodVoo.Text);
+            if (txtValor.Text == "")
+                passagem.Valor = 0;
+            else
+                passagem.Valor = int.Parse(txtValor.Text);
             passagem.Caminho_Img = txtImagem.Text;
-            passagem.voo.Id = int.Parse(txtCodVoo.Text);
-            passagem.Valor = int.Parse(txtValor.Text);
 
             //Chamada do Controlador
             bool isValid = passagemController.Salvapassagem(passagem);

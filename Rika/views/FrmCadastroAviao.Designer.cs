@@ -79,7 +79,7 @@
             this.lblAeroDecolagem.Name = "lblAeroDecolagem";
             this.lblAeroDecolagem.Size = new System.Drawing.Size(154, 22);
             this.lblAeroDecolagem.TabIndex = 46;
-            this.lblAeroDecolagem.Text = "Companhia Aerea";
+            this.lblAeroDecolagem.Text = "Companhia Aérea";
             // 
             // label1lblCodigoPassagem
             // 

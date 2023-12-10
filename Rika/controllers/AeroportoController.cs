@@ -31,6 +31,7 @@ namespace Rika.controllers
                 //Verifica se as informações estão preenchidas e OK
                 new models.Comum.ValidacaoModel().Validacao(aeroporto);
 
+                //Valida FK - Chave estrangeira
                 bool isValid = ValidaCampos(model);
 
                 if (isValid)
@@ -136,7 +137,7 @@ namespace Rika.controllers
                 return false;
             }
 
-            return true; //Passu por todas as validações
+            return true; //Passou por todas as validações
         }
         #endregion
     }

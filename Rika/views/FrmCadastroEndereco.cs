@@ -157,15 +157,15 @@ namespace Rika.views
                 endereco.CEP = null;
             else
                 endereco.CEP = txtCep.Text;
+            if (txtNumero.Text == "")
+                endereco.NumeroCasa = 0;
+            else
+                endereco.NumeroCasa = int.Parse(txtNumero.Text);
             endereco.pais.Id = int.Parse(txtCodPais.Text);
             endereco.Estado = txtEstado.Text;
             endereco.Cidade = txtCidade.Text;
             endereco.Logradouro = txtLogradouro.Text;
             endereco.Complemento = txtComplemento.Text;
-            if (txtNumero.Text == "")
-                endereco.NumeroCasa = 0;
-            else
-                endereco.NumeroCasa = int.Parse(txtNumero.Text);
 
             //Chamada do Controlador
             bool isValid = enderecoController.SalvaEndereco(endereco);

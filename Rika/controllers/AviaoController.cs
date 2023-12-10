@@ -31,6 +31,9 @@ namespace Rika.controllers
                 //Verifica se as informações estão preenchidas e OK
                 new models.Comum.ValidacaoModel().Validacao(aviao);
 
+                //Valida FK - Chave estrangeira
+                bool isValid = ValidaCampos(model);
+
                 //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
                 if (aviao.Id == 0)
                 {
@@ -115,6 +118,23 @@ namespace Rika.controllers
         public Aviao GetInfoaviao()
         {
             return aviao;
+        }
+        #endregion
+
+        #region Validações
+        public bool ValidaCampos(Aviao model)
+        {
+            string msg = "";
+            if (model.comp.Id == 0)
+                msg += "O campo Companhia Aérea não pode ser vazio!" + "\n";
+
+            if (msg != string.Empty) //Se existe mensagem de erro
+            {
+                MessageBox.Show(msg, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true; //Passou por todas as validações
         }
         #endregion
     }

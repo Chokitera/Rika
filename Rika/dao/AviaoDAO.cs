@@ -146,8 +146,8 @@ namespace Rika.dao
                 else
                 {
                     aviao.comp.Id = reader.GetInt32(1);
-                    aviao.Modelo = reader[2].ToString();
-                    aviao.Qtd_Acento = reader.GetInt32(3);
+                    aviao.Qtd_Acento = reader.GetInt32(2);
+                    aviao.Modelo = reader[3].ToString();
                 }
 
                 conexao.Close();

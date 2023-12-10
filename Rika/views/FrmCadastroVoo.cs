@@ -118,14 +118,23 @@ namespace Rika.views
                 voo.Id = 0;
             else
                 voo.Id = int.Parse(txtCodVoo.Text);
-            voo.Decolagem = int.Parse(txtCodAeroportoDecolagem.Text);
-            voo.Destino = int.Parse(txtCodAeroportoDestino.Text);
+            if (txtCodAeroportoDecolagem.Text == "")
+                voo.Decolagem = 0;
+            else
+                voo.Decolagem = int.Parse(txtCodAeroportoDecolagem.Text);
+            if(txtCodAeroportoDestino.Text == "")
+                voo.Destino = 0;
+            else
+                voo.Destino = int.Parse(txtCodAeroportoDestino.Text);
+            if (txtCodAviao.Text == "")
+                voo.aviao.Id = 0;
+            else
+                voo.aviao.Id = int.Parse(txtCodAviao.Text);
             voo.DataSaida = Convert.ToDateTime(txtDataSaida.Text);
             voo.DataChegada = Convert.ToDateTime(txtDataChegada.Text);
             voo.Duracao = Convert.ToDateTime(txtDuracao.Text);
             voo.HorarioSaida = Convert.ToDateTime(txtHoraSaida.Text);
             voo.HorarioChegada = Convert.ToDateTime(txtHoraChegada.Text);
-            voo.aviao.Id = int.Parse(txtCodAviao.Text);
 
             //Chamada do Controlador
             bool isValid = vooController.Salvavoo(voo);
@@ -198,7 +207,7 @@ namespace Rika.views
                 voo = vooController.ConsultavooPorId(voo.Id);
 
                 //Atribuição da consulta
-                if (voo.Decolagem != 0)
+                if (voo.Destino != 0)
                 {
                     txtCodVoo.Text = voo.Id.ToString();
                     txtCodAeroportoDecolagem.Text = voo.Decolagem.ToString();

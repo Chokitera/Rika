@@ -25,12 +25,11 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"insert into VOO (IDAEROPORTO, IDAVIAO, DT_SAIDA, DT_CHEGADA, DURACAO, HORARIO_SAIDA, HORARIO_CHEGADA, DESTINO, DECOLAGEM) 
-                               values (@IDAEROPORTO, @IDAVIAO, @DT_SAIDA, @DT_CHEGADA, @DURACAO, @HORARIO_SAIDA, @HORARIO_CHEGADA, @DESTINO, @DECOLAGEM);";
+                string sql = @"insert into VOO (IDAVIAO, DT_SAIDA, DT_CHEGADA, DURACAO, HORARIO_SAIDA, HORARIO_CHEGADA, DESTINO, DECOLAGEM) 
+                               values (@IDAVIAO, @DT_SAIDA, @DT_CHEGADA, @DURACAO, @HORARIO_SAIDA, @HORARIO_CHEGADA, @DESTINO, @DECOLAGEM);";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue("@IDAEROPORTO", voo.aeroporto.Id);
                 executacmd.Parameters.AddWithValue("@IDAVIAO", voo.aviao.Id);
                 executacmd.Parameters.AddWithValue("@DT_SAIDA", voo.DataSaida);
                 executacmd.Parameters.AddWithValue("@DT_CHEGADA", voo.DataChegada);
@@ -158,15 +157,14 @@ namespace Rika.dao
                 }
                 else
                 {
-                    voo.aeroporto.Id = reader.GetInt32(1);
-                    voo.aviao.Id = reader.GetInt32(2);
-                    voo.DataSaida = reader.GetDateTime(3);
-                    voo.DataChegada = reader.GetDateTime(4);
-                    voo.Duracao = reader.GetDateTime(5);
-                    voo.HorarioSaida = reader.GetDateTime(6);
-                    voo.HorarioChegada = reader.GetDateTime(7);
-                    voo.Destino = reader.GetInt32(8);
-                    voo.Decolagem = reader.GetInt32(9);
+                    voo.Destino = reader.GetInt32(1);
+                    voo.Decolagem = reader.GetInt32(2);
+                    voo.aviao.Id = reader.GetInt32(3);
+                    voo.DataSaida = reader.GetDateTime(4);
+                    voo.DataChegada = reader.GetDateTime(5);
+                    voo.Duracao = reader.GetDateTime(6);
+                    voo.HorarioSaida = reader.GetDateTime(7);
+                    voo.HorarioChegada = reader.GetDateTime(8);
                 }
 
                 conexao.Close();

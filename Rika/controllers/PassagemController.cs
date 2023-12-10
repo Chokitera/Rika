@@ -32,6 +32,9 @@ namespace Rika.controllers
                 //Verifica se as informações estão preenchidas e OK
                 new models.Comum.ValidacaoModel().Validacao(passagem);
 
+                //Valida FK - Chave estrangeira
+                bool isValid = ValidaCampos(model);
+
                 //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
                 if (passagem.Id == 0)
                 {
@@ -140,6 +143,25 @@ namespace Rika.controllers
                 MessageBox.Show("Ocorreu um erro na consulta: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return null; //Se não deu certo retorna nulo
             }
+        }
+        #endregion
+
+        #region Validações
+        public bool ValidaCampos(Passagem model)
+        {
+            string msg = "";
+            if (model.voo.Id == 0)
+                msg += "O campo Voo não pode ser vazio!" + "\n";
+            if (model.classe.Id == 0)
+                msg += "O campo Classe não pode ser vazio!" + "\n";
+
+            if (msg != string.Empty) //Se existe mensagem de erro
+            {
+                MessageBox.Show(msg, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true; //Passou por todas as validações
         }
         #endregion
     }

@@ -38,6 +38,5 @@ namespace Rika.models
         public DateTime HorarioChegada { get; set; }
 
         public Aviao aviao = new Aviao();
-        public Aeroporto aeroporto = new Aeroporto();
     }
 }

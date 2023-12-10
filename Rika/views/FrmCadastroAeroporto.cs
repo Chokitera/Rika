@@ -126,12 +126,12 @@ namespace Rika.views
                 aeroporto.Id = 0;
             else
                 aeroporto.Id = int.Parse(txtCodAeroporto.Text);
-            aeroporto.Nome = txtNome.Text;
-            aeroporto.Descricao = txtDescricao.Text;
             if (txtCodEndereco.Text == "")
                 aeroporto.endereco.Id = 0;
             else
                 aeroporto.endereco.Id = int.Parse(txtCodEndereco.Text);
+            aeroporto.Nome = txtNome.Text;
+            aeroporto.Descricao = txtDescricao.Text;
 
             //Chamada do Controlador
             bool isValid = aeroportoController.SalvaAeroporto(aeroporto);

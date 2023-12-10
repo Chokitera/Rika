@@ -115,9 +115,15 @@ namespace Rika.views
                 aviao.Id = 0;
             else
                 aviao.Id = int.Parse(txtCodAviao.Text);
+            if (txtCodCompAerea.Text == "")
+                aviao.comp.Id = 0;
+            else
+                aviao.comp.Id = int.Parse(txtCodCompAerea.Text);
+            if (txtQtdAcentos.Text == "")
+                aviao.Qtd_Acento = 0;
+            else
+                aviao.Qtd_Acento = int.Parse(txtQtdAcentos.Text);
             aviao.Modelo = txtModelAviao.Text;
-            aviao.comp.Id = int.Parse(txtCodCompAerea.Text);
-            aviao.Qtd_Acento = int.Parse(txtQtdAcentos.Text);
 
             //Chamada do Controlador
             bool isValid = aviaoController.Salvaaviao(aviao);

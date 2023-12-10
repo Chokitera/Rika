@@ -32,6 +32,9 @@ namespace Rika.controllers
                 //Verifica se as informações estão preenchidas e OK
                 new models.Comum.ValidacaoModel().Validacao(endereco);
 
+                //Valida FK - Chave estrangeira
+                bool isValid = ValidaCampos(model);
+
                 //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
                 if (endereco.Id == 0)
                 {
@@ -144,6 +147,23 @@ namespace Rika.controllers
         public Endereco GetInfoEndereco()
         {
             return endereco;
+        }
+        #endregion
+
+        #region Validações
+        public bool ValidaCampos(Endereco model)
+        {
+            string msg = "";
+            if (model.pais.Id == 0)
+                msg += "O campo País não pode ser vazio!" + "\n";
+
+            if (msg != string.Empty) //Se existe mensagem de erro
+            {
+                MessageBox.Show(msg, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true; //Passou por todas as validações
         }
         #endregion
     }
