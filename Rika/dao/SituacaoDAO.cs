@@ -25,12 +25,13 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"insert into situacao (descricao) 
-                               values (@descricao);";
+                string sql = @"insert into situacao (descricao, nome) 
+                               values (@descricao, @nome);";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@descricao", situacao.Descricao);
+                executacmd.Parameters.AddWithValue("@nome", situacao.Nome);
 
                 //Consultar último registro
                 string sql2 = @"select idsituacao from situacao order by idsituacao desc limit 1;";
@@ -43,7 +44,7 @@ namespace Rika.dao
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 situacao.Id = reader.GetInt32(0);
-                MessageBox.Show("Situação " + situacao.Id + " - " + situacao.Descricao + " cadastrada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Situação " + situacao.Id + " - " + situacao.Nome + " cadastrada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;

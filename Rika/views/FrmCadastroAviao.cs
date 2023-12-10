@@ -180,6 +180,7 @@ namespace Rika.views
             if (txtCodAviao.Text != "")
             {
                 //Instancia do model
+                CompanhiaAerea companhiaAerea = new CompanhiaAerea();
                 Aviao aviao = new Aviao
                 {
                     //Atribuição
@@ -196,6 +197,15 @@ namespace Rika.views
                     txtModelAviao.Text = aviao.Modelo;
                     txtCodCompAerea.Text = aviao.comp.Id.ToString();
                     txtQtdAcentos.Text = aviao.Qtd_Acento.ToString();
+
+                    //Atribui o nome da companhia a partir do código presente no BD
+                    if (txtCodCompAerea.Text != "")
+                    {
+                        companhiaAerea = compAereaController.ConsultaCompanhiaPorId(aviao.comp.Id);
+
+                        if (companhiaAerea.Nome != "")
+                            txtCompAerea.Text = companhiaAerea.Nome;
+                    }
                 }
                 else
                 {
@@ -203,6 +213,8 @@ namespace Rika.views
                     txtCodAviao.Focus();
                 }
             }
+            else
+                new Helpers().LimparTela(this);
         }
 
         #endregion

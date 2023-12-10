@@ -34,17 +34,20 @@ namespace Rika.controllers
                 //Valida FK - Chave estrangeira
                 bool isValid = ValidaCampos(model);
 
-                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
-                if (aviao.Id == 0)
+                if (isValid)
                 {
-                    aviaoDAO.CadastrarAviao(aviao);
-                }
-                else
-                {
-                    aviaoDAO.EfetuarEdicao(aviao);
+                    //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
+                    if (aviao.Id == 0)
+                    {
+                        aviaoDAO.CadastrarAviao(aviao);
+                    }
+                    else
+                    {
+                        aviaoDAO.EfetuarEdicao(aviao);
+                    }
                 }
 
-                return true; //Se Ok retorna verdadeiro
+                return isValid; //Se Ok retorna verdadeiro
             }
             catch (Exception erro)
             {

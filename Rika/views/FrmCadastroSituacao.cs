@@ -187,7 +187,8 @@ namespace Rika.views
                 if (situacao.Nome != "")
                 {
                     txtCodigo.Text = situacao.Id.ToString();
-                    txtNome.Text = situacao.Descricao;
+                    txtNome.Text = situacao.Nome;
+                    txtDescricao.Text = situacao.Descricao;
                 }
                 else
                 {
@@ -195,6 +196,8 @@ namespace Rika.views
                     txtCodigo.Focus();
                 }
             }
+            else
+                new Helpers().LimparTela(this);
         }
 
         #endregion

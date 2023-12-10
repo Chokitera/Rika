@@ -130,20 +130,48 @@ namespace Rika.views
                 voo.aviao.Id = 0;
             else
                 voo.aviao.Id = int.Parse(txtCodAviao.Text);
-            voo.DataSaida = Convert.ToDateTime(txtDataSaida.Text);
-            voo.DataChegada = Convert.ToDateTime(txtDataChegada.Text);
-            voo.Duracao = Convert.ToDateTime(txtDuracao.Text);
-            voo.HorarioSaida = Convert.ToDateTime(txtHoraSaida.Text);
-            voo.HorarioChegada = Convert.ToDateTime(txtHoraChegada.Text);
+            if (txtDuracao.Text == "  :")
+                voo.Duracao = null;
+            else
+                voo.Duracao = txtDuracao.Text;
+            if (txtHoraSaida.Text == "  :")
+                voo.HorarioSaida = null;
+            else
+                voo.HorarioSaida = txtHoraSaida.Text;
+            if (txtHoraChegada.Text == "  :")
+                voo.HorarioChegada = null;
+            else
+                voo.HorarioChegada = txtHoraChegada.Text;
 
-            //Chamada do Controlador
-            bool isValid = vooController.Salvavoo(voo);
+            //Valida as datas preenchidas pelo usuário
+            string msg = "";
+            bool dataValida = ValidarDatas(txtDataSaida.Text);
+            if (dataValida)
+                voo.DataSaida = DateTime.ParseExact(txtDataSaida.Text, "dd/MM/yyyy", null);
+            else
+                msg += "Data de Saída inválida! Por favor, insira uma data válida." + "\n";
 
-            //Se realizou o processo limpa a tela
-            if (isValid)
+            dataValida = ValidarDatas(txtDataChegada.Text);
+            if (dataValida)
+                voo.DataChegada = DateTime.ParseExact(txtDataChegada.Text, "dd/MM/yyyy", null);
+            else
+                msg += "Data de Chegada inválida! Por favor, insira uma data válida." + "\n";
+
+            //Verifica se existe erros para informar
+            if (msg != "")
+                MessageBox.Show(msg, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
             {
-                new Helpers().LimparTela(this);
-                txtCodVoo.Focus();
+                //Chamada do Controlador
+                bool isValid = vooController.Salvavoo(voo);
+
+                //Se realizou o processo limpa a tela
+                if (isValid)
+                {
+                    new Helpers().LimparTela(this);
+                    LimpaMaskedBox();
+                    txtCodVoo.Focus();
+                }
             }
         }
 
@@ -166,6 +194,7 @@ namespace Rika.views
                 if (isValid)
                 {
                     new Helpers().LimparTela(this);
+                    LimpaMaskedBox();
                     txtCodVoo.Focus();
                 }
             }
@@ -197,6 +226,9 @@ namespace Rika.views
             if (txtCodVoo.Text != "")
             {
                 //Instancia do model
+                Aeroporto aeroportoDecolagem = new Aeroporto();
+                Aeroporto aeroportoDestino = new Aeroporto();
+                Aviao aviao = new Aviao();
                 Voo voo = new Voo
                 {
                     //Atribuição
@@ -212,18 +244,51 @@ namespace Rika.views
                     txtCodVoo.Text = voo.Id.ToString();
                     txtCodAeroportoDecolagem.Text = voo.Decolagem.ToString();
                     txtCodAeroportoDestino.Text = voo.Destino.ToString();
-                    txtDataSaida.Text = voo.DataSaida.ToString();
-                    txtDataChegada.Text = voo.DataChegada.ToString();
+                    txtDataSaida.Text = voo.DataSaida.ToString("dd/MM/yyyy");
+                    txtDataChegada.Text = voo.DataChegada.ToString("dd/MM/yyyy");
                     txtDuracao.Text = voo.Duracao.ToString();
                     txtHoraSaida.Text = voo.HorarioSaida.ToString();
                     txtHoraChegada.Text = voo.HorarioChegada.ToString();
                     txtCodAviao.Text = voo.aviao.Id.ToString();
+
+                    //Atribui o nome do Aeroporto Decolagem a partir do código presente no BD
+                    if (txtCodAeroportoDecolagem.Text != "")
+                    {
+                        aeroportoDecolagem = aeroportoController.ConsultaAeroportoPorId(voo.Decolagem);
+
+                        if (aeroportoDecolagem.Nome != "")
+                            txtAeroportoDecolagem.Text = aeroportoDecolagem.Nome;
+                    }
+
+                    //Atribui o nome do Aeroporto Destino a partir do código presente no BD
+                    if (txtCodAeroportoDestino.Text != "")
+                    {
+                        aeroportoDestino = aeroportoController.ConsultaAeroportoPorId(voo.Destino);
+
+                        if (aeroportoDestino.Nome != "")
+                            txtAeroportoDestino.Text = aeroportoDestino.Nome;
+                    }
+
+                    //Atribui o nome do Avião a partir do código presente no BD
+                    if (txtCodAviao.Text != "")
+                    {
+                        aviao = aviaoController.ConsultaAviaoPorId(voo.aviao.Id);
+
+                        if (aviao.Modelo != "")
+                            txtAviao.Text = aviao.Modelo;
+                    }
                 }
                 else
                 {
                     new Helpers().LimparTela(this);
+                    LimpaMaskedBox();
                     txtCodVoo.Focus();
                 }
+            }
+            else
+            {
+                new Helpers().LimparTela(this);
+                LimpaMaskedBox();
             }
         }
 
@@ -325,6 +390,17 @@ namespace Rika.views
         }
         #endregion
 
+        #region Limpar MaskedBox
+        public void LimpaMaskedBox()
+        {
+            txtDuracao.Text = "";
+            txtHoraChegada.Text = "";
+            txtHoraSaida.Text = "";
+            txtDataSaida.Text = "";
+            txtDataChegada.Text = "";
+        }
+        #endregion
+
         #region Validações
         private void txtCodVoo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -333,6 +409,30 @@ namespace Rika.views
                 e.Handled = true;
             }
         }
+
+        #region Metódo para Validar Datas
+        public bool ValidarDatas(string data)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(data))
+                {
+                    if (DateTime.TryParseExact(data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out _)) //Não tem uma saída, pois vai ser atribuido a partir da entrada do usuário
+                    {
+                        return true; //Conversão deu certo
+                    }
+                    else
+                        return false; //Deu errado
+                }
+                else
+                    return false;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+        #endregion
         #endregion
     }
 }

@@ -26,16 +26,13 @@ namespace Rika.models
         public DateTime DataChegada { get; set; }
 
         [Required(ErrorMessage = "O campo Duração não pode ser vazio!")]
-        [DataType(DataType.Time)]
-        public DateTime Duracao { get; set; }
+        public string Duracao { get; set; }
 
         [Required(ErrorMessage = "O campo Horário de Saída não pode ser vazio!")]
-        [DataType(DataType.Time)]
-        public DateTime HorarioSaida { get; set; }
+        public string HorarioSaida { get; set; }
 
         [Required(ErrorMessage = "O campo Horário de Chegada não pode ser vazio!")]
-        [DataType(DataType.Time)]
-        public DateTime HorarioChegada { get; set; }
+        public string HorarioChegada { get; set; }
 
         public Aviao aviao = new Aviao();
     }

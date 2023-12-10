@@ -35,17 +35,20 @@ namespace Rika.controllers
                 //Valida FK - Chave estrangeira
                 bool isValid = ValidaCampos(model);
 
-                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
-                if (endereco.Id == 0)
+                if (isValid)
                 {
-                    enderecoDAO.EfetuarCadastro(endereco);
-                }
-                else
-                {
-                    enderecoDAO.EfetuarEdicao(endereco);
+                    //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
+                    if (endereco.Id == 0)
+                    {
+                        enderecoDAO.EfetuarCadastro(endereco);
+                    }
+                    else
+                    {
+                        enderecoDAO.EfetuarEdicao(endereco);
+                    }
                 }
 
-                return true; //Se Ok retorna verdadeiro
+                return isValid; //Se Ok retorna verdadeiro
             }
             catch (Exception erro)
             {

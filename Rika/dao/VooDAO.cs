@@ -25,6 +25,7 @@ namespace Rika.dao
         {
             try
             {
+                string destino = "";
                 string sql = @"insert into VOO (IDAVIAO, DT_SAIDA, DT_CHEGADA, DURACAO, HORARIO_SAIDA, HORARIO_CHEGADA, DESTINO, DECOLAGEM) 
                                values (@IDAVIAO, @DT_SAIDA, @DT_CHEGADA, @DURACAO, @HORARIO_SAIDA, @HORARIO_CHEGADA, @DESTINO, @DECOLAGEM);";
 
@@ -43,14 +44,30 @@ namespace Rika.dao
                 string sql2 = @"select IDVOO from VOO order by IDVOO desc limit 1;";
                 MySqlCommand executacmd2 = new MySqlCommand(sql2, conexao);
 
+                //Consulta o nome do Aeroporto Destino
+                string sql3 = @"select NOME from AEROPORTO where IDAEROPORTO = @id";
+                MySqlCommand executacmd3 = new MySqlCommand(sql3, conexao);
+                executacmd3.Parameters.AddWithValue("@id", voo.Destino);
+
                 //Executa SQL
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
+                //Id do Voo
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 voo.Id = reader.GetInt32(0);
-                MessageBox.Show("Endereço " + voo.Id + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //Restabelece a conexao
+                conexao.Close();
+                conexao.Open();
+
+                //Nome do Destino
+                MySqlDataReader reader1 = executacmd3.ExecuteReader();
+                reader1.Read();
+                destino = reader1.GetString(0);
+
+                MessageBox.Show("Voo " + voo.Id + " - Destino: " + destino + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -104,7 +121,6 @@ namespace Rika.dao
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue("@IdAeroporto", voo.aeroporto.Id);
                 executacmd.Parameters.AddWithValue("@IdAviao", voo.aviao.Id);
                 executacmd.Parameters.AddWithValue("@Dt_Saida", voo.DataSaida);
                 executacmd.Parameters.AddWithValue("@Dt_Chegada", voo.DataChegada);
@@ -128,6 +144,10 @@ namespace Rika.dao
                 MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conexao.Close();
                 return false;
+            }
+            finally
+            {
+                conexao.Close();
             }
         }
         #endregion
@@ -162,9 +182,9 @@ namespace Rika.dao
                     voo.aviao.Id = reader.GetInt32(3);
                     voo.DataSaida = reader.GetDateTime(4);
                     voo.DataChegada = reader.GetDateTime(5);
-                    voo.Duracao = reader.GetDateTime(6);
-                    voo.HorarioSaida = reader.GetDateTime(7);
-                    voo.HorarioChegada = reader.GetDateTime(8);
+                    voo.Duracao = reader.GetString(6);
+                    voo.HorarioSaida = reader.GetString(7);
+                    voo.HorarioChegada = reader.GetString(8);
                 }
 
                 conexao.Close();

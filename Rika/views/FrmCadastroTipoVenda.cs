@@ -196,6 +196,8 @@ namespace Rika.views
                     txtCodigo.Focus();
                 }
             }
+            else
+                new Helpers().LimparTela(this);
         }
 
         #endregion

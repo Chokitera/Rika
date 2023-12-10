@@ -46,6 +46,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtAeroportoDestino = new Rika.controls.novoTextBoxReadOnly();
             this.txtAeroportoDecolagem = new Rika.controls.novoTextBoxReadOnly();
             this.txtAviao = new Rika.controls.novoTextBoxReadOnly();
@@ -56,7 +57,6 @@
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -163,7 +163,6 @@
             this.txtDataSaida.Name = "txtDataSaida";
             this.txtDataSaida.Size = new System.Drawing.Size(137, 26);
             this.txtDataSaida.TabIndex = 7;
-            this.txtDataSaida.ValidatingType = typeof(System.DateTime);
             // 
             // txtDataChegada
             // 
@@ -174,7 +173,6 @@
             this.txtDataChegada.Name = "txtDataChegada";
             this.txtDataChegada.Size = new System.Drawing.Size(137, 26);
             this.txtDataChegada.TabIndex = 9;
-            this.txtDataChegada.ValidatingType = typeof(System.DateTime);
             // 
             // txtDuracao
             // 
@@ -245,6 +243,16 @@
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
             this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
+            this.pictureBox2.Location = new System.Drawing.Point(544, 39);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(180, 166);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 88;
+            this.pictureBox2.TabStop = false;
             // 
             // txtAeroportoDestino
             // 
@@ -453,16 +461,6 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox2.Location = new System.Drawing.Point(544, 39);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(180, 166);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 88;
-            this.pictureBox2.TabStop = false;
-            // 
             // FrmCadastroVoo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,7 +497,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroVoo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Voo";
+            this.Text = "Cadastro de Voo";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroVoo_Paint);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
