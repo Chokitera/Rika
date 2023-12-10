@@ -313,6 +313,7 @@ namespace Rika.views
                     txtAeroportoDecolagem.Text = aeroporto.Nome;
                 else
                 {
+                    txtCodAeroportoDecolagem.Text = "";
                     txtAeroportoDecolagem.Text = "";
                     txtCodAeroportoDecolagem.Focus();
                 }
@@ -345,6 +346,7 @@ namespace Rika.views
                     txtAeroportoDestino.Text = aeroporto.Nome;
                 else
                 {
+                    txtCodAeroportoDestino.Text = "";
                     txtAeroportoDestino.Text = "";
                     txtCodAeroportoDestino.Focus();
                 }
@@ -377,6 +379,7 @@ namespace Rika.views
                     txtAviao.Text = aviao.Modelo;
                 else
                 {
+                    txtCodAviao.Text = "";
                     txtAviao.Text = "";
                     txtCodAviao.Focus();
                 }

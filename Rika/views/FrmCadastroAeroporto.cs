@@ -235,6 +235,7 @@ namespace Rika.views
                     txtEndereco.Text = endereco.Cidade;
                 else
                 {
+                    txtCodAeroporto.Text = "";
                     txtEndereco.Text = "";
                     txtCodEndereco.Focus();
                 }

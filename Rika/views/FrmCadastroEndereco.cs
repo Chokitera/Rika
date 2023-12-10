@@ -161,7 +161,10 @@ namespace Rika.views
                 endereco.NumeroCasa = 0;
             else
                 endereco.NumeroCasa = int.Parse(txtNumero.Text);
-            endereco.pais.Id = int.Parse(txtCodPais.Text);
+            if (txtCodPais.Text == "")
+                endereco.pais.Id = 0;
+            else
+                endereco.pais.Id = int.Parse(txtCodPais.Text);
             endereco.Estado = txtEstado.Text;
             endereco.Cidade = txtCidade.Text;
             endereco.Logradouro = txtLogradouro.Text;
@@ -279,6 +282,7 @@ namespace Rika.views
                     txtPais.Text = pais.Nome;
                 else
                 {
+                    txtCodPais.Text = "";
                     txtPais.Text = "";
                     txtCodPais.Focus();
                 }

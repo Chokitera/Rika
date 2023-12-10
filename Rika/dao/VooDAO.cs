@@ -115,12 +115,14 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"update VOO set IdAeropoto=@IdAeroporto, IdAviao=@IdAviao, Dt_Saida=@Dt_Saida, Dt_Chegada=@Dt_Chegada, Duracao=@Duracao, Horario_Saida=@Horario_Saida, 
+                string destino = "";
+                string sql = @"update VOO set IdAviao=@IdAviao, Dt_Saida=@Dt_Saida, Dt_Chegada=@Dt_Chegada, Duracao=@Duracao, Horario_Saida=@Horario_Saida, 
                                               Horario_Chegada=@Horario_Chegada, Destino=@Destino, Decolagem=@Decolagem
                                where IDVOO = @id;";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", voo.Id);
                 executacmd.Parameters.AddWithValue("@IdAviao", voo.aviao.Id);
                 executacmd.Parameters.AddWithValue("@Dt_Saida", voo.DataSaida);
                 executacmd.Parameters.AddWithValue("@Dt_Chegada", voo.DataChegada);
@@ -130,11 +132,25 @@ namespace Rika.dao
                 executacmd.Parameters.AddWithValue("@Destino", voo.Destino);
                 executacmd.Parameters.AddWithValue("@Decolagem", voo.Decolagem);
 
+                //Consulta o nome do Aeroporto Destino
+                string sql2 = @"select NOME from AEROPORTO where IDAEROPORTO = @id";
+                MySqlCommand executacmd2 = new MySqlCommand(sql2, conexao);
+                executacmd2.Parameters.AddWithValue("@id", voo.Destino);
+
                 //Executa SQL
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Voo " + voo.Id + " - " + voo.Destino + " atualizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Restabelece a conexao
+                conexao.Close();
+                conexao.Open();
+
+                //Nome do Destino
+                MySqlDataReader reader = executacmd2.ExecuteReader();
+                reader.Read();
+                destino = reader.GetString(0);
+
+                MessageBox.Show("Voo " + voo.Id + " - Destino: " + destino + " atualizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;

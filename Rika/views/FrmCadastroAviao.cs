@@ -238,6 +238,7 @@ namespace Rika.views
                     txtCompAerea.Text = companhiaAerea.Nome;
                 else
                 {
+                    txtCodCompAerea.Text = "";
                     txtCompAerea.Text = "";
                     txtCodCompAerea.Focus();
                 }

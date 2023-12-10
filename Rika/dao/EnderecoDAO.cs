@@ -96,8 +96,8 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"update ENDERECO set pais=idpais, cidade=@cidade, estado=@estado, cep=@cep, logradouro=@logradouro, numero=@numero, complemento=@complemento
-                               where IDCOMP_AEREA = @id;";
+                string sql = @"update ENDERECO set idpais=@idpais, cidade=@cidade, estado=@estado, cep=@cep, logradouro=@logradouro, numero=@numero, complemento=@complemento
+                               where IDENDERECO = @id;";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);

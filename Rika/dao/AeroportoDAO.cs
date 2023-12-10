@@ -92,21 +92,21 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"update AEROPORTO set nome=@nome, descricao=@descricao, inscricao=@inscricao, endereco=@endereco
-                               where AEROPORTO = @id;";
+                string sql = @"update AEROPORTO set nome=@nome, descricao=@descricao, idendereco=@endereco
+                               where IDAEROPORTO = @id;";
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", aeroporto.Id);
-                executacmd.Parameters.AddWithValue("@endereco", aeroporto.endereco);
                 executacmd.Parameters.AddWithValue("@nome", aeroporto.Nome);
                 executacmd.Parameters.AddWithValue("@descricao", aeroporto.Descricao);
+                executacmd.Parameters.AddWithValue("@endereco", aeroporto.endereco.Id);
 
                 //Executa SQL
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Aeroporto " + aeroporto.Id + " - " + aeroporto.Nome + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Aeroporto " + aeroporto.Id + " - " + aeroporto.Nome + " atualizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
