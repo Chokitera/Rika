@@ -34,7 +34,7 @@
             this.pnlAviao = new System.Windows.Forms.Panel();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnConfirmar = new Rika.controls.ModeloBotao();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabelaAviao = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new Rika.controls.novoTextBox();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.txtNome = new Rika.controls.novoTextBox();
@@ -44,7 +44,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             this.pnlAviao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaAviao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +57,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(820, 30);
             this.panel2.TabIndex = 73;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown_1);
             // 
             // iconFechar
             // 
@@ -69,6 +70,7 @@
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 28;
             this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click_1);
             // 
             // iconMinimizar
             // 
@@ -81,12 +83,13 @@
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click_1);
             // 
             // pnlAviao
             // 
             this.pnlAviao.Controls.Add(this.btnSair);
             this.pnlAviao.Controls.Add(this.btnConfirmar);
-            this.pnlAviao.Controls.Add(this.dataGridView1);
+            this.pnlAviao.Controls.Add(this.tabelaAviao);
             this.pnlAviao.Controls.Add(this.txtCodigo);
             this.pnlAviao.Controls.Add(this.label1lblCodigoPassagem);
             this.pnlAviao.Controls.Add(this.txtNome);
@@ -97,6 +100,7 @@
             this.pnlAviao.Name = "pnlAviao";
             this.pnlAviao.Size = new System.Drawing.Size(820, 602);
             this.pnlAviao.TabIndex = 74;
+            this.pnlAviao.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAviao_Paint);
             // 
             // btnSair
             // 
@@ -116,6 +120,7 @@
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnConfirmar
             // 
@@ -135,17 +140,18 @@
             this.btnConfirmar.TextColor = System.Drawing.Color.White;
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // dataGridView1
+            // tabelaAviao
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 226);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 316);
-            this.dataGridView1.TabIndex = 93;
+            this.tabelaAviao.AllowUserToAddRows = false;
+            this.tabelaAviao.AllowUserToDeleteRows = false;
+            this.tabelaAviao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaAviao.Location = new System.Drawing.Point(38, 226);
+            this.tabelaAviao.Name = "tabelaAviao";
+            this.tabelaAviao.ReadOnly = true;
+            this.tabelaAviao.Size = new System.Drawing.Size(749, 316);
+            this.tabelaAviao.TabIndex = 93;
             // 
             // txtCodigo
             // 
@@ -195,6 +201,7 @@
             this.txtNome.TabIndex = 90;
             this.txtNome.TextNew = "";
             this.txtNome.UnderlinedStyle = false;
+            this.txtNome._TextChanged += new System.EventHandler(this.txtNome__TextChanged);
             // 
             // lblAeroDestino
             // 
@@ -232,7 +239,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
             this.pnlAviao.ResumeLayout(false);
             this.pnlAviao.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaAviao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -245,7 +252,7 @@
         private System.Windows.Forms.Panel pnlAviao;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnConfirmar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tabelaAviao;
         private controls.novoTextBox txtCodigo;
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private controls.novoTextBox txtNome;

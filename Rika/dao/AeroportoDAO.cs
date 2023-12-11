@@ -161,5 +161,40 @@ namespace Rika.dao
             }
         }
         #endregion
+
+        #region Consultar Aviao
+        public DataTable ConsultarAeroporto(Aeroporto aeroporto)
+        {
+            try
+            {
+                //Criacao do DataTable
+                DataTable dt = new DataTable();
+
+                //Sql
+                string sql = @"select * from tipo_venda where nome like @nome";
+
+                //Atribuição de parametro
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@nome", aeroporto.Nome);
+
+                //Abre a conexao e executa Sql
+                conexao.Open();
+
+                //Preenche o DataTable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(dt);
+
+                conexao.Close();
+
+                return dt; //Retorna a DT
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return null;
+            }
+        }
+        #endregion
     }
 }

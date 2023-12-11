@@ -117,5 +117,29 @@ namespace Rika.controllers
             return aeroporto;
         }
         #endregion
+
+        #region Consulta Aeroporto (DataTable)
+        public DataTable ConsultarAeroportos(Aeroporto aeroporto)
+        {
+            try
+            {
+                //Cria a DataTable
+                DataTable aeroportos = new DataTable();
+
+                //Atribuicao da entrada
+                this.aeroporto = aeroporto;
+
+                //Consultar os Paises
+                aeroportos = aeroportoDAO.ConsultarAeroporto(this.aeroporto);
+
+                return aeroportos; //Retorna os paises - DataTable
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro na consulta: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null; //Se não deu certo retorna nulo
+            }
+        }
+        #endregion
     }
 }

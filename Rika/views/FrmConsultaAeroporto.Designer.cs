@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaAeroporto));
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
             this.pnlAeroporto = new System.Windows.Forms.Panel();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnConfirmar = new Rika.controls.ModeloBotao();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabelaAeroporto = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new Rika.controls.novoTextBox();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.txtNome = new Rika.controls.novoTextBox();
@@ -44,7 +45,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             this.pnlAeroporto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaAeroporto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(820, 30);
             this.panel2.TabIndex = 73;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown_1);
             // 
             // iconFechar
             // 
@@ -69,6 +71,7 @@
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 28;
             this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click_1);
             // 
             // iconMinimizar
             // 
@@ -81,12 +84,13 @@
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click_1);
             // 
             // pnlAeroporto
             // 
             this.pnlAeroporto.Controls.Add(this.btnSair);
             this.pnlAeroporto.Controls.Add(this.btnConfirmar);
-            this.pnlAeroporto.Controls.Add(this.dataGridView1);
+            this.pnlAeroporto.Controls.Add(this.tabelaAeroporto);
             this.pnlAeroporto.Controls.Add(this.txtCodigo);
             this.pnlAeroporto.Controls.Add(this.label1lblCodigoPassagem);
             this.pnlAeroporto.Controls.Add(this.txtNome);
@@ -97,6 +101,7 @@
             this.pnlAeroporto.Name = "pnlAeroporto";
             this.pnlAeroporto.Size = new System.Drawing.Size(820, 602);
             this.pnlAeroporto.TabIndex = 74;
+            this.pnlAeroporto.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlAeroporto_Paint);
             // 
             // btnSair
             // 
@@ -116,6 +121,7 @@
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnConfirmar
             // 
@@ -136,16 +142,16 @@
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // tabelaAeroporto
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 226);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 316);
-            this.dataGridView1.TabIndex = 93;
+            this.tabelaAeroporto.AllowUserToAddRows = false;
+            this.tabelaAeroporto.AllowUserToDeleteRows = false;
+            this.tabelaAeroporto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaAeroporto.Location = new System.Drawing.Point(38, 226);
+            this.tabelaAeroporto.Name = "tabelaAeroporto";
+            this.tabelaAeroporto.ReadOnly = true;
+            this.tabelaAeroporto.Size = new System.Drawing.Size(749, 316);
+            this.tabelaAeroporto.TabIndex = 93;
             // 
             // txtCodigo
             // 
@@ -225,14 +231,17 @@
             this.Controls.Add(this.pnlAeroporto);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaAeroporto";
-            this.Text = "FrmConsultaAeroporto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Consulta Aeroporto";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmConsultaAeroporto_Paint);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
             this.pnlAeroporto.ResumeLayout(false);
             this.pnlAeroporto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaAeroporto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -245,7 +254,7 @@
         private System.Windows.Forms.Panel pnlAeroporto;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnConfirmar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tabelaAeroporto;
         private controls.novoTextBox txtCodigo;
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private controls.novoTextBox txtNome;

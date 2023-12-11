@@ -145,5 +145,9 @@ namespace Rika.views
 
         #endregion
 
+        private void pnlTipoVenda_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

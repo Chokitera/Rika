@@ -1,8 +1,9 @@
-﻿using Rika.dao;
+﻿ using Rika.dao;
 using Rika.dto;
 using Rika.models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -115,6 +116,30 @@ namespace Rika.controllers
         public Aviao GetInfoaviao()
         {
             return aviao;
+        }
+        #endregion
+
+        #region Consulta Avião (DataTable)
+        public DataTable ConsultarAvioes(Aviao aviao)
+        {
+            try
+            {
+                //Cria a DataTable
+                DataTable avioes = new DataTable();
+
+                //Atribuicao da entrada
+                this.aviao = aviao;
+
+                //Consultar os Paises
+                avioes = aviaoDAO.ConsultarAviao(this.aviao);
+
+                return avioes; //Retorna os paises - DataTable
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro na consulta: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null; //Se não deu certo retorna nulo
+            }
         }
         #endregion
     }

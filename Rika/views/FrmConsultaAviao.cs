@@ -9,14 +9,20 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Rika.controllers;
+using Rika.models;
 
 namespace Rika.views
 {
     public partial class FrmConsultaAviao : Form
     {
+        private AviaoController AviaoController;
         public FrmConsultaAviao()
         {
             InitializeComponent();
+
+            AviaoController = new AviaoController();
+            ListarAviao();
         }
         #region Ajustes da Borda
         //Campos para alterar a borda
@@ -60,7 +66,7 @@ namespace Rika.views
                 }
             }
         }
-        private void pnlConteudo_Paint(object sender, PaintEventArgs e)
+        private void pnlAviao_Paint(object sender, PaintEventArgs e)
         {
             // Ajusta as bordas
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
@@ -87,7 +93,7 @@ namespace Rika.views
             }
         }
 
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        private void panel2_MouseDown_1(object sender, MouseEventArgs e)
         {
             //Chamada dos métodos para arrastar o formulário
             ReleaseCapture();
@@ -96,20 +102,48 @@ namespace Rika.views
         #endregion
 
         #region Botões/Ações
-        private void iconMinimizar_Click(object sender, EventArgs e)
+        private void iconFechar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void iconMinimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void iconFechar_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         #endregion
 
-        
+        #region Eventos em Geral
+        private void txtNome__TextChanged(object sender, EventArgs e)
+        {
+            ListarAviao();
+        }
+        #endregion
 
-        
-        
+        #region Listar Aviao
+        public void ListarAviao()
+        {
+            DataTable dataTable = new DataTable();
+            //Instancia do Model
+            Aviao aviao = new Aviao
+            {
+                Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
+            };
+
+            //Consulta os paises e atribui a DataGrid
+            tabelaAviao.DataSource = AviaoController.ConsultarAvioes(aviao);
+        }
+        #endregion
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
