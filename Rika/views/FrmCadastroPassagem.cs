@@ -178,7 +178,7 @@ namespace Rika.views
                 passagem.situacao.Id = int.Parse(cmbSituacao.SelectedValue);
             if (cmbTipoPassagem.SelectedIndex != -1)
                 passagem.Direto_Escala = cmbTipoPassagem.SelectedItem.ToString(); //Conversão explicita, coletando o item selecionado
-            passagem.Caminho_Img = txtImagem.Text;
+            passagem.Caminho_Img = caminhoNovo;
 
             //Chamada do Controlador
             bool isValid = passagemController.Salvapassagem(passagem);
@@ -206,7 +206,14 @@ namespace Rika.views
         {
             if (txtCodigo.Text != "")
             {
+                //Limpa as variaveis das imagens
+                caminhoNovo = "";
+                caminhoOriginal = "";
+
                 //Instancia do model
+                Voo voo = new Voo();
+                Classe classe = new Classe();
+                Aeroporto aeroporto = new Aeroporto();
                 Passagem passagem = new Passagem
                 {
                     //Atribuição
@@ -217,13 +224,41 @@ namespace Rika.views
                 passagem = passagemController.ConsultapassagemPorId(passagem.Id);
 
                 //Atribuição da consulta
-                if (passagem.Cod_Passagem != "")
+                if (passagem.Direto_Escala != "")
                 {
                     txtCodigo.Text = passagem.Id.ToString();
                     txtCodClasse.Text = passagem.classe.Id.ToString();
-                    txtImagem.Text = passagem.Caminho_Img;
+                    caminhoNovo = passagem.Caminho_Img; //Permite visualizar a imagem em tela
+                    txtImagem.Text = caminhoNovo.Replace("C:\\fotos\\", ""); //Retira o caminho da imagem (caminho no servidor)
                     txtCodVoo.Text = passagem.voo.Id.ToString();
                     txtValor.Text = passagem.Valor.ToString();
+
+                    if (passagem.situacao.Id > 0)
+                        cmbSituacao.SelectedValue = passagem.situacao.Id.ToString();
+                    if (passagem.Direto_Escala != string.Empty)
+                        cmbTipoPassagem.SelectedItem = passagem.Direto_Escala;
+
+                    //Atribui o nome da Classe a partir do código presente no BD
+                    if (txtCodClasse.Text != "")
+                    {
+                        classe = classeController.ConsultaClassePorId(passagem.classe.Id);
+
+                        if (classe.Nome != "")
+                            txtClasse.Text = classe.Nome;
+                    }
+
+                    //Atribui o nome do Voo a partir do código presente no BD
+                    if (txtCodVoo.Text != "")
+                    {
+                        voo = vooController.ConsultavooPorId(passagem.voo.Id);
+
+                        if (voo.Destino > 0)
+                        {
+                            //Consulta o nome do Aeroporto Destino para atribuir ao texto do Voo
+                            aeroporto = aeroportoController.ConsultaAeroportoPorId(voo.Destino);
+                            txtVoo.Text = aeroporto.Nome;
+                        }
+                    }
                 }
                 else
                 {
@@ -231,6 +266,11 @@ namespace Rika.views
                     LimparComboBox();
                     txtCodigo.Focus();
                 }
+            }
+            else
+            {
+                new Helpers().LimparTela(this);
+                LimparComboBox();
             }
         }
         #endregion
@@ -414,6 +454,8 @@ namespace Rika.views
         #region Limpar ComboBox
         public void LimparComboBox()
         {
+            caminhoNovo = "";
+            caminhoOriginal = "";
             cmbSituacao.SelectedIndex = -1;
             cmbTipoPassagem.SelectedIndex = -1;
         }

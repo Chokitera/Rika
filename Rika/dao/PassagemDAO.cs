@@ -154,7 +154,7 @@ namespace Rika.dao
                 //Le os dados
                 if (!reader.Read())
                 {
-                    passagem.Cod_Passagem = "";
+                    passagem.Direto_Escala = "";
                     MessageBox.Show("Passagem não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
