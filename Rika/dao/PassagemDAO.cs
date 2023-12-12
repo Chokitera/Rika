@@ -28,6 +28,9 @@ namespace Rika.dao
                 string sql = @"insert into PASSAGEM (IDVOO, IDSITUACAO, IDCLASSE, COD_PASS, VALOR, DIRETO_ESCALA, CAMINHO_IMG) 
                                values (@IDVOO, @IDSITUACAO, @IDCLASSE, @COD_PASS, @VALOR, @DIRETO_ESCALA, @CAMINHO_IMG);";
 
+                //Define o Código da Passagem (Identificação)
+                passagem.Cod_Passagem = ConsultaAeroportoPassagem(passagem);
+
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@IDVOO", passagem.voo.Id);
@@ -100,6 +103,9 @@ namespace Rika.dao
                 string sql = @"update PASSAGEM set IdVoo=@IdVoo, IdSituacao=@IdSituacao, IdClasse=@IdClasse, Cod_Passagem=@Cod_Passagem, Direto_Escala=@Direto_Escala, Caminho_Img=@Caminho_Img
                                where IDPASSAGEM = @id;";
 
+                //Define o Código da Passagem (Identificação)
+                passagem.Cod_Passagem = ConsultaAeroportoPassagem(passagem);
+
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", passagem.Id);
@@ -171,6 +177,73 @@ namespace Rika.dao
                 MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conexao.Close();
                 return passagem;
+            }
+        }
+        #endregion
+
+        #region Método para Consultar os Aeroportos da Passagem
+        public string ConsultaAeroportoPassagem(Passagem passagem)
+        {
+            try
+            {
+                //Sql
+                string sql = @"SELECT DECOLAGEM.PAIS DECOLAGEM, DESTINO.PAIS DESTINO FROM(
+                               SELECT PS.SIGLA AS PAIS, V.IDVOO VOO FROM PAIS PS
+                               INNER JOIN ENDERECO E ON (E.IDPAIS = PS.IDPAIS)
+                               INNER JOIN AEROPORTO A ON (A.IDENDERECO = E.IDENDERECO)
+                               INNER JOIN VOO V ON (V.DECOLAGEM = A.IDAEROPORTO)
+                               ) DECOLAGEM
+                               JOIN (
+                               SELECT PS.SIGLA AS PAIS, V.IDVOO VOO  FROM PAIS PS
+                               INNER JOIN ENDERECO E ON (E.IDPAIS = PS.IDPAIS)
+                               INNER JOIN AEROPORTO A ON (A.IDENDERECO = E.IDENDERECO)
+                               INNER JOIN VOO V ON (V.DESTINO = A.IDAEROPORTO)
+                               ) DESTINO ON (DECOLAGEM.VOO = DESTINO.VOO)
+                               WHERE DESTINO.VOO = @id";
+
+                //Definindo o comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", passagem.voo.Id);
+
+                //Consultar o último registro (código da passagem)
+                string sql2 = @"select IDPASSAGEM from PASSAGEM order by IDPASSAGEM desc limit 1;";
+                MySqlCommand executacmd2 = new MySqlCommand(sql2, conexao);
+
+                //Executa Comando e abre a conexao
+                conexao.Open();
+
+                MySqlDataReader reader2 = executacmd2.ExecuteReader();
+                reader2.Read();
+                passagem.Id = reader2.GetInt32(0) + 1; // +1 pois é o próximo código a ser serializado
+
+                //Finaliza a conexão e sessão
+                reader2.Close();
+                conexao.Close();
+
+                //Abre novamente a conexão
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+                reader.Read();
+
+                //Monta o Código da Passagem ----> País Origem + Código Passagem + País Destino
+                passagem.Cod_Passagem = reader.GetString(0);
+                passagem.Cod_Passagem += passagem.Id.ToString();
+                passagem.Cod_Passagem += reader.GetString(1);
+
+                //Fecha conexão e sessão
+                conexao.Close();
+
+                return passagem.Cod_Passagem;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
             }
         }
         #endregion
