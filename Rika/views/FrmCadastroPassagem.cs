@@ -175,7 +175,7 @@ namespace Rika.views
             else
                 passagem.Valor = int.Parse(txtValor.Text);
             if (cmbSituacao.SelectedIndex != -1)
-                passagem.situacao.Id = int.Parse(cmbSituacao.Selecte);
+               // passagem.situacao.Id = int.Parse(cmbSituacao.Selecte);
             if (cmbTipoPassagem.SelectedIndex != -1)
                 passagem.Direto_Escala = cmbTipoPassagem.SelectedItem.ToString(); //Conversão explicita, coletando o item selecionado
             passagem.Caminho_Img = txtImagem.Text;
