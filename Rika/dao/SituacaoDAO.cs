@@ -196,5 +196,42 @@ namespace Rika.dao
         }
 
         #endregion
+
+        #region
+        public DataTable ListarSituacoes()
+        {
+            try
+            {
+                //Inicialização
+                DataTable lista = new DataTable();
+
+                //Sql
+                string sql = @"select * from situacao order by nome";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+
+                //Abre a conexao e executa o comando
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+                lista.Load(reader);
+                reader.Close();
+
+                conexao.Close();
+
+                return lista;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+        #endregion
     }
 }

@@ -157,6 +157,8 @@ namespace Rika.controllers
                 msg += "O campo Voo não pode ser vazio!" + "\n";
             if (model.classe.Id == 0)
                 msg += "O campo Classe não pode ser vazio!" + "\n";
+            if (model.situacao.Id == null || model.situacao.Id == 0)
+                msg += "O campo Situação não pode ser vazio!" + "\n";
 
             if (msg != string.Empty) //Se existe mensagem de erro
             {

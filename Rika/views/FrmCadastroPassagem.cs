@@ -25,6 +25,7 @@ namespace Rika.views
         private ClasseController classeController;
         private VooController vooController;
         private AeroportoController aeroportoController;
+        private SituacaoController situacaoController;
         public FrmCadastroPassagem()
         {
             InitializeComponent();
@@ -33,6 +34,10 @@ namespace Rika.views
             classeController = new ClasseController();
             vooController = new VooController();
             aeroportoController = new AeroportoController();
+            situacaoController = new SituacaoController();
+
+            //Inicialização
+            ListarSituacoes();
         }
 
         #region Ajustes da Borda
@@ -141,6 +146,7 @@ namespace Rika.views
                 if (isValid)
                 {
                     new Helpers().LimparTela(this);
+                    LimparComboBox();
                     txtCodigo.Focus();
                 }
             }
@@ -168,6 +174,10 @@ namespace Rika.views
                 passagem.Valor = 0;
             else
                 passagem.Valor = int.Parse(txtValor.Text);
+            if (cmbSituacao.SelectedIndex != -1)
+                passagem.situacao.Id = int.Parse(cmbSituacao.Selecte);
+            if (cmbTipoPassagem.SelectedIndex != -1)
+                passagem.Direto_Escala = cmbTipoPassagem.SelectedItem.ToString(); //Conversão explicita, coletando o item selecionado
             passagem.Caminho_Img = txtImagem.Text;
 
             //Chamada do Controlador
@@ -177,6 +187,7 @@ namespace Rika.views
             if (isValid)
             {
                 new Helpers().LimparTela(this);
+                LimparComboBox();
                 txtCodigo.Focus();
             }
         }
@@ -206,7 +217,7 @@ namespace Rika.views
                 passagem = passagemController.ConsultapassagemPorId(passagem.Id);
 
                 //Atribuição da consulta
-                if (passagem.Direto_Escala != "")
+                if (passagem.Cod_Passagem != "")
                 {
                     txtCodigo.Text = passagem.Id.ToString();
                     txtCodClasse.Text = passagem.classe.Id.ToString();
@@ -217,6 +228,7 @@ namespace Rika.views
                 else
                 {
                     new Helpers().LimparTela(this);
+                    LimparComboBox();
                     txtCodigo.Focus();
                 }
             }
@@ -230,7 +242,7 @@ namespace Rika.views
             openFile.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png"; //Extensões permitidas
             openFile.Multiselect = false; //Seleciona somente 1 arquivo
             string nomeArquivo = "";
-            string pastaDestino = @"C:\projetos-csharp\RIKA\Rika\fotos\";
+            string pastaDestino = @"C:\fotos\";
 
 
             if (openFile.ShowDialog() == DialogResult.OK) //Se confirmou o arquivo
@@ -323,6 +335,7 @@ namespace Rika.views
                     txtClasse.Text = classe.Nome;
                 else
                 {
+                    txtCodClasse.Text = "";
                     txtClasse.Text = "";
                     txtCodClasse.Focus();
                 }
@@ -360,6 +373,7 @@ namespace Rika.views
                 }
                 else
                 {
+                    txtCodVoo.Text = "";
                     txtVoo.Text = "";
                     txtCodVoo.Focus();
                 }
@@ -373,6 +387,20 @@ namespace Rika.views
         }
         #endregion
 
+        #region Método para listar as Situações
+        public void ListarSituacoes()
+        {
+            //Preencher o ComboBox
+            cmbSituacao.Items.Clear();
+            cmbSituacao.DataSource = situacaoController.ListarSituacoes();
+            cmbSituacao.DisplayMember = "nome";
+            cmbSituacao.ValueMember = "idsituacao";
+
+            //Selecionar os campos limpos ao iniciar
+            cmbSituacao.SelectedIndex = -1;
+        }
+        #endregion
+
         #region Validações
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -380,6 +408,14 @@ namespace Rika.views
             {
                 e.Handled = true;
             }
+        }
+        #endregion
+
+        #region Limpar ComboBox
+        public void LimparComboBox()
+        {
+            cmbSituacao.SelectedIndex = -1;
+            cmbTipoPassagem.SelectedIndex = -1;
         }
         #endregion
     }

@@ -210,7 +210,7 @@
             this.cmbSituacao.BackColor = System.Drawing.Color.White;
             this.cmbSituacao.BorderColor = System.Drawing.Color.DimGray;
             this.cmbSituacao.BorderSize = 1;
-            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSituacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbSituacao.ForeColor = System.Drawing.Color.DimGray;
             this.cmbSituacao.IconColor = System.Drawing.Color.DimGray;
@@ -271,10 +271,13 @@
             this.cmbTipoPassagem.BackColor = System.Drawing.Color.White;
             this.cmbTipoPassagem.BorderColor = System.Drawing.Color.DimGray;
             this.cmbTipoPassagem.BorderSize = 1;
-            this.cmbTipoPassagem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbTipoPassagem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbTipoPassagem.ForeColor = System.Drawing.Color.DimGray;
             this.cmbTipoPassagem.IconColor = System.Drawing.Color.DimGray;
+            this.cmbTipoPassagem.Items.AddRange(new object[] {
+            "Direto",
+            "Escala"});
             this.cmbTipoPassagem.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.cmbTipoPassagem.ListTextColor = System.Drawing.Color.DimGray;
             this.cmbTipoPassagem.Location = new System.Drawing.Point(210, 290);
