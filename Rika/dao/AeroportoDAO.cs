@@ -3,6 +3,7 @@ using Rika.models;
 using Solucao.conexao;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -162,7 +163,7 @@ namespace Rika.dao
         }
         #endregion
 
-        #region Consultar Aviao
+        #region Consultar Aeroporto
         public DataTable ConsultarAeroporto(Aeroporto aeroporto)
         {
             try

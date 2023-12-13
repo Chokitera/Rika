@@ -100,8 +100,6 @@ namespace Rika.views
         #endregion
 
         #region Botões/Ações
-
-        #endregion
         private void iconMinimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -116,6 +114,8 @@ namespace Rika.views
         {
             this.Close();
         }
+
+        #endregion
         #region Listar Aviao
         public void ListarAeroporto()
         {
@@ -135,6 +135,9 @@ namespace Rika.views
 
         }
 
-
+        private void txtNome__TextChanged(object sender, EventArgs e)
+        {
+            ListarAeroporto();
+        }
     }
 }

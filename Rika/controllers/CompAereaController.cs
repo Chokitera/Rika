@@ -4,6 +4,7 @@ using Rika.models;
 using Rika.views;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -116,6 +117,30 @@ namespace Rika.controllers
         public CompanhiaAerea GetInfoCompanhia()
         {
             return companhiaAerea;
+        }
+        #endregion
+
+        #region Consulta Companhias Aereas (DataTable)
+        public DataTable ConsultarCompAereas(CompanhiaAerea companhiaAerea)
+        {
+            try
+            {
+                //Cria a DataTable
+                DataTable companhiaAereas = new DataTable();
+
+                //Atribuicao da entrada
+                this.companhiaAerea = companhiaAerea;
+
+                //Consultar os Paises
+                companhiaAereas = compAereaDAO.ConsultarCompAerea(this.companhiaAerea);
+
+                return companhiaAereas; //Retorna os paises - DataTable
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro na consulta: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null; //Se não deu certo retorna nulo
+            }
         }
         #endregion
     }

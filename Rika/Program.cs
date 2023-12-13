@@ -18,7 +18,7 @@ namespace Rika
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmConsultaAeroporto());
+            Application.Run(new FrmConsultaCompAerea());
         }
     }
 }

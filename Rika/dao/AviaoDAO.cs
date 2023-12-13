@@ -15,7 +15,8 @@ namespace Rika.dao
     {
         //Conexao Banco
         private MySqlConnection conexao;
-        public AviaoDAO(){
+        public AviaoDAO()
+        {
             this.conexao = new ConnectionFactory().getconnection();
         }
 
