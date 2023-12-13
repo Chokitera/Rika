@@ -50,8 +50,8 @@
             this.pnlConteudo = new System.Windows.Forms.Panel();
             this.pnlEspaco2 = new System.Windows.Forms.Panel();
             this.pnlInformacoes = new System.Windows.Forms.Panel();
-            this.linkLabel15 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel14 = new System.Windows.Forms.LinkLabel();
+            this.lblConsultas = new System.Windows.Forms.LinkLabel();
+            this.lblCadastros = new System.Windows.Forms.LinkLabel();
             this.linkLabel13 = new System.Windows.Forms.LinkLabel();
             this.linkLabel12 = new System.Windows.Forms.LinkLabel();
             this.linkLabel11 = new System.Windows.Forms.LinkLabel();
@@ -377,8 +377,8 @@
             // 
             // pnlInformacoes
             // 
-            this.pnlInformacoes.Controls.Add(this.linkLabel15);
-            this.pnlInformacoes.Controls.Add(this.linkLabel14);
+            this.pnlInformacoes.Controls.Add(this.lblConsultas);
+            this.pnlInformacoes.Controls.Add(this.lblCadastros);
             this.pnlInformacoes.Controls.Add(this.linkLabel13);
             this.pnlInformacoes.Controls.Add(this.linkLabel12);
             this.pnlInformacoes.Controls.Add(this.linkLabel11);
@@ -402,31 +402,33 @@
             this.pnlInformacoes.Size = new System.Drawing.Size(1376, 304);
             this.pnlInformacoes.TabIndex = 64;
             // 
-            // linkLabel15
+            // lblConsultas
             // 
-            this.linkLabel15.AutoSize = true;
-            this.linkLabel15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.linkLabel15.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel15.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel15.Location = new System.Drawing.Point(964, 97);
-            this.linkLabel15.Name = "linkLabel15";
-            this.linkLabel15.Size = new System.Drawing.Size(66, 16);
-            this.linkLabel15.TabIndex = 57;
-            this.linkLabel15.TabStop = true;
-            this.linkLabel15.Text = "Consultas";
+            this.lblConsultas.AutoSize = true;
+            this.lblConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lblConsultas.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblConsultas.LinkColor = System.Drawing.Color.Black;
+            this.lblConsultas.Location = new System.Drawing.Point(964, 97);
+            this.lblConsultas.Name = "lblConsultas";
+            this.lblConsultas.Size = new System.Drawing.Size(66, 16);
+            this.lblConsultas.TabIndex = 57;
+            this.lblConsultas.TabStop = true;
+            this.lblConsultas.Text = "Consultas";
+            this.lblConsultas.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblConsultas_LinkClicked);
             // 
-            // linkLabel14
+            // lblCadastros
             // 
-            this.linkLabel14.AutoSize = true;
-            this.linkLabel14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.linkLabel14.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.linkLabel14.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel14.Location = new System.Drawing.Point(964, 71);
-            this.linkLabel14.Name = "linkLabel14";
-            this.linkLabel14.Size = new System.Drawing.Size(69, 16);
-            this.linkLabel14.TabIndex = 56;
-            this.linkLabel14.TabStop = true;
-            this.linkLabel14.Text = "Cadastros";
+            this.lblCadastros.AutoSize = true;
+            this.lblCadastros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.lblCadastros.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblCadastros.LinkColor = System.Drawing.Color.Black;
+            this.lblCadastros.Location = new System.Drawing.Point(964, 71);
+            this.lblCadastros.Name = "lblCadastros";
+            this.lblCadastros.Size = new System.Drawing.Size(69, 16);
+            this.lblCadastros.TabIndex = 56;
+            this.lblCadastros.TabStop = true;
+            this.lblCadastros.Text = "Cadastros";
+            this.lblCadastros.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblCadastros_LinkClicked);
             // 
             // linkLabel13
             // 
@@ -734,8 +736,8 @@
         private System.Windows.Forms.Panel pnlConteudo;
         private System.Windows.Forms.Panel pnlEspaco2;
         private System.Windows.Forms.Panel pnlInformacoes;
-        private System.Windows.Forms.LinkLabel linkLabel15;
-        private System.Windows.Forms.LinkLabel linkLabel14;
+        private System.Windows.Forms.LinkLabel lblConsultas;
+        private System.Windows.Forms.LinkLabel lblCadastros;
         private System.Windows.Forms.LinkLabel linkLabel13;
         private System.Windows.Forms.LinkLabel linkLabel12;
         private System.Windows.Forms.LinkLabel linkLabel11;

@@ -22,11 +22,22 @@ namespace Rika.views
         private string caminhoOriginal = ""; //Utilizado na Imagem da Passagem
         private string caminhoNovo = ""; //Utilizado na Imagem da Passagem
         private PassagemController passagemController;
+        private ClasseController classeController;
+        private VooController vooController;
+        private AeroportoController aeroportoController;
+        private SituacaoController situacaoController;
         public FrmCadastroPassagem()
         {
             InitializeComponent();
 
             passagemController = new PassagemController();
+            classeController = new ClasseController();
+            vooController = new VooController();
+            aeroportoController = new AeroportoController();
+            situacaoController = new SituacaoController();
+
+            //Inicialização
+            ListarSituacoes();
         }
 
         #region Ajustes da Borda
@@ -116,10 +127,6 @@ namespace Rika.views
         }
         #endregion
 
-        private void FrmTelaAdministrativa_Load(object sender, EventArgs e)
-        {
-
-        }
         #region Evento/Ações dos Botões
         private void btnExcluir_Click(object sender, EventArgs e)
         {
@@ -139,6 +146,7 @@ namespace Rika.views
                 if (isValid)
                 {
                     new Helpers().LimparTela(this);
+                    LimparComboBox();
                     txtCodigo.Focus();
                 }
             }
@@ -154,10 +162,23 @@ namespace Rika.views
                 passagem.Id = 0;
             else
                 passagem.Id = int.Parse(txtCodigo.Text);
-            passagem.classe.Id = int.Parse(txtCodClasse.Text);
-            passagem.Caminho_Img = txtImagem.Text;
-            passagem.voo.Id = int.Parse(txtCodVoo.Text);
-            passagem.Valor = int.Parse(txtValor.Text);
+            if (txtCodClasse.Text == "")
+                passagem.classe.Id = 0;
+            else
+                passagem.classe.Id = int.Parse(txtCodClasse.Text);
+            if (txtCodVoo.Text == "")
+                passagem.voo.Id = 0;
+            else
+                passagem.voo.Id = int.Parse(txtCodVoo.Text);
+            if (txtValor.Text == "")
+                passagem.Valor = 0;
+            else
+                passagem.Valor = int.Parse(txtValor.Text);
+            if (cmbSituacao.SelectedIndex != -1)
+                passagem.situacao.Id = int.Parse(cmbSituacao.SelectedValue);
+            if (cmbTipoPassagem.SelectedIndex != -1)
+                passagem.Direto_Escala = cmbTipoPassagem.SelectedItem.ToString(); //Conversão explicita, coletando o item selecionado
+            passagem.Caminho_Img = caminhoNovo;
 
             //Chamada do Controlador
             bool isValid = passagemController.Salvapassagem(passagem);
@@ -166,6 +187,7 @@ namespace Rika.views
             if (isValid)
             {
                 new Helpers().LimparTela(this);
+                LimparComboBox();
                 txtCodigo.Focus();
             }
         }
@@ -178,12 +200,21 @@ namespace Rika.views
 
         }
         #endregion
+
         #region Evento Código Leave
         private void txtCodigo_Leave(object sender, EventArgs e)
         {
+            lblCodPassagem.Visible = false;
             if (txtCodigo.Text != "")
             {
+                //Limpa as variaveis das imagens
+                caminhoNovo = "";
+                caminhoOriginal = "";
+
                 //Instancia do model
+                Voo voo = new Voo();
+                Classe classe = new Classe();
+                Aeroporto aeroporto = new Aeroporto();
                 Passagem passagem = new Passagem
                 {
                     //Atribuição
@@ -198,19 +229,59 @@ namespace Rika.views
                 {
                     txtCodigo.Text = passagem.Id.ToString();
                     txtCodClasse.Text = passagem.classe.Id.ToString();
-                    txtImagem.Text = passagem.Caminho_Img;
+                    caminhoNovo = passagem.Caminho_Img; //Permite visualizar a imagem em tela
+                    txtImagem.Text = caminhoNovo.Replace("C:\\fotos\\", ""); //Retira o caminho da imagem (caminho no servidor)
                     txtCodVoo.Text = passagem.voo.Id.ToString();
                     txtValor.Text = passagem.Valor.ToString();
+
+                    if (passagem.situacao.Id > 0)
+                        cmbSituacao.SelectedValue = passagem.situacao.Id.ToString();
+                    if (passagem.Direto_Escala != string.Empty)
+                        cmbTipoPassagem.SelectedItem = passagem.Direto_Escala;
+
+                    //Atribui o nome da Classe a partir do código presente no BD
+                    if (txtCodClasse.Text != "")
+                    {
+                        classe = classeController.ConsultaClassePorId(passagem.classe.Id);
+
+                        if (classe.Nome != "")
+                            txtClasse.Text = classe.Nome;
+                    }
+
+                    //Atribui o nome do Voo a partir do código presente no BD
+                    if (txtCodVoo.Text != "")
+                    {
+                        voo = vooController.ConsultavooPorId(passagem.voo.Id);
+
+                        if (voo.Destino > 0)
+                        {
+                            //Consulta o nome do Aeroporto Destino para atribuir ao texto do Voo
+                            aeroporto = aeroportoController.ConsultaAeroportoPorId(voo.Destino);
+                            txtVoo.Text = aeroporto.Nome;
+                        }
+                    }
+
+                    //Identificação do código da passagem na tela
+                    if (passagem.Cod_Passagem != "")
+                    {
+                        lblCodPassagem.Text = passagem.Cod_Passagem;
+                        lblCodPassagem.Visible = true;
+                    }
                 }
                 else
                 {
                     new Helpers().LimparTela(this);
+                    LimparComboBox();
                     txtCodigo.Focus();
                 }
             }
+            else
+            {
+                new Helpers().LimparTela(this);
+                LimparComboBox();
+            }
         }
         #endregion
-
 
         #region Le a imagem e salva na aplicação
         private void btnAbrirPasta_Click(object sender, EventArgs e)
@@ -219,7 +290,7 @@ namespace Rika.views
             openFile.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png"; //Extensões permitidas
             openFile.Multiselect = false; //Seleciona somente 1 arquivo
             string nomeArquivo = "";
-            string pastaDestino = @"C:\projetos-csharp\RIKA\Rika\fotos\";
+            string pastaDestino = @"C:\fotos\";
 
 
             if (openFile.ShowDialog() == DialogResult.OK) //Se confirmou o arquivo
@@ -289,9 +360,111 @@ namespace Rika.views
             }
             
         }
-
         #endregion
 
-        
+        #region Evento Classe Leave
+        private void txtCodClasse_Leave(object sender, EventArgs e)
+        {
+            if (txtCodClasse.Text != "")
+            {
+                //Instancia do Model
+                Classe classe = new Classe
+                {
+                    Id = int.Parse(txtCodClasse.Text)
+                };
+
+                //Chamada do Controlador
+                classe = classeController.ConsultaClassePorId(classe.Id);
+
+                //Atribuições da Consulta
+                if (classe.Nome != "")
+                    txtClasse.Text = classe.Nome;
+                else
+                {
+                    txtCodClasse.Text = "";
+                    txtClasse.Text = "";
+                    txtCodClasse.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código da Classe não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtClasse.Text = "";
+                txtCodClasse.Focus();
+            }
+        }
+        #endregion
+
+        #region Evento Voo Leave
+        private void txtCodVoo_Leave(object sender, EventArgs e)
+        {
+            if (txtCodVoo.Text != "")
+            {
+                //Instancia do Model
+                Aeroporto aeroporto = new Aeroporto();
+                Voo voo = new Voo
+                {
+                    Id = int.Parse(txtCodVoo.Text)
+                };
+
+                //Chamada do Controlador
+                voo = vooController.ConsultavooPorId(voo.Id);
+
+                //Atribuições da Consulta
+                if (voo.Destino > 0)
+                {
+                    //Consulta o nome do Aeroporto Destino para atribuir ao texto do Voo
+                    aeroporto = aeroportoController.ConsultaAeroportoPorId(voo.Destino);
+                    txtVoo.Text = aeroporto.Nome;
+                }
+                else
+                {
+                    txtCodVoo.Text = "";
+                    txtVoo.Text = "";
+                    txtCodVoo.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código do Voo não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtVoo.Text = "";
+                txtCodVoo.Focus();
+            }
+        }
+        #endregion
+
+        #region Método para listar as Situações
+        public void ListarSituacoes()
+        {
+            //Preencher o ComboBox
+            cmbSituacao.Items.Clear();
+            cmbSituacao.DataSource = situacaoController.ListarSituacoes();
+            cmbSituacao.DisplayMember = "nome";
+            cmbSituacao.ValueMember = "idsituacao";
+
+            //Selecionar os campos limpos ao iniciar
+            cmbSituacao.SelectedIndex = -1;
+        }
+        #endregion
+
+        #region Validações
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
+
+        #region Limpar ComboBox
+        public void LimparComboBox()
+        {
+            caminhoNovo = "";
+            caminhoOriginal = "";
+            cmbSituacao.SelectedIndex = -1;
+            cmbTipoPassagem.SelectedIndex = -1;
+        }
+        #endregion
     }
 }

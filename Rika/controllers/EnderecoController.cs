@@ -3,6 +3,7 @@ using Rika.dto;
 using Rika.models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Rika.controllers
         }
 
         #region Salvar endereco
-        public bool Salvaendereco(Endereco model)
+        public bool SalvaEndereco(Endereco model)
         {
             try
             {
@@ -31,17 +32,23 @@ namespace Rika.controllers
                 //Verifica se as informações estão preenchidas e OK
                 new models.Comum.ValidacaoModel().Validacao(endereco);
 
-                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
-                if (endereco.Id == 0)
+                //Valida FK - Chave estrangeira
+                bool isValid = ValidaCampos(model);
+
+                if (isValid)
                 {
-                    enderecoDAO.EfetuarCadastro(endereco);
-                }
-                else
-                {
-                    enderecoDAO.EfetuarEdicao(endereco);
+                    //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
+                    if (endereco.Id == 0)
+                    {
+                        enderecoDAO.EfetuarCadastro(endereco);
+                    }
+                    else
+                    {
+                        enderecoDAO.EfetuarEdicao(endereco);
+                    }
                 }
 
-                return true; //Se Ok retorna verdadeiro
+                return isValid; //Se Ok retorna verdadeiro
             }
             catch (Exception erro)
             {
@@ -52,7 +59,7 @@ namespace Rika.controllers
         #endregion
 
         #region Excluir endereco
-        public bool Excluirendereco(int? id)
+        public bool ExcluirEndereco(int? id)
         {
             try
             {
@@ -82,7 +89,7 @@ namespace Rika.controllers
         #endregion
 
         #region Consulta endereco por Id
-        public Endereco ConsultaenderecoPorId(int? id)
+        public Endereco ConsultaEnderecoPorId(int? id)
         {
             try
             {
@@ -111,10 +118,55 @@ namespace Rika.controllers
         }
         #endregion
 
-        #region Pegar informações da endereco
-        public Endereco GetInfoendereco()
+        #region Consulta CEP por API
+        public DataSet ConsultaCEPAPI(string url)
+        {
+            try
+            {
+                //DataSet (Dados na Memória)
+                DataSet consulta = new DataSet();
+
+                //Consulta a Api a partir da rota e dados (CEP) disponibilizados
+                consulta.ReadXml(url);
+
+                //Retorna a consulta
+                if (consulta.Tables[0].Columns.Count > 1)
+                    return consulta;
+
+                //Só cai aqui se não encontrou o endereço a partir do CEP preenchido
+                MessageBox.Show("Endereço não encontrado, por favor digite o CEP manualmente.", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null; 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Endereço não encontrado, por favor digite o CEP manualmente.", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }
+            
+        }
+        #endregion
+
+        #region Pegar informações do Endereço
+        public Endereco GetInfoEndereco()
         {
             return endereco;
+        }
+        #endregion
+
+        #region Validações
+        public bool ValidaCampos(Endereco model)
+        {
+            string msg = "";
+            if (model.pais.Id == 0)
+                msg += "O campo País não pode ser vazio!" + "\n";
+
+            if (msg != string.Empty) //Se existe mensagem de erro
+            {
+                MessageBox.Show(msg, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true; //Passou por todas as validações
         }
         #endregion
     }

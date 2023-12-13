@@ -32,17 +32,23 @@ namespace Rika.controllers
                 //Verifica se as informações estão preenchidas e OK
                 new models.Comum.ValidacaoModel().Validacao(voo);
 
-                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
-                if (voo.Id == 0)
+                //Valida FK - Chave estrangeira
+                bool isValid = ValidaCampos(model);
+
+                if (isValid)
                 {
-                    vooDAO.EfetuarCadastro(voo);
-                }
-                else
-                {
-                    vooDAO.EfetuarEdicao(voo);
+                    //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
+                    if (voo.Id == 0)
+                    {
+                        vooDAO.EfetuarCadastro(voo);
+                    }
+                    else
+                    {
+                        vooDAO.EfetuarEdicao(voo);
+                    }
                 }
 
-                return true; //Se Ok retorna verdadeiro
+                return isValid; //Se Ok retorna verdadeiro
             }
             catch (Exception erro)
             {
@@ -112,13 +118,6 @@ namespace Rika.controllers
         }
         #endregion
 
-        #region Pegar informações da voo
-        public Voo GetInfovoo()
-        {
-            return voo;
-        }
-        #endregion
-
         #region Consulta Voo (DataTable)
         public DataTable ConsultarVoos(Voo voo)
         {
@@ -140,6 +139,34 @@ namespace Rika.controllers
                 MessageBox.Show("Ocorreu um erro na consulta: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return null; //Se não deu certo retorna nulo
             }
+        }
+        #endregion
+
+        #region Pegar informações da voo
+        public Voo GetInfovoo()
+        {
+            return voo;
+        }
+        #endregion
+
+        #region Validações
+        public bool ValidaCampos(Voo model)
+        {
+            string msg = "";
+            if (model.Decolagem == 0)
+                msg += "O campo Aeroporto Decolagem não pode ser vazio!" + "\n";
+            if (model.Destino == 0)
+                msg += "O campo Aeroporto Destino não pode ser vazio!" + "\n";
+            if (model.aviao.Id == 0)
+                msg += "O campo Avião não pode ser vazio!" + "\n";
+
+            if (msg != string.Empty) //Se existe mensagem de erro
+            {
+                MessageBox.Show(msg, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true; //Passou por todas as validações
         }
         #endregion
     }

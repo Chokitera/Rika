@@ -100,13 +100,13 @@ namespace Rika.dao
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", pais.Id);
                 executacmd.Parameters.AddWithValue("@nome", pais.Nome) ;
-                executacmd.Parameters.AddWithValue("@descricao", pais.Sigla);
+                executacmd.Parameters.AddWithValue("@sigla", pais.Sigla);
 
                 //Executa SQL
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("País " + pais.Id + " - " + pais.Nome + " atualizada com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("País " + pais.Id + " - " + pais.Nome + " atualizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -141,7 +141,7 @@ namespace Rika.dao
                 if (!reader.Read())
                 {
                     pais.Nome = "";
-                    MessageBox.Show("País não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("País não encontrado!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

@@ -196,21 +196,20 @@ namespace Rika.views
                     txtCodigo.Focus();
                 }
             }
+            else
+                new Helpers().LimparTela(this);
         }
 
         #endregion
 
+        #region Validações
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
-                if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
-                {
-                    e.Handled = true;
-                }
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
             }
-
-        private void FrmCadastroTipoVenda_Load(object sender, EventArgs e)
-        {
-
         }
+        #endregion
     }
-    }
+}

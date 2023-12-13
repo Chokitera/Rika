@@ -29,6 +29,6 @@ namespace Rika.models
         [Required(ErrorMessage = "O campo Confirmar Senha não pode ser vazio!")]
         [StringLength(20, ErrorMessage = "A Confirmação da Senha pode conter no máximo 20 caracteres!")]
         public string ConfirmarSenha { get; set; }
-        public int Tipo { get; set; }
+        public int Tipo { get; set; } /* 0 - Normal, 1 - Administrador */
     }
 }

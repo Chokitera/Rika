@@ -162,8 +162,7 @@
             this.txtDataSaida.Mask = "00/00/0000";
             this.txtDataSaida.Name = "txtDataSaida";
             this.txtDataSaida.Size = new System.Drawing.Size(137, 26);
-            this.txtDataSaida.TabIndex = 76;
-            this.txtDataSaida.ValidatingType = typeof(System.DateTime);
+            this.txtDataSaida.TabIndex = 7;
             // 
             // txtDataChegada
             // 
@@ -173,8 +172,7 @@
             this.txtDataChegada.Mask = "00/00/0000";
             this.txtDataChegada.Name = "txtDataChegada";
             this.txtDataChegada.Size = new System.Drawing.Size(137, 26);
-            this.txtDataChegada.TabIndex = 77;
-            this.txtDataChegada.ValidatingType = typeof(System.DateTime);
+            this.txtDataChegada.TabIndex = 9;
             // 
             // txtDuracao
             // 
@@ -184,7 +182,7 @@
             this.txtDuracao.Mask = "00:00";
             this.txtDuracao.Name = "txtDuracao";
             this.txtDuracao.Size = new System.Drawing.Size(137, 26);
-            this.txtDuracao.TabIndex = 78;
+            this.txtDuracao.TabIndex = 2;
             this.txtDuracao.ValidatingType = typeof(System.DateTime);
             // 
             // txtHoraChegada
@@ -195,7 +193,7 @@
             this.txtHoraChegada.Mask = "00:00";
             this.txtHoraChegada.Name = "txtHoraChegada";
             this.txtHoraChegada.Size = new System.Drawing.Size(137, 26);
-            this.txtHoraChegada.TabIndex = 81;
+            this.txtHoraChegada.TabIndex = 4;
             this.txtHoraChegada.ValidatingType = typeof(System.DateTime);
             // 
             // txtHoraSaida
@@ -206,7 +204,7 @@
             this.txtHoraSaida.Mask = "00:00";
             this.txtHoraSaida.Name = "txtHoraSaida";
             this.txtHoraSaida.Size = new System.Drawing.Size(137, 26);
-            this.txtHoraSaida.TabIndex = 82;
+            this.txtHoraSaida.TabIndex = 6;
             this.txtHoraSaida.ValidatingType = typeof(System.DateTime);
             // 
             // panel2
@@ -273,6 +271,7 @@
             this.txtAeroportoDestino.ReadOnly = true;
             this.txtAeroportoDestino.Size = new System.Drawing.Size(250, 31);
             this.txtAeroportoDestino.TabIndex = 91;
+            this.txtAeroportoDestino.TabStop = false;
             this.txtAeroportoDestino.TextNew = "";
             this.txtAeroportoDestino.UnderlinedStyle = false;
             // 
@@ -293,6 +292,7 @@
             this.txtAeroportoDecolagem.ReadOnly = true;
             this.txtAeroportoDecolagem.Size = new System.Drawing.Size(250, 31);
             this.txtAeroportoDecolagem.TabIndex = 90;
+            this.txtAeroportoDecolagem.TabStop = false;
             this.txtAeroportoDecolagem.TextNew = "";
             this.txtAeroportoDecolagem.UnderlinedStyle = false;
             // 
@@ -313,6 +313,7 @@
             this.txtAviao.ReadOnly = true;
             this.txtAviao.Size = new System.Drawing.Size(250, 31);
             this.txtAviao.TabIndex = 89;
+            this.txtAviao.TabStop = false;
             this.txtAviao.TextNew = "";
             this.txtAviao.UnderlinedStyle = false;
             // 
@@ -331,9 +332,11 @@
             this.txtCodAviao.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodAviao.PasswordChar = false;
             this.txtCodAviao.Size = new System.Drawing.Size(90, 31);
-            this.txtCodAviao.TabIndex = 71;
+            this.txtCodAviao.TabIndex = 8;
             this.txtCodAviao.TextNew = "";
             this.txtCodAviao.UnderlinedStyle = false;
+            this.txtCodAviao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodVoo_KeyPress);
+            this.txtCodAviao.Leave += new System.EventHandler(this.txtCodAviao_Leave);
             // 
             // txtCodAeroportoDestino
             // 
@@ -350,9 +353,11 @@
             this.txtCodAeroportoDestino.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodAeroportoDestino.PasswordChar = false;
             this.txtCodAeroportoDestino.Size = new System.Drawing.Size(90, 31);
-            this.txtCodAeroportoDestino.TabIndex = 66;
+            this.txtCodAeroportoDestino.TabIndex = 5;
             this.txtCodAeroportoDestino.TextNew = "";
             this.txtCodAeroportoDestino.UnderlinedStyle = false;
+            this.txtCodAeroportoDestino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodVoo_KeyPress);
+            this.txtCodAeroportoDestino.Leave += new System.EventHandler(this.txtCodAeroportoDestino_Leave);
             // 
             // txtCodAeroportoDecolagem
             // 
@@ -369,9 +374,11 @@
             this.txtCodAeroportoDecolagem.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodAeroportoDecolagem.PasswordChar = false;
             this.txtCodAeroportoDecolagem.Size = new System.Drawing.Size(90, 31);
-            this.txtCodAeroportoDecolagem.TabIndex = 65;
+            this.txtCodAeroportoDecolagem.TabIndex = 3;
             this.txtCodAeroportoDecolagem.TextNew = "";
             this.txtCodAeroportoDecolagem.UnderlinedStyle = false;
+            this.txtCodAeroportoDecolagem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodVoo_KeyPress);
+            this.txtCodAeroportoDecolagem.Leave += new System.EventHandler(this.txtCodAeroportoDecolagem_Leave);
             // 
             // txtCodVoo
             // 
@@ -388,9 +395,10 @@
             this.txtCodVoo.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodVoo.PasswordChar = false;
             this.txtCodVoo.Size = new System.Drawing.Size(90, 31);
-            this.txtCodVoo.TabIndex = 64;
+            this.txtCodVoo.TabIndex = 1;
             this.txtCodVoo.TextNew = "";
             this.txtCodVoo.UnderlinedStyle = false;
+            this.txtCodVoo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodVoo_KeyPress);
             this.txtCodVoo.Leave += new System.EventHandler(this.txtCodVoo_Leave);
             // 
             // btnSair
@@ -403,10 +411,10 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(715, 463);
+            this.btnSair.Location = new System.Drawing.Point(715, 470);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
-            this.btnSair.TabIndex = 55;
+            this.btnSair.TabIndex = 12;
             this.btnSair.Text = "Sair";
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -423,10 +431,10 @@
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(554, 463);
+            this.btnExcluir.Location = new System.Drawing.Point(554, 470);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
-            this.btnExcluir.TabIndex = 54;
+            this.btnExcluir.TabIndex = 11;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextColor = System.Drawing.Color.White;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -443,10 +451,10 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(394, 463);
+            this.btnSalvar.Location = new System.Drawing.Point(394, 470);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
-            this.btnSalvar.TabIndex = 53;
+            this.btnSalvar.TabIndex = 10;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextColor = System.Drawing.Color.White;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -488,7 +496,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroVoo";
-            this.Text = "Voo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro de Voo";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroVoo_Paint);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();

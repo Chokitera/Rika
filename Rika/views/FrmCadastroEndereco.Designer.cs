@@ -37,32 +37,35 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlArrastarFormulario = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
+            this.txtCep = new System.Windows.Forms.MaskedTextBox();
+            this.ptbConsultaCEP = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtPais = new Rika.controls.novoTextBoxTextAlign();
             this.txtCodEndereco = new Rika.controls.novoTextBox();
             this.txtComplemento = new Rika.controls.novoTextBox();
             this.txtNumero = new Rika.controls.novoTextBox();
             this.txtLogradouro = new Rika.controls.novoTextBox();
-            this.txtCep = new Rika.controls.novoTextBox();
             this.txtCidade = new Rika.controls.novoTextBox();
             this.txtEstado = new Rika.controls.novoTextBox();
-            this.txtPais = new Rika.controls.novoTextBox();
+            this.txtCodPais = new Rika.controls.novoTextBox();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlArrastarFormulario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbConsultaCEP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDataSaida
             // 
             this.lblDataSaida.AutoSize = true;
             this.lblDataSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataSaida.Location = new System.Drawing.Point(22, 316);
+            this.lblDataSaida.Location = new System.Drawing.Point(598, 341);
             this.lblDataSaida.Name = "lblDataSaida";
             this.lblDataSaida.Size = new System.Drawing.Size(66, 22);
             this.lblDataSaida.TabIndex = 74;
@@ -72,7 +75,7 @@
             // 
             this.lblAeroDestino.AutoSize = true;
             this.lblAeroDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDestino.Location = new System.Drawing.Point(21, 355);
+            this.lblAeroDestino.Location = new System.Drawing.Point(72, 384);
             this.lblAeroDestino.Name = "lblAeroDestino";
             this.lblAeroDestino.Size = new System.Drawing.Size(67, 22);
             this.lblAeroDestino.TabIndex = 73;
@@ -82,7 +85,7 @@
             // 
             this.lblAeroDecolagem.AutoSize = true;
             this.lblAeroDecolagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAeroDecolagem.Location = new System.Drawing.Point(21, 394);
+            this.lblAeroDecolagem.Location = new System.Drawing.Point(72, 301);
             this.lblAeroDecolagem.Name = "lblAeroDecolagem";
             this.lblAeroDecolagem.Size = new System.Drawing.Size(43, 22);
             this.lblAeroDecolagem.TabIndex = 72;
@@ -93,7 +96,7 @@
             this.label1lblCodigoPassagem.AccessibleName = "";
             this.label1lblCodigoPassagem.AutoSize = true;
             this.label1lblCodigoPassagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(21, 277);
+            this.label1lblCodigoPassagem.Location = new System.Drawing.Point(72, 341);
             this.label1lblCodigoPassagem.Name = "label1lblCodigoPassagem";
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(45, 22);
             this.label1lblCodigoPassagem.TabIndex = 71;
@@ -103,7 +106,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 479);
+            this.label1.Location = new System.Drawing.Point(598, 425);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 22);
             this.label1.TabIndex = 86;
@@ -113,7 +116,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 518);
+            this.label2.Location = new System.Drawing.Point(72, 425);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 22);
             this.label2.TabIndex = 85;
@@ -124,7 +127,7 @@
             this.label4.AccessibleName = "";
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 440);
+            this.label4.Location = new System.Drawing.Point(598, 384);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 22);
             this.label4.TabIndex = 83;
@@ -135,21 +138,11 @@
             this.label3.AccessibleName = "";
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 238);
+            this.label3.Location = new System.Drawing.Point(72, 259);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 22);
             this.label3.TabIndex = 90;
             this.label3.Text = "Código";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
-            this.pictureBox1.Location = new System.Drawing.Point(172, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 166);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 70;
-            this.pictureBox1.TabStop = false;
             // 
             // pnlArrastarFormulario
             // 
@@ -158,7 +151,7 @@
             this.pnlArrastarFormulario.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlArrastarFormulario.Location = new System.Drawing.Point(0, 0);
             this.pnlArrastarFormulario.Name = "pnlArrastarFormulario";
-            this.pnlArrastarFormulario.Size = new System.Drawing.Size(528, 30);
+            this.pnlArrastarFormulario.Size = new System.Drawing.Size(1043, 30);
             this.pnlArrastarFormulario.TabIndex = 92;
             this.pnlArrastarFormulario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlArrastarFormulario_MouseDown);
             // 
@@ -167,7 +160,7 @@
             this.iconFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconFechar.Image = global::Rika.Properties.Resources.x;
-            this.iconFechar.Location = new System.Drawing.Point(498, 6);
+            this.iconFechar.Location = new System.Drawing.Point(1013, 6);
             this.iconFechar.Name = "iconFechar";
             this.iconFechar.Size = new System.Drawing.Size(20, 20);
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -180,13 +173,66 @@
             this.iconMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconMinimizar.Image = global::Rika.Properties.Resources.janela_minimizada;
-            this.iconMinimizar.Location = new System.Drawing.Point(472, 6);
+            this.iconMinimizar.Location = new System.Drawing.Point(987, 6);
             this.iconMinimizar.Name = "iconMinimizar";
             this.iconMinimizar.Size = new System.Drawing.Size(20, 20);
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
             this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
+            // 
+            // txtCep
+            // 
+            this.txtCep.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtCep.Location = new System.Drawing.Point(212, 299);
+            this.txtCep.Mask = "00000-999";
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(137, 26);
+            this.txtCep.TabIndex = 2;
+            // 
+            // ptbConsultaCEP
+            // 
+            this.ptbConsultaCEP.Image = global::Rika.Properties.Resources.procurar;
+            this.ptbConsultaCEP.Location = new System.Drawing.Point(356, 299);
+            this.ptbConsultaCEP.Name = "ptbConsultaCEP";
+            this.ptbConsultaCEP.Size = new System.Drawing.Size(26, 26);
+            this.ptbConsultaCEP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbConsultaCEP.TabIndex = 95;
+            this.ptbConsultaCEP.TabStop = false;
+            this.ptbConsultaCEP.Click += new System.EventHandler(this.ptbConsultaCEP_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Rika.Properties.Resources.Logo_Rika_Preto;
+            this.pictureBox1.Location = new System.Drawing.Point(451, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 166);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 70;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtPais
+            // 
+            this.txtPais.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPais.BorderColor = System.Drawing.Color.DimGray;
+            this.txtPais.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPais.BorderSize = 1;
+            this.txtPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPais.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPais.Location = new System.Drawing.Point(310, 338);
+            this.txtPais.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPais.Multiline = false;
+            this.txtPais.Name = "txtPais";
+            this.txtPais.Padding = new System.Windows.Forms.Padding(7);
+            this.txtPais.PasswordChar = false;
+            this.txtPais.ReadOnly = true;
+            this.txtPais.Size = new System.Drawing.Size(250, 31);
+            this.txtPais.TabIndex = 93;
+            this.txtPais.TabStop = false;
+            this.txtPais.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPais.TextNew = "";
+            this.txtPais.UnderlinedStyle = false;
             // 
             // txtCodEndereco
             // 
@@ -196,16 +242,18 @@
             this.txtCodEndereco.BorderSize = 1;
             this.txtCodEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodEndereco.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCodEndereco.Location = new System.Drawing.Point(167, 238);
+            this.txtCodEndereco.Location = new System.Drawing.Point(212, 256);
             this.txtCodEndereco.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodEndereco.Multiline = false;
             this.txtCodEndereco.Name = "txtCodEndereco";
             this.txtCodEndereco.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodEndereco.PasswordChar = false;
-            this.txtCodEndereco.Size = new System.Drawing.Size(348, 31);
+            this.txtCodEndereco.Size = new System.Drawing.Size(90, 31);
             this.txtCodEndereco.TabIndex = 1;
             this.txtCodEndereco.TextNew = "";
             this.txtCodEndereco.UnderlinedStyle = false;
+            this.txtCodEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodEndereco_KeyPress);
+            this.txtCodEndereco.Leave += new System.EventHandler(this.txtCodEndereco_Leave);
             // 
             // txtComplemento
             // 
@@ -215,14 +263,14 @@
             this.txtComplemento.BorderSize = 1;
             this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplemento.ForeColor = System.Drawing.Color.DimGray;
-            this.txtComplemento.Location = new System.Drawing.Point(167, 518);
+            this.txtComplemento.Location = new System.Drawing.Point(212, 420);
             this.txtComplemento.Margin = new System.Windows.Forms.Padding(4);
             this.txtComplemento.Multiline = false;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Padding = new System.Windows.Forms.Padding(7);
             this.txtComplemento.PasswordChar = false;
             this.txtComplemento.Size = new System.Drawing.Size(348, 31);
-            this.txtComplemento.TabIndex = 8;
+            this.txtComplemento.TabIndex = 7;
             this.txtComplemento.TextNew = "";
             this.txtComplemento.UnderlinedStyle = false;
             // 
@@ -234,16 +282,17 @@
             this.txtNumero.BorderSize = 1;
             this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero.ForeColor = System.Drawing.Color.DimGray;
-            this.txtNumero.Location = new System.Drawing.Point(167, 479);
+            this.txtNumero.Location = new System.Drawing.Point(707, 420);
             this.txtNumero.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumero.Multiline = false;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Padding = new System.Windows.Forms.Padding(7);
             this.txtNumero.PasswordChar = false;
-            this.txtNumero.Size = new System.Drawing.Size(348, 31);
-            this.txtNumero.TabIndex = 7;
+            this.txtNumero.Size = new System.Drawing.Size(90, 31);
+            this.txtNumero.TabIndex = 8;
             this.txtNumero.TextNew = "";
             this.txtNumero.UnderlinedStyle = false;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // txtLogradouro
             // 
@@ -253,35 +302,16 @@
             this.txtLogradouro.BorderSize = 1;
             this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogradouro.ForeColor = System.Drawing.Color.DimGray;
-            this.txtLogradouro.Location = new System.Drawing.Point(167, 440);
+            this.txtLogradouro.Location = new System.Drawing.Point(707, 381);
             this.txtLogradouro.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogradouro.Multiline = false;
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Padding = new System.Windows.Forms.Padding(7);
             this.txtLogradouro.PasswordChar = false;
-            this.txtLogradouro.Size = new System.Drawing.Size(348, 31);
+            this.txtLogradouro.Size = new System.Drawing.Size(284, 31);
             this.txtLogradouro.TabIndex = 6;
             this.txtLogradouro.TextNew = "";
             this.txtLogradouro.UnderlinedStyle = false;
-            // 
-            // txtCep
-            // 
-            this.txtCep.BackColor = System.Drawing.SystemColors.Window;
-            this.txtCep.BorderColor = System.Drawing.Color.DimGray;
-            this.txtCep.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtCep.BorderSize = 1;
-            this.txtCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCep.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCep.Location = new System.Drawing.Point(167, 394);
-            this.txtCep.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCep.Multiline = false;
-            this.txtCep.Name = "txtCep";
-            this.txtCep.Padding = new System.Windows.Forms.Padding(7);
-            this.txtCep.PasswordChar = false;
-            this.txtCep.Size = new System.Drawing.Size(348, 31);
-            this.txtCep.TabIndex = 5;
-            this.txtCep.TextNew = "";
-            this.txtCep.UnderlinedStyle = false;
             // 
             // txtCidade
             // 
@@ -291,14 +321,14 @@
             this.txtCidade.BorderSize = 1;
             this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCidade.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCidade.Location = new System.Drawing.Point(167, 355);
+            this.txtCidade.Location = new System.Drawing.Point(212, 381);
             this.txtCidade.Margin = new System.Windows.Forms.Padding(4);
             this.txtCidade.Multiline = false;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Padding = new System.Windows.Forms.Padding(7);
             this.txtCidade.PasswordChar = false;
             this.txtCidade.Size = new System.Drawing.Size(348, 31);
-            this.txtCidade.TabIndex = 4;
+            this.txtCidade.TabIndex = 5;
             this.txtCidade.TextNew = "";
             this.txtCidade.UnderlinedStyle = false;
             // 
@@ -310,35 +340,37 @@
             this.txtEstado.BorderSize = 1;
             this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstado.ForeColor = System.Drawing.Color.DimGray;
-            this.txtEstado.Location = new System.Drawing.Point(167, 316);
+            this.txtEstado.Location = new System.Drawing.Point(707, 338);
             this.txtEstado.Margin = new System.Windows.Forms.Padding(4);
             this.txtEstado.Multiline = false;
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Padding = new System.Windows.Forms.Padding(7);
             this.txtEstado.PasswordChar = false;
-            this.txtEstado.Size = new System.Drawing.Size(348, 31);
-            this.txtEstado.TabIndex = 3;
+            this.txtEstado.Size = new System.Drawing.Size(90, 31);
+            this.txtEstado.TabIndex = 4;
             this.txtEstado.TextNew = "";
             this.txtEstado.UnderlinedStyle = false;
             // 
-            // txtPais
+            // txtCodPais
             // 
-            this.txtPais.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPais.BorderColor = System.Drawing.Color.DimGray;
-            this.txtPais.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtPais.BorderSize = 1;
-            this.txtPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPais.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPais.Location = new System.Drawing.Point(167, 277);
-            this.txtPais.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPais.Multiline = false;
-            this.txtPais.Name = "txtPais";
-            this.txtPais.Padding = new System.Windows.Forms.Padding(7);
-            this.txtPais.PasswordChar = false;
-            this.txtPais.Size = new System.Drawing.Size(348, 31);
-            this.txtPais.TabIndex = 2;
-            this.txtPais.TextNew = "";
-            this.txtPais.UnderlinedStyle = false;
+            this.txtCodPais.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCodPais.BorderColor = System.Drawing.Color.DimGray;
+            this.txtCodPais.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtCodPais.BorderSize = 1;
+            this.txtCodPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodPais.ForeColor = System.Drawing.Color.DimGray;
+            this.txtCodPais.Location = new System.Drawing.Point(212, 338);
+            this.txtCodPais.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodPais.Multiline = false;
+            this.txtCodPais.Name = "txtCodPais";
+            this.txtCodPais.Padding = new System.Windows.Forms.Padding(7);
+            this.txtCodPais.PasswordChar = false;
+            this.txtCodPais.Size = new System.Drawing.Size(90, 31);
+            this.txtCodPais.TabIndex = 3;
+            this.txtCodPais.TextNew = "";
+            this.txtCodPais.UnderlinedStyle = false;
+            this.txtCodPais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodPais_KeyPress);
+            this.txtCodPais.Leave += new System.EventHandler(this.txtCodPais_Leave);
             // 
             // btnSair
             // 
@@ -350,7 +382,7 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ForeColor = System.Drawing.Color.White;
-            this.btnSair.Location = new System.Drawing.Point(342, 567);
+            this.btnSair.Location = new System.Drawing.Point(619, 533);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
             this.btnSair.TabIndex = 11;
@@ -370,7 +402,7 @@
             this.btnExcluir.FlatAppearance.BorderSize = 0;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(181, 567);
+            this.btnExcluir.Location = new System.Drawing.Point(458, 533);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
             this.btnExcluir.TabIndex = 10;
@@ -390,7 +422,7 @@
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
-            this.btnSalvar.Location = new System.Drawing.Point(21, 567);
+            this.btnSalvar.Location = new System.Drawing.Point(298, 533);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
             this.btnSalvar.TabIndex = 9;
@@ -405,7 +437,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(528, 624);
+            this.ClientSize = new System.Drawing.Size(1043, 597);
+            this.Controls.Add(this.ptbConsultaCEP);
+            this.Controls.Add(this.txtCep);
+            this.Controls.Add(this.txtPais);
             this.Controls.Add(this.pnlArrastarFormulario);
             this.Controls.Add(this.txtCodEndereco);
             this.Controls.Add(this.label3);
@@ -415,10 +450,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtCep);
             this.Controls.Add(this.txtCidade);
             this.Controls.Add(this.txtEstado);
-            this.Controls.Add(this.txtPais);
+            this.Controls.Add(this.txtCodPais);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);
@@ -432,24 +466,21 @@
             this.Name = "FrmCadastroEndereco";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Endereço";
-            this.Load += new System.EventHandler(this.FrmCadastroEndereco_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroEndereco_Paint);
-            this.Leave += new System.EventHandler(this.FrmCadastroEndereco_Leave);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlArrastarFormulario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbConsultaCEP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private controls.novoTextBox txtCep;
         private controls.novoTextBox txtCidade;
         private controls.novoTextBox txtEstado;
-        private controls.novoTextBox txtPais;
+        private controls.novoTextBox txtCodPais;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnExcluir;
         private controls.ModeloBotao btnSalvar;
@@ -469,5 +500,8 @@
         private System.Windows.Forms.Panel pnlArrastarFormulario;
         private System.Windows.Forms.PictureBox iconFechar;
         private System.Windows.Forms.PictureBox iconMinimizar;
+        private controls.novoTextBoxTextAlign txtPais;
+        private System.Windows.Forms.MaskedTextBox txtCep;
+        private System.Windows.Forms.PictureBox ptbConsultaCEP;
     }
 }

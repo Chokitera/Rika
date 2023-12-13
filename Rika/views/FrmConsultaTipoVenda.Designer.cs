@@ -194,6 +194,7 @@
             this.txtCodigo.TabIndex = 100;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
+            this.txtCodigo.Visible = false;
             // 
             // label1lblCodigoPassagem
             // 
@@ -205,6 +206,7 @@
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
             this.label1lblCodigoPassagem.TabIndex = 99;
             this.label1lblCodigoPassagem.Text = "Código";
+            this.label1lblCodigoPassagem.Visible = false;
             // 
             // txtNome
             // 
@@ -258,7 +260,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmConsultaTipoVenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Formulário de Consulta do Tipo de Venda";
+            this.Text = "Consulta de Tipo de Venda";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmConsultaTipoVenda_Paint);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();

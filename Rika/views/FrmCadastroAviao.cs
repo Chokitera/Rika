@@ -19,7 +19,6 @@ namespace Rika.views
     public partial class FrmCadastroAviao : Form
     {
         private AviaoController aviaoController;
-
         private CompAereaController compAereaController;
 
         public FrmCadastroAviao()
@@ -116,9 +115,15 @@ namespace Rika.views
                 aviao.Id = 0;
             else
                 aviao.Id = int.Parse(txtCodAviao.Text);
+            if (txtCodCompAerea.Text == "")
+                aviao.comp.Id = 0;
+            else
+                aviao.comp.Id = int.Parse(txtCodCompAerea.Text);
+            if (txtQtdAcentos.Text == "")
+                aviao.Qtd_Acento = 0;
+            else
+                aviao.Qtd_Acento = int.Parse(txtQtdAcentos.Text);
             aviao.Modelo = txtModelAviao.Text;
-            aviao.comp.Id = int.Parse(txtCodCompAerea.Text);
-            aviao.Qtd_Acento = int.Parse(txtQtdAcentos.Text);
 
             //Chamada do Controlador
             bool isValid = aviaoController.Salvaaviao(aviao);
@@ -175,6 +180,7 @@ namespace Rika.views
             if (txtCodAviao.Text != "")
             {
                 //Instancia do model
+                CompanhiaAerea companhiaAerea = new CompanhiaAerea();
                 Aviao aviao = new Aviao
                 {
                     //Atribuição
@@ -191,6 +197,15 @@ namespace Rika.views
                     txtModelAviao.Text = aviao.Modelo;
                     txtCodCompAerea.Text = aviao.comp.Id.ToString();
                     txtQtdAcentos.Text = aviao.Qtd_Acento.ToString();
+
+                    //Atribui o nome da companhia a partir do código presente no BD
+                    if (txtCodCompAerea.Text != "")
+                    {
+                        companhiaAerea = compAereaController.ConsultaCompanhiaPorId(aviao.comp.Id);
+
+                        if (companhiaAerea.Nome != "")
+                            txtCompAerea.Text = companhiaAerea.Nome;
+                    }
                 }
                 else
                 {
@@ -198,10 +213,46 @@ namespace Rika.views
                     txtCodAviao.Focus();
                 }
             }
+            else
+                new Helpers().LimparTela(this);
         }
 
         #endregion
 
+        #region Evento Companhia Aérea Leave
+        private void txtCodCompAerea_Leave(object sender, EventArgs e)
+        {
+            if (txtCodCompAerea.Text != "")
+            {
+                //Instancia do Model
+                CompanhiaAerea companhiaAerea = new CompanhiaAerea
+                {
+                    Id = int.Parse(txtCodCompAerea.Text)
+                };
+
+                //Chamada do Controlador
+                companhiaAerea = compAereaController.ConsultaCompanhiaPorId(companhiaAerea.Id);
+
+                //Atribuições da Consulta
+                if (companhiaAerea.Nome != "")
+                    txtCompAerea.Text = companhiaAerea.Nome;
+                else
+                {
+                    txtCodCompAerea.Text = "";
+                    txtCompAerea.Text = "";
+                    txtCodCompAerea.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código da Companhia Aérea não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtCompAerea.Text = "";
+                txtCodCompAerea.Focus();
+            }
+        }
+        #endregion
+
+        #region Validações
         private void txtCodAviao_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
@@ -210,9 +261,21 @@ namespace Rika.views
             }
         }
 
-        private void FrmCadastroAviao_Load(object sender, EventArgs e)
+        private void txtCodCompAerea_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
+
+        private void txtQtdAcentos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
     }
 }

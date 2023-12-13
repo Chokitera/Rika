@@ -18,11 +18,15 @@ namespace Rika.views
     public partial class FrmCadastroVoo : Form
     {
         private VooController vooController;
+        private AeroportoController aeroportoController;
+        private AviaoController aviaoController;
         public FrmCadastroVoo()
         {
             InitializeComponent();
 
             vooController = new VooController();
+            aeroportoController = new AeroportoController();
+            aviaoController = new AviaoController();
         }
 
         #region Ajustes da Borda
@@ -114,23 +118,60 @@ namespace Rika.views
                 voo.Id = 0;
             else
                 voo.Id = int.Parse(txtCodVoo.Text);
-            voo.Decolagem = int.Parse(txtCodAeroportoDecolagem.Text);
-            voo.Destino = int.Parse(txtCodAeroportoDestino.Text);
-            voo.DataSaida = Convert.ToDateTime(txtDataSaida.Text);
-            voo.DataChegada = Convert.ToDateTime(txtDataChegada.Text);
-            voo.Duracao = Convert.ToDateTime(txtDuracao.Text);
-            voo.HorarioSaida = Convert.ToDateTime(txtHoraSaida.Text);
-            voo.HorarioChegada = Convert.ToDateTime(txtHoraChegada.Text);
-            voo.aviao.Id = int.Parse(txtCodAviao.Text);
+            if (txtCodAeroportoDecolagem.Text == "")
+                voo.Decolagem = 0;
+            else
+                voo.Decolagem = int.Parse(txtCodAeroportoDecolagem.Text);
+            if(txtCodAeroportoDestino.Text == "")
+                voo.Destino = 0;
+            else
+                voo.Destino = int.Parse(txtCodAeroportoDestino.Text);
+            if (txtCodAviao.Text == "")
+                voo.aviao.Id = 0;
+            else
+                voo.aviao.Id = int.Parse(txtCodAviao.Text);
+            if (txtDuracao.Text == "  :")
+                voo.Duracao = null;
+            else
+                voo.Duracao = txtDuracao.Text;
+            if (txtHoraSaida.Text == "  :")
+                voo.HorarioSaida = null;
+            else
+                voo.HorarioSaida = txtHoraSaida.Text;
+            if (txtHoraChegada.Text == "  :")
+                voo.HorarioChegada = null;
+            else
+                voo.HorarioChegada = txtHoraChegada.Text;
 
-            //Chamada do Controlador
-            bool isValid = vooController.Salvavoo(voo);
+            //Valida as datas preenchidas pelo usuário
+            string msg = "";
+            bool dataValida = ValidarDatas(txtDataSaida.Text);
+            if (dataValida)
+                voo.DataSaida = DateTime.ParseExact(txtDataSaida.Text, "dd/MM/yyyy", null);
+            else
+                msg += "Data de Saída inválida! Por favor, insira uma data válida." + "\n";
 
-            //Se realizou o processo limpa a tela
-            if (isValid)
+            dataValida = ValidarDatas(txtDataChegada.Text);
+            if (dataValida)
+                voo.DataChegada = DateTime.ParseExact(txtDataChegada.Text, "dd/MM/yyyy", null);
+            else
+                msg += "Data de Chegada inválida! Por favor, insira uma data válida." + "\n";
+
+            //Verifica se existe erros para informar
+            if (msg != "")
+                MessageBox.Show(msg, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
             {
-                new Helpers().LimparTela(this);
-                txtCodVoo.Focus();
+                //Chamada do Controlador
+                bool isValid = vooController.Salvavoo(voo);
+
+                //Se realizou o processo limpa a tela
+                if (isValid)
+                {
+                    new Helpers().LimparTela(this);
+                    LimpaMaskedBox();
+                    txtCodVoo.Focus();
+                }
             }
         }
 
@@ -153,6 +194,7 @@ namespace Rika.views
                 if (isValid)
                 {
                     new Helpers().LimparTela(this);
+                    LimpaMaskedBox();
                     txtCodVoo.Focus();
                 }
             }
@@ -184,6 +226,9 @@ namespace Rika.views
             if (txtCodVoo.Text != "")
             {
                 //Instancia do model
+                Aeroporto aeroportoDecolagem = new Aeroporto();
+                Aeroporto aeroportoDestino = new Aeroporto();
+                Aviao aviao = new Aviao();
                 Voo voo = new Voo
                 {
                     //Atribuição
@@ -194,27 +239,203 @@ namespace Rika.views
                 voo = vooController.ConsultavooPorId(voo.Id);
 
                 //Atribuição da consulta
-                if (voo.Decolagem != 0)
+                if (voo.Destino != 0)
                 {
                     txtCodVoo.Text = voo.Id.ToString();
                     txtCodAeroportoDecolagem.Text = voo.Decolagem.ToString();
                     txtCodAeroportoDestino.Text = voo.Destino.ToString();
-                    txtDataSaida.Text = voo.DataSaida.ToString();
-                    txtDataChegada.Text = voo.DataChegada.ToString();
+                    txtDataSaida.Text = voo.DataSaida.ToString("dd/MM/yyyy");
+                    txtDataChegada.Text = voo.DataChegada.ToString("dd/MM/yyyy");
                     txtDuracao.Text = voo.Duracao.ToString();
                     txtHoraSaida.Text = voo.HorarioSaida.ToString();
                     txtHoraChegada.Text = voo.HorarioChegada.ToString();
                     txtCodAviao.Text = voo.aviao.Id.ToString();
+
+                    //Atribui o nome do Aeroporto Decolagem a partir do código presente no BD
+                    if (txtCodAeroportoDecolagem.Text != "")
+                    {
+                        aeroportoDecolagem = aeroportoController.ConsultaAeroportoPorId(voo.Decolagem);
+
+                        if (aeroportoDecolagem.Nome != "")
+                            txtAeroportoDecolagem.Text = aeroportoDecolagem.Nome;
+                    }
+
+                    //Atribui o nome do Aeroporto Destino a partir do código presente no BD
+                    if (txtCodAeroportoDestino.Text != "")
+                    {
+                        aeroportoDestino = aeroportoController.ConsultaAeroportoPorId(voo.Destino);
+
+                        if (aeroportoDestino.Nome != "")
+                            txtAeroportoDestino.Text = aeroportoDestino.Nome;
+                    }
+
+                    //Atribui o nome do Avião a partir do código presente no BD
+                    if (txtCodAviao.Text != "")
+                    {
+                        aviao = aviaoController.ConsultaAviaoPorId(voo.aviao.Id);
+
+                        if (aviao.Modelo != "")
+                            txtAviao.Text = aviao.Modelo;
+                    }
                 }
                 else
                 {
                     new Helpers().LimparTela(this);
+                    LimpaMaskedBox();
                     txtCodVoo.Focus();
                 }
+            }
+            else
+            {
+                new Helpers().LimparTela(this);
+                LimpaMaskedBox();
+            }
+        }
+
+        #endregion
+
+        #region Evento Aeroporto Decolagem Leave
+        private void txtCodAeroportoDecolagem_Leave(object sender, EventArgs e)
+        {
+            if (txtCodAeroportoDecolagem.Text != "")
+            {
+                //Instancia do Model
+                Aeroporto aeroporto = new Aeroporto
+                {
+                    Id = int.Parse(txtCodAeroportoDecolagem.Text)
+                };
+
+                //Chamada do Controlador
+                aeroporto = aeroportoController.ConsultaAeroportoPorId(aeroporto.Id);
+
+                //Atribuições da Consulta
+                if (aeroporto.Nome != "")
+                    txtAeroportoDecolagem.Text = aeroporto.Nome;
+                else
+                {
+                    txtCodAeroportoDecolagem.Text = "";
+                    txtAeroportoDecolagem.Text = "";
+                    txtCodAeroportoDecolagem.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código do Aeroporto Decolagem não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAeroportoDecolagem.Text = "";
+                txtCodAeroportoDecolagem.Focus();
             }
         }
         #endregion
 
+        #region Evento Aeroporto Destino Leave
+        private void txtCodAeroportoDestino_Leave(object sender, EventArgs e)
+        {
+            if (txtCodAeroportoDestino.Text != "")
+            {
+                //Instancia do Model
+                Aeroporto aeroporto = new Aeroporto
+                {
+                    Id = int.Parse(txtCodAeroportoDestino.Text)
+                };
 
+                //Chamada do Controlador
+                aeroporto = aeroportoController.ConsultaAeroportoPorId(aeroporto.Id);
+
+                //Atribuições da Consulta
+                if (aeroporto.Nome != "")
+                    txtAeroportoDestino.Text = aeroporto.Nome;
+                else
+                {
+                    txtCodAeroportoDestino.Text = "";
+                    txtAeroportoDestino.Text = "";
+                    txtCodAeroportoDestino.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código do Aeroporto Destino não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAeroportoDestino.Text = "";
+                txtCodAeroportoDestino.Focus();
+            }
+        }
+        #endregion
+
+        #region Evento Avião Leave
+        private void txtCodAviao_Leave(object sender, EventArgs e)
+        {
+            if (txtCodAviao.Text != "")
+            {
+                //Instancia do Model
+                Aviao aviao = new Aviao
+                {
+                    Id = int.Parse(txtCodAviao.Text)
+                };
+
+                //Chamada do Controlador
+                aviao = aviaoController.ConsultaAviaoPorId(aviao.Id);
+
+                //Atribuições da Consulta
+                if (aviao.Modelo != "")
+                    txtAviao.Text = aviao.Modelo;
+                else
+                {
+                    txtCodAviao.Text = "";
+                    txtAviao.Text = "";
+                    txtCodAviao.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código do Avião não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAviao.Text = "";
+                txtCodAviao.Focus();
+            }
+        }
+        #endregion
+
+        #region Limpar MaskedBox
+        public void LimpaMaskedBox()
+        {
+            txtDuracao.Text = "";
+            txtHoraChegada.Text = "";
+            txtHoraSaida.Text = "";
+            txtDataSaida.Text = "";
+            txtDataChegada.Text = "";
+        }
+        #endregion
+
+        #region Validações
+        private void txtCodVoo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        #region Metódo para Validar Datas
+        public bool ValidarDatas(string data)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(data))
+                {
+                    if (DateTime.TryParseExact(data, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out _)) //Não tem uma saída, pois vai ser atribuido a partir da entrada do usuário
+                    {
+                        return true; //Conversão deu certo
+                    }
+                    else
+                        return false; //Deu errado
+                }
+                else
+                    return false;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+        #endregion
+        #endregion
     }
 }

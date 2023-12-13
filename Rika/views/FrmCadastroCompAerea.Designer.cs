@@ -300,7 +300,6 @@
             this.Name = "FrmCadastroCompAerea";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Companhia Aérea";
-            this.Load += new System.EventHandler(this.FrmCadastroCompAerea_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroCompAerea_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

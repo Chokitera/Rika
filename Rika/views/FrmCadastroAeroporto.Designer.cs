@@ -37,7 +37,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
-            this.txtEndereco = new Rika.controls.novoTextBox();
             this.txtDescricao = new Rika.controls.novoTextBox();
             this.txtNome = new Rika.controls.novoTextBox();
             this.txtCodEndereco = new Rika.controls.novoTextBox();
@@ -45,6 +44,7 @@
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnExcluir = new Rika.controls.ModeloBotao();
             this.btnSalvar = new Rika.controls.ModeloBotao();
+            this.txtEndereco = new Rika.controls.novoTextBoxReadOnly();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
@@ -139,25 +139,6 @@
             this.iconMinimizar.TabStop = false;
             this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
-            // txtEndereco
-            // 
-            this.txtEndereco.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEndereco.BorderColor = System.Drawing.Color.DimGray;
-            this.txtEndereco.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtEndereco.BorderSize = 1;
-            this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.ForeColor = System.Drawing.Color.DimGray;
-            this.txtEndereco.Location = new System.Drawing.Point(252, 354);
-            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEndereco.Multiline = false;
-            this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Padding = new System.Windows.Forms.Padding(7);
-            this.txtEndereco.PasswordChar = false;
-            this.txtEndereco.Size = new System.Drawing.Size(250, 31);
-            this.txtEndereco.TabIndex = 69;
-            this.txtEndereco.TextNew = "";
-            this.txtEndereco.UnderlinedStyle = false;
-            // 
             // txtDescricao
             // 
             this.txtDescricao.BackColor = System.Drawing.SystemColors.Window;
@@ -173,7 +154,7 @@
             this.txtDescricao.Padding = new System.Windows.Forms.Padding(7);
             this.txtDescricao.PasswordChar = false;
             this.txtDescricao.Size = new System.Drawing.Size(348, 31);
-            this.txtDescricao.TabIndex = 67;
+            this.txtDescricao.TabIndex = 3;
             this.txtDescricao.TextNew = "";
             this.txtDescricao.UnderlinedStyle = false;
             // 
@@ -192,7 +173,7 @@
             this.txtNome.Padding = new System.Windows.Forms.Padding(7);
             this.txtNome.PasswordChar = false;
             this.txtNome.Size = new System.Drawing.Size(348, 31);
-            this.txtNome.TabIndex = 66;
+            this.txtNome.TabIndex = 2;
             this.txtNome.TextNew = "";
             this.txtNome.UnderlinedStyle = false;
             // 
@@ -211,9 +192,11 @@
             this.txtCodEndereco.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodEndereco.PasswordChar = false;
             this.txtCodEndereco.Size = new System.Drawing.Size(90, 31);
-            this.txtCodEndereco.TabIndex = 65;
+            this.txtCodEndereco.TabIndex = 4;
             this.txtCodEndereco.TextNew = "";
             this.txtCodEndereco.UnderlinedStyle = false;
+            this.txtCodEndereco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodEndereco_KeyPress);
+            this.txtCodEndereco.Leave += new System.EventHandler(this.txtCodEndereco_Leave);
             // 
             // txtCodAeroporto
             // 
@@ -230,9 +213,10 @@
             this.txtCodAeroporto.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodAeroporto.PasswordChar = false;
             this.txtCodAeroporto.Size = new System.Drawing.Size(90, 31);
-            this.txtCodAeroporto.TabIndex = 64;
+            this.txtCodAeroporto.TabIndex = 1;
             this.txtCodAeroporto.TextNew = "";
             this.txtCodAeroporto.UnderlinedStyle = false;
+            this.txtCodAeroporto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodAeroporto_KeyPress);
             this.txtCodAeroporto.Leave += new System.EventHandler(this.txtCodAeroporto_Leave);
             // 
             // btnSair
@@ -248,7 +232,7 @@
             this.btnSair.Location = new System.Drawing.Point(353, 417);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(150, 45);
-            this.btnSair.TabIndex = 55;
+            this.btnSair.TabIndex = 7;
             this.btnSair.Text = "Sair";
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -268,7 +252,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(192, 417);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(150, 45);
-            this.btnExcluir.TabIndex = 54;
+            this.btnExcluir.TabIndex = 6;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextColor = System.Drawing.Color.White;
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -288,12 +272,33 @@
             this.btnSalvar.Location = new System.Drawing.Point(32, 417);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(150, 45);
-            this.btnSalvar.TabIndex = 53;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextColor = System.Drawing.Color.White;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // txtEndereco
+            // 
+            this.txtEndereco.BackColor = System.Drawing.SystemColors.Window;
+            this.txtEndereco.BorderColor = System.Drawing.Color.DimGray;
+            this.txtEndereco.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtEndereco.BorderSize = 1;
+            this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEndereco.ForeColor = System.Drawing.Color.DimGray;
+            this.txtEndereco.Location = new System.Drawing.Point(252, 354);
+            this.txtEndereco.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEndereco.Multiline = false;
+            this.txtEndereco.Name = "txtEndereco";
+            this.txtEndereco.Padding = new System.Windows.Forms.Padding(7);
+            this.txtEndereco.PasswordChar = false;
+            this.txtEndereco.ReadOnly = true;
+            this.txtEndereco.Size = new System.Drawing.Size(250, 31);
+            this.txtEndereco.TabIndex = 88;
+            this.txtEndereco.TabStop = false;
+            this.txtEndereco.TextNew = "";
+            this.txtEndereco.UnderlinedStyle = false;
             // 
             // FrmCadastroAeroporto
             // 
@@ -318,6 +323,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadastroAeroporto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aeroporto";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCadastroAeroporto_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -345,6 +351,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox iconFechar;
         private System.Windows.Forms.PictureBox iconMinimizar;
-        private controls.novoTextBox txtEndereco;
+        private controls.novoTextBoxReadOnly txtEndereco;
     }
 }

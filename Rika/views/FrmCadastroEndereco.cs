@@ -1,8 +1,12 @@
-﻿using Rika.controllers;
+﻿using Org.BouncyCastle.Asn1.Cmp;
+using Rika.controllers;
+using Rika.models;
+using Rika.models.Comum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -15,14 +19,15 @@ namespace Rika.views
 {
     public partial class FrmCadastroEndereco : Form
     {
-        private SituacaoController situacaoController;
+        private EnderecoController enderecoController;
+        private PaisController paisController;
         public FrmCadastroEndereco()
         {
             InitializeComponent();
 
-            situacaoController = new SituacaoController();
+            enderecoController = new EnderecoController();
+            paisController = new PaisController();
         }
-
 
         #region Ajustes da Borda
         //Campos para alterar a borda
@@ -101,9 +106,7 @@ namespace Rika.views
         }
         #endregion
 
-
-
-        #region
+        #region Ajustes nos botões superiores da tela
         private void iconFechar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -113,6 +116,92 @@ namespace Rika.views
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        #endregion
+
+
+        #region Evento/Ações dos Botões
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (txtCodEndereco.Text != "")
+            {
+                //Instancia do Model
+                Endereco endereco = new Endereco
+                {
+                    Id = int.Parse(txtCodEndereco.Text)
+                };
+
+                //Chamado do Controlador
+                bool isValid = enderecoController.ExcluirEndereco(endereco.Id);
+
+                //Se realizou o processo limpa a tela
+                if (isValid)
+                {
+                    new Helpers().LimparTela(this);
+                    LimpaMaskedBox();
+                    txtCodEndereco.Focus();
+                }
+            }
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            //Instancia do Model
+            Endereco endereco = new Endereco();
+
+            //Atribuições
+            if (txtCodEndereco.Text == "")
+                endereco.Id = 0;
+            else
+                endereco.Id = int.Parse(txtCodEndereco.Text);
+            if (txtCep.Text == "     -")//Retira a Mascara para a validação
+                endereco.CEP = null;
+            else
+                endereco.CEP = txtCep.Text;
+            if (txtNumero.Text == "")
+                endereco.NumeroCasa = 0;
+            else
+                endereco.NumeroCasa = int.Parse(txtNumero.Text);
+            if (txtCodPais.Text == "")
+                endereco.pais.Id = 0;
+            else
+                endereco.pais.Id = int.Parse(txtCodPais.Text);
+            endereco.Estado = txtEstado.Text;
+            endereco.Cidade = txtCidade.Text;
+            endereco.Logradouro = txtLogradouro.Text;
+            endereco.Complemento = txtComplemento.Text;
+
+            //Chamada do Controlador
+            bool isValid = enderecoController.SalvaEndereco(endereco);
+
+            //Se realizou o processo limpa a tela
+            if (isValid)
+            {
+                new Helpers().LimparTela(this);
+                LimpaMaskedBox();
+                txtCodEndereco.Focus();
+            }
+        }
+
+        private void ptbConsultaCEP_Click(object sender, EventArgs e)
+        {
+            DataSet dados = new DataSet();
+
+            //Atribuições
+            string cep = txtCep.Text;
+            string url = "https://viacep.com.br/ws/" + cep + "/xml/";
+
+            //Consulta
+            dados = enderecoController.ConsultaCEPAPI(url);
+
+            //Atribuições do retorno
+            if (dados != null) //Consulta deu certa
+            {
+                txtCidade.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
+                txtEstado.Text = dados.Tables[0].Rows[0]["uf"].ToString();
+                txtLogradouro.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
+                txtComplemento.Text = dados.Tables[0].Rows[0]["complemento"].ToString();
+            }
+        }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -120,26 +209,124 @@ namespace Rika.views
         }
         #endregion
 
-
-
-        private void btnExcluir_Click(object sender, EventArgs e)
+        #region Evento Código Leave
+        private void txtCodEndereco_Leave(object sender, EventArgs e)
         {
+            if (txtCodEndereco.Text != "")
+            {
+                //Instancia dos Models
+                Pais pais = new Pais();
+                Endereco endereco = new Endereco
+                {
+                    Id = int.Parse(txtCodEndereco.Text)
+                };
 
+                //Chamada do Controlador
+                endereco = enderecoController.ConsultaEnderecoPorId(endereco.Id);
+
+                //Atribuição da Consulta
+                if (endereco.Cidade != "")
+                {
+                    txtCodEndereco.Text = endereco.Id.ToString();
+                    txtCep.Text = endereco.CEP;
+                    txtCodPais.Text = endereco.pais.Id.ToString();
+                    txtEstado.Text = endereco.Estado;
+                    txtCidade.Text = endereco.Cidade;
+                    txtLogradouro.Text = endereco.Logradouro;
+                    txtComplemento.Text = endereco.Complemento;
+                    if (endereco.NumeroCasa == 0)
+                        txtNumero.Text = "";
+                    else
+                        txtNumero.Text = endereco.NumeroCasa.ToString();
+
+                    //Atribui o nome do país a partir do código presente no BD
+                    if(txtCodPais.Text != "")
+                    {
+                        pais = paisController.ConsultaPaisPorId(endereco.pais.Id);
+
+                        if (pais.Nome != "")
+                            txtPais.Text = pais.Nome;
+                    }
+                }
+                else
+                {
+                    new Helpers().LimparTela(this);
+                    LimpaMaskedBox();
+                    txtCodEndereco.Focus();
+                }
+            }
+            else
+            {
+                new Helpers().LimparTela(this);
+                LimpaMaskedBox();
+            }
+        }
+        #endregion
+
+        #region Evento País Leave
+        private void txtCodPais_Leave(object sender, EventArgs e)
+        {
+            if(txtCodPais.Text != "")
+            {
+                //Instancia do Model
+                Pais pais = new Pais
+                {
+                    Id = int.Parse(txtCodPais.Text)
+                };
+
+                //Chamada do Controlador
+                pais = paisController.ConsultaPaisPorId(pais.Id);
+
+                //Atribuição da Consulta
+                if (pais.Nome != "")
+                    txtPais.Text = pais.Nome;
+                else
+                {
+                    txtCodPais.Text = "";
+                    txtPais.Text = "";
+                    txtCodPais.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("O Código do País não pode ser vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtPais.Text = "";
+                txtCodPais.Focus();
+            }
+        }
+        #endregion
+
+        #region Validações
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true; //Tratado
+            }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+        private void txtCodEndereco_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if(!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true; //Tratado
+            }
         }
 
-        private void FrmCadastroEndereco_Load(object sender, EventArgs e)
+        private void txtCodPais_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
+        #endregion
 
-        private void FrmCadastroEndereco_Leave(object sender, EventArgs e)
+        #region Limpar MaskedBox
+        public void LimpaMaskedBox()
         {
-
+            txtCep.Text = "";
         }
+        #endregion
     }
 }

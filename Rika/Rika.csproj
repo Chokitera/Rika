@@ -113,8 +113,15 @@
     <Compile Include="controllers\PassagemController.cs" />
     <Compile Include="controllers\SituacaoController.cs" />
     <Compile Include="controllers\TipoVendaController.cs" />
+    <Compile Include="controllers\TituloController.cs" />
     <Compile Include="controllers\UsuarioController.cs" />
     <Compile Include="controllers\VooController.cs" />
+    <Compile Include="controls\MenuCategorias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\MenuCategorias.Designer.cs">
+      <DependentUpon>MenuCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="controls\ModeloItemNoCarrinho.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -233,6 +240,12 @@
     <Compile Include="views\FrmCadastroTipoVenda.Designer.cs">
       <DependentUpon>FrmCadastroTipoVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmCadastroTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmCadastroTitulo.Designer.cs">
+      <DependentUpon>FrmCadastroTitulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +281,12 @@
     </Compile>
     <Compile Include="views\FrmConsultaCompAerea.Designer.cs">
       <DependentUpon>FrmConsultaCompAerea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmConsultaEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmConsultaEndereco.Designer.cs">
+      <DependentUpon>FrmConsultaEndereco.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FrmConsultaPais.cs">
       <SubType>Form</SubType>
@@ -316,6 +335,18 @@
     </Compile>
     <Compile Include="views\FrmExibirImagemPassagem.Designer.cs">
       <DependentUpon>FrmExibirImagemPassagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmMenuCadastros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmMenuCadastros.Designer.cs">
+      <DependentUpon>FrmMenuCadastros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmMenuConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmMenuConsultas.Designer.cs">
+      <DependentUpon>FrmMenuConsultas.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FrmTelaAdministrativa.cs">
       <SubType>Form</SubType>
@@ -390,6 +421,9 @@
     <Compile Include="views\FrmCadastroVoo.Designer.cs">
       <DependentUpon>FrmCadastroVoo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="controls\MenuCategorias.resx">
+      <DependentUpon>MenuCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controls\ModeloItemNoCarrinho.resx">
       <DependentUpon>ModeloItemNoCarrinho.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,6 +460,9 @@
     <EmbeddedResource Include="views\FrmCadastroTipoVenda.resx">
       <DependentUpon>FrmCadastroTipoVenda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmCadastroTitulo.resx">
+      <DependentUpon>FrmCadastroTitulo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\FrmCadastroUsuario.resx">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -443,6 +480,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmConsultaCompAerea.resx">
       <DependentUpon>FrmConsultaCompAerea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmConsultaEndereco.resx">
+      <DependentUpon>FrmConsultaEndereco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmConsultaPais.resx">
       <DependentUpon>FrmConsultaPais.cs</DependentUpon>
@@ -467,6 +507,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmExibirImagemPassagem.resx">
       <DependentUpon>FrmExibirImagemPassagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmMenuCadastros.resx">
+      <DependentUpon>FrmMenuCadastros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmMenuConsultas.resx">
+      <DependentUpon>FrmMenuConsultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmTelaAdministrativa.resx">
       <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
@@ -550,6 +596,21 @@
     <None Include="resources\Logo_Rika_Preto.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="resources\menu-usuario.png" />
+    <None Include="resources\menu-titulos-fino.png" />
+    <None Include="resources\menu-classe-fina.png" />
+    <None Include="resources\voo-direto.png" />
+    <None Include="resources\endereco.png" />
+    <None Include="resources\procurar.png" />
+    <None Include="resources\menu-titulos.png" />
+    <None Include="resources\menu-tipovenda.png" />
+    <None Include="resources\menu-situacao.png" />
+    <None Include="resources\menu-passagem.png" />
+    <None Include="resources\menu-pais.png" />
+    <None Include="resources\menu-compaerea.png" />
+    <None Include="resources\menu-classe.png" />
+    <None Include="resources\menu-aviao.png" />
+    <None Include="resources\menu-aeroporto.png" />
     <None Include="resources\marca-de-verificacao.png" />
     <None Include="resources\maldivas 2.jpg" />
     <None Include="resources\maldivas.jpg" />

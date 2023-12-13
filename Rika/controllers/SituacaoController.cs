@@ -137,5 +137,19 @@ namespace Rika.controllers
         }
 
         #endregion
+
+        #region Método para listar as Situações
+        public DataTable ListarSituacoes()
+        {
+            //Inicialização
+            DataTable lista = new DataTable();
+
+            //Realiza o processo no DAO
+            lista = situacaoDAO.ListarSituacoes();
+
+            //Retorno
+            return lista;
+        }
+        #endregion
     }
 }

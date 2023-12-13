@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Org.BouncyCastle.Crmf;
 
 namespace Rika.controls
 {
@@ -281,6 +282,13 @@ namespace Rika.controls
             get { return cmbList.ValueMember; }
             set { cmbList.ValueMember = value; }
         }
+
+        public string SelectedValue
+        {
+            get { return cmbList.SelectedValue.ToString(); }
+            set { cmbList.SelectedValue = value; }
+        }
+
 
         //Métodos privados
         private void AdjustComboBoxDimensions()

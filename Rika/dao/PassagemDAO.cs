@@ -3,6 +3,7 @@ using Rika.models;
 using Solucao.conexao;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,9 @@ namespace Rika.dao
             {
                 string sql = @"insert into PASSAGEM (IDVOO, IDSITUACAO, IDCLASSE, COD_PASS, VALOR, DIRETO_ESCALA, CAMINHO_IMG) 
                                values (@IDVOO, @IDSITUACAO, @IDCLASSE, @COD_PASS, @VALOR, @DIRETO_ESCALA, @CAMINHO_IMG);";
+
+                //Define o Código da Passagem (Identificação)
+                passagem.Cod_Passagem = ConsultaAeroportoPassagem(passagem);
 
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
@@ -99,6 +103,9 @@ namespace Rika.dao
                 string sql = @"update PASSAGEM set IdVoo=@IdVoo, IdSituacao=@IdSituacao, IdClasse=@IdClasse, Cod_Passagem=@Cod_Passagem, Direto_Escala=@Direto_Escala, Caminho_Img=@Caminho_Img
                                where IDPASSAGEM = @id;";
 
+                //Define o Código da Passagem (Identificação)
+                passagem.Cod_Passagem = ConsultaAeroportoPassagem(passagem);
+
                 //Atributos
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
                 executacmd.Parameters.AddWithValue("@id", passagem.Id);
@@ -147,7 +154,7 @@ namespace Rika.dao
                 //Le os dados
                 if (!reader.Read())
                 {
-                    passagem.Cod_Passagem = "";
+                    passagem.Direto_Escala = "";
                     MessageBox.Show("Passagem não encontrada!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -170,6 +177,116 @@ namespace Rika.dao
                 MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conexao.Close();
                 return passagem;
+            }
+        }
+        #endregion
+
+        #region Método para Consultar os Aeroportos da Passagem
+        public string ConsultaAeroportoPassagem(Passagem passagem)
+        {
+            try
+            {
+                //Sql
+                string sql = @"SELECT DECOLAGEM.PAIS DECOLAGEM, DESTINO.PAIS DESTINO FROM(
+                               SELECT PS.SIGLA AS PAIS, V.IDVOO VOO FROM PAIS PS
+                               INNER JOIN ENDERECO E ON (E.IDPAIS = PS.IDPAIS)
+                               INNER JOIN AEROPORTO A ON (A.IDENDERECO = E.IDENDERECO)
+                               INNER JOIN VOO V ON (V.DECOLAGEM = A.IDAEROPORTO)
+                               ) DECOLAGEM
+                               JOIN (
+                               SELECT PS.SIGLA AS PAIS, V.IDVOO VOO  FROM PAIS PS
+                               INNER JOIN ENDERECO E ON (E.IDPAIS = PS.IDPAIS)
+                               INNER JOIN AEROPORTO A ON (A.IDENDERECO = E.IDENDERECO)
+                               INNER JOIN VOO V ON (V.DESTINO = A.IDAEROPORTO)
+                               ) DESTINO ON (DECOLAGEM.VOO = DESTINO.VOO)
+                               WHERE DESTINO.VOO = @id";
+
+                //Definindo o comando
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", passagem.voo.Id);
+
+                //Consultar o último registro (código da passagem)
+                string sql2 = @"select IDPASSAGEM from PASSAGEM order by IDPASSAGEM desc limit 1;";
+                MySqlCommand executacmd2 = new MySqlCommand(sql2, conexao);
+
+                //Executa Comando e abre a conexao
+                conexao.Open();
+
+                MySqlDataReader reader2 = executacmd2.ExecuteReader();
+                reader2.Read();
+                passagem.Id = reader2.GetInt32(0) + 1; // +1 pois é o próximo código a ser serializado
+
+                //Finaliza a conexão e sessão
+                reader2.Close();
+                conexao.Close();
+
+                //Abre novamente a conexão
+                conexao.Open();
+
+                MySqlDataReader reader = executacmd.ExecuteReader();
+                reader.Read();
+
+                //Monta o Código da Passagem ----> País Origem + Código Passagem + País Destino
+                passagem.Cod_Passagem = reader.GetString(0);
+                passagem.Cod_Passagem += passagem.Id.ToString();
+                passagem.Cod_Passagem += reader.GetString(1);
+
+                //Fecha conexão e sessão
+                conexao.Close();
+
+                return passagem.Cod_Passagem;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+        #endregion
+
+        #region Método para consultar passagens e preencher a DataTable
+        public DataTable ConsultarPassagens(Passagem passagem)
+        {
+            try
+            {
+                //Criacao do DataTable
+                DataTable dt = new DataTable();
+
+                //Sql
+                string sql = @"select idpassagem, cod_pass, valor, direto_escala
+
+                               from passagem p
+                               inner join situacao s
+                               where idpassagem like @idpassagem";
+                               
+
+                //Atribuição de parametro
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@idpassagem", passagem.Id);
+                executacmd.Parameters.AddWithValue("@cod_pass", passagem.Cod_Passagem);
+                executacmd.Parameters.AddWithValue("@valor", passagem.Valor);
+                executacmd.Parameters.AddWithValue("@direto_escala", passagem.Direto_Escala);
+
+                //Abre a conexao e executa Sql
+                conexao.Open();
+
+                //Preenche o DataTable
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(dt);
+
+                conexao.Close();
+
+                return dt; //Retorna a DT
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return null;
             }
         }
         #endregion
