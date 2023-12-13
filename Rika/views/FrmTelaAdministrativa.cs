@@ -134,5 +134,31 @@ namespace Rika.views
         //    pnlConteudo.VerticalScroll.Value = vScrollConteudo.Value;
         //}
         #endregion
+
+        #region Link Cadastros
+        private void lblCadastros_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Inicialização
+            FrmMenuCadastros telaPrincipal = new FrmMenuCadastros();
+            FrmTelaModelo telaModelo = new FrmTelaModelo(telaPrincipal);
+
+            telaModelo.ShowDialog(); //Mostra a tela
+        }
+        #endregion
+
+        #region Link Consultas
+        private void lblConsultas_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Inicialização
+            FrmMenuConsultas telaPrincipal = new FrmMenuConsultas();
+            FrmTelaModelo telaModelo = new FrmTelaModelo(telaPrincipal);
+
+            telaModelo.ShowDialog(); //Mostra a tela
+        }
+        #endregion
+
+        #region Método para abrir os formulários
+
+        #endregion
     }
 }
