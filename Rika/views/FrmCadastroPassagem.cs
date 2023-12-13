@@ -204,6 +204,7 @@ namespace Rika.views
         #region Evento Código Leave
         private void txtCodigo_Leave(object sender, EventArgs e)
         {
+            lblCodPassagem.Visible = false;
             if (txtCodigo.Text != "")
             {
                 //Limpa as variaveis das imagens
@@ -258,6 +259,13 @@ namespace Rika.views
                             aeroporto = aeroportoController.ConsultaAeroportoPorId(voo.Destino);
                             txtVoo.Text = aeroporto.Nome;
                         }
+                    }
+
+                    //Identificação do código da passagem na tela
+                    if (passagem.Cod_Passagem != "")
+                    {
+                        lblCodPassagem.Text = passagem.Cod_Passagem;
+                        lblCodPassagem.Visible = true;
                     }
                 }
                 else
@@ -352,8 +360,6 @@ namespace Rika.views
             }
             
         }
-
-
         #endregion
 
         #region Evento Classe Leave

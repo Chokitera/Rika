@@ -47,6 +47,8 @@
             this.txtInformacao.Size = new System.Drawing.Size(217, 45);
             this.txtInformacao.TabIndex = 11;
             this.txtInformacao.Text = "Consultar e verificar diversos Países.";
+            this.txtInformacao.MouseEnter += new System.EventHandler(this.MenuCategorias_MouseEnter);
+            this.txtInformacao.MouseLeave += new System.EventHandler(this.MenuCategorias_MouseLeave);
             // 
             // lblTitulo
             // 
@@ -57,6 +59,8 @@
             this.lblTitulo.Size = new System.Drawing.Size(56, 23);
             this.lblTitulo.TabIndex = 10;
             this.lblTitulo.Text = "Título";
+            this.lblTitulo.MouseEnter += new System.EventHandler(this.MenuCategorias_MouseEnter);
+            this.lblTitulo.MouseLeave += new System.EventHandler(this.MenuCategorias_MouseLeave);
             // 
             // ptbImagem
             // 
@@ -67,6 +71,8 @@
             this.ptbImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbImagem.TabIndex = 9;
             this.ptbImagem.TabStop = false;
+            this.ptbImagem.MouseEnter += new System.EventHandler(this.MenuCategorias_MouseEnter);
+            this.ptbImagem.MouseLeave += new System.EventHandler(this.MenuCategorias_MouseLeave);
             // 
             // MenuCategorias
             // 
@@ -79,6 +85,8 @@
             this.Name = "MenuCategorias";
             this.Size = new System.Drawing.Size(394, 127);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuCategorias_Paint);
+            this.MouseEnter += new System.EventHandler(this.MenuCategorias_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.MenuCategorias_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

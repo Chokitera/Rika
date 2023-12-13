@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,26 @@ namespace Rika.views
 {
     public partial class FrmMenuCadastros : Form
     {
+        FrmCadastroAeroporto tela1 = new FrmCadastroAeroporto();
+        #region Ajustes da Parte Superior do Formulário e Adiciona Sombra no Formulário
+        public void ColocaSombraFormulario()
+        {
+            CreateParams createParams = new CreateParams();
+            //createParams.
+        }
+        private const int SombraFormulario = 0x00020000;
+        private const int EstiloFormulario = 0x20000;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle = SombraFormulario; //Sombra do Formulário
+                return cp;
+            }
+        }
+        #endregion
+
         public FrmMenuCadastros()
         {
             InitializeComponent();

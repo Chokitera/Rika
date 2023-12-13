@@ -42,6 +42,7 @@
             this.btnAbrirPasta = new System.Windows.Forms.Button();
             this.btnVisualizarImagem = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCodPassagem = new System.Windows.Forms.Label();
             this.cmbSituacao = new Rika.controls.novosComboBox();
             this.txtVoo = new Rika.controls.novoTextBoxReadOnly();
             this.txtClasse = new Rika.controls.novoTextBoxReadOnly();
@@ -204,6 +205,22 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // lblCodPassagem
+            // 
+            this.lblCodPassagem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCodPassagem.AutoSize = true;
+            this.lblCodPassagem.Font = new System.Drawing.Font("Sylfaen", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodPassagem.ForeColor = System.Drawing.Color.DimGray;
+            this.lblCodPassagem.Location = new System.Drawing.Point(951, 36);
+            this.lblCodPassagem.Name = "lblCodPassagem";
+            this.lblCodPassagem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblCodPassagem.Size = new System.Drawing.Size(118, 31);
+            this.lblCodPassagem.TabIndex = 88;
+            this.lblCodPassagem.Text = "CND10BR";
+            this.lblCodPassagem.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblCodPassagem.Visible = false;
             // 
             // cmbSituacao
             // 
@@ -458,6 +475,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1094, 521);
+            this.Controls.Add(this.lblCodPassagem);
             this.Controls.Add(this.cmbSituacao);
             this.Controls.Add(this.txtVoo);
             this.Controls.Add(this.txtClasse);
@@ -523,5 +541,6 @@
         private controls.novoTextBoxReadOnly txtClasse;
         private controls.novoTextBoxReadOnly txtVoo;
         private controls.novosComboBox cmbSituacao;
+        private System.Windows.Forms.Label lblCodPassagem;
     }
 }

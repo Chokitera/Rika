@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace Rika.controls
 {
     public partial class MenuCategorias : UserControl
     {
+
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
@@ -56,12 +58,27 @@ namespace Rika.controls
         private void MenuCategorias_Paint(object sender, PaintEventArgs e)
         {
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
+
+            int borderWidth = 1; //Tamanho da borda
+
+            //Desenha sombra nas laterais e na parte inferior do controle
+            using (var shadowBrush = new SolidBrush(Color.WhiteSmoke))
+            {
+                // Sombra nas laterais
+                e.Graphics.FillRectangle(shadowBrush, 0, borderWidth, borderWidth, this.Height - borderWidth);
+                e.Graphics.FillRectangle(shadowBrush, this.Width - borderWidth, borderWidth, borderWidth, this.Height - borderWidth);
+
+                // Sombra na parte inferior
+                e.Graphics.FillRectangle(shadowBrush, borderWidth, this.Height - borderWidth, this.Width - 2 * borderWidth, borderWidth);
+            }
         }
         #endregion
 
         public MenuCategorias()
         {
             InitializeComponent();
+
+            //this.Paint += MenuCategorias_Paint;
         }
 
         private string _titulo;
@@ -86,6 +103,20 @@ namespace Rika.controls
         {
             get { return _imagem; }
             set { _imagem = value; ptbImagem.Image = value; }
+        }
+
+        //Define a cor do fundo ao mouse entrar na categoria
+        private void MenuCategorias_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.WhiteSmoke;
+            txtInformacao.BackColor = Color.WhiteSmoke;
+        }
+
+        //Define a cor do fundo ao mouse sair da categoria
+        private void MenuCategorias_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.White;
+            txtInformacao.BackColor = Color.White;
         }
     }
 }
