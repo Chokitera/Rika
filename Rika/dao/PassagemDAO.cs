@@ -258,7 +258,11 @@ namespace Rika.dao
 
                 //Sql
                 string sql = @"select idpassagem, cod_pass, valor, direto_escala
-                               from passagem where idpassagem like @idpassagem";
+
+                               from passagem p
+                               inner join situacao s
+                               where idpassagem like @idpassagem";
+                               
 
                 //Atribuição de parametro
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);

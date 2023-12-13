@@ -225,19 +225,21 @@ namespace Rika.dao
                 DataTable dt = new DataTable();
 
                 //Sql
-                string sql = @"select a.modelo, v.idvoo, v.dt_saida, v.dt_chegada, v.duracao, v.horario_saida, v.horario_chegada from aviao a 
+                string sql = @"select a.modelo, v.idvoo, v.dt_saida, v.dt_chegada, 
+                               v.duracao, v.horario_saida, v.horario_chegada
+                               from aviao a 
                                inner join voo v on a.idaviao = v.idaviao
                                where a.modelo like @modelo;";
 
                 //Atribuição de parametro
-                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);   
                 executacmd.Parameters.AddWithValue("@modelo", voo.aviao.Modelo);
-                executacmd.Parameters.AddWithValue("@idvoo", voo.aviao.Modelo);
-                executacmd.Parameters.AddWithValue("@dt_saida", voo.aviao.Modelo);
-                executacmd.Parameters.AddWithValue("@dt_chegada", voo.aviao.Modelo);
-                executacmd.Parameters.AddWithValue("@duracao", voo.aviao.Modelo);
-                executacmd.Parameters.AddWithValue("@horario_saida", voo.aviao.Modelo);
-                executacmd.Parameters.AddWithValue("@horario_chegada", voo.aviao.Modelo);
+                executacmd.Parameters.AddWithValue("@idvoo", voo.Id);
+                executacmd.Parameters.AddWithValue("@dt_saida", voo.DataSaida);
+                executacmd.Parameters.AddWithValue("@dt_chegada", voo.DataChegada);
+                executacmd.Parameters.AddWithValue("@duracao", voo.Duracao);
+                executacmd.Parameters.AddWithValue("@horario_saida", voo.HorarioSaida);
+                executacmd.Parameters.AddWithValue("@horario_chegada", voo.HorarioChegada);
 
                 //Abre a conexao e executa Sql
                 conexao.Open();
