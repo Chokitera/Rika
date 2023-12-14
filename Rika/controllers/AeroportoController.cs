@@ -3,6 +3,7 @@ using Rika.dto;
 using Rika.models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,23 +32,17 @@ namespace Rika.controllers
                 //Verifica se as informações estão preenchidas e OK
                 new models.Comum.ValidacaoModel().Validacao(aeroporto);
 
-                //Valida FK - Chave estrangeira
-                bool isValid = ValidaCampos(model);
-
-                if (isValid)
+                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
+                if (aeroporto.Id == 0)
                 {
-                    //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
-                    if (aeroporto.Id == 0)
-                    {
-                        aeroportoDAO.EfetuarCadastro(aeroporto);
-                    }
-                    else
-                    {
-                        aeroportoDAO.EfetuarEdicao(aeroporto);
-                    }
+                    aeroportoDAO.EfetuarCadastro(aeroporto);
                 }
-                
-                return isValid; //Se Ok retorna verdadeiro
+                else
+                {
+                    aeroportoDAO.EfetuarEdicao(aeroporto);
+                }
+
+                return true; //Se Ok retorna verdadeiro
             }
             catch (Exception erro)
             {
@@ -124,20 +119,27 @@ namespace Rika.controllers
         }
         #endregion
 
-        #region Validações
-        public bool ValidaCampos(Aeroporto model)
+        #region Consulta Aeroporto (DataTable)
+        public DataTable ConsultarAeroportos(Aeroporto aeroporto)
         {
-            string msg = "";
-            if (model.endereco.Id == 0)
-                msg += "O campo Endereço não pode ser vazio!" + "\n";
-
-            if(msg != string.Empty) //Se existe mensagem de erro
+            try
             {
-                MessageBox.Show(msg, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
+                //Cria a DataTable
+                DataTable aeroportos = new DataTable();
 
-            return true; //Passou por todas as validações
+                //Atribuicao da entrada
+                this.aeroporto = aeroporto;
+
+                //Consultar os Paises
+                aeroportos = aeroportoDAO.ConsultarAeroporto(this.aeroporto);
+
+                return aeroportos; //Retorna os paises - DataTable
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro na consulta: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null; //Se não deu certo retorna nulo
+            }
         }
         #endregion
     }

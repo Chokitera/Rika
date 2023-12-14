@@ -9,14 +9,20 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Rika.controllers;
+using Rika.models;
 
 namespace Rika.views
 {
     public partial class FrmConsultaClasse : Form
     {
+        private ClasseController classeController;
         public FrmConsultaClasse()
         {
             InitializeComponent();
+
+            classeController = new ClasseController();
+            ListarClasses();
         }
         #region Ajustes da Borda
         //Campos para alterar a borda
@@ -61,11 +67,13 @@ namespace Rika.views
             }
         }
 
-        private void pnlConteudo_Paint(object sender, PaintEventArgs e)
+        private void FrmConsultaClasse_Paint(object sender, PaintEventArgs e)
         {
             // Ajusta as bordas
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
         }
+
+
         #endregion
 
         #region Ajustes da Parte Superior do Formulário e Adiciona Sombra no Formulário
@@ -96,21 +104,43 @@ namespace Rika.views
         #endregion
 
         #region Botões/Ações
-        private void iconMinimizar_Click(object sender, EventArgs e)
+        private void iconMinimizar_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void iconFechar_Click(object sender, EventArgs e)
+        private void iconFechar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
         #endregion
 
-        
+        #region Listar Consulta de Classes
+        public void ListarClasses()
+        {
+            DataTable dataTable = new DataTable();
+            //Instancia do Model
+            Classe classe = new Classe
+            {
+                Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
+            };
 
-        
+            //Consulta os paises e atribui a DataGrid
+            tabelaClasses.DataSource = classeController.ConsultarClasses(classe);
+        }
 
-        
+        #endregion
+
+        private void pnlClasse_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

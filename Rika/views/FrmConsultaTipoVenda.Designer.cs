@@ -103,6 +103,7 @@
             this.pnlTipoVenda.Name = "pnlTipoVenda";
             this.pnlTipoVenda.Size = new System.Drawing.Size(820, 602);
             this.pnlTipoVenda.TabIndex = 72;
+            this.pnlTipoVenda.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTipoVenda_Paint);
             // 
             // btnSair
             // 

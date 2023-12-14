@@ -35,7 +35,7 @@
             this.pnlClasse = new System.Windows.Forms.Panel();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnConfirmar = new Rika.controls.ModeloBotao();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabelaClasses = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new Rika.controls.novoTextBox();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.txtNome = new Rika.controls.novoTextBox();
@@ -45,7 +45,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             this.pnlClasse.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaClasses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(820, 30);
             this.panel2.TabIndex = 73;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // iconFechar
             // 
@@ -70,6 +71,7 @@
             this.iconFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconFechar.TabIndex = 28;
             this.iconFechar.TabStop = false;
+            this.iconFechar.Click += new System.EventHandler(this.iconFechar_Click_1);
             // 
             // iconMinimizar
             // 
@@ -82,12 +84,13 @@
             this.iconMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.iconMinimizar.TabIndex = 29;
             this.iconMinimizar.TabStop = false;
+            this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click_1);
             // 
             // pnlClasse
             // 
             this.pnlClasse.Controls.Add(this.btnSair);
             this.pnlClasse.Controls.Add(this.btnConfirmar);
-            this.pnlClasse.Controls.Add(this.dataGridView1);
+            this.pnlClasse.Controls.Add(this.tabelaClasses);
             this.pnlClasse.Controls.Add(this.txtCodigo);
             this.pnlClasse.Controls.Add(this.label1lblCodigoPassagem);
             this.pnlClasse.Controls.Add(this.txtNome);
@@ -98,6 +101,7 @@
             this.pnlClasse.Name = "pnlClasse";
             this.pnlClasse.Size = new System.Drawing.Size(820, 602);
             this.pnlClasse.TabIndex = 74;
+            this.pnlClasse.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlClasse_Paint);
             // 
             // btnSair
             // 
@@ -117,6 +121,7 @@
             this.btnSair.TextColor = System.Drawing.Color.White;
             this.btnSair.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnConfirmar
             // 
@@ -137,16 +142,16 @@
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // tabelaClasses
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 226);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(749, 316);
-            this.dataGridView1.TabIndex = 93;
+            this.tabelaClasses.AllowUserToAddRows = false;
+            this.tabelaClasses.AllowUserToDeleteRows = false;
+            this.tabelaClasses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaClasses.Location = new System.Drawing.Point(38, 226);
+            this.tabelaClasses.Name = "tabelaClasses";
+            this.tabelaClasses.ReadOnly = true;
+            this.tabelaClasses.Size = new System.Drawing.Size(749, 316);
+            this.tabelaClasses.TabIndex = 93;
             // 
             // txtCodigo
             // 
@@ -166,7 +171,6 @@
             this.txtCodigo.TabIndex = 92;
             this.txtCodigo.TextNew = "";
             this.txtCodigo.UnderlinedStyle = false;
-            this.txtCodigo.Visible = false;
             // 
             // label1lblCodigoPassagem
             // 
@@ -178,7 +182,6 @@
             this.label1lblCodigoPassagem.Size = new System.Drawing.Size(67, 22);
             this.label1lblCodigoPassagem.TabIndex = 91;
             this.label1lblCodigoPassagem.Text = "Código";
-            this.label1lblCodigoPassagem.Visible = false;
             // 
             // txtNome
             // 
@@ -232,12 +235,13 @@
             this.Name = "FrmConsultaClasse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Classe";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmConsultaClasse_Paint);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
             this.pnlClasse.ResumeLayout(false);
             this.pnlClasse.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaClasses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -250,7 +254,7 @@
         private System.Windows.Forms.Panel pnlClasse;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnConfirmar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tabelaClasses;
         private controls.novoTextBox txtCodigo;
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private controls.novoTextBox txtNome;

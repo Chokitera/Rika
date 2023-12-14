@@ -1,8 +1,9 @@
-﻿using Rika.dao;
+﻿ using Rika.dao;
 using Rika.dto;
 using Rika.models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,23 +32,17 @@ namespace Rika.controllers
                 //Verifica se as informações estão preenchidas e OK
                 new models.Comum.ValidacaoModel().Validacao(aviao);
 
-                //Valida FK - Chave estrangeira
-                bool isValid = ValidaCampos(model);
-
-                if (isValid)
+                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
+                if (aviao.Id == 0)
                 {
-                    //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza
-                    if (aviao.Id == 0)
-                    {
-                        aviaoDAO.CadastrarAviao(aviao);
-                    }
-                    else
-                    {
-                        aviaoDAO.EfetuarEdicao(aviao);
-                    }
+                    aviaoDAO.CadastrarAviao(aviao);
+                }
+                else
+                {
+                    aviaoDAO.EfetuarEdicao(aviao);
                 }
 
-                return isValid; //Se Ok retorna verdadeiro
+                return true; //Se Ok retorna verdadeiro
             }
             catch (Exception erro)
             {
@@ -124,20 +119,27 @@ namespace Rika.controllers
         }
         #endregion
 
-        #region Validações
-        public bool ValidaCampos(Aviao model)
+        #region Consulta Avião (DataTable)
+        public DataTable ConsultarAvioes(Aviao aviao)
         {
-            string msg = "";
-            if (model.comp.Id == 0)
-                msg += "O campo Companhia Aérea não pode ser vazio!" + "\n";
-
-            if (msg != string.Empty) //Se existe mensagem de erro
+            try
             {
-                MessageBox.Show(msg, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return false;
-            }
+                //Cria a DataTable
+                DataTable avioes = new DataTable();
 
-            return true; //Passou por todas as validações
+                //Atribuicao da entrada
+                this.aviao = aviao;
+
+                //Consultar os Paises
+                avioes = aviaoDAO.ConsultarAviao(this.aviao);
+
+                return avioes; //Retorna os paises - DataTable
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro na consulta: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null; //Se não deu certo retorna nulo
+            }
         }
         #endregion
     }
