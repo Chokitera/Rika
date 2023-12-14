@@ -327,11 +327,14 @@ namespace Rika.dao
                 conexao.Open();
 
                 //Executa o Sql e obtem o retorno
-                MySqlDataReader reader = executacmd.ExecuteReader();
+                //MySqlDataReader reader = executacmd.ExecuteReader();
 
-                reader.Read();
-                dataTable.Load(reader);
-                reader.Close();
+                //reader.Read();
+                //dataTable.Load(reader);
+                //reader.Close();
+
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(dataTable);
 
                 conexao.Close();
 
@@ -387,11 +390,14 @@ namespace Rika.dao
                 conexao.Open();
 
                 //Executa o Sql e obtem o retorno
-                MySqlDataReader reader = executacmd.ExecuteReader();
+                //MySqlDataReader reader = executacmd.ExecuteReader();
 
-                reader.Read();
-                dataTable.Load(reader);
-                reader.Close();
+                //reader.Read();
+                //dataTable.Load(reader);
+                //reader.Close();
+
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(dataTable);
 
                 conexao.Close();
 

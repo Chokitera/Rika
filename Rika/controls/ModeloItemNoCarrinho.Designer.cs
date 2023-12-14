@@ -225,7 +225,6 @@
             // ptbImagemPassagem
             // 
             this.ptbImagemPassagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ptbImagemPassagem.Image = global::Rika.Properties.Resources.maldivas;
             this.ptbImagemPassagem.Location = new System.Drawing.Point(0, 3);
             this.ptbImagemPassagem.Name = "ptbImagemPassagem";
             this.ptbImagemPassagem.Size = new System.Drawing.Size(127, 151);

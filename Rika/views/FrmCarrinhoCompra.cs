@@ -1,4 +1,5 @@
 ﻿using Rika.controllers;
+using Rika.controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -116,6 +117,7 @@ namespace Rika.views
         private void FrmCarrinhoCompra_Load(object sender, EventArgs e)
         {
             //Inicialização
+            AtualizaTotalizador(); //Atualiza o Totalizador na inicilização da tela
 
             //Botão de desconto inativado
             btnAplicarCupom.BackColor = Color.DarkGray;
@@ -176,37 +178,110 @@ namespace Rika.views
             //Chama o controlador e preenche o dataTable
             dataTable = carrinhoController.CarregarCarrinhoCompra();
 
+            //////if (dataTable != null && dataTable.Rows.Count > 0) //Verifica se conseguiu encontrar registros
+            //////{
+            //////    controls.ModeloItemNoCarrinho[] itemCarrinho = new controls.ModeloItemNoCarrinho[dataTable.Rows.Count + 1]; //Recebe a quantidade de linhas da consulta (DataTable)
+
+            //////    foreach (DataRow row in dataTable.Rows) //Varre as linhas do DataTable (consulta)
+            //////    {
+            //////        //Inicializa o controle
+            //////        itemCarrinho[0] = new controls.ModeloItemNoCarrinho();
+
+            //////        //Atribui os registros da consulta no controle
+            //////        //dataAux = DateTime.ParseExact(row["dt_adicao"].ToString().Replace(" 12:00:00 AM", ""), "MM/dd/yyyy", null); //Excluir item após 7 dias (não implementado)
+            //////        itemCarrinho[0].IdCarrinho = int.Parse(row["idcarrinho"].ToString());
+            //////        itemCarrinho[0].IdUsuario  = int.Parse(row["idusuario"].ToString());
+            //////        itemCarrinho[0].DataAdicao = DateTime.ParseExact(row["dt_adicao"].ToString().Replace(" 12:00:00 AM", ""), "MM/dd/yyyy", null);
+            //////        itemCarrinho[0].CodPass    = int.Parse(row["codpass"].ToString());
+            //////        itemCarrinho[0].Titulo     = "Passagem para " + row["cidade"].ToString() ?? "";
+            //////        dataAux = DateTime.ParseExact(row["datasaida"].ToString().Replace(" 12:00:00 AM", ""), "MM/dd/yyyy", null);
+            //////        itemCarrinho[0].Data       = "      Data " + dataAux.ToString("dd/MM/yyyy") ?? "";
+            //////        itemCarrinho[0].Saida      = "      Saída " + row["hor_sai"].ToString() ?? "";
+            //////        itemCarrinho[0].Chegada    = "      Chegada " + row["hor_che"].ToString() ?? "";
+            //////        itemCarrinho[0].CaminhoImg = row["caminho_img"].ToString() ?? "";
+            //////        itemCarrinho[0].Quantidade = row["qtd_item"].ToString() ?? "";
+            //////        itemCarrinho[0].IdaVolta   = "      Somente ida";
+            //////        if (row["valor"].ToString() != "")
+            //////            itemCarrinho[0].Valor  = double.Parse(row["valor"].ToString());
+            //////        else
+            //////            itemCarrinho[0].Valor  = 0;
+            //////        itemCarrinho[0].ValorInformativo = "R$" + row["valor"].ToString() + ",99" ?? "";
+
+            //////        flpItens.Controls.Add(itemCarrinho[0]);
+            //////    }
+
+            //////    AtualizaTotalizador();
+            //////}
+            ///
+
             if (dataTable != null && dataTable.Rows.Count > 0) //Verifica se conseguiu encontrar registros
             {
                 controls.ModeloItemNoCarrinho[] itemCarrinho = new controls.ModeloItemNoCarrinho[dataTable.Rows.Count]; //Recebe a quantidade de linhas da consulta (DataTable)
 
-                foreach (DataRow row in dataTable.Rows) //Varre as linhas do DataTable (consulta)
+                for (int i = 0; i < dataTable.Rows.Count; i++)
                 {
+                    DataRow row = dataTable.Rows[i]; //Inclui conforme quantidade de linhas
+                   
                     //Inicializa o controle
                     itemCarrinho[0] = new controls.ModeloItemNoCarrinho();
 
                     //Atribui os registros da consulta no controle
                     //dataAux = DateTime.ParseExact(row["dt_adicao"].ToString().Replace(" 12:00:00 AM", ""), "MM/dd/yyyy", null); //Excluir item após 7 dias (não implementado)
                     itemCarrinho[0].IdCarrinho = int.Parse(row["idcarrinho"].ToString());
-                    itemCarrinho[0].IdUsuario  = int.Parse(row["idusuario"].ToString());
+                    itemCarrinho[0].IdUsuario = int.Parse(row["idusuario"].ToString());
                     itemCarrinho[0].DataAdicao = DateTime.ParseExact(row["dt_adicao"].ToString().Replace(" 12:00:00 AM", ""), "MM/dd/yyyy", null);
-                    itemCarrinho[0].CodPass    = int.Parse(row["codpass"].ToString());
-                    itemCarrinho[0].Titulo     = "Passagem para " + row["cidade"].ToString() ?? "";
+                    itemCarrinho[0].CodPass = int.Parse(row["codpass"].ToString());
+                    itemCarrinho[0].Titulo = "Passagem para " + row["cidade"].ToString() ?? "";
                     dataAux = DateTime.ParseExact(row["datasaida"].ToString().Replace(" 12:00:00 AM", ""), "MM/dd/yyyy", null);
-                    itemCarrinho[0].Data       = "      Data " + dataAux.ToString("dd/MM/yyyy") ?? "";
-                    itemCarrinho[0].Saida      = "      Saída " + row["hor_sai"].ToString() ?? "";
-                    itemCarrinho[0].Chegada    = "      Chegada " + row["hor_che"].ToString() ?? "";
+                    itemCarrinho[0].Data = "      Data " + dataAux.ToString("dd/MM/yyyy") ?? "";
+                    itemCarrinho[0].Saida = "      Saída " + row["hor_sai"].ToString() ?? "";
+                    itemCarrinho[0].Chegada = "      Chegada " + row["hor_che"].ToString() ?? "";
                     itemCarrinho[0].CaminhoImg = row["caminho_img"].ToString() ?? "";
                     itemCarrinho[0].Quantidade = row["qtd_item"].ToString() ?? "";
-                    itemCarrinho[0].IdaVolta   = "      Somente ida";
+                    itemCarrinho[0].IdaVolta = "      Somente ida";
                     if (row["valor"].ToString() != "")
-                        itemCarrinho[0].Valor  = double.Parse(row["valor"].ToString());
+                        itemCarrinho[0].Valor = double.Parse(row["valor"].ToString());
                     else
-                        itemCarrinho[0].Valor  = 0;
+                        itemCarrinho[0].Valor = 0;
                     itemCarrinho[0].ValorInformativo = "R$" + row["valor"].ToString() + ",99" ?? "";
 
                     flpItens.Controls.Add(itemCarrinho[0]);
                 }
+                //Atualiza o Totalizador no final
+                AtualizaTotalizador();
+            }
+
+        }
+        #endregion
+
+        #region Método para atualizar o totalizador
+        public void AtualizaTotalizador()
+        {
+            //Inicialização
+            double valorAux = 0;
+            txtSubTotal.Text = "";
+            txtTotalResumo.Text = "";
+            txtTotalCarrinho.Text = "";
+
+            //Varre os controles do Flow Panel
+            foreach (Control controle in flpItens.Controls)
+            {
+                if(controle is ModeloItemNoCarrinho)
+                {
+                    valorAux += (controle as ModeloItemNoCarrinho).ValorItem;
+                }
+            }
+            if(valorAux > 0)
+            {
+                txtSubTotal.Text = "R$ " + valorAux.ToString().Replace(".", ",");
+                txtTotalResumo.Text = "R$ " + valorAux.ToString().Replace(".", ",");
+                txtTotalCarrinho.Text = "R$ " + valorAux.ToString().Replace(".", ",");
+            }
+            else
+            {
+                txtSubTotal.Text = "R$ 0,00";
+                txtTotalResumo.Text = "R$ 0,00";
+                txtTotalCarrinho.Text = "R$ 0,00";
             }
 
         }

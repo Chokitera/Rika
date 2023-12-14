@@ -221,11 +221,14 @@ namespace Rika.dao
                 conexao.Open();
 
                 //Executa o Sql e obtem o retorno
-                MySqlDataReader reader = executacmd.ExecuteReader();
+                //MySqlDataReader reader = executacmd.ExecuteReader();
 
-                reader.Read();
-                dataTable.Load(reader);
-                reader.Close();
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(executacmd);
+                dataAdapter.Fill(dataTable);
+
+                //reader.Read();
+                //dataTable.Load(reader);
+                //reader.Close();
 
                 conexao.Close();
 

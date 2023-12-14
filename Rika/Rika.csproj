@@ -354,6 +354,18 @@
     <Compile Include="views\FrmTelaAdministrativa.Designer.cs">
       <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\FrmTelaCompraEfetuada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmTelaCompraEfetuada.Designer.cs">
+      <DependentUpon>FrmTelaCompraEfetuada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmTelaEfetuarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmTelaEfetuarCompra.Designer.cs">
+      <DependentUpon>FrmTelaEfetuarCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FrmTelaInicialLogado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,6 +389,18 @@
     </Compile>
     <Compile Include="views\FrmTelaModelo.Designer.cs">
       <DependentUpon>FrmTelaModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmTelaModeloAdministrativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmTelaModeloAdministrativo.Designer.cs">
+      <DependentUpon>FrmTelaModeloAdministrativo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\FrmTelaModeloLogado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\FrmTelaModeloLogado.Designer.cs">
+      <DependentUpon>FrmTelaModeloLogado.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FrmTelaPrincipal.cs">
       <SubType>Form</SubType>

@@ -64,9 +64,8 @@ namespace Rika.controls
         public string CaminhoImg
         {
             get { return _caminhoImg; }
-            set { _caminhoImg = value; }
+            set { _caminhoImg = value; ptbImagemPassagem.Image = Image.FromFile(value); }
         }
-
 
         private double _valor;
 
@@ -133,6 +132,13 @@ namespace Rika.controls
             set { _quantidade = value; btnQuantidade.Text = value; }
         }
 
+        private double _valorItem;
+        public double ValorItem
+        {
+            get { return _valorItem; }
+            set { _valorItem = value; }
+        }
+
         private int quantidade;
 
         #region Botões principais
@@ -151,6 +157,9 @@ namespace Rika.controls
 
                     //Atualiza a quantidade no BD
                     AtualizarCarrinho();
+
+                    //Atualiza o totalizador do carrinho
+                    AtualizaTotalizadorCarrinho();
                 }
             }
             else
@@ -171,6 +180,9 @@ namespace Rika.controls
 
                 //Atualiza a quantidade no BD
                 AtualizarCarrinho();
+
+                //Atualiza o totalizador do carrinho
+                AtualizaTotalizadorCarrinho();
             }
             else
                 btnQuantidade.Text = "1";
@@ -211,7 +223,7 @@ namespace Rika.controls
 
             valorAux = (_valor + 0.99) * quantidade;
 
-            //Valor = valorAux;
+            _valorItem = valorAux;
             ValorInformativo = "R$" + valorAux.ToString().Replace(".", ",");
         }
         #endregion
@@ -228,6 +240,20 @@ namespace Rika.controls
             carrinhoController.AtualizarQuantidadeCarrinhoCompra(carrinhoCompra);
 
             return carrinhoCompra;
+        }
+        #endregion
+
+        #region Atualizar o Totalizador do Carrinho de Compra
+        public void AtualizaTotalizadorCarrinho()
+        {
+            var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                         where frm is FrmCarrinhoCompra
+                         select frm;
+
+            if (qrForm != null && qrForm.Count() > 0)
+            {
+                ((FrmCarrinhoCompra)qrForm.First()).AtualizaTotalizador();
+            }
         }
         #endregion
     }
