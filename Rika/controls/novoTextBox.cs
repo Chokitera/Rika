@@ -133,6 +133,12 @@ namespace Rika.controls
             set { borderFocusColor = value; }
         }
 
+        [Category("Botoes")]
+        public bool ReadOnly
+        {
+            get { return textBox1.ReadOnly; }
+            set { textBox1.ReadOnly = value; }
+        }
         //Complemento do método
 
         protected override void OnPaint(PaintEventArgs e)

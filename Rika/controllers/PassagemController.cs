@@ -149,6 +149,32 @@ namespace Rika.controllers
         }
         #endregion
 
+        #region Método para consultar as passagens iniciais
+        public DataTable CarregarPassagensIniciais()
+        {
+            //Inicialização
+            DataTable dataTable = new DataTable();
+
+            //Chamada do DAO
+            dataTable = passagemDAO.CarregarPassagensIniciais();
+
+            return dataTable;
+        }
+        #endregion
+
+        #region Método para consultar as passagens mais populares
+        public DataTable CarregarPassagensPopulares()
+        {
+            //Inicialização
+            DataTable dataTable = new DataTable();
+
+            //Chamada do DAO
+            dataTable = passagemDAO.CarregarPassagensPopulares();
+
+            return dataTable;
+        }
+        #endregion
+
         #region Validações
         public bool ValidaCampos(Passagem model)
         {
