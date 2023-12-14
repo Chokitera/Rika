@@ -34,9 +34,9 @@
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtDiretoEscala = new System.Windows.Forms.TextBox();
             this.lblPrecoFinal = new System.Windows.Forms.Label();
-            this.txtDataViagem = new Rika.controls.novoTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.imgPassagem = new System.Windows.Forms.PictureBox();
+            this.txtDataViagem = new Rika.controls.novoTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPassagem)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +49,7 @@
             this.txtDestino.ForeColor = System.Drawing.Color.Indigo;
             this.txtDestino.Location = new System.Drawing.Point(7, 136);
             this.txtDestino.Name = "txtDestino";
+            this.txtDestino.ReadOnly = true;
             this.txtDestino.Size = new System.Drawing.Size(223, 28);
             this.txtDestino.TabIndex = 3;
             this.txtDestino.Text = "destino";
@@ -61,6 +62,7 @@
             this.txtIdaVolta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdaVolta.Location = new System.Drawing.Point(7, 175);
             this.txtIdaVolta.Name = "txtIdaVolta";
+            this.txtIdaVolta.ReadOnly = true;
             this.txtIdaVolta.Size = new System.Drawing.Size(105, 16);
             this.txtIdaVolta.TabIndex = 4;
             this.txtIdaVolta.Text = "Somente Ida";
@@ -73,6 +75,7 @@
             this.txtClasse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClasse.Location = new System.Drawing.Point(114, 175);
             this.txtClasse.Name = "txtClasse";
+            this.txtClasse.ReadOnly = true;
             this.txtClasse.Size = new System.Drawing.Size(112, 16);
             this.txtClasse.TabIndex = 5;
             this.txtClasse.Text = "Classe";
@@ -85,6 +88,7 @@
             this.txtValor.ForeColor = System.Drawing.Color.Indigo;
             this.txtValor.Location = new System.Drawing.Point(7, 237);
             this.txtValor.Name = "txtValor";
+            this.txtValor.ReadOnly = true;
             this.txtValor.Size = new System.Drawing.Size(155, 22);
             this.txtValor.TabIndex = 7;
             this.txtValor.Text = "R$9999,99";
@@ -96,6 +100,7 @@
             this.txtDiretoEscala.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDiretoEscala.Location = new System.Drawing.Point(7, 270);
             this.txtDiretoEscala.Name = "txtDiretoEscala";
+            this.txtDiretoEscala.ReadOnly = true;
             this.txtDiretoEscala.Size = new System.Drawing.Size(223, 13);
             this.txtDiretoEscala.TabIndex = 8;
             this.txtDiretoEscala.Text = "Voo Direto";
@@ -109,26 +114,6 @@
             this.lblPrecoFinal.Size = new System.Drawing.Size(110, 13);
             this.lblPrecoFinal.TabIndex = 9;
             this.lblPrecoFinal.Text = "Preço final a partir de:";
-            // 
-            // txtDataViagem
-            // 
-            this.txtDataViagem.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtDataViagem.BorderColor = System.Drawing.Color.Transparent;
-            this.txtDataViagem.BorderFocusColor = System.Drawing.Color.Black;
-            this.txtDataViagem.BorderSize = 2;
-            this.txtDataViagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataViagem.ForeColor = System.Drawing.Color.DimGray;
-            this.txtDataViagem.Location = new System.Drawing.Point(0, 98);
-            this.txtDataViagem.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDataViagem.Multiline = false;
-            this.txtDataViagem.Name = "txtDataViagem";
-            this.txtDataViagem.Padding = new System.Windows.Forms.Padding(7);
-            this.txtDataViagem.PasswordChar = false;
-            this.txtDataViagem.Size = new System.Drawing.Size(410, 31);
-            this.txtDataViagem.TabIndex = 0;
-            this.txtDataViagem.TextNew = "data viage";
-            this.txtDataViagem.UnderlinedStyle = false;
-            this.txtDataViagem.Paint += new System.Windows.Forms.PaintEventHandler(this.txtDataViagem_Paint);
             // 
             // pictureBox1
             // 
@@ -148,6 +133,27 @@
             this.imgPassagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgPassagem.TabIndex = 2;
             this.imgPassagem.TabStop = false;
+            // 
+            // txtDataViagem
+            // 
+            this.txtDataViagem.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtDataViagem.BorderColor = System.Drawing.Color.Transparent;
+            this.txtDataViagem.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtDataViagem.BorderSize = 2;
+            this.txtDataViagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataViagem.ForeColor = System.Drawing.Color.DimGray;
+            this.txtDataViagem.Location = new System.Drawing.Point(0, 98);
+            this.txtDataViagem.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDataViagem.Multiline = false;
+            this.txtDataViagem.Name = "txtDataViagem";
+            this.txtDataViagem.Padding = new System.Windows.Forms.Padding(7);
+            this.txtDataViagem.PasswordChar = false;
+            this.txtDataViagem.ReadOnly = true;
+            this.txtDataViagem.Size = new System.Drawing.Size(410, 31);
+            this.txtDataViagem.TabIndex = 0;
+            this.txtDataViagem.TextNew = "data viage";
+            this.txtDataViagem.UnderlinedStyle = false;
+            this.txtDataViagem.Paint += new System.Windows.Forms.PaintEventHandler(this.txtDataViagem_Paint);
             // 
             // PassagensAerea
             // 

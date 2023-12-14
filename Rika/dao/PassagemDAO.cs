@@ -287,5 +287,124 @@ namespace Rika.dao
         }
         #endregion
 
+        #region Método para consultar as passagens iniciais
+        public DataTable CarregarPassagensIniciais()
+        {
+            try
+            {
+                //Inicialização
+                DataTable dataTable = new DataTable();
+
+                //Sql
+                string sql = @"SELECT DESTINO.CODPASS PASSAGEM, DECOLAGEM.PAIS DECOLAGEM, DESTINO.PAIS DESTINO, DESTINO.PAISNOME, DESTINO.CIDADE, DESTINO.DATASAIDA, DESTINO.DIR_ESC,
+                               DESTINO.CLASSE, DESTINO.VALOR, DESTINO.CAMINHO_IMG
+                               FROM(
+                               SELECT P.IDPASSAGEM CODPASS, PS.SIGLA AS PAIS FROM PAIS PS
+                               INNER JOIN ENDERECO E ON (E.IDPAIS = PS.IDPAIS)
+                               INNER JOIN AEROPORTO A ON (A.IDENDERECO = E.IDENDERECO)
+                               INNER JOIN VOO V ON (V.DECOLAGEM = A.IDAEROPORTO)
+                               INNER JOIN PASSAGEM P ON (P.IDVOO = V.IDVOO)
+                               ) DECOLAGEM
+                               JOIN (
+                               SELECT P.IDPASSAGEM CODPASS, PS.SIGLA AS PAIS, PS.NOME PAISNOME, E.CIDADE CIDADE, V.DT_SAIDA DATASAIDA, P.DIRETO_ESCALA DIR_ESC,
+                               C.NOME CLASSE, P.VALOR VALOR, P.CAMINHO_IMG
+                               FROM PAIS PS
+                               INNER JOIN ENDERECO E ON (E.IDPAIS = PS.IDPAIS)
+                               INNER JOIN AEROPORTO A ON (A.IDENDERECO = E.IDENDERECO)
+                               INNER JOIN VOO V ON (V.DESTINO = A.IDAEROPORTO)
+                               INNER JOIN PASSAGEM P ON (P.IDVOO = V.IDVOO)
+                               INNER JOIN CLASSE C ON (C.IDCLASSE = P.IDCLASSE)
+                               ) DESTINO ON (DECOLAGEM.CODPASS = DESTINO.CODPASS)";
+
+                //Passa os paramentros
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+
+                //Abre a conexão
+                conexao.Open();
+
+                //Executa o Sql e obtem o retorno
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                reader.Read();
+                dataTable.Load(reader);
+                reader.Close();
+
+                conexao.Close();
+
+                //Retorna o resultado
+                return dataTable;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+        #endregion
+
+        #region Método para consultar as passagens mais populares
+        public DataTable CarregarPassagensPopulares()
+        {
+            try
+            {
+                //Inicialização
+                DataTable dataTable = new DataTable();
+
+                //Sql
+                string sql = @"SELECT DESTINO.CODPASS PASSAGEM, DECOLAGEM.PAIS DECOLAGEM, DESTINO.PAIS DESTINO, DESTINO.PAISNOME, DESTINO.CIDADE, DESTINO.DATASAIDA, DESTINO.DIR_ESC,
+                               DESTINO.CLASSE, DESTINO.VALOR, DESTINO.CAMINHO_IMG
+                               FROM(
+                               SELECT P.IDPASSAGEM CODPASS, PS.SIGLA AS PAIS FROM PAIS PS
+                               INNER JOIN ENDERECO E ON (E.IDPAIS = PS.IDPAIS)
+                               INNER JOIN AEROPORTO A ON (A.IDENDERECO = E.IDENDERECO)
+                               INNER JOIN VOO V ON (V.DECOLAGEM = A.IDAEROPORTO)
+                               INNER JOIN PASSAGEM P ON (P.IDVOO = V.IDVOO)
+                               ) DECOLAGEM
+                               JOIN (
+                               SELECT P.IDPASSAGEM CODPASS, PS.SIGLA AS PAIS, PS.NOME PAISNOME, E.CIDADE CIDADE, V.DT_SAIDA DATASAIDA, P.DIRETO_ESCALA DIR_ESC,
+                               C.NOME CLASSE, P.VALOR VALOR, P.CAMINHO_IMG
+                               FROM PAIS PS
+                               INNER JOIN ENDERECO E ON (E.IDPAIS = PS.IDPAIS)
+                               INNER JOIN AEROPORTO A ON (A.IDENDERECO = E.IDENDERECO)
+                               INNER JOIN VOO V ON (V.DESTINO = A.IDAEROPORTO)
+                               INNER JOIN PASSAGEM P ON (P.IDVOO = V.IDVOO)
+                               INNER JOIN CLASSE C ON (C.IDCLASSE = P.IDCLASSE)
+                               ) DESTINO ON (DECOLAGEM.CODPASS = DESTINO.CODPASS)";
+
+                //Passa os paramentros
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+
+
+                //Abre a conexão
+                conexao.Open();
+
+                //Executa o Sql e obtem o retorno
+                MySqlDataReader reader = executacmd.ExecuteReader();
+
+                reader.Read();
+                dataTable.Load(reader);
+                reader.Close();
+
+                conexao.Close();
+
+                //Retorna o resultado
+                return dataTable;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+        #endregion
+
     }
 }
