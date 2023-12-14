@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Rika.controllers;
+using Rika.models;
+using Rika.views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +17,7 @@ namespace Rika.controls
 {
     public partial class PassagensAerea : UserControl
     {
+        private CarrinhoCompraController carrinhoController;
         Bitmap shadowBmp = null;
 
         #region Ajustes da Borda
@@ -188,6 +192,8 @@ namespace Rika.controls
         public PassagensAerea()
         {
             InitializeComponent();
+
+            carrinhoController = new CarrinhoCompraController();
         }
 
         private void PassagensAerea_Load(object sender, EventArgs e)
@@ -221,12 +227,12 @@ namespace Rika.controls
             set { _dataViagem = value; txtDataViagem.Text = value; }
         }
 
-        private int myVar;
+        private int _codPassagem;
 
-        public int MyProperty
+        public int CodPassagem
         {
-            get { return myVar; }
-            set { myVar = value; }
+            get { return _codPassagem; }
+            set { _codPassagem = value; }
         }
 
 
@@ -295,6 +301,24 @@ namespace Rika.controls
         private void txtValor_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ptbConfirmar_Click(object sender, EventArgs e)
+        {
+            //Preenche o model
+            CarrinhoCompra carrinhoCompra = new CarrinhoCompra();
+            carrinhoCompra.Id = 0; //Inclusão do item
+            carrinhoCompra.passagem.Id = _codPassagem;
+            carrinhoCompra.Dt_Adicao = DateTime.Today;
+            carrinhoCompra.Quantidade = 1;
+            carrinhoCompra.usuario.Id = 1; //Ainda não feito o gravamento do usuário no sistema ou regedit
+
+            //Salva os itens no carrinho de compras
+            carrinhoController.SalvaCarrinhoCompra(carrinhoCompra);
+
+            //Mostra o carrinho de compras
+            FrmCarrinhoCompra tela = new FrmCarrinhoCompra();
+            tela.ShowDialog();
         }
     }
 }

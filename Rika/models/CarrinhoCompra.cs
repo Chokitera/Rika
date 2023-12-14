@@ -9,7 +9,8 @@ namespace Rika.models
     public class CarrinhoCompra : Entidade
     {
         public DateTime Dt_Adicao { get; set; }
-        public virtual Usuario Usuario { get; set; } //Verificar se funciona, se não usar o modelo de baixo
+        public int Quantidade { get; set; }
+        public Usuario usuario = new Usuario();
         public Passagem passagem = new Passagem();
     }
 }

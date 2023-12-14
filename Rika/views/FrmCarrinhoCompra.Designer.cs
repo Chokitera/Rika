@@ -57,7 +57,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.modeloItemNoCarrinho1 = new Rika.controls.ModeloItemNoCarrinho();
+            this.flpItens = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -136,7 +136,7 @@
             this.panel1.Controls.Add(this.btnAplicarCupom);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(634, 106);
+            this.panel1.Location = new System.Drawing.Point(643, 106);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(322, 496);
             this.panel1.TabIndex = 29;
@@ -200,7 +200,7 @@
             this.txtTaxaEntrega.Name = "txtTaxaEntrega";
             this.txtTaxaEntrega.Padding = new System.Windows.Forms.Padding(7);
             this.txtTaxaEntrega.PasswordChar = false;
-            this.txtTaxaEntrega.ReadOnly = false;
+            this.txtTaxaEntrega.ReadOnly = true;
             this.txtTaxaEntrega.Size = new System.Drawing.Size(120, 35);
             this.txtTaxaEntrega.TabIndex = 56;
             this.txtTaxaEntrega.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -221,7 +221,7 @@
             this.txtTempoEntrega.Name = "txtTempoEntrega";
             this.txtTempoEntrega.Padding = new System.Windows.Forms.Padding(7);
             this.txtTempoEntrega.PasswordChar = false;
-            this.txtTempoEntrega.ReadOnly = false;
+            this.txtTempoEntrega.ReadOnly = true;
             this.txtTempoEntrega.Size = new System.Drawing.Size(120, 35);
             this.txtTempoEntrega.TabIndex = 55;
             this.txtTempoEntrega.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -263,7 +263,7 @@
             this.txtTotalCarrinho.Name = "txtTotalCarrinho";
             this.txtTotalCarrinho.Padding = new System.Windows.Forms.Padding(7);
             this.txtTotalCarrinho.PasswordChar = false;
-            this.txtTotalCarrinho.ReadOnly = false;
+            this.txtTotalCarrinho.ReadOnly = true;
             this.txtTotalCarrinho.Size = new System.Drawing.Size(120, 35);
             this.txtTotalCarrinho.TabIndex = 48;
             this.txtTotalCarrinho.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -284,7 +284,7 @@
             this.txtTotalResumo.Name = "txtTotalResumo";
             this.txtTotalResumo.Padding = new System.Windows.Forms.Padding(7);
             this.txtTotalResumo.PasswordChar = false;
-            this.txtTotalResumo.ReadOnly = false;
+            this.txtTotalResumo.ReadOnly = true;
             this.txtTotalResumo.Size = new System.Drawing.Size(120, 35);
             this.txtTotalResumo.TabIndex = 47;
             this.txtTotalResumo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -305,7 +305,7 @@
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.Padding = new System.Windows.Forms.Padding(7);
             this.txtSubTotal.PasswordChar = false;
-            this.txtSubTotal.ReadOnly = false;
+            this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(120, 35);
             this.txtSubTotal.TabIndex = 46;
             this.txtSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -329,6 +329,7 @@
             this.btnVoltarCompras.Text = "Voltar às compras";
             this.btnVoltarCompras.TextColor = System.Drawing.Color.DimGray;
             this.btnVoltarCompras.UseVisualStyleBackColor = false;
+            this.btnVoltarCompras.Click += new System.EventHandler(this.btnVoltarCompras_Click);
             // 
             // btnComprarAgora
             // 
@@ -467,12 +468,13 @@
             this.panel3.Size = new System.Drawing.Size(500, 2);
             this.panel3.TabIndex = 53;
             // 
-            // modeloItemNoCarrinho1
+            // flpItens
             // 
-            this.modeloItemNoCarrinho1.Location = new System.Drawing.Point(41, 116);
-            this.modeloItemNoCarrinho1.Name = "modeloItemNoCarrinho1";
-            this.modeloItemNoCarrinho1.Size = new System.Drawing.Size(562, 258);
-            this.modeloItemNoCarrinho1.TabIndex = 53;
+            this.flpItens.AutoScroll = true;
+            this.flpItens.Location = new System.Drawing.Point(41, 114);
+            this.flpItens.Name = "flpItens";
+            this.flpItens.Size = new System.Drawing.Size(587, 523);
+            this.flpItens.TabIndex = 54;
             // 
             // FrmCarrinhoCompra
             // 
@@ -480,7 +482,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1007, 690);
-            this.Controls.Add(this.modeloItemNoCarrinho1);
+            this.Controls.Add(this.flpItens);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -535,6 +537,6 @@
         private controls.novoTextBoxTextAlign txtTaxaEntrega;
         private controls.novoTextBoxTextAlign txtTempoEntrega;
         private controls.novoTextBoxTextAlign txtCupomDesconto;
-        private controls.ModeloItemNoCarrinho modeloItemNoCarrinho1;
+        private System.Windows.Forms.FlowLayoutPanel flpItens;
     }
 }

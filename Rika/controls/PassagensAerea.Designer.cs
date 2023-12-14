@@ -34,10 +34,10 @@
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtDiretoEscala = new System.Windows.Forms.TextBox();
             this.lblPrecoFinal = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ptbConfirmar = new System.Windows.Forms.PictureBox();
             this.imgPassagem = new System.Windows.Forms.PictureBox();
             this.txtDataViagem = new Rika.controls.novoTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPassagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,14 +115,15 @@
             this.lblPrecoFinal.TabIndex = 9;
             this.lblPrecoFinal.Text = "Preço final a partir de:";
             // 
-            // pictureBox1
+            // ptbConfirmar
             // 
-            this.pictureBox1.Image = global::Rika.Properties.Resources.seta_correta;
-            this.pictureBox1.Location = new System.Drawing.Point(333, 237);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 50);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.ptbConfirmar.Image = global::Rika.Properties.Resources.seta_correta;
+            this.ptbConfirmar.Location = new System.Drawing.Point(333, 237);
+            this.ptbConfirmar.Name = "ptbConfirmar";
+            this.ptbConfirmar.Size = new System.Drawing.Size(56, 50);
+            this.ptbConfirmar.TabIndex = 10;
+            this.ptbConfirmar.TabStop = false;
+            this.ptbConfirmar.Click += new System.EventHandler(this.ptbConfirmar_Click);
             // 
             // imgPassagem
             // 
@@ -160,7 +161,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ptbConfirmar);
             this.Controls.Add(this.lblPrecoFinal);
             this.Controls.Add(this.txtDiretoEscala);
             this.Controls.Add(this.txtValor);
@@ -173,7 +174,7 @@
             this.Size = new System.Drawing.Size(410, 298);
             this.Load += new System.EventHandler(this.PassagensAerea_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.PassagensAerea_Paint);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbConfirmar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgPassagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -190,6 +191,6 @@
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.TextBox txtDiretoEscala;
         private System.Windows.Forms.Label lblPrecoFinal;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ptbConfirmar;
     }
 }

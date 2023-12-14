@@ -35,7 +35,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtValorPassagem = new Rika.controls.novoTextBoxTextAlign();
             this.lblRemover = new System.Windows.Forms.Label();
-            this.lblDuracao = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
             this.lblSaida = new System.Windows.Forms.Label();
             this.lblChegada = new System.Windows.Forms.Label();
             this.lblTipoPassagem = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             this.txtNomePassagem.Name = "txtNomePassagem";
             this.txtNomePassagem.Padding = new System.Windows.Forms.Padding(7);
             this.txtNomePassagem.PasswordChar = false;
-            this.txtNomePassagem.ReadOnly = false;
+            this.txtNomePassagem.ReadOnly = true;
             this.txtNomePassagem.Size = new System.Drawing.Size(140, 85);
             this.txtNomePassagem.TabIndex = 1;
             this.txtNomePassagem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -86,6 +86,7 @@
             this.btnRemoverItem.Text = "——";
             this.btnRemoverItem.TextColor = System.Drawing.Color.Black;
             this.btnRemoverItem.UseVisualStyleBackColor = false;
+            this.btnRemoverItem.Click += new System.EventHandler(this.btnRemoverItem_Click);
             // 
             // btnAdicionarItem
             // 
@@ -105,6 +106,7 @@
             this.btnAdicionarItem.Text = "+";
             this.btnAdicionarItem.TextColor = System.Drawing.Color.Black;
             this.btnAdicionarItem.UseVisualStyleBackColor = false;
+            this.btnAdicionarItem.Click += new System.EventHandler(this.btnAdicionarItem_Click);
             // 
             // btnQuantidade
             // 
@@ -150,7 +152,7 @@
             this.txtValorPassagem.Name = "txtValorPassagem";
             this.txtValorPassagem.Padding = new System.Windows.Forms.Padding(7);
             this.txtValorPassagem.PasswordChar = false;
-            this.txtValorPassagem.ReadOnly = false;
+            this.txtValorPassagem.ReadOnly = true;
             this.txtValorPassagem.Size = new System.Drawing.Size(120, 35);
             this.txtValorPassagem.TabIndex = 47;
             this.txtValorPassagem.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -166,19 +168,20 @@
             this.lblRemover.Size = new System.Drawing.Size(50, 13);
             this.lblRemover.TabIndex = 48;
             this.lblRemover.Text = "Remover";
+            this.lblRemover.Click += new System.EventHandler(this.lblRemover_Click);
             // 
-            // lblDuracao
+            // lblData
             // 
-            this.lblDuracao.AutoSize = true;
-            this.lblDuracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDuracao.ForeColor = System.Drawing.Color.Black;
-            this.lblDuracao.Image = global::Rika.Properties.Resources.marca_de_verificacao;
-            this.lblDuracao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDuracao.Location = new System.Drawing.Point(143, 107);
-            this.lblDuracao.Name = "lblDuracao";
-            this.lblDuracao.Size = new System.Drawing.Size(136, 15);
-            this.lblDuracao.TabIndex = 49;
-            this.lblDuracao.Text = "       Duração 6 h 20 min";
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.Color.Black;
+            this.lblData.Image = global::Rika.Properties.Resources.marca_de_verificacao;
+            this.lblData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblData.Location = new System.Drawing.Point(143, 107);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(119, 15);
+            this.lblData.TabIndex = 49;
+            this.lblData.Text = "       Data 01/01/2023";
             // 
             // lblSaida
             // 
@@ -277,7 +280,7 @@
             this.Controls.Add(this.lblChegada);
             this.Controls.Add(this.lblSaida);
             this.Controls.Add(this.lblTipoPassagem);
-            this.Controls.Add(this.lblDuracao);
+            this.Controls.Add(this.lblData);
             this.Controls.Add(this.lblRemover);
             this.Controls.Add(this.txtValorPassagem);
             this.Controls.Add(this.label8);
@@ -306,7 +309,7 @@
         private System.Windows.Forms.Label label8;
         private novoTextBoxTextAlign txtValorPassagem;
         private System.Windows.Forms.Label lblRemover;
-        private System.Windows.Forms.Label lblDuracao;
+        private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblTipoPassagem;
         private System.Windows.Forms.Label lblSaida;
         private System.Windows.Forms.Label lblChegada;

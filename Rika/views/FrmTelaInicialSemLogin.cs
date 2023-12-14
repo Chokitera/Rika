@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rika.controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +15,15 @@ namespace Rika.views
 {
     public partial class FrmTelaInicialSemLogin : Form
     {
+        private PassagemController passagemController;
         public FrmTelaInicialSemLogin()
         {
             InitializeComponent();
+
+            passagemController = new PassagemController();
+
+            CarregarPassagensIniciais(); //Carrega as passagens iniciais
+            CarregarPassagensMaisPopulares(); //Carrega as passagens mais populares
         }
         #region Ajustes da Borda
         //Campos para alterar a borda
@@ -112,5 +119,80 @@ namespace Rika.views
             FrmCarrinhoCompra form = new FrmCarrinhoCompra();
             form.ShowDialog();
         }
+
+        #region Método para Carregar as Passagens Aéreas Inicial
+        public void CarregarPassagensIniciais()
+        {
+            //Limpa o FlowPanel + inicialização
+            DateTime dataAux;
+            flpInicial.Controls.Clear();
+            DataTable dataTable = new DataTable();
+
+            //Chama o controlador e preenche o dataTable
+            dataTable = passagemController.CarregarPassagensIniciais();
+
+            if (dataTable != null && dataTable.Rows.Count > 0) //Verifica se conseguiu encontrar registros
+            {
+                controls.PassagensAerea[] passagensAerea = new controls.PassagensAerea[dataTable.Rows.Count]; //Recebe a quantidade de linhas da consulta (DataTable)
+
+                foreach (DataRow row in dataTable.Rows) //Varre as linhas do DataTable (consulta)
+                {
+                    //Inicializa o controle
+                    passagensAerea[0] = new controls.PassagensAerea();
+
+                    //Atribui os registros da consulta no controle
+                    passagensAerea[0].CodPassagem = int.Parse(row["passagem"].ToString());
+                    passagensAerea[0].ImagemPassagem = Image.FromFile(row["caminho_img"].ToString()) ?? null;
+                    dataAux = DateTime.ParseExact(row["datasaida"].ToString().Replace(" 12:00:00 AM", ""), "MM/dd/yyyy", null);
+                    passagensAerea[0].DataViagem = dataAux.ToString("dd/MM/yyyy") ?? "";
+                    passagensAerea[0].Destino = row["cidade"].ToString() ?? "";
+                    passagensAerea[0].Idavolta = "Somente Ida" ?? "";
+                    passagensAerea[0].Classe = "Classe " + row["classe"].ToString() ?? "";
+                    passagensAerea[0].Valor = "R$" + row["valor"].ToString() + ",99" ?? "";
+                    passagensAerea[0].DiretoEscala = row["dir_esc"].ToString() ?? "";
+
+                    flpInicial.Controls.Add(passagensAerea[0]);
+                }
+            }
+
+        }
+        #endregion
+
+        #region Método para Carregar as Passagens Aéreas Mais Populares
+        public void CarregarPassagensMaisPopulares()
+        {
+            //Limpa o FlowPanel + inicialização
+            DateTime dataAux;
+            flpMaisPopulares.Controls.Clear();
+            DataTable dataTable = new DataTable();
+
+            //Chama o controlador  e preenche o dataTable
+            dataTable = passagemController.CarregarPassagensPopulares();
+
+            if (dataTable != null && dataTable.Rows.Count > 0) //Verifica se conseguiu encontrar registros
+            {
+                controls.PassagensAerea[] passagensAerea = new controls.PassagensAerea[dataTable.Rows.Count]; //Recebe a quantidade de linhas da consulta (DataTable)
+
+                foreach (DataRow row in dataTable.Rows) //Varre as linhas do DataTable (consulta)
+                {
+                    //Inicializa o controle
+                    passagensAerea[0] = new controls.PassagensAerea();
+
+                    //Atribui os registros da consulta no controle
+                    passagensAerea[0].CodPassagem = int.Parse(row["passagem"].ToString());
+                    passagensAerea[0].ImagemPassagem = Image.FromFile(row["caminho_img"].ToString()) ?? null;
+                    dataAux = DateTime.ParseExact(row["datasaida"].ToString().Replace(" 12:00:00 AM", ""), "MM/dd/yyyy", null);
+                    passagensAerea[0].DataViagem = dataAux.ToString("dd/MM/yyyy") ?? "";
+                    passagensAerea[0].Destino = row["cidade"].ToString() ?? "";
+                    passagensAerea[0].Idavolta = "Somente Ida" ?? "";
+                    passagensAerea[0].Classe = "Classe " + row["classe"].ToString() ?? "";
+                    passagensAerea[0].Valor = "R$" + row["valor"].ToString() + ",99" ?? "";
+                    passagensAerea[0].DiretoEscala = row["dir_esc"].ToString() ?? "";
+
+                    flpMaisPopulares.Controls.Add(passagensAerea[0]);
+                }
+            }
+        }
+        #endregion
     }
 }

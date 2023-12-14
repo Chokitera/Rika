@@ -66,8 +66,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.modeloBotao6 = new Rika.controls.ModeloBotao();
             this.btnVoltarCompras = new Rika.controls.ModeloBotao();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpMaisPopulares = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpInicial = new System.Windows.Forms.FlowLayoutPanel();
             this.label23 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pnlCabecalho.SuspendLayout();
@@ -270,8 +270,8 @@
             this.pnlConteudo.Controls.Add(this.label22);
             this.pnlConteudo.Controls.Add(this.modeloBotao6);
             this.pnlConteudo.Controls.Add(this.btnVoltarCompras);
-            this.pnlConteudo.Controls.Add(this.flowLayoutPanel2);
-            this.pnlConteudo.Controls.Add(this.flowLayoutPanel1);
+            this.pnlConteudo.Controls.Add(this.flpMaisPopulares);
+            this.pnlConteudo.Controls.Add(this.flpInicial);
             this.pnlConteudo.Controls.Add(this.label23);
             this.pnlConteudo.Controls.Add(this.pictureBox6);
             this.pnlConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -600,21 +600,21 @@
             this.btnVoltarCompras.TextColor = System.Drawing.Color.MediumSlateBlue;
             this.btnVoltarCompras.UseVisualStyleBackColor = false;
             // 
-            // flowLayoutPanel2
+            // flpMaisPopulares
             // 
-            this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(64, 984);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1266, 302);
-            this.flowLayoutPanel2.TabIndex = 58;
+            this.flpMaisPopulares.AutoScroll = true;
+            this.flpMaisPopulares.Location = new System.Drawing.Point(64, 984);
+            this.flpMaisPopulares.Name = "flpMaisPopulares";
+            this.flpMaisPopulares.Size = new System.Drawing.Size(1266, 302);
+            this.flpMaisPopulares.TabIndex = 58;
             // 
-            // flowLayoutPanel1
+            // flpInicial
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(67, 567);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1266, 302);
-            this.flowLayoutPanel1.TabIndex = 57;
+            this.flpInicial.AutoScroll = true;
+            this.flpInicial.Location = new System.Drawing.Point(67, 567);
+            this.flpInicial.Name = "flpInicial";
+            this.flpInicial.Size = new System.Drawing.Size(1266, 302);
+            this.flpInicial.TabIndex = 57;
             // 
             // label23
             // 
@@ -709,8 +709,8 @@
         private System.Windows.Forms.Label label22;
         private controls.ModeloBotao modeloBotao6;
         private controls.ModeloBotao btnVoltarCompras;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flpMaisPopulares;
+        private System.Windows.Forms.FlowLayoutPanel flpInicial;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.PictureBox pictureBox6;
     }

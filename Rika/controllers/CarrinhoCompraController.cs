@@ -3,6 +3,7 @@ using Rika.dto;
 using Rika.models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -111,7 +112,35 @@ namespace Rika.controllers
         }
         #endregion
 
-        #region Pegar informações da carrinhoCompra
+        #region Método para atualizar a quantidade do item no carrinho de compra
+        public void AtualizarQuantidadeCarrinhoCompra(CarrinhoCompra carrinhoCompra)
+        {
+            try
+            {
+                //Atualiza a quantidade do carrinho de compra
+                carrinhoCompraDAO.AtualizarQuantidadeCarrinhoCompra(carrinhoCompra);
+            }
+            catch (Exception)
+            {
+                //Sem validação e execao no controller
+            }
+        }
+        #endregion
+
+        #region Método para consultar o carrinho de compra
+        public DataTable CarregarCarrinhoCompra()
+        {
+            //Inicialização
+            DataTable dataTable = new DataTable();
+
+            //Chamada do DAO
+            dataTable = carrinhoCompraDAO.CarregarCarrinhoCompra();
+
+            return dataTable;
+        }
+        #endregion
+
+        #region Pegar informações do carrinho de compra
         public CarrinhoCompra GetInfocarrinhoCompra()
         {
             return carrinhoCompra;

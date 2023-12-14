@@ -186,6 +186,7 @@ namespace Rika.views
                     passagensAerea[0] = new controls.PassagensAerea();
 
                     //Atribui os registros da consulta no controle
+                    passagensAerea[0].CodPassagem = int.Parse(row["passagem"].ToString());
                     passagensAerea[0].ImagemPassagem = Image.FromFile(row["caminho_img"].ToString()) ?? null;
                     dataAux = DateTime.ParseExact(row["datasaida"].ToString().Replace(" 12:00:00 AM", ""), "MM/dd/yyyy", null);
                     passagensAerea[0].DataViagem = dataAux.ToString("dd/MM/yyyy") ?? "";
@@ -223,6 +224,7 @@ namespace Rika.views
                     passagensAerea[0] = new controls.PassagensAerea();
 
                     //Atribui os registros da consulta no controle
+                    passagensAerea[0].CodPassagem = int.Parse(row["passagem"].ToString());
                     passagensAerea[0].ImagemPassagem = Image.FromFile(row["caminho_img"].ToString()) ?? null;
                     dataAux = DateTime.ParseExact(row["datasaida"].ToString().Replace(" 12:00:00 AM", ""), "MM/dd/yyyy", null);
                     passagensAerea[0].DataViagem = dataAux.ToString("dd/MM/yyyy") ?? "";
