@@ -348,6 +348,7 @@
             this.btnComprarAgora.Text = "Comprar agora";
             this.btnComprarAgora.TextColor = System.Drawing.Color.White;
             this.btnComprarAgora.UseVisualStyleBackColor = false;
+            this.btnComprarAgora.Click += new System.EventHandler(this.btnComprarAgora_Click);
             // 
             // label9
             // 

@@ -161,6 +161,11 @@ namespace Rika.views
         #endregion
 
         #region Botões laterais
+        private void btnComprarAgora_Click(object sender, EventArgs e)
+        {
+            CompraFinalizada();
+        }
+
         private void btnVoltarCompras_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -284,6 +289,24 @@ namespace Rika.views
                 txtTotalCarrinho.Text = "R$ 0,00";
             }
 
+        }
+        #endregion
+
+        #region Compra Finalizada
+        public void CompraFinalizada()
+        {
+            //Gera o título
+
+
+            //Limpar o carrinho (excluir tudo)
+
+
+            //Chama a tela de compra finalizada
+            FrmTelaCompraEfetuada tela = new FrmTelaCompraEfetuada();
+            tela.ShowDialog();
+
+            //Por fim fecha essa tela
+            this.Close();
         }
         #endregion
     }

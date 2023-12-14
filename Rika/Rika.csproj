@@ -541,6 +541,12 @@
     <EmbeddedResource Include="views\FrmTelaAdministrativa.resx">
       <DependentUpon>FrmTelaAdministrativa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmTelaCompraEfetuada.resx">
+      <DependentUpon>FrmTelaCompraEfetuada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmTelaEfetuarCompra.resx">
+      <DependentUpon>FrmTelaEfetuarCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\FrmTelaInicialLogado.resx">
       <DependentUpon>FrmTelaInicialLogado.cs</DependentUpon>
     </EmbeddedResource>
@@ -552,6 +558,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmTelaModelo.resx">
       <DependentUpon>FrmTelaModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmTelaModeloAdministrativo.resx">
+      <DependentUpon>FrmTelaModeloAdministrativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\FrmTelaModeloLogado.resx">
+      <DependentUpon>FrmTelaModeloLogado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FrmTelaPrincipal.resx">
       <DependentUpon>FrmTelaPrincipal.cs</DependentUpon>

@@ -256,5 +256,24 @@ namespace Rika.controls
             }
         }
         #endregion
+
+        private void btnComprarAgora_Click(object sender, EventArgs e)
+        {
+            //Gerar o(os) título
+
+
+            //Limpar o item do carrinho
+
+
+            //Chama a tela de compra finalizada
+            var qrForm = from frm in Application.OpenForms.Cast<Form>()
+                         where frm is FrmCarrinhoCompra
+                         select frm;
+
+            if (qrForm != null && qrForm.Count() > 0)
+            {
+                ((FrmCarrinhoCompra)qrForm.First()).CompraFinalizada();
+            }
+        }
     }
 }

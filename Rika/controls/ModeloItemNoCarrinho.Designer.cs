@@ -249,6 +249,7 @@
             this.btnComprarAgora.Text = "Comprar agora";
             this.btnComprarAgora.TextColor = System.Drawing.Color.Black;
             this.btnComprarAgora.UseVisualStyleBackColor = false;
+            this.btnComprarAgora.Click += new System.EventHandler(this.btnComprarAgora_Click);
             // 
             // panel7
             // 
