@@ -165,7 +165,7 @@ namespace Rika.dao
         #endregion
 
         #region Consultar Companhia Aeroporto
-        public DataTable ConsultarCompAerea(CompanhiaAerea companhiaAerea)
+        public DataTable ConsultarCompAereas(CompanhiaAerea companhiaAerea)
         {
             try
             {

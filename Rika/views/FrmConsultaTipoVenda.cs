@@ -139,7 +139,7 @@ namespace Rika.views
             };
 
             //Consulta os paises e atribui a DataGrid
-            tabelaTipoVendas.DataSource = tipoVendaController.ConsultarTipoVendas(tipoVenda);
+            tabelaTipoVenda.DataSource = tipoVendaController.ConsultarTipoVendas(tipoVenda);
         }
         #endregion
 

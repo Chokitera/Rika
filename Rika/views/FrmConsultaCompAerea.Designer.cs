@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaCompAerea));
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
@@ -35,18 +40,21 @@
             this.pnlCompAerea = new System.Windows.Forms.Panel();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnConfirmar = new Rika.controls.ModeloBotao();
-            this.tabelaCompAerea = new System.Windows.Forms.DataGridView();
             this.txtCodigo = new Rika.controls.novoTextBox();
             this.label1lblCodigoPassagem = new System.Windows.Forms.Label();
             this.txtNome = new Rika.controls.novoTextBox();
             this.lblAeroDestino = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabelaCompAerea = new System.Windows.Forms.DataGridView();
+            this.idpais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomepais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siglapais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             this.pnlCompAerea.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelaCompAerea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaCompAerea)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -88,9 +96,9 @@
             // 
             // pnlCompAerea
             // 
+            this.pnlCompAerea.Controls.Add(this.tabelaCompAerea);
             this.pnlCompAerea.Controls.Add(this.btnSair);
             this.pnlCompAerea.Controls.Add(this.btnConfirmar);
-            this.pnlCompAerea.Controls.Add(this.tabelaCompAerea);
             this.pnlCompAerea.Controls.Add(this.txtCodigo);
             this.pnlCompAerea.Controls.Add(this.label1lblCodigoPassagem);
             this.pnlCompAerea.Controls.Add(this.txtNome);
@@ -141,17 +149,6 @@
             this.btnConfirmar.TextColor = System.Drawing.Color.White;
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnConfirmar.UseVisualStyleBackColor = false;
-            // 
-            // tabelaCompAerea
-            // 
-            this.tabelaCompAerea.AllowUserToAddRows = false;
-            this.tabelaCompAerea.AllowUserToDeleteRows = false;
-            this.tabelaCompAerea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabelaCompAerea.Location = new System.Drawing.Point(38, 224);
-            this.tabelaCompAerea.Name = "tabelaCompAerea";
-            this.tabelaCompAerea.ReadOnly = true;
-            this.tabelaCompAerea.Size = new System.Drawing.Size(749, 316);
-            this.tabelaCompAerea.TabIndex = 101;
             // 
             // txtCodigo
             // 
@@ -223,6 +220,82 @@
             this.pictureBox1.TabIndex = 96;
             this.pictureBox1.TabStop = false;
             // 
+            // tabelaCompAerea
+            // 
+            this.tabelaCompAerea.AllowUserToAddRows = false;
+            this.tabelaCompAerea.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.tabelaCompAerea.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tabelaCompAerea.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tabelaCompAerea.BackgroundColor = System.Drawing.Color.DimGray;
+            this.tabelaCompAerea.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tabelaCompAerea.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tabelaCompAerea.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaCompAerea.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tabelaCompAerea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaCompAerea.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idpais,
+            this.nomepais,
+            this.siglapais});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumPurple;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaCompAerea.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tabelaCompAerea.EnableHeadersVisualStyles = false;
+            this.tabelaCompAerea.Location = new System.Drawing.Point(36, 225);
+            this.tabelaCompAerea.MultiSelect = false;
+            this.tabelaCompAerea.Name = "tabelaCompAerea";
+            this.tabelaCompAerea.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaCompAerea.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.tabelaCompAerea.RowHeadersWidth = 20;
+            this.tabelaCompAerea.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.tabelaCompAerea.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.tabelaCompAerea.Size = new System.Drawing.Size(749, 316);
+            this.tabelaCompAerea.TabIndex = 104;
+            // 
+            // idpais
+            // 
+            this.idpais.DataPropertyName = "IDPAIS";
+            this.idpais.FillWeight = 45.68528F;
+            this.idpais.HeaderText = "Código";
+            this.idpais.Name = "idpais";
+            this.idpais.ReadOnly = true;
+            // 
+            // nomepais
+            // 
+            this.nomepais.DataPropertyName = "NOME";
+            this.nomepais.FillWeight = 161.8271F;
+            this.nomepais.HeaderText = "Nome";
+            this.nomepais.Name = "nomepais";
+            this.nomepais.ReadOnly = true;
+            // 
+            // siglapais
+            // 
+            this.siglapais.DataPropertyName = "SIGLA";
+            this.siglapais.FillWeight = 92.48762F;
+            this.siglapais.HeaderText = "Sigla";
+            this.siglapais.Name = "siglapais";
+            this.siglapais.ReadOnly = true;
+            // 
             // FrmConsultaCompAerea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,8 +314,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
             this.pnlCompAerea.ResumeLayout(false);
             this.pnlCompAerea.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelaCompAerea)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaCompAerea)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,11 +327,14 @@
         private System.Windows.Forms.Panel pnlCompAerea;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnConfirmar;
-        private System.Windows.Forms.DataGridView tabelaCompAerea;
         private controls.novoTextBox txtCodigo;
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private controls.novoTextBox txtNome;
         private System.Windows.Forms.Label lblAeroDestino;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView tabelaCompAerea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomepais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn siglapais;
     }
 }

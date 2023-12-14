@@ -131,7 +131,7 @@ namespace Rika.controllers
                 this.aviao = aviao;
 
                 //Consultar os Paises
-                avioes = aviaoDAO.ConsultarAviao(this.aviao);
+                avioes = aviaoDAO.ConsultarAvioes(this.aviao);
 
                 return avioes; //Retorna os paises - DataTable
             }

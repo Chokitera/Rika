@@ -166,7 +166,7 @@ namespace Rika.dao
         #endregion
 
         #region Consultar Aviao
-        public DataTable ConsultarAviao(Aviao aviao)
+        public DataTable ConsultarAvioes(Aviao aviao)
         {
             try
             {
