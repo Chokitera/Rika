@@ -132,7 +132,7 @@ namespace Rika.controllers
                 this.companhiaAerea = companhiaAerea;
 
                 //Consultar os Paises
-                companhiaAereas = compAereaDAO.ConsultarCompAerea(this.companhiaAerea);
+                companhiaAereas = compAereaDAO.ConsultarCompAereas(this.companhiaAerea);
 
                 return companhiaAereas; //Retorna os paises - DataTable
             }
