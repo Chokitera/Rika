@@ -1,5 +1,6 @@
 ﻿using Rika.controllers;
 using Rika.controls;
+using Rika.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,11 +18,13 @@ namespace Rika.views
     public partial class FrmCarrinhoCompra : Form
     {
         private CarrinhoCompraController carrinhoController;
-        public FrmCarrinhoCompra()
+        private Usuario usuario;
+        public FrmCarrinhoCompra(Usuario usuario)
         {
             InitializeComponent();
 
             carrinhoController = new CarrinhoCompraController();
+            this.usuario = usuario;
 
             CarregarCarrinhoCompra(); //Carregar os itens do carrinho ao inicializar
         }

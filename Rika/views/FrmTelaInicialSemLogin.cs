@@ -1,4 +1,5 @@
 ﻿using Rika.controllers;
+using Rika.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Rika.views
 {
     public partial class FrmTelaInicialSemLogin : Form
     {
+        private Usuario usuario = new Usuario();
         private PassagemController passagemController;
         public FrmTelaInicialSemLogin()
         {
@@ -114,10 +116,10 @@ namespace Rika.views
         }
     #endregion
 
-    private void modeloBotao3_Click(object sender, EventArgs e)
+        private void modeloBotao3_Click(object sender, EventArgs e)
         {
-            FrmCarrinhoCompra form = new FrmCarrinhoCompra();
-            form.ShowDialog();
+            //FrmCarrinhoCompra form = new FrmCarrinhoCompra();
+            //form.ShowDialog();
         }
 
         #region Método para Carregar as Passagens Aéreas Inicial
@@ -138,7 +140,7 @@ namespace Rika.views
                 foreach (DataRow row in dataTable.Rows) //Varre as linhas do DataTable (consulta)
                 {
                     //Inicializa o controle
-                    passagensAerea[0] = new controls.PassagensAerea();
+                    passagensAerea[0] = new controls.PassagensAerea(usuario);
 
                     //Atribui os registros da consulta no controle
                     passagensAerea[0].CodPassagem = int.Parse(row["passagem"].ToString());
@@ -176,7 +178,7 @@ namespace Rika.views
                 foreach (DataRow row in dataTable.Rows) //Varre as linhas do DataTable (consulta)
                 {
                     //Inicializa o controle
-                    passagensAerea[0] = new controls.PassagensAerea();
+                    passagensAerea[0] = new controls.PassagensAerea(usuario);
 
                     //Atribui os registros da consulta no controle
                     passagensAerea[0].CodPassagem = int.Parse(row["passagem"].ToString());

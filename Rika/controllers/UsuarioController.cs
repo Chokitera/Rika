@@ -84,7 +84,7 @@ namespace Rika.controllers
 
             if (usuario.Tipo == 0) //Se ele é usuário normal
             {
-                FrmTelaInicialLogado tela = new FrmTelaInicialLogado();
+                FrmTelaInicialLogado tela = new FrmTelaInicialLogado(usuario);
 
                 var qrForm = from frm in Application.OpenForms.Cast<Form>()
                              where frm is FrmTelaPrincipal
@@ -97,7 +97,7 @@ namespace Rika.controllers
             }
             else //Se ele é ADM
             {
-                FrmTelaAdministrativa tela = new FrmTelaAdministrativa();
+                FrmTelaAdministrativa tela = new FrmTelaAdministrativa(usuario);
 
                 var qrForm = from frm in Application.OpenForms.Cast<Form>()
                              where frm is FrmTelaPrincipal

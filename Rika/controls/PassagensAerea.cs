@@ -17,6 +17,7 @@ namespace Rika.controls
 {
     public partial class PassagensAerea : UserControl
     {
+        private Usuario usuario = new Usuario();
         private CarrinhoCompraController carrinhoController;
         Bitmap shadowBmp = null;
 
@@ -189,11 +190,12 @@ namespace Rika.controls
         //}
         #endregion
 
-        public PassagensAerea()
+        public PassagensAerea(Usuario usuario)
         {
             InitializeComponent();
 
             carrinhoController = new CarrinhoCompraController();
+            this.usuario = usuario;
         }
 
         private void PassagensAerea_Load(object sender, EventArgs e)
@@ -317,7 +319,7 @@ namespace Rika.controls
             carrinhoController.SalvaCarrinhoCompra(carrinhoCompra);
 
             //Mostra o carrinho de compras
-            FrmCarrinhoCompra tela = new FrmCarrinhoCompra();
+            FrmCarrinhoCompra tela = new FrmCarrinhoCompra(usuario);
             tela.ShowDialog();
         }
     }

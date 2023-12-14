@@ -1,4 +1,5 @@
 ﻿using Rika.controllers;
+using Rika.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +17,13 @@ namespace Rika.views
     public partial class FrmTelaInicialLogado : Form
     {
         private PassagemController passagemController;
-        public FrmTelaInicialLogado()
+        private Usuario usuario = new Usuario();
+        public FrmTelaInicialLogado(Usuario usuario)
         {
             InitializeComponent();
 
             passagemController = new PassagemController();
+            this.usuario = usuario;
 
             CarregarPassagensIniciais(); //Carrega as passagens iniciais
             CarregarPassagensMaisPopulares(); //Carrega as passagens mais populares
@@ -149,7 +152,7 @@ namespace Rika.views
                 foreach (DataRow row in dataTable.Rows) //Varre as linhas do DataTable (consulta)
                 {
                     //Inicializa o controle
-                    passagensAerea[0] = new controls.PassagensAerea();
+                    passagensAerea[0] = new controls.PassagensAerea(usuario);
 
                     //Atribui os registros da consulta no controle
                     passagensAerea[0].CodPassagem = int.Parse(row["passagem"].ToString());
@@ -187,7 +190,7 @@ namespace Rika.views
                 foreach (DataRow row in dataTable.Rows) //Varre as linhas do DataTable (consulta)
                 {
                     //Inicializa o controle
-                    passagensAerea[0] = new controls.PassagensAerea();
+                    passagensAerea[0] = new controls.PassagensAerea(usuario);
 
                     //Atribui os registros da consulta no controle
                     passagensAerea[0].CodPassagem = int.Parse(row["passagem"].ToString());
@@ -205,5 +208,11 @@ namespace Rika.views
             }
         }
         #endregion
+
+        private void btnCarrinhoCompra_Click(object sender, EventArgs e)
+        {
+            FrmCarrinhoCompra tela = new FrmCarrinhoCompra(usuario);
+            tela.ShowDialog();
+        }
     }
 }

@@ -36,7 +36,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.modeloBotao5 = new Rika.controls.ModeloBotao();
             this.modeloBotao4 = new Rika.controls.ModeloBotao();
-            this.modeloBotao3 = new Rika.controls.ModeloBotao();
+            this.btnCarrinhoCompra = new Rika.controls.ModeloBotao();
             this.modeloBotao2 = new Rika.controls.ModeloBotao();
             this.modeloBotao1 = new Rika.controls.ModeloBotao();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -92,7 +92,7 @@
             this.pnlCabecalho.Controls.Add(this.pictureBox2);
             this.pnlCabecalho.Controls.Add(this.modeloBotao5);
             this.pnlCabecalho.Controls.Add(this.modeloBotao4);
-            this.pnlCabecalho.Controls.Add(this.modeloBotao3);
+            this.pnlCabecalho.Controls.Add(this.btnCarrinhoCompra);
             this.pnlCabecalho.Controls.Add(this.modeloBotao2);
             this.pnlCabecalho.Controls.Add(this.modeloBotao1);
             this.pnlCabecalho.Controls.Add(this.pictureBox1);
@@ -190,24 +190,25 @@
             this.modeloBotao4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.modeloBotao4.UseVisualStyleBackColor = false;
             // 
-            // modeloBotao3
+            // btnCarrinhoCompra
             // 
-            this.modeloBotao3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao3.BorderColor = System.Drawing.Color.Black;
-            this.modeloBotao3.BorderRadius = 15;
-            this.modeloBotao3.BorderSize = 0;
-            this.modeloBotao3.FlatAppearance.BorderSize = 0;
-            this.modeloBotao3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modeloBotao3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.modeloBotao3.ForeColor = System.Drawing.Color.White;
-            this.modeloBotao3.Location = new System.Drawing.Point(988, 31);
-            this.modeloBotao3.Name = "modeloBotao3";
-            this.modeloBotao3.Size = new System.Drawing.Size(136, 30);
-            this.modeloBotao3.TabIndex = 5;
-            this.modeloBotao3.Text = "Status de voos";
-            this.modeloBotao3.TextColor = System.Drawing.Color.White;
-            this.modeloBotao3.UseVisualStyleBackColor = false;
+            this.btnCarrinhoCompra.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCarrinhoCompra.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCarrinhoCompra.BorderColor = System.Drawing.Color.Black;
+            this.btnCarrinhoCompra.BorderRadius = 15;
+            this.btnCarrinhoCompra.BorderSize = 0;
+            this.btnCarrinhoCompra.FlatAppearance.BorderSize = 0;
+            this.btnCarrinhoCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarrinhoCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCarrinhoCompra.ForeColor = System.Drawing.Color.White;
+            this.btnCarrinhoCompra.Location = new System.Drawing.Point(968, 31);
+            this.btnCarrinhoCompra.Name = "btnCarrinhoCompra";
+            this.btnCarrinhoCompra.Size = new System.Drawing.Size(156, 30);
+            this.btnCarrinhoCompra.TabIndex = 5;
+            this.btnCarrinhoCompra.Text = "Carrinho de Compras";
+            this.btnCarrinhoCompra.TextColor = System.Drawing.Color.White;
+            this.btnCarrinhoCompra.UseVisualStyleBackColor = false;
+            this.btnCarrinhoCompra.Click += new System.EventHandler(this.btnCarrinhoCompra_Click);
             // 
             // modeloBotao2
             // 
@@ -677,7 +678,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private controls.ModeloBotao modeloBotao5;
         private controls.ModeloBotao modeloBotao4;
-        private controls.ModeloBotao modeloBotao3;
+        private controls.ModeloBotao btnCarrinhoCompra;
         private controls.ModeloBotao modeloBotao2;
         private controls.ModeloBotao modeloBotao1;
         private System.Windows.Forms.PictureBox pictureBox1;

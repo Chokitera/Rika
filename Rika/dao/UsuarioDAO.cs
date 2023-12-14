@@ -213,7 +213,7 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"select TIPOUSUARIO from usuarios where NOMEUSUARIO = @NOMEUSUARIO AND SENHA = @SENHA";
+                string sql = @"select TIPOUSUARIO, IDUSUARIO from usuarios where NOMEUSUARIO = @NOMEUSUARIO AND SENHA = @SENHA";
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
 
                 executacmd.Parameters.AddWithValue("@NOMEUSUARIO", usuario.NomeUsuario);
@@ -223,8 +223,9 @@ namespace Rika.dao
 
                 MySqlDataReader reader = executacmd.ExecuteReader();
                 if (reader.Read())
-                 {
+                {
                     usuario.Tipo = reader.GetInt32(0);
+                    usuario.Id = reader.GetInt32(1);
                 }
 
                 conexao.Close();
