@@ -174,11 +174,11 @@ namespace Rika.dao
                 DataTable dt = new DataTable();
 
                 //Sql
-                string sql = @"select * from tipo_venda where nome like @nome";
+                string sql = @"select * from aviao where nome like @modelo";
 
                 //Atribuição de parametro
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
-                executacmd.Parameters.AddWithValue("@nome", aviao.Nome);
+                executacmd.Parameters.AddWithValue("@nome", aviao.Modelo);
 
                 //Abre a conexao e executa Sql
                 conexao.Open();
