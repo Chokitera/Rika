@@ -22,8 +22,9 @@ namespace Rika.views
             InitializeComponent();
 
             AviaoController = new AviaoController();
-            ListarAviao();
+            //ListarAviao();
         }
+
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
@@ -119,27 +120,27 @@ namespace Rika.views
 
         #endregion
 
-        #region Eventos em Geral
-        private void txtNome__TextChanged(object sender, EventArgs e)
-        {
-            ListarAviao();
-        }
-        #endregion
+        //#region Eventos em Geral
+        //private void txtNome__TextChanged(object sender, EventArgs e)
+        //{
+        //    ListarAviao();
+        //}
+        //#endregion
 
-        #region Listar Aviao
-        public void ListarAviao()
-        {
-            DataTable dataTable = new DataTable();
-            //Instancia do Model
-            Aviao aviao = new Aviao
-            {
-                Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
-            };
+        //#region Listar Aviao
+        //public void ListarAviao()
+        //{
+        //    DataTable dataTable = new DataTable();
+        //    //Instancia do Model
+        //    Aviao aviao = new Aviao
+        //    {
+        //        Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
+        //    };
 
-            //Consulta os paises e atribui a DataGrid
-            tabelaAviao.DataSource = AviaoController.ConsultarAvioes(aviao);
-        }
-        #endregion
+        //    //Consulta os paises e atribui a DataGrid
+        //    tabelaAviao.DataSource = AviaoController.ConsultarAvioes(aviao);
+        //}
+        //#endregion
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {

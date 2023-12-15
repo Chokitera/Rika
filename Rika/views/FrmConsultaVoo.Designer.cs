@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaVoo));
             this.panel2 = new System.Windows.Forms.Panel();
             this.iconFechar = new System.Windows.Forms.PictureBox();
@@ -35,7 +40,7 @@
             this.pnlVoo = new System.Windows.Forms.Panel();
             this.btnSair = new Rika.controls.ModeloBotao();
             this.btnConfirmar = new Rika.controls.ModeloBotao();
-            this.tabelaVoos = new System.Windows.Forms.DataGridView();
+            this.tabelaV = new System.Windows.Forms.DataGridView();
             this.idvoo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dt_saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,12 +53,17 @@
             this.txtNome = new Rika.controls.novoTextBox();
             this.lblAeroDestino = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabelaVoos = new System.Windows.Forms.DataGridView();
+            this.idpais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomepais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.siglapais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             this.pnlVoo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelaVoos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaVoos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -95,9 +105,10 @@
             // 
             // pnlVoo
             // 
+            this.pnlVoo.Controls.Add(this.tabelaVoos);
             this.pnlVoo.Controls.Add(this.btnSair);
             this.pnlVoo.Controls.Add(this.btnConfirmar);
-            this.pnlVoo.Controls.Add(this.tabelaVoos);
+            this.pnlVoo.Controls.Add(this.tabelaV);
             this.pnlVoo.Controls.Add(this.txtCodigo);
             this.pnlVoo.Controls.Add(this.label1lblCodigoPassagem);
             this.pnlVoo.Controls.Add(this.txtNome);
@@ -149,12 +160,12 @@
             this.btnConfirmar.UseVisualStyleBackColor = false;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // tabelaVoos
+            // tabelaV
             // 
-            this.tabelaVoos.AllowUserToAddRows = false;
-            this.tabelaVoos.AllowUserToDeleteRows = false;
-            this.tabelaVoos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tabelaVoos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tabelaV.AllowUserToAddRows = false;
+            this.tabelaV.AllowUserToDeleteRows = false;
+            this.tabelaV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idvoo,
             this.Modelo,
             this.dt_saida,
@@ -162,11 +173,12 @@
             this.Duracao,
             this.Horario_saida,
             this.Horario_Chegada});
-            this.tabelaVoos.Location = new System.Drawing.Point(38, 239);
-            this.tabelaVoos.Name = "tabelaVoos";
-            this.tabelaVoos.ReadOnly = true;
-            this.tabelaVoos.Size = new System.Drawing.Size(749, 316);
-            this.tabelaVoos.TabIndex = 101;
+            this.tabelaV.Location = new System.Drawing.Point(38, 239);
+            this.tabelaV.Name = "tabelaV";
+            this.tabelaV.ReadOnly = true;
+            this.tabelaV.Size = new System.Drawing.Size(749, 316);
+            this.tabelaV.TabIndex = 101;
+            this.tabelaV.Visible = false;
             // 
             // idvoo
             // 
@@ -233,6 +245,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Padding = new System.Windows.Forms.Padding(7);
             this.txtCodigo.PasswordChar = false;
+            this.txtCodigo.ReadOnly = false;
             this.txtCodigo.Size = new System.Drawing.Size(90, 31);
             this.txtCodigo.TabIndex = 100;
             this.txtCodigo.TextNew = "";
@@ -266,6 +279,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Padding = new System.Windows.Forms.Padding(7);
             this.txtNome.PasswordChar = false;
+            this.txtNome.ReadOnly = false;
             this.txtNome.Size = new System.Drawing.Size(347, 31);
             this.txtNome.TabIndex = 98;
             this.txtNome.TextNew = "";
@@ -292,6 +306,82 @@
             this.pictureBox1.TabIndex = 96;
             this.pictureBox1.TabStop = false;
             // 
+            // tabelaVoos
+            // 
+            this.tabelaVoos.AllowUserToAddRows = false;
+            this.tabelaVoos.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.tabelaVoos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tabelaVoos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tabelaVoos.BackgroundColor = System.Drawing.Color.DimGray;
+            this.tabelaVoos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tabelaVoos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.tabelaVoos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaVoos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tabelaVoos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabelaVoos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idpais,
+            this.nomepais,
+            this.siglapais});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumPurple;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaVoos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tabelaVoos.EnableHeadersVisualStyles = false;
+            this.tabelaVoos.Location = new System.Drawing.Point(38, 239);
+            this.tabelaVoos.MultiSelect = false;
+            this.tabelaVoos.Name = "tabelaVoos";
+            this.tabelaVoos.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabelaVoos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.tabelaVoos.RowHeadersWidth = 20;
+            this.tabelaVoos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.tabelaVoos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.tabelaVoos.Size = new System.Drawing.Size(749, 316);
+            this.tabelaVoos.TabIndex = 104;
+            // 
+            // idpais
+            // 
+            this.idpais.DataPropertyName = "IDPAIS";
+            this.idpais.FillWeight = 45.68528F;
+            this.idpais.HeaderText = "Código";
+            this.idpais.Name = "idpais";
+            this.idpais.ReadOnly = true;
+            // 
+            // nomepais
+            // 
+            this.nomepais.DataPropertyName = "NOME";
+            this.nomepais.FillWeight = 161.8271F;
+            this.nomepais.HeaderText = "Nome";
+            this.nomepais.Name = "nomepais";
+            this.nomepais.ReadOnly = true;
+            // 
+            // siglapais
+            // 
+            this.siglapais.DataPropertyName = "SIGLA";
+            this.siglapais.FillWeight = 92.48762F;
+            this.siglapais.HeaderText = "Sigla";
+            this.siglapais.Name = "siglapais";
+            this.siglapais.ReadOnly = true;
+            // 
             // FrmConsultaVoo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,8 +401,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).EndInit();
             this.pnlVoo.ResumeLayout(false);
             this.pnlVoo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tabelaVoos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaVoos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,7 +416,7 @@
         private System.Windows.Forms.Panel pnlVoo;
         private controls.ModeloBotao btnSair;
         private controls.ModeloBotao btnConfirmar;
-        private System.Windows.Forms.DataGridView tabelaVoos;
+        private System.Windows.Forms.DataGridView tabelaV;
         private controls.novoTextBox txtCodigo;
         private System.Windows.Forms.Label label1lblCodigoPassagem;
         private controls.novoTextBox txtNome;
@@ -338,5 +429,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Duracao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Horario_saida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Horario_Chegada;
+        private System.Windows.Forms.DataGridView tabelaVoos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idpais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomepais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn siglapais;
     }
 }

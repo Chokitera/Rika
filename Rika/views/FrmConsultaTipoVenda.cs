@@ -23,8 +23,9 @@ namespace Rika.views
             InitializeComponent();
 
             tipoVendaController = new TipoVendaController();
-            ListarTipoVendas();
+            //ListarTipoVendas();
         }
+
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
@@ -119,31 +120,31 @@ namespace Rika.views
 
         #endregion
 
-        #region Eventos em Geral
-        private void txtNome__TextChanged_1(object sender, EventArgs e)
-        {
-            ListarTipoVendas();
-        }
-        #endregion
+        //#region Eventos em Geral
+        //private void txtNome__TextChanged_1(object sender, EventArgs e)
+        //{
+        //    ListarTipoVendas();
+        //}
+        //#endregion
 
-        #region  Métodos
+        ////#region  Métodos
 
-        #region Listar Tipo de Vendas
-        public void ListarTipoVendas()
-        {
-            DataTable dataTable = new DataTable();
-            //Instancia do Model
-            TipoVenda tipoVenda = new TipoVenda
-            {
-                Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
-            };
+        //#region Listar Tipo de Vendas
+        //public void ListarTipoVendas()
+        //{
+        //    DataTable dataTable = new DataTable();
+        //    //Instancia do Model
+        //    TipoVenda tipoVenda = new TipoVenda
+        //    {
+        //        Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
+        //    };
 
-            //Consulta os paises e atribui a DataGrid
-            tabelaTipoVenda.DataSource = tipoVendaController.ConsultarTipoVendas(tipoVenda);
-        }
-        #endregion
+        //    //Consulta os paises e atribui a DataGrid
+        //    tabelaTipoVenda.DataSource = tipoVendaController.ConsultarTipoVendas(tipoVenda);
+        //}
+        //#endregion
 
-        #endregion
+        //#endregion
 
         private void pnlTipoVenda_Paint(object sender, PaintEventArgs e)
         {

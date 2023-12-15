@@ -150,7 +150,7 @@ namespace Rika.views
             voo.aviao.Modelo = "%" + txtNome.Text + "%"; //Porcentagem utilizada no .LIKE
 
             //Consulta os paises e atribui a DataGrid
-            tabelaVoos.DataSource = vooController.ConsultarVoos(voo);
+            tabelaV.DataSource = vooController.ConsultarVoos(voo);
         }
         #endregion
 

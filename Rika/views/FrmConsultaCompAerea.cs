@@ -22,8 +22,9 @@ namespace Rika.views
             InitializeComponent();
 
             CompAereaController = new CompAereaController();
-            ListarCompAerea();
+            //ListarCompAerea();
         }
+
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
@@ -118,24 +119,24 @@ namespace Rika.views
         }
         #endregion
 
-        #region Listar Aviao
-        public void ListarCompAerea()
-        {
-            DataTable dataTable = new DataTable();
-            //Instancia do Model
-            CompanhiaAerea companhiaAerea = new CompanhiaAerea
-            {
-                Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
-            };
+        //#region Listar Aviao
+        //public void ListarCompAerea()
+        //{
+        //    DataTable dataTable = new DataTable();
+        //    //Instancia do Model
+        //    CompanhiaAerea companhiaAerea = new CompanhiaAerea
+        //    {
+        //        Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
+        //    };
 
-            //Consulta os paises e atribui a DataGrid
-            tabelaCompAerea.DataSource = CompAereaController.ConsultarCompAereas(companhiaAerea);
-        }
-        #endregion
+        //    //Consulta os paises e atribui a DataGrid
+        //    tabelaCompAerea.DataSource = CompAereaController.ConsultarCompAereas(companhiaAerea);
+        //}
+        //#endregion
 
-        private void txtNome__TextChanged(object sender, EventArgs e)
-        {
-            ListarCompAerea();
-        }
+        //private void txtNome__TextChanged(object sender, EventArgs e)
+        //{
+        //    ListarCompAerea();
+        //}
     }
 }

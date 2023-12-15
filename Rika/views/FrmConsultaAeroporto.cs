@@ -22,8 +22,9 @@ namespace Rika.views
             InitializeComponent();
 
             AeroportoController = new AeroportoController();
-            ListarAeroporto();
+            //ListarAeroporto();
         }
+
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
@@ -116,28 +117,29 @@ namespace Rika.views
         }
 
         #endregion
-        #region Listar Aviao
-        public void ListarAeroporto()
-        {
-            DataTable dataTable = new DataTable();
-            //Instancia do Model
-            Aeroporto aeroporto = new Aeroporto
-            {
-                Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
-            };
 
-            //Consulta os paises e atribui a DataGrid
-            tabelaAeroporto.DataSource = AeroportoController.ConsultarAeroportos(aeroporto);
-        }
-        #endregion
+        //#region Listar Aviao
+        //public void ListarAeroporto()
+        //{
+        //    DataTable dataTable = new DataTable();
+        //    //Instancia do Model
+        //    Aeroporto aeroporto = new Aeroporto
+        //    {
+        //        Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
+        //    };
+
+        //    //Consulta os paises e atribui a DataGrid
+        //    tabelaAeroporto.DataSource = AeroportoController.ConsultarAeroportos(aeroporto);
+        //}
+        //#endregion
         private void pnlAeroporto_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void txtNome__TextChanged(object sender, EventArgs e)
-        {
-            ListarAeroporto();
-        }
+        //    private void txtNome__TextChanged(object sender, EventArgs e)
+        //    {
+        //        ListarAeroporto();
+        //    }
     }
 }

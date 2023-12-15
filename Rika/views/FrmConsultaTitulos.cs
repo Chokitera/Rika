@@ -18,6 +18,7 @@ namespace Rika.views
         {
             InitializeComponent();
         }
+
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
@@ -60,8 +61,7 @@ namespace Rika.views
                 }
             }
         }
-
-        private void pnlConteudo_Paint(object sender, PaintEventArgs e)
+        private void pnlTitulo_Paint(object sender, PaintEventArgs e)
         {
             // Ajusta as bordas
             FormRegionAndBorder(this, borderRadius, e.Graphics, borderColor, borderSize);
@@ -86,31 +86,29 @@ namespace Rika.views
                 return cp;
             }
         }
-
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        private void panel2_MouseDown_1(object sender, MouseEventArgs e)
         {
             //Chamada dos métodos para arrastar o formulário
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
         #endregion
 
         #region Botões/Ações
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void iconFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
         private void iconMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void iconFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         #endregion
-
-        
-
-        
-
-        
     }
 }

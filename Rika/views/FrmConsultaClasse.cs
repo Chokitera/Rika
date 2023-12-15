@@ -22,8 +22,9 @@ namespace Rika.views
             InitializeComponent();
 
             classeController = new ClasseController();
-            ListarClasses();
+            //ListarClasses();
         }
+
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
@@ -122,21 +123,21 @@ namespace Rika.views
 
         #endregion
 
-        #region Listar Consulta de Classes
-        public void ListarClasses()
-        {
-            DataTable dataTable = new DataTable();
-            //Instancia do Model
-            Classe classe = new Classe
-            {
-                Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
-            };
+        //#region Listar Consulta de Classes
+        //public void ListarClasses()
+        //{
+        //    DataTable dataTable = new DataTable();
+        //    //Instancia do Model
+        //    Classe classe = new Classe
+        //    {
+        //        Nome = "%" + txtNome.Text + "%" //Porcentagem utilizada no .LIKE
+        //    };
 
-            //Consulta os paises e atribui a DataGrid
-            tabelaClasses.DataSource = classeController.ConsultarClasses(classe);
-        }
+        //    //Consulta os paises e atribui a DataGrid
+        //    tabelaClasses.DataSource = classeController.ConsultarClasses(classe);
+        //}
 
-        #endregion
+        //#endregion
 
         private void pnlClasse_Paint(object sender, PaintEventArgs e)
         {

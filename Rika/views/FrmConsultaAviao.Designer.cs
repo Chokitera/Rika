@@ -201,7 +201,7 @@
             this.txtNome.TabIndex = 90;
             this.txtNome.TextNew = "";
             this.txtNome.UnderlinedStyle = false;
-            this.txtNome._TextChanged += new System.EventHandler(this.txtNome__TextChanged);
+            //this.txtNome._TextChanged += new System.EventHandler(this.txtNome__TextChanged);
             // 
             // lblAeroDestino
             // 
