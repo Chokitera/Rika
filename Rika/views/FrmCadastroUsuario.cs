@@ -239,6 +239,8 @@ namespace Rika.views
             else
                 usuario.Senha = txtSenha.Text;
             usuario.ConfirmarSenha = txtConfirmarSenha.Text;
+            usuario.Tipo = 0;
+            usuario.Id = 0;
 
             if (VerificarSenhas(usuario))
             {
