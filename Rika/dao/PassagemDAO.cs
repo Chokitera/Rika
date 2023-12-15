@@ -100,7 +100,7 @@ namespace Rika.dao
         {
             try
             {
-                string sql = @"update PASSAGEM set IdVoo=@IdVoo, IdSituacao=@IdSituacao, IdClasse=@IdClasse, Cod_Passagem=@Cod_Passagem, Direto_Escala=@Direto_Escala, Caminho_Img=@Caminho_Img
+                string sql = @"update PASSAGEM set IdVoo=@IdVoo, IdSituacao=@IdSituacao, IdClasse=@IdClasse, COD_PASS=@Cod_Passagem, Direto_Escala=@Direto_Escala, Caminho_Img=@Caminho_Img
                                where IDPASSAGEM = @id;";
 
                 //Define o Código da Passagem (Identificação)
@@ -214,7 +214,10 @@ namespace Rika.dao
 
                 MySqlDataReader reader2 = executacmd2.ExecuteReader();
                 reader2.Read();
-                passagem.Id = reader2.GetInt32(0) + 1; // +1 pois é o próximo código a ser serializado
+                if (reader2.GetInt32(0) > 0)
+                    passagem.Id = reader2.GetInt32(0) + 1; // +1 pois é o próximo código a ser serializado
+                else
+                    passagem.Id = 1;
 
                 //Finaliza a conexão e sessão
                 reader2.Close();
