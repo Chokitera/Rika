@@ -47,15 +47,17 @@ namespace Rika.dao
                     MessageBox.Show("Usuário ou Senha incorreta!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     conexao.Close();
                     return false;
-                }
-
-                    
+                }   
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conexao.Close();
                 return false;
+            }
+            finally
+            {
+                conexao.Close();
             }
         }
         #endregion
@@ -98,6 +100,10 @@ namespace Rika.dao
                 conexao.Close();
                 return false;
             }
+            finally
+            {
+                conexao.Close();
+            }
         }
         #endregion
 
@@ -131,6 +137,10 @@ namespace Rika.dao
                 MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conexao.Close();
                 return false;
+            }
+            finally
+            {
+                conexao.Close();
             }
         }
         #endregion
@@ -177,6 +187,10 @@ namespace Rika.dao
                 conexao.Close();
                 return usuario;
             }
+            finally
+            {
+                conexao.Close();
+            }
         }
 
         #endregion
@@ -202,6 +216,7 @@ namespace Rika.dao
                     conexao.Close();
                     return true;
                 }
+                conexao.Close();
                 return false;
             }
             catch (Exception erro)
@@ -209,6 +224,10 @@ namespace Rika.dao
                 MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conexao.Close();
                 return false;
+            }
+            finally
+            {
+                conexao.Close();
             }
         }
         #endregion
@@ -238,6 +257,10 @@ namespace Rika.dao
                 MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conexao.Close();
                 return false;
+            }
+            finally
+            {
+                conexao.Close();
             }
         }
         #endregion
@@ -270,6 +293,10 @@ namespace Rika.dao
                 MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conexao.Close();
                 return usuario;
+            }
+            finally
+            {
+                conexao.Close();
             }
         }
         #endregion
