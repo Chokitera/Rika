@@ -313,7 +313,7 @@ namespace Rika.controls
             carrinhoCompra.passagem.Id = _codPassagem;
             carrinhoCompra.Dt_Adicao = DateTime.Today;
             carrinhoCompra.Quantidade = 1;
-            carrinhoCompra.usuario.Id = 1; //Ainda não feito o gravamento do usuário no sistema ou regedit
+            carrinhoCompra.usuario.Id = usuario.Id; //Ainda não feito o gravamento do usuário no sistema ou regedit
 
             //Salva os itens no carrinho de compras
             carrinhoController.SalvaCarrinhoCompra(carrinhoCompra);

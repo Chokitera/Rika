@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Rika.dao;
 
 namespace Rika.views
 {
@@ -128,16 +129,22 @@ namespace Rika.views
             if (txtCodUsuario.Text == "")
             {
                 txtCodUsuario.Focus();
-                MessageBox.Show("Não é possível cadastrar um usuário. Por favor, procure a tela de cadastro!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Não é possível cadastrar um usuário. Por favor, utilize a tela de cadastro!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 new Helpers().LimparTela(this);
+                AjustesLimpezaTela();
             }
             else
             {
                 usuario.Id = int.Parse(txtCodUsuario.Text);
                 usuario.Nome = txtNome.Text;
-                //Tipo usuario
+                usuario.SobreNome = txtSobrenome.Text;
                 usuario.NomeUsuario = txtNomeUsuario.Text;
+                if (cmbTipoUsuario.SelectedItem == "Administrador")
+                    usuario.Tipo = 1;
+                else
+                    usuario.Tipo = 0;
                 usuario.Senha = txtSenha.Text;
+                usuario.ConfirmarSenha = txtSenha.Text;
 
                 //Chamada do Controlador
                 bool isValid = usuarioController.SalvaUsuario(usuario);
@@ -146,6 +153,7 @@ namespace Rika.views
                 if (isValid)
                 {
                     new Helpers().LimparTela(this);
+                    AjustesLimpezaTela();
                     txtCodUsuario.Focus();
                 }
             }
@@ -170,6 +178,7 @@ namespace Rika.views
                 if (isValid)
                 {
                     new Helpers().LimparTela(this);
+                    AjustesLimpezaTela();
                     txtCodUsuario.Focus();
                 }
             }
@@ -208,19 +217,52 @@ namespace Rika.views
                 {
                     txtCodUsuario.Text = usuario.Id.ToString();
                     txtNome.Text = usuario.Nome;
-                    //tipo usuario
+                    txtSobrenome.Text = usuario.SobreNome;
+                    if (usuario.Tipo == 0)
+                        cmbTipoUsuario.SelectedItem = "Normal";
+                    else
+                        cmbTipoUsuario.SelectedItem = "Administrador";
                     txtNomeUsuario.Text = usuario.NomeUsuario;
 
                 }
                 else
                 {
                     new Helpers().LimparTela(this);
+                    AjustesLimpezaTela();
                     txtCodUsuario.Focus();
                 }
             }
             else
+            {
                 new Helpers().LimparTela(this);
+                AjustesLimpezaTela();
+            }
         }
         #endregion
+
+        #region Ajustes na limpeza da tela
+        public void AjustesLimpezaTela()
+        {
+            txtSenha.Text = "12345678"; //Define sempre a senha padrão (somente visualização na tela)
+            cmbTipoUsuario.SelectedIndex = -1; //Limpa o ComboBox
+        }
+        #endregion
+
+        private void txtNomeUsuario_Leave(object sender, EventArgs e)
+        {
+            if (txtNomeUsuario.Text != "") //Verifica se o nome de usuário já existe
+            {
+                Usuario usuario = new Usuario();
+
+                usuario.NomeUsuario = txtNomeUsuario.Text;
+
+                bool cadastroUsuario = usuarioController.VerificaNomeUsuario(usuario);
+
+                if (cadastroUsuario)
+                {
+                    txtNomeUsuario.Focus(); //Se existir não deixa continuar
+                }
+            }
+        }
     }
 }

@@ -5,6 +5,7 @@ using Rika.views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,10 +34,17 @@ namespace Rika.controllers
                 //Verifica se as informações estão preenchidas e OK
                 new models.Comum.ValidacaoModel().Validacao(usuario);
 
-                //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza                
-                SalvaDados = usuarioDAO.EfetuarCadastro(usuario);
+                if(usuario.Id  == 0)
+                {
+                    //Se for igual a 0 ele cadastra um novo, se for diferente ele atualiza                
+                    SalvaDados = usuarioDAO.EfetuarCadastro(usuario);
+                }
+                else
+                {
+                    //Se for diferente de 0 é edição
+                    SalvaDados = usuarioDAO.EfetuarEdicao(usuario);
+                }
                 
-
                 return SalvaDados; //Se Ok retorna verdadeiro
             }
             catch (Exception erro)
@@ -167,6 +175,24 @@ namespace Rika.controllers
             {
                 MessageBox.Show(erro.Message, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return usuario; //Se deu ruim retorna falso
+            }
+        }
+        #endregion
+
+        #region Método para verificar se já existe nome de usuário cadastrado
+        public bool VerificaNomeUsuario(Usuario usuario)
+        {
+            try
+            {
+                this.usuario = usuario;
+                bool isValid = usuarioDAO.ValidarNome(usuario);
+
+                return isValid;
+            }
+            catch (Exception)
+            {
+                //Sem exeção nesse método
+                return false;
             }
         }
         #endregion

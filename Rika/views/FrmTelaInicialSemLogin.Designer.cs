@@ -36,8 +36,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.modeloBotao5 = new Rika.controls.ModeloBotao();
             this.modeloBotao4 = new Rika.controls.ModeloBotao();
-            this.modeloBotao3 = new Rika.controls.ModeloBotao();
-            this.modeloBotao2 = new Rika.controls.ModeloBotao();
+            this.btnFazerLogin = new Rika.controls.ModeloBotao();
             this.modeloBotao1 = new Rika.controls.ModeloBotao();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlConteudo = new System.Windows.Forms.Panel();
@@ -70,6 +69,7 @@
             this.flpInicial = new System.Windows.Forms.FlowLayoutPanel();
             this.label23 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.btnCarrinhoCompra = new Rika.controls.ModeloBotao();
             this.pnlCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
@@ -87,14 +87,14 @@
             // 
             this.pnlCabecalho.AutoScroll = true;
             this.pnlCabecalho.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.pnlCabecalho.Controls.Add(this.btnCarrinhoCompra);
             this.pnlCabecalho.Controls.Add(this.iconMinimizar);
             this.pnlCabecalho.Controls.Add(this.iconFechar);
             this.pnlCabecalho.Controls.Add(this.pictureBox3);
             this.pnlCabecalho.Controls.Add(this.pictureBox2);
             this.pnlCabecalho.Controls.Add(this.modeloBotao5);
             this.pnlCabecalho.Controls.Add(this.modeloBotao4);
-            this.pnlCabecalho.Controls.Add(this.modeloBotao3);
-            this.pnlCabecalho.Controls.Add(this.modeloBotao2);
+            this.pnlCabecalho.Controls.Add(this.btnFazerLogin);
             this.pnlCabecalho.Controls.Add(this.modeloBotao1);
             this.pnlCabecalho.Controls.Add(this.pictureBox1);
             this.pnlCabecalho.Dock = System.Windows.Forms.DockStyle.Top;
@@ -190,44 +190,25 @@
             this.modeloBotao4.TextColor = System.Drawing.Color.White;
             this.modeloBotao4.UseVisualStyleBackColor = false;
             // 
-            // modeloBotao3
+            // btnFazerLogin
             // 
-            this.modeloBotao3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.modeloBotao3.BorderColor = System.Drawing.Color.Black;
-            this.modeloBotao3.BorderRadius = 15;
-            this.modeloBotao3.BorderSize = 0;
-            this.modeloBotao3.FlatAppearance.BorderSize = 0;
-            this.modeloBotao3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modeloBotao3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.modeloBotao3.ForeColor = System.Drawing.Color.White;
-            this.modeloBotao3.Location = new System.Drawing.Point(978, 31);
-            this.modeloBotao3.Name = "modeloBotao3";
-            this.modeloBotao3.Size = new System.Drawing.Size(146, 30);
-            this.modeloBotao3.TabIndex = 5;
-            this.modeloBotao3.Text = "Carrinho de Compra";
-            this.modeloBotao3.TextColor = System.Drawing.Color.White;
-            this.modeloBotao3.UseVisualStyleBackColor = false;
-            this.modeloBotao3.Click += new System.EventHandler(this.modeloBotao3_Click);
-            // 
-            // modeloBotao2
-            // 
-            this.modeloBotao2.BackColor = System.Drawing.Color.SlateBlue;
-            this.modeloBotao2.BackgroundColor = System.Drawing.Color.SlateBlue;
-            this.modeloBotao2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.modeloBotao2.BorderRadius = 15;
-            this.modeloBotao2.BorderSize = 0;
-            this.modeloBotao2.FlatAppearance.BorderSize = 0;
-            this.modeloBotao2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.modeloBotao2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.modeloBotao2.ForeColor = System.Drawing.Color.White;
-            this.modeloBotao2.Location = new System.Drawing.Point(1130, 31);
-            this.modeloBotao2.Name = "modeloBotao2";
-            this.modeloBotao2.Size = new System.Drawing.Size(107, 30);
-            this.modeloBotao2.TabIndex = 4;
-            this.modeloBotao2.Text = "Fazer login";
-            this.modeloBotao2.TextColor = System.Drawing.Color.White;
-            this.modeloBotao2.UseVisualStyleBackColor = false;
+            this.btnFazerLogin.BackColor = System.Drawing.Color.SlateBlue;
+            this.btnFazerLogin.BackgroundColor = System.Drawing.Color.SlateBlue;
+            this.btnFazerLogin.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnFazerLogin.BorderRadius = 15;
+            this.btnFazerLogin.BorderSize = 0;
+            this.btnFazerLogin.FlatAppearance.BorderSize = 0;
+            this.btnFazerLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFazerLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnFazerLogin.ForeColor = System.Drawing.Color.White;
+            this.btnFazerLogin.Location = new System.Drawing.Point(1130, 31);
+            this.btnFazerLogin.Name = "btnFazerLogin";
+            this.btnFazerLogin.Size = new System.Drawing.Size(107, 30);
+            this.btnFazerLogin.TabIndex = 4;
+            this.btnFazerLogin.Text = "Fazer login";
+            this.btnFazerLogin.TextColor = System.Drawing.Color.White;
+            this.btnFazerLogin.UseVisualStyleBackColor = false;
+            this.btnFazerLogin.Click += new System.EventHandler(this.btnFazerLogin_Click);
             // 
             // modeloBotao1
             // 
@@ -638,6 +619,26 @@
             this.pictureBox6.TabIndex = 55;
             this.pictureBox6.TabStop = false;
             // 
+            // btnCarrinhoCompra
+            // 
+            this.btnCarrinhoCompra.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCarrinhoCompra.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCarrinhoCompra.BorderColor = System.Drawing.Color.Black;
+            this.btnCarrinhoCompra.BorderRadius = 15;
+            this.btnCarrinhoCompra.BorderSize = 0;
+            this.btnCarrinhoCompra.FlatAppearance.BorderSize = 0;
+            this.btnCarrinhoCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarrinhoCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnCarrinhoCompra.ForeColor = System.Drawing.Color.White;
+            this.btnCarrinhoCompra.Location = new System.Drawing.Point(968, 31);
+            this.btnCarrinhoCompra.Name = "btnCarrinhoCompra";
+            this.btnCarrinhoCompra.Size = new System.Drawing.Size(156, 30);
+            this.btnCarrinhoCompra.TabIndex = 31;
+            this.btnCarrinhoCompra.Text = "Carrinho de Compras";
+            this.btnCarrinhoCompra.TextColor = System.Drawing.Color.White;
+            this.btnCarrinhoCompra.UseVisualStyleBackColor = false;
+            this.btnCarrinhoCompra.Click += new System.EventHandler(this.btnCarrinhoCompra_Click);
+            // 
             // FrmTelaInicialSemLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,8 +676,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlCabecalho;
         private controls.ModeloBotao modeloBotao1;
-        private controls.ModeloBotao modeloBotao3;
-        private controls.ModeloBotao modeloBotao2;
+        private controls.ModeloBotao btnFazerLogin;
         private controls.ModeloBotao modeloBotao5;
         private controls.ModeloBotao modeloBotao4;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -713,5 +713,6 @@
         private System.Windows.Forms.FlowLayoutPanel flpInicial;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private controls.ModeloBotao btnCarrinhoCompra;
     }
 }

@@ -116,12 +116,6 @@ namespace Rika.views
         }
     #endregion
 
-        private void modeloBotao3_Click(object sender, EventArgs e)
-        {
-            //FrmCarrinhoCompra form = new FrmCarrinhoCompra();
-            //form.ShowDialog();
-        }
-
         #region Método para Carregar as Passagens Aéreas Inicial
         public void CarregarPassagensIniciais()
         {
@@ -193,6 +187,28 @@ namespace Rika.views
 
                     flpMaisPopulares.Controls.Add(passagensAerea[0]);
                 }
+            }
+        }
+        #endregion
+
+        #region Botões superiores
+        private void btnFazerLogin_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            FrmTelaPrincipal tela = new FrmTelaPrincipal();
+            tela.Show();
+        }
+
+        private void btnCarrinhoCompra_Click(object sender, EventArgs e)
+        {
+            //Questiona para fazer login
+            DialogResult result = MessageBox.Show("Você deseja realizar o login para visualizar seu carrinho?", "RIKA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Visible = false;
+                FrmTelaPrincipal tela = new FrmTelaPrincipal();
+                tela.Show();
             }
         }
         #endregion

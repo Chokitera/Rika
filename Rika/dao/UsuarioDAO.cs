@@ -101,6 +101,40 @@ namespace Rika.dao
         }
         #endregion
 
+        #region Método para editar usuários
+        public bool EfetuarEdicao(Usuario usuario)
+        {
+            try
+            {
+                string sql = @"update USUARIOS set nome=@nome, sobrenome=@sobrenome,nomeusuario=@nomeusuario, tipousuario=@tipousuario
+                               where IDUSUARIO = @id;";
+
+                //Atributos
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", usuario.Id);
+                executacmd.Parameters.AddWithValue("@nome", usuario.Nome);
+                executacmd.Parameters.AddWithValue("@sobrenome", usuario.SobreNome);
+                executacmd.Parameters.AddWithValue("@nomeusuario", usuario.NomeUsuario);
+                executacmd.Parameters.AddWithValue("@tipousuario", usuario.Tipo);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Usuário " + usuario.Id + " - " + usuario.NomeUsuario + " atualizado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
         #region Buscar usuário pelo ID
 
         public Usuario ConsultarUsuarioPorId(Usuario usuario)
@@ -128,9 +162,9 @@ namespace Rika.dao
                 else
                 {
                     usuario.Nome = reader[1].ToString();
-                    usuario.NomeUsuario = reader[2].ToString();
-                    //usuario.Senha = reader[3].ToString();
-                    //Tipo = reader[4];
+                    usuario.SobreNome = reader[2].ToString();
+                    usuario.NomeUsuario = reader[3].ToString();
+                    usuario.Tipo = reader.GetInt32(5);
                 }
 
                 conexao.Close();

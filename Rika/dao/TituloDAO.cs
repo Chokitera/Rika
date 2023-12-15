@@ -47,7 +47,7 @@ namespace Rika.dao
                 MySqlDataReader reader = executacmd2.ExecuteReader();
                 reader.Read();
                 titulo.Id = reader.GetInt32(0);
-                MessageBox.Show("Título " + titulo.Id + " - " + nomePassagem + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Título " + titulo.Id + " - Passagem " + titulo.passagem.Id + " cadastrado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 conexao.Close();
                 return true;
@@ -154,6 +154,8 @@ namespace Rika.dao
                     titulo.passagem.Id = reader.GetInt32(1);
                     titulo.tipovenda.Id = reader.GetInt32(2);
                     titulo.Valor = reader.GetDouble(3);
+                    titulo.ValorPago = reader.GetDouble(4);
+                    titulo.StatusTitulo = reader.GetInt32(5);
                 }
 
                 conexao.Close();

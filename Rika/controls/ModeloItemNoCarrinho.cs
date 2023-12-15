@@ -16,11 +16,13 @@ namespace Rika.controls
     public partial class ModeloItemNoCarrinho : UserControl
     {
         private CarrinhoCompraController carrinhoController;
+        private TituloController tituloController;
         public ModeloItemNoCarrinho()
         {
             InitializeComponent();
 
             carrinhoController = new CarrinhoCompraController();
+            tituloController = new TituloController();
         }
 
         private void ModeloItemNoCarrinho_Load(object sender, EventArgs e)
@@ -200,7 +202,7 @@ namespace Rika.controls
 
                 if (exclusao) //Se excluiu
                 {
-                    //Atualiza a tela?
+                    //Atualiza a tela
                     var qrForm = from frm in Application.OpenForms.Cast<Form>()
                                  where frm is FrmCarrinhoCompra
                                  select frm;
@@ -259,11 +261,19 @@ namespace Rika.controls
 
         private void btnComprarAgora_Click(object sender, EventArgs e)
         {
-            //Gerar o(os) título
+            //Preenche o Model para gerar o título
+            Titulo titulo = new Titulo();
+            titulo.passagem.Id = CodPass;
+            titulo.StatusTitulo = 1; //Título Pago
+            titulo.Valor = ValorItem;
+            titulo.ValorPago = ValorItem;
+            titulo.tipovenda.Id = 1; //Á vista
 
+            //Salva o Título
+            tituloController.SalvaTitulo(titulo); //Gera o título (individual)
 
-            //Limpar o item do carrinho
-
+            //Exclui o Item do Carrinho
+            carrinhoController.ExcluirCarrinhoCompra(IdCarrinho);
 
             //Chama a tela de compra finalizada
             var qrForm = from frm in Application.OpenForms.Cast<Form>()
@@ -272,7 +282,7 @@ namespace Rika.controls
 
             if (qrForm != null && qrForm.Count() > 0)
             {
-                ((FrmCarrinhoCompra)qrForm.First()).CompraFinalizada();
+                ((FrmCarrinhoCompra)qrForm.First()).CompraFinalizada(titulo);
             }
         }
     }

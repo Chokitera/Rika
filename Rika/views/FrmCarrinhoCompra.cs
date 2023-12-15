@@ -18,16 +18,29 @@ namespace Rika.views
     public partial class FrmCarrinhoCompra : Form
     {
         private CarrinhoCompraController carrinhoController;
+        private TituloController tituloController;
         private Usuario usuario;
         public FrmCarrinhoCompra(Usuario usuario)
         {
             InitializeComponent();
 
             carrinhoController = new CarrinhoCompraController();
+            tituloController = new TituloController();
             this.usuario = usuario;
 
             CarregarCarrinhoCompra(); //Carregar os itens do carrinho ao inicializar
         }
+
+        private void FrmCarrinhoCompra_Load(object sender, EventArgs e)
+        {
+            //Inicialização
+            AtualizaTotalizador(); //Atualiza o Totalizador na inicilização da tela
+
+            //Botão de desconto inativado
+            btnAplicarCupom.BackColor = Color.DarkGray;
+            btnAplicarCupom.Enabled = false;
+        }
+
         #region Ajustes da Borda
         //Campos para alterar a borda
         private int borderRadius = 20;
@@ -117,15 +130,6 @@ namespace Rika.views
         }
         #endregion
 
-        private void FrmCarrinhoCompra_Load(object sender, EventArgs e)
-        {
-            //Inicialização
-            AtualizaTotalizador(); //Atualiza o Totalizador na inicilização da tela
-
-            //Botão de desconto inativado
-            btnAplicarCupom.BackColor = Color.DarkGray;
-            btnAplicarCupom.Enabled = false;
-        }
 
         #region Eventos de Ajuste no Menu do Carrinho
         private void txtCupomDesconto_Enter(object sender, EventArgs e)
@@ -166,7 +170,24 @@ namespace Rika.views
         #region Botões laterais
         private void btnComprarAgora_Click(object sender, EventArgs e)
         {
-            CompraFinalizada();
+            bool isValid = false;
+
+            foreach (Control controle in flpItens.Controls)
+            {
+                if (controle is ModeloItemNoCarrinho)
+                {
+                    isValid = true; //Verifica se existe o controle (item no carrinho)
+                }
+            }
+
+            if (isValid) //Se existir item no carrinho finaliza a compra
+            {
+                Titulo titulo = new Titulo();
+                titulo.passagem.Id = 0;
+                CompraFinalizada(titulo);
+            }
+            else
+                MessageBox.Show("Carrinho vazio!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnVoltarCompras_Click(object sender, EventArgs e)
@@ -179,13 +200,16 @@ namespace Rika.views
         public void CarregarCarrinhoCompra()
         {
             //Limpa o FlowPanel + inicialização
-            DateTime dataAux;
             flpItens.Controls.Clear();
+            CarrinhoCompra carrinhoCompra = new CarrinhoCompra();
+            carrinhoCompra.usuario.Id = usuario.Id;
+            DateTime dataAux;
             DataTable dataTable = new DataTable();
 
             //Chama o controlador e preenche o dataTable
-            dataTable = carrinhoController.CarregarCarrinhoCompra();
+            dataTable = carrinhoController.CarregarCarrinhoCompra(carrinhoCompra);
 
+            //COMENTADO E UTILIZADO A PARTE ABAIXO DESCOMENTADA!
             //////if (dataTable != null && dataTable.Rows.Count > 0) //Verifica se conseguiu encontrar registros
             //////{
             //////    controls.ModeloItemNoCarrinho[] itemCarrinho = new controls.ModeloItemNoCarrinho[dataTable.Rows.Count + 1]; //Recebe a quantidade de linhas da consulta (DataTable)
@@ -296,13 +320,31 @@ namespace Rika.views
         #endregion
 
         #region Compra Finalizada
-        public void CompraFinalizada()
+        public void CompraFinalizada(Titulo titulo)
         {
-            //Gera o título
+            //Verifica se o título está vazio (se estiver preenche ele) - é gerado todos os títulos do carrinho nesse if
+            if(titulo.passagem.Id == 0)
+            {
+                //Varre os controles do Flow Panel
+                foreach (Control controle in flpItens.Controls)
+                {
+                    if (controle is ModeloItemNoCarrinho)
+                    {
+                        //Preenche o Model
+                        titulo.passagem.Id = (controle as ModeloItemNoCarrinho).CodPass;
+                        titulo.StatusTitulo = 1; //Título Pago
+                        titulo.Valor = (controle as ModeloItemNoCarrinho).ValorItem;
+                        titulo.ValorPago = (controle as ModeloItemNoCarrinho).ValorItem;
+                        titulo.tipovenda.Id = 1; //Á vista
 
+                        //Salva o Título
+                        tituloController.SalvaTitulo(titulo);
+                    }
+                }
 
-            //Limpar o carrinho (excluir tudo)
-
+                //Limpar o carrinho (excluir tudo)
+                carrinhoController.ExcluirItensCarrinho();
+            }
 
             //Chama a tela de compra finalizada
             FrmTelaCompraEfetuada tela = new FrmTelaCompraEfetuada();

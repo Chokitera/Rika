@@ -59,7 +59,7 @@
             this.menuCadVoo.BackColor = System.Drawing.Color.White;
             this.menuCadVoo.Imagem = global::Rika.Properties.Resources.voo_direto;
             this.menuCadVoo.Informacao = "Cadastrar Voos";
-            this.menuCadVoo.Location = new System.Drawing.Point(498, 680);
+            this.menuCadVoo.Location = new System.Drawing.Point(924, 530);
             this.menuCadVoo.Name = "menuCadVoo";
             this.menuCadVoo.Size = new System.Drawing.Size(394, 127);
             this.menuCadVoo.TabIndex = 34;
@@ -71,7 +71,7 @@
             this.menuCadEndereco.BackColor = System.Drawing.Color.White;
             this.menuCadEndereco.Imagem = global::Rika.Properties.Resources.endereco;
             this.menuCadEndereco.Informacao = "Cadastrar Endereços";
-            this.menuCadEndereco.Location = new System.Drawing.Point(66, 680);
+            this.menuCadEndereco.Location = new System.Drawing.Point(498, 380);
             this.menuCadEndereco.Name = "menuCadEndereco";
             this.menuCadEndereco.Size = new System.Drawing.Size(394, 127);
             this.menuCadEndereco.TabIndex = 33;
@@ -83,7 +83,7 @@
             this.menuCadTitulo.BackColor = System.Drawing.Color.White;
             this.menuCadTitulo.Imagem = global::Rika.Properties.Resources.menu_titulos_fino;
             this.menuCadTitulo.Informacao = "Cadastrar Títulos";
-            this.menuCadTitulo.Location = new System.Drawing.Point(924, 530);
+            this.menuCadTitulo.Location = new System.Drawing.Point(498, 668);
             this.menuCadTitulo.Name = "menuCadTitulo";
             this.menuCadTitulo.Size = new System.Drawing.Size(394, 127);
             this.menuCadTitulo.TabIndex = 32;
@@ -95,7 +95,7 @@
             this.menuCadTipoVenda.BackColor = System.Drawing.Color.White;
             this.menuCadTipoVenda.Imagem = global::Rika.Properties.Resources.menu_tipovenda;
             this.menuCadTipoVenda.Informacao = "Cadastrar Tipos de Vendas";
-            this.menuCadTipoVenda.Location = new System.Drawing.Point(498, 530);
+            this.menuCadTipoVenda.Location = new System.Drawing.Point(498, 228);
             this.menuCadTipoVenda.Name = "menuCadTipoVenda";
             this.menuCadTipoVenda.Size = new System.Drawing.Size(394, 127);
             this.menuCadTipoVenda.TabIndex = 31;
@@ -107,7 +107,7 @@
             this.menuCadSituacao.BackColor = System.Drawing.Color.White;
             this.menuCadSituacao.Imagem = global::Rika.Properties.Resources.menu_situacao;
             this.menuCadSituacao.Informacao = "Cadastrar Situações";
-            this.menuCadSituacao.Location = new System.Drawing.Point(66, 530);
+            this.menuCadSituacao.Location = new System.Drawing.Point(66, 228);
             this.menuCadSituacao.Name = "menuCadSituacao";
             this.menuCadSituacao.Size = new System.Drawing.Size(394, 127);
             this.menuCadSituacao.TabIndex = 30;
@@ -119,7 +119,7 @@
             this.menuCadPassagem.BackColor = System.Drawing.Color.White;
             this.menuCadPassagem.Imagem = global::Rika.Properties.Resources.menu_passagem;
             this.menuCadPassagem.Informacao = "Cadastrar Passagens";
-            this.menuCadPassagem.Location = new System.Drawing.Point(924, 380);
+            this.menuCadPassagem.Location = new System.Drawing.Point(66, 668);
             this.menuCadPassagem.Name = "menuCadPassagem";
             this.menuCadPassagem.Size = new System.Drawing.Size(394, 127);
             this.menuCadPassagem.TabIndex = 29;
@@ -131,7 +131,7 @@
             this.menuCadPais.BackColor = System.Drawing.Color.White;
             this.menuCadPais.Imagem = global::Rika.Properties.Resources.menu_pais;
             this.menuCadPais.Informacao = "Cadastrar Países";
-            this.menuCadPais.Location = new System.Drawing.Point(498, 380);
+            this.menuCadPais.Location = new System.Drawing.Point(66, 380);
             this.menuCadPais.Name = "menuCadPais";
             this.menuCadPais.Size = new System.Drawing.Size(394, 127);
             this.menuCadPais.TabIndex = 28;
@@ -143,7 +143,7 @@
             this.menuCadCompAerea.BackColor = System.Drawing.Color.White;
             this.menuCadCompAerea.Imagem = global::Rika.Properties.Resources.menu_compaerea;
             this.menuCadCompAerea.Informacao = "Cadastrar Companhias Aéreas";
-            this.menuCadCompAerea.Location = new System.Drawing.Point(66, 380);
+            this.menuCadCompAerea.Location = new System.Drawing.Point(924, 380);
             this.menuCadCompAerea.Name = "menuCadCompAerea";
             this.menuCadCompAerea.Size = new System.Drawing.Size(394, 127);
             this.menuCadCompAerea.TabIndex = 27;
@@ -167,7 +167,7 @@
             this.menuCadAviao.BackColor = System.Drawing.Color.White;
             this.menuCadAviao.Imagem = global::Rika.Properties.Resources.menu_aviao;
             this.menuCadAviao.Informacao = "Cadastrar Aviões";
-            this.menuCadAviao.Location = new System.Drawing.Point(498, 228);
+            this.menuCadAviao.Location = new System.Drawing.Point(66, 530);
             this.menuCadAviao.Name = "menuCadAviao";
             this.menuCadAviao.Size = new System.Drawing.Size(394, 127);
             this.menuCadAviao.TabIndex = 25;
@@ -179,7 +179,7 @@
             this.menuCadAeroporto.BackColor = System.Drawing.Color.White;
             this.menuCadAeroporto.Imagem = global::Rika.Properties.Resources.menu_aeroporto;
             this.menuCadAeroporto.Informacao = "Cadastrar Aeroportos";
-            this.menuCadAeroporto.Location = new System.Drawing.Point(66, 228);
+            this.menuCadAeroporto.Location = new System.Drawing.Point(498, 530);
             this.menuCadAeroporto.Name = "menuCadAeroporto";
             this.menuCadAeroporto.Size = new System.Drawing.Size(394, 127);
             this.menuCadAeroporto.TabIndex = 24;

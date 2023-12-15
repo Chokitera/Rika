@@ -209,10 +209,12 @@ namespace Rika.views
         }
         #endregion
 
+        #region Validações
         private void btnCarrinhoCompra_Click(object sender, EventArgs e)
         {
             FrmCarrinhoCompra tela = new FrmCarrinhoCompra(usuario);
             tela.ShowDialog();
         }
+        #endregion
     }
 }

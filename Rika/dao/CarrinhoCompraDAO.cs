@@ -89,6 +89,34 @@ namespace Rika.dao
         }
         #endregion
 
+        #region Método para exclusão dos itens do carrinho de compra
+        public bool ExcluirItensCarrinho()
+        {
+            try
+            {
+                string sql = @"delete from CARRINHOCOMPRA";
+
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+
+                //Executa SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                //Mensagem que aparou o registro
+                //MessageBox.Show("O cadastro foi apagado com sucesso!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                conexao.Close();
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Ocorreu um erro: " + erro, "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexao.Close();
+                return false;
+            }
+        }
+        #endregion
+
         #region Método para editar Carrinho de Compra
         public bool EfetuarEdicao(CarrinhoCompra carrinhoCompra)
         {
@@ -198,7 +226,7 @@ namespace Rika.dao
         #endregion
 
         #region Método para consultar o carrinho de compras
-        public DataTable CarregarCarrinhoCompra()
+        public DataTable CarregarCarrinhoCompra(CarrinhoCompra carrinho)
         {
             try
             {
@@ -212,10 +240,13 @@ namespace Rika.dao
                                INNER JOIN AEROPORTO A ON (A.IDENDERECO = E.IDENDERECO)
                                INNER JOIN VOO V ON (V.DESTINO = A.IDAEROPORTO)
                                INNER JOIN PASSAGEM P ON (P.IDVOO = V.IDVOO)
-                               INNER JOIN CARRINHOCOMPRA C ON (C.IDPASSAGEM = P.IDPASSAGEM)"; //Colocar um order by e wherer usuario = usuario logado
+                               INNER JOIN CARRINHOCOMPRA C ON (C.IDPASSAGEM = P.IDPASSAGEM)
+                               WHERE C.IDUSUARIO = @ID 
+                               ORDER BY C.IDCARRINHO"; //Colocar um order by e wherer usuario = usuario logado
 
                 //Passa os paramentros
                 MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", carrinho.usuario.Id);
 
                 //Abre a conexão
                 conexao.Open();

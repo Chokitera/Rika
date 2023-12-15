@@ -128,15 +128,22 @@ namespace Rika.controllers
         #endregion
 
         #region Método para consultar o carrinho de compra
-        public DataTable CarregarCarrinhoCompra()
+        public DataTable CarregarCarrinhoCompra(CarrinhoCompra carrinhoCompra)
         {
             //Inicialização
             DataTable dataTable = new DataTable();
 
             //Chamada do DAO
-            dataTable = carrinhoCompraDAO.CarregarCarrinhoCompra();
+            dataTable = carrinhoCompraDAO.CarregarCarrinhoCompra(carrinhoCompra);
 
             return dataTable;
+        }
+        #endregion
+
+        #region Método para exclusão dos itens do carrinho de compra
+        public void ExcluirItensCarrinho()
+        {
+            bool excluiu = carrinhoCompraDAO.ExcluirItensCarrinho();
         }
         #endregion
 

@@ -98,15 +98,18 @@ namespace Rika.views
                 txtUsuario.Text = "Usuário";
                 txtUsuario.ForeColor = Color.DimGray;
             }
-            if (txtUsuario.Text != "")
+            if (txtUsuario.Text != "") //Verifica se o nome de usuário já existe
             {
-                UsuarioDAO dao = new UsuarioDAO();
-
                 Usuario usuario = new Usuario();
 
                 usuario.NomeUsuario = txtUsuario.Text;
 
-                bool cadastroUsuario = dao.ValidarNome(usuario);
+                bool cadastroUsuario = usuarioController.VerificaNomeUsuario(usuario);
+
+                if (cadastroUsuario)
+                {
+                    txtUsuario.Focus(); //Se existir não deixa continuar
+                }
             }
         }
 
