@@ -197,9 +197,7 @@ namespace Rika.views
                 }
             }
             else
-            {
-                MessageBox.Show("Cadastro de Tipo de Venda desabilitado por parâmetro!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtCodigo.Focus();
+            { 
                 new Helpers().LimparTela(this);
             }
         }

@@ -51,7 +51,8 @@ namespace Rika.views
         #region Evento Tipo de Venda Leave
         private void txtCodTipoVenda_Leave(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Cadastro de Tipo de Venda desabilitado por parâmetro!", "RIKA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtCodTitulo.Focus();
         }
         #endregion
 
